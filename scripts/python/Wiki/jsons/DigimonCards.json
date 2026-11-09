@@ -15067,13 +15067,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-066_P0",
         "illustrator": "TANIMESO",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT10-066_P1",
         "illustrator": "kaz",
         "note": "Event Pack 6",
         "type": "Alternative Art"
@@ -15138,7 +15138,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-067_P0",
         "illustrator": "Tonamikanji",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -15203,41 +15203,29 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-068_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT10-068_P2",
         "illustrator": "Nakano Haito",
         "note": "Final Championships 2023 Trophy Cards",
-        "type": "Trophy -\u00a02nd Place Prize"
-      },
-      {
-        "id": "_P3",
-        "illustrator": "Nakano Haito",
-        "note": "World Championship 2023",
         "type": "Trophy -\u00a02nd Place Prize"
       }
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-068_P1-J",
         "illustrator": "Naochika Morishita",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT10-068_P2-J",
         "illustrator": "Nakano Haito",
         "note": "Final Championships 2023 Trophy Cards",
-        "type": "Trophy -\u00a02nd Place Prize"
-      },
-      {
-        "id": "_P3",
-        "illustrator": "Nakano Haito",
-        "note": "World Championship 2023",
         "type": "Trophy -\u00a02nd Place Prize"
       }
     ],
@@ -15304,7 +15292,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-069_P1",
         "illustrator": "As'Maria",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
@@ -15312,7 +15300,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-069_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
@@ -15381,7 +15369,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-070_P0",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -15567,7 +15555,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-073_P0",
         "illustrator": "GOSSAN",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -15690,7 +15678,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-075_P0",
         "illustrator": "GOSSAN",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -15871,7 +15859,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-078_P0",
         "illustrator": "Hisashi Fujiwara",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -15994,7 +15982,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-080_P0",
         "illustrator": "koki",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -16059,7 +16047,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-081_P1",
         "illustrator": "KISUKE",
         "note": "Winner Pack: Exceed Apocalypse",
         "type": "Foil -\u00a0Alternative Art"
@@ -16067,7 +16055,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-081_P1-J",
         "illustrator": "KISUKE",
         "note": "Tamer Battle Pack 19",
         "type": "No Foil -\u00a0Alternative Art"
@@ -16132,13 +16120,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-082_P1",
         "illustrator": "Hisashi Fujiwara",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P0",
+        "id": "BT10-082_P0",
         "illustrator": "Tonamikanji",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -16146,7 +16134,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-082_P1-J",
         "illustrator": "Hisashi Fujiwara",
         "note": "Tamer's Selection Box Evolution Cup 2022 Ver.2",
         "type": "Textured -\u00a0Alternative Art"
@@ -16210,7 +16198,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-083_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
@@ -16218,7 +16206,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-083_P1-J",
         "illustrator": "Tonamikanji",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
@@ -16340,39 +16328,39 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-085_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P0",
+        "id": "BT10-085_P0",
         "illustrator": "Takase",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P3",
+        "id": "BT10-085_P2",
         "illustrator": "Tonamikanji",
         "note": "Store Championship 2023 Participant Pack",
         "type": "Gold Background & Participation Stamp -\u00a0Alternative Art"
       },
       {
-        "id": "_P4",
+        "id": "BT10-085_P3",
         "illustrator": "Tonamikanji",
         "note": "Store Championships 2023 Wave 1",
-        "type": "Gold Background & Top 4 Stamp -\u00a0Top 4 Prize"
+        "type": "Gold Background & Participation Stamp -\u00a0Alternative Art"
       }
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-085_P1-J",
         "illustrator": "Tonamikanji",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT10-085_P2-J",
         "illustrator": "Tonamikanji",
         "note": "Special Battle Area Set 2023",
         "type": "Gold Foil - Gold Background -\u00a0Alternative Art"
@@ -16430,19 +16418,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-086_P1",
         "illustrator": "As'Maria",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "-Errata",
+        "id": "BT10-086-Errata",
         "illustrator": "sasasi",
         "note": "Revision Pack 2023",
         "type": "No Foil - Errata Text -\u00a0Super Rare"
       },
       {
-        "id": "_P3",
+        "id": "BT10-086_P2",
         "illustrator": "tyuga",
         "note": "2025 Evolution Cup Season 1",
         "type": "Stamped -\u00a01st Place Prize"
@@ -16450,7 +16438,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-086_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
@@ -16519,19 +16507,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-087_P1",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P0",
+        "id": "BT10-087_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P3",
+        "id": "BT10-087_P2",
         "illustrator": "No Illustrator",
         "note": "PB-20: DIGIMON ANIMATION SERIES 25th Anniversary Set",
         "type": "Foil -\u00a0Alternative Art"
@@ -16539,13 +16527,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-087_P1-J",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P2",
+        "id": "BT10-087_P2-J",
         "illustrator": "No Illustrator",
         "note": "PB-20: DIGIMON ANIMATION SERIES 25th Anniversary Set",
         "type": "Foil -\u00a0Alternative Art"
@@ -16603,13 +16591,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-088_P1",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P0",
+        "id": "BT10-088_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -16617,7 +16605,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-088_P1-J",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
@@ -16675,13 +16663,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-089_P1",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P0",
+        "id": "BT10-089_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -16689,7 +16677,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-089_P1-J",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
@@ -16747,13 +16735,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-090_P1",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P0",
+        "id": "BT10-090_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -16761,7 +16749,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-090_P1-J",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
@@ -16819,13 +16807,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-091_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT10-091_P1",
         "illustrator": "No Illustrator",
         "note": "DP-02: Double Pack Set 2",
         "type": "Textured -\u00a0Alternative Art"
@@ -16833,7 +16821,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-091_P1-J",
         "illustrator": "No Illustrator",
         "note": "LM-01: Limited Card Pack Digimon Ghost Game",
         "type": "Foil -\u00a0Alternative Art"
@@ -16891,19 +16879,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-092_P1",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P0",
+        "id": "BT10-092_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P3",
+        "id": "BT10-092_P2",
         "illustrator": "No Illustrator",
         "note": "PB-18: Digimon Card Game Premium Heroines Set",
         "type": "Foil -\u00a0Alternative Art"
@@ -16911,13 +16899,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-092_P1-J",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P2",
+        "id": "BT10-092_P2-J",
         "illustrator": "No Illustrator",
         "note": "PB-18: Digimon Card Game Premium Heroines Set",
         "type": "Foil -\u00a0Alternative Art"
@@ -16975,25 +16963,25 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-093_P1",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P0",
+        "id": "BT10-093_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "-Errata",
+        "id": "BT10-093-Errata",
         "illustrator": "No Illustrator",
         "note": "Revision Pack 2023",
         "type": "No Foil - Errata Text -\u00a0Rare"
       },
       {
-        "id": "_P4",
+        "id": "BT10-093_P2",
         "illustrator": "No Illustrator",
         "note": "LM-07: LIMITED CARD PACK ANOTHER KNIGHT",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -17001,13 +16989,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-093_P1-J",
         "illustrator": "No Illustrator",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Foil - Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P2",
+        "id": "BT10-093_P2-J",
         "illustrator": "No Illustrator",
         "note": "LM-07: LIMITED CARD PACK ANOTHER KNIGHT",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -17065,7 +17053,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-094_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -17124,7 +17112,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-095_P0",
         "illustrator": "Shin Sasaki",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -17183,7 +17171,7 @@
   {
     "AAs": [
       {
-        "id": "-Errata",
+        "id": "BT10-096-Errata",
         "illustrator": "SENNSU",
         "note": "Revision Pack 2023",
         "type": "No Foil - Errata Text -\u00a0Common"
@@ -17242,19 +17230,19 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-097-Errata",
+        "illustrator": "Shin Sasaki",
+        "note": "BT-10: Booster Xros Encounter",
+        "type": "No Foil - Errata Text -\u00a0Rare"
+      },
+      {
+        "id": "BT10-097_P0",
         "illustrator": "Shin Sasaki",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "-Errata",
-        "illustrator": "Shin Sasaki",
-        "note": "Revision Pack 2023",
-        "type": "No Foil - Errata Text -\u00a0Rare"
-      },
-      {
-        "id": "_P3",
+        "id": "BT10-097_P1",
         "illustrator": "Shin Sasaki",
         "note": "Event Pack 5",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -17417,7 +17405,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-100_P1",
         "illustrator": "p!k@ru",
         "note": "Judge Pack 3",
         "type": "Foil - Judge Stamp -\u00a0Common"
@@ -17476,19 +17464,19 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-101_P0",
         "illustrator": "itohiro",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "-Errata",
+        "id": "BT10-101-Errata",
         "illustrator": "itohiro",
         "note": "Revision Pack 2023",
         "type": "No Foil - Errata Text -\u00a0Uncommon"
       },
       {
-        "id": "_P3",
+        "id": "BT10-101_P1",
         "illustrator": "itohiro",
         "note": "Event Pack 5",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -17599,13 +17587,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-103_P0",
         "illustrator": "itohiro",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P2",
+        "id": "BT10-103_P1",
         "illustrator": "itohiro",
         "note": "Event Pack 5",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -17664,7 +17652,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-104_P0",
         "illustrator": "Shin Sasaki",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -17723,7 +17711,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-105_P1",
         "illustrator": "No Illustrator",
         "note": "Event Pack 4",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -17782,7 +17770,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-106_P0",
         "illustrator": "SENNSU",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -17841,7 +17829,7 @@
   {
     "AAs": [
       {
-        "id": "-Errata",
+        "id": "BT10-107-Errata",
         "illustrator": "banira",
         "note": "Revision Pack 2023",
         "type": "No Foil - Errata Text -\u00a0Common"
@@ -17900,7 +17888,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-108_P0",
         "illustrator": "Ishibashi Yosuke",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -17959,13 +17947,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-109_P0",
         "illustrator": "No Illustrator",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P2",
+        "id": "BT10-109_P1",
         "illustrator": "No Illustrator",
         "note": "Event Pack 4",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -18024,7 +18012,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT10-110_P0",
         "illustrator": "Shin Sasaki",
         "note": "Xros Encounter Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -18083,7 +18071,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-111_P1",
         "illustrator": "sasasi",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
@@ -18091,7 +18079,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-111_P1-J",
         "illustrator": "sasasi",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
@@ -18155,42 +18143,30 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT10-112_P1",
         "illustrator": "As'Maria",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
-        "illustrator": "Nakano Haito",
-        "note": "World Championship 2023",
-        "type": "Trophy -\u00a01st Place Prize"
-      },
-      {
-        "id": "_P3",
+        "id": "BT10-112_P2",
         "illustrator": "Nakano Haito",
         "note": "PB-21: Tamer's Evolution Box - Rise of Digimon",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Trophy -\u00a01st Place Prize"
       }
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT10-112_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-10: Booster Xros Encounter",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
-        "illustrator": "Nakano Haito",
-        "note": "World Championship 2023",
-        "type": "Trophy -\u00a01st Place Prize"
-      },
-      {
-        "id": "_P3",
+        "id": "BT10-112_P2-J",
         "illustrator": "Nakano Haito",
         "note": "PB-21: Tamer's Evolution Box - Rise of Digimon",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Trophy -\u00a01st Place Prize"
       }
     ],
     "aceEffect": "-",
@@ -18254,14 +18230,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Takase",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
@@ -18313,17 +18282,10 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Takase",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT11-002_P1-J",
         "illustrator": "Takase",
         "note": "LM-02: Limited Card Pack DeathXmon",
         "type": "Foil - Coloured Border -\u00a0Common"
@@ -18381,13 +18343,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
-        "illustrator": "tessy",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Uncommon"
-      },
-      {
-        "id": "_P0",
+        "id": "BT11-003_P0",
         "illustrator": "tessy",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -18444,14 +18400,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "koki",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
@@ -18505,32 +18454,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
-        "illustrator": "tyuga",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Uncommon"
-      },
-      {
-        "id": "_P0",
+        "id": "BT11-005_P0",
         "illustrator": "tyuga",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P3",
-        "illustrator": "Spareribs",
+        "id": "BT11-005_P1",
+        "illustrator": "tyuga",
         "note": "3 on 3 Battle",
-        "type": "Textured - Stamped -\u00a0Participation"
+        "type": "Foil -\u00a0Uncommon"
       }
     ],
-    "JAAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Spareribs",
-        "note": "Evolution Cup 2023",
-        "type": "Textured - Stamped -\u00a0Participation"
-      }
-    ],
+    "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -18581,14 +18517,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "koki",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
@@ -18642,13 +18571,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT11-007_P0",
         "illustrator": "Takase",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT11-007_P1",
         "illustrator": "No Illustrator",
         "note": "Winter Holiday Event 2024",
         "type": "Foil -\u00a0Alternative Art"
@@ -18656,13 +18585,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT11-007_P1-J",
         "illustrator": "Takase",
         "note": "LM-02: Limited Card Pack DeathXmon",
         "type": "Foil - Coloured Border -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT11-007_P2-J",
         "illustrator": "No Illustrator",
         "note": "EX-08: Legend Pack 2024",
         "type": "Foil -\u00a0Box Topper"
@@ -18718,17 +18647,10 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "banira",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT11-008_P1-J",
         "illustrator": "banira",
         "note": "Box Promotion Pack: Dimensional Phase",
         "type": "Foil -\u00a0Common"
@@ -18792,7 +18714,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT11-009-Errata",
         "illustrator": "Ishibashi Yosuke",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Foil -\u00a0Common"
@@ -18860,14 +18782,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "itohiro",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
@@ -18927,13 +18842,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
-        "illustrator": "Takase",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Uncommon"
-      },
-      {
-        "id": "_P0",
+        "id": "BT11-011_P0",
         "illustrator": "Takase",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -18998,22 +18907,16 @@
   {
     "AAs": [
       {
-        "id": "_P1",
-        "illustrator": "Tomotake Kinoshita",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Uncommon"
-      },
-      {
-        "id": "_P0",
+        "id": "BT11-012_P0",
         "illustrator": "Tomotake Kinoshita",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P3",
+        "id": "BT11-012_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "Final Championships 2023 Tamers Pack",
-        "type": "Foil - Championship Stamp -\u00a0Full Art"
+        "type": "Foil -\u00a0Uncommon"
       }
     ],
     "JAAs": [],
@@ -19078,14 +18981,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Takase",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
@@ -19145,13 +19041,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
-        "illustrator": "tessy",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Uncommon"
-      },
-      {
-        "id": "_P0",
+        "id": "BT11-014_P0",
         "illustrator": "tessy",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -19216,28 +19106,28 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT11-015_P0",
         "illustrator": "TANIMESO",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT11-015_P1",
         "illustrator": "TANIMESO",
         "note": "Regionals 2023 Participation Set 2",
         "type": "Foil - Participation Stamp -\u00a0Participation"
       },
       {
-        "id": "_P3",
+        "id": "BT11-015_P2",
         "illustrator": "TANIMESO",
         "note": "Regionals 2023 Finalist Set 2",
-        "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
+        "type": "Foil - Participation Stamp -\u00a0Participation"
       },
       {
-        "id": "_P4",
+        "id": "BT11-015_P3",
         "illustrator": "TANIMESO",
         "note": "Regionals 2023 Champion Set 2",
-        "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
+        "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
       }
     ],
     "JAAs": [],
@@ -19304,7 +19194,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT11-016_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Textured -\u00a0Alternative Art"
@@ -19312,7 +19202,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT11-016_P1-J",
         "illustrator": "Tonamikanji",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Textured -\u00a0Alternative Art"
@@ -19376,7 +19266,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT11-017_P1",
         "illustrator": "sasasi",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Textured -\u00a0Alternative Art"
@@ -19384,7 +19274,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT11-017_P1-J",
         "illustrator": "sasasi",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Textured -\u00a0Alternative Art"
@@ -19448,7 +19338,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT11-018_P0",
         "illustrator": "TANIMESO",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -19518,31 +19408,31 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT11-019_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT11-019_P2",
         "illustrator": "TANIMESO",
         "note": "Regionals 2023 Participation Set 3",
         "type": "Foil - Participation Stamp -\u00a0Participation"
       },
       {
-        "id": "_P3",
+        "id": "BT11-019_P3",
         "illustrator": "TANIMESO",
         "note": "Regionals 2023 Finalist Set 3",
         "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
       },
       {
-        "id": "_P4",
+        "id": "BT11-019_P4",
         "illustrator": "TANIMESO",
         "note": "Regionals 2023 Champion Set 3",
         "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
       },
       {
-        "id": "_P5",
+        "id": "BT11-019_P5",
         "illustrator": "Nakano Haito",
         "note": "PB-21: Tamer's Evolution Box - Rise of Digimon",
         "type": "Textured -\u00a0Alternative Art"
@@ -19550,21 +19440,21 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT11-019_P1-J",
         "illustrator": "Naochika Morishita",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT11-019_P2-J",
         "illustrator": "Nakano Haito",
-        "note": "PB-21: Tamer's Evolution Box - Rise of Digimon",
+        "note": "Memorial Legend Collection",
         "type": "Textured -\u00a0Alternative Art"
       },
       {
-        "id": "_P3",
+        "id": "BT11-019_P3-J",
         "illustrator": "TANIMESO",
-        "note": "Memorial Legend Collection",
+        "note": "PB-21: Tamer's Evolution Box - Rise of Digimon",
         "type": "Textured -\u00a0Alternative Art"
       }
     ],
@@ -19631,13 +19521,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT11-020_P0",
         "illustrator": "Takase",
         "note": "Dimensional Phase Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT11-020_P1",
         "illustrator": "Takase",
         "note": "Judge Pack 5",
         "type": "Foil - Judge Stamp -\u00a0Alternative Art"
@@ -19700,14 +19590,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "koki",
-        "note": "BT-11: Booster Dimensional Phase",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
@@ -80791,7 +80674,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-077_P1",
         "illustrator": "YAMURETSU",
         "note": "Box Promotion: Special Booster Ver.2.5",
         "type": "Full Art -\u00a0Box Topper"
@@ -80799,7 +80682,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-077_P1-J",
         "illustrator": "YAMURETSU",
         "note": "Box Promotion Pack: Xros Evolution",
         "type": "Full Art -\u00a0Box Topper"
@@ -80909,7 +80792,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-079_P1",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT19-20: Special Booster Ver.2.5",
         "type": "Alternative Art"
@@ -80917,7 +80800,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-079_P1-J",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT-19: Booster Xros Evolution",
         "type": "Alternative Art"
@@ -80975,7 +80858,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-080_P1",
         "illustrator": "No Illustrator",
         "note": "Box Promotion: Special Booster Ver.2.5",
         "type": "Full Art -\u00a0Box Topper"
@@ -80983,7 +80866,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-080_P1-J",
         "illustrator": "No Illustrator",
         "note": "Box Promotion Pack: Xros Evolution",
         "type": "Full Art -\u00a0Box Topper"
@@ -81041,7 +80924,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-081_P1",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT19-20: Special Booster Ver.2.5",
         "type": "Alternative Art"
@@ -81049,7 +80932,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-081_P1-J",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT-19: Booster Xros Evolution",
         "type": "Alternative Art"
@@ -81107,13 +80990,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-082_P1",
         "illustrator": "Tonamikanji",
         "note": "BT18-19: Special Booster Ver.2.0",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT19-082_P2",
         "illustrator": "GS",
         "note": "PB-22: Digimon Liberator Debuggers Set",
         "type": "Alternative Art"
@@ -81121,15 +81004,9 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-082_P1-J",
         "illustrator": "Tonamikanji",
         "note": "BT-19: Booster Xros Evolution",
-        "type": "Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "GS",
-        "note": "PB-22: Digimon Liberator Debuggers Set",
         "type": "Alternative Art"
       }
     ],
@@ -81185,13 +81062,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-083_P1",
         "illustrator": "No Illustrator",
         "note": "Box Promotion: Special Booster Ver.2.5",
         "type": "Full Art -\u00a0Box Topper"
       },
       {
-        "id": "_P2",
+        "id": "BT19-083_P2",
         "illustrator": "No Illustrator",
         "note": "ST-22: ADVANCED DECK SET AMETHYST MANDALA",
         "type": "Alternative Art"
@@ -81199,16 +81076,10 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-083_P1-J",
         "illustrator": "No Illustrator",
         "note": "Box Promotion Pack: Xros Evolution",
         "type": "Full Art -\u00a0Box Topper"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "No Illustrator",
-        "note": "ST-22: ADVANCED DECK SET AMETHYST MANDALA",
-        "type": "Alternative Art"
       }
     ],
     "aceEffect": "-",
@@ -81263,13 +81134,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-084_P1",
         "illustrator": "Tonamikanji",
         "note": "BT18-19: Special Booster Ver.2.0",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT19-084_P2",
         "illustrator": "Shoyama Seihou",
         "note": "PB-22: Digimon Liberator Debuggers Set",
         "type": "Alternative Art"
@@ -81277,15 +81148,9 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-084_P1-J",
         "illustrator": "Tonamikanji",
         "note": "BT-19: Booster Xros Evolution",
-        "type": "Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "Shoyama Seihou",
-        "note": "PB-22: Digimon Liberator Debuggers Set",
         "type": "Alternative Art"
       }
     ],
@@ -81341,7 +81206,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-085_P1",
         "illustrator": "No Illustrator",
         "note": "Box Promotion: Special Booster Ver.2.5",
         "type": "Full Art -\u00a0Box Topper"
@@ -81349,7 +81214,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-085_P1-J",
         "illustrator": "No Illustrator",
         "note": "Box Promotion Pack: Xros Evolution",
         "type": "Full Art -\u00a0Box Topper"
@@ -81407,7 +81272,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-086_P1",
         "illustrator": "No Illustrator",
         "note": "Box Promotion: Special Booster Ver.2.5",
         "type": "Full Art -\u00a0Box Topper"
@@ -81415,7 +81280,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-086_P1-J",
         "illustrator": "No Illustrator",
         "note": "Box Promotion Pack: Xros Evolution",
         "type": "Full Art -\u00a0Box Topper"
@@ -81473,7 +81338,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-087_P1",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT18-19: Special Booster Ver.2.0",
         "type": "Alternative Art"
@@ -81481,7 +81346,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-087_P1-J",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT-19: Booster Xros Evolution",
         "type": "Alternative Art"
@@ -81539,7 +81404,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-088_P1",
         "illustrator": "No Illustrator",
         "note": "Box Promotion: Special Booster Ver.2.5",
         "type": "Full Art -\u00a0Box Topper"
@@ -81547,7 +81412,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-088_P1-J",
         "illustrator": "No Illustrator",
         "note": "Box Promotion Pack: Xros Evolution",
         "type": "Full Art -\u00a0Box Topper"
@@ -82229,13 +82094,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-101_P1",
         "illustrator": "sasasi",
         "note": "BT18-19: Special Booster Ver.2.0",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT19-101_P2",
         "illustrator": "Tonamikanji",
         "note": "BT18-19: Special Booster Ver.2.0",
         "type": "Rare Pull"
@@ -82243,13 +82108,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-101_P1-J",
         "illustrator": "sasasi",
         "note": "BT-19: Booster Xros Evolution",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT19-101_P2-J",
         "illustrator": "Tonamikanji",
         "note": "BT-19: Booster Xros Evolution",
         "type": "Rare Pull"
@@ -82323,7 +82188,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT19-102_P1",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT19-20: Special Booster Ver.2.5",
         "type": "Alternative Art"
@@ -82331,7 +82196,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT19-102_P1-J",
         "illustrator": "NAKASHIMA YUUKI",
         "note": "BT-19: Booster Xros Evolution",
         "type": "Alternative Art"
@@ -82395,7 +82260,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-001_P1",
         "illustrator": "tessy",
         "note": "ST-11 Special Entry Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -82403,7 +82268,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-001_P1-J",
         "illustrator": "tessy",
         "note": "ST-11: Starter Deck Special Entry Deck",
         "type": "No Foil -\u00a0Alternative Art"
@@ -82566,19 +82431,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-004_P1",
         "illustrator": "Kenji Watanabe",
         "note": "Event Pack 2",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-004_P2",
         "illustrator": "Kenji Watanabe",
         "note": "Digimon Card Game Fest - Digi-Egg Set",
         "type": "Foil - Fest Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P3",
+        "id": "BT2-004_P3",
         "illustrator": "koki",
         "note": "ST-14: Advanced Deck Set Beelzemon",
         "type": "Textured -\u00a0Alternative Art"
@@ -82586,7 +82451,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-004_P1-J",
         "illustrator": "koki",
         "note": "ST-14: Advanced Deck Set Beelzemon",
         "type": "Textured -\u00a0Alternative Art"
@@ -82643,14 +82508,7 @@
     "version": "Normal"
   },
   {
-    "AAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Sanosuke Sakuma",
-        "note": "Demo Deck: Black",
-        "type": "No Foil -\u00a0Common"
-      }
-    ],
+    "AAs": [],
     "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
@@ -82704,7 +82562,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-006_P1",
         "illustrator": "koki",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Rare"
@@ -82712,7 +82570,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-006_P1-J",
         "illustrator": "koki",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Rare"
@@ -82875,13 +82733,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-009_P1",
         "illustrator": "Ishibashi Yosuke",
         "note": "PB-08: Digimon Tamers Playmat",
         "type": "Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-009_P2",
         "illustrator": "Ishibashi Yosuke",
         "note": "Final Championships 2022 Tamer's Pack",
         "type": "Foil - Stamped -\u00a0Alternative Art"
@@ -82889,7 +82747,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-009_P1-J",
         "illustrator": "Ishibashi Yosuke",
         "note": "Memorial Collection 02",
         "type": "Foil -\u00a0Alternative Art"
@@ -82954,7 +82812,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-010_P1",
         "illustrator": "yuuki.",
         "note": "ST-11 Special Entry Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -82962,7 +82820,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-010_P1-J",
         "illustrator": "yuuki.",
         "note": "ST-11: Starter Deck Special Entry Deck",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83027,7 +82885,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-011_P1",
         "illustrator": "Nakano Haito",
         "note": "ST-11 Special Entry Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -83035,7 +82893,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-011_P1-J",
         "illustrator": "Nakano Haito",
         "note": "ST-11: Starter Deck Special Entry Deck",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83100,7 +82958,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-012_P1",
         "illustrator": "Takase",
         "note": "Official Tournament Pack Vol. 3",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83108,7 +82966,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-012_P1-J",
         "illustrator": "Takase",
         "note": "1st Anniversary Adventure Pack",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83173,7 +83031,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-013_P1",
         "illustrator": "sasasi",
         "note": "Winner Pack Next Adventure",
         "type": "No Foil - Variant Art -\u00a0Alternative Art"
@@ -83181,15 +83039,9 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-013_P1-J",
         "illustrator": "sasasi",
-        "note": "Level Up Matching Battle ONLINE August 2021",
-        "type": "No Foil - Variant Art -\u00a02 Wins"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "sasasi",
-        "note": "Level Up Matching Battle ONLINE November 2021",
+        "note": "Level Up Matching Battle ONLINE August 2021 / Level Up Matching Battle ONLINE November 2021",
         "type": "No Foil - Variant Art -\u00a02 Wins"
       }
     ],
@@ -83310,7 +83162,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-015_P1",
         "illustrator": "Takase",
         "note": "Official Tournament Pack Vol. 3",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83318,7 +83170,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-015_P1-J",
         "illustrator": "Takase",
         "note": "1st Anniversary Adventure Pack",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83383,7 +83235,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-016_P1",
         "illustrator": "Nakano Haito",
         "note": "ST-11 Special Entry Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -83391,7 +83243,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-016_P1-J",
         "illustrator": "Nakano Haito",
         "note": "ST-11: Starter Deck Special Entry Deck",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83456,7 +83308,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-017_P1",
         "illustrator": "tessy",
         "note": "Official Tournament Pack Vol. 2",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83464,7 +83316,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-017_P1-j",
         "illustrator": "tessy",
         "note": "Tamer Battle Pack 3",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83528,7 +83380,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-018_P1",
         "illustrator": "Nakano Haito",
         "note": "ST-11 Special Entry Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -83536,7 +83388,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-018_P1-J",
         "illustrator": "Nakano Haito",
         "note": "ST-11: Starter Deck Special Entry Deck",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83659,19 +83511,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-020_P1",
         "illustrator": "As'Maria",
         "note": "BT01-03: Release Special Booster Ver.1.0",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-020_P2",
         "illustrator": "Nakano Haito",
         "note": "Store Championship 2021 Participant Pack",
         "type": "Participation Stamp -\u00a0Alternative Art"
       },
       {
-        "id": "_P3",
+        "id": "BT2-020_P3",
         "illustrator": "Nakano Haito",
         "note": "Store Championships 2021",
         "type": "Champion Stamp -\u00a01st Place Prize"
@@ -83679,13 +83531,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-020_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-02: Booster Ultimate Power",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-020_P2-J",
         "illustrator": "Nakano Haito",
         "note": "Tamer's Selection Box Evolution Cup 2022",
         "type": "Textured - Full Art -\u00a0Alternative Art"
@@ -83749,13 +83601,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-021_P1",
         "illustrator": "Ishibashi Yosuke",
         "note": "DC-1 2021",
         "type": "Foil - Stamped -\u00a0Participation"
       },
       {
-        "id": "_P2",
+        "id": "BT2-021_P2",
         "illustrator": "naru",
         "note": "Illustration Competition Promotion Pack 2023",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83763,13 +83615,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-021_P1-J",
         "illustrator": "Ishibashi Yosuke",
         "note": "DC-1 2021",
         "type": "Foil - Stamped -\u00a0Participation"
       },
       {
-        "id": "_P2",
+        "id": "BT2-021_P2-J",
         "illustrator": "naru",
         "note": "Illustration Competition Promotion Pack 2023",
         "type": "No Foil -\u00a0Alternative Art"
@@ -83949,7 +83801,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-024_P1",
         "illustrator": "Kagemaru Himeno",
         "note": "25th Special Memorial Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -83957,7 +83809,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-024_P1-J",
         "illustrator": "Kagemaru Himeno",
         "note": "Memorial Collection 25th Anniversary",
         "type": "Foil -\u00a0Alternative Art"
@@ -84021,7 +83873,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-025_P1",
         "illustrator": "koki",
         "note": "Official Tournament Pack Vol. 3",
         "type": "No Foil -\u00a0Alternative Art"
@@ -84029,7 +83881,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-025_P1-J",
         "illustrator": "koki",
         "note": "1st Anniversary Adventure Pack",
         "type": "No Foil -\u00a0Alternative Art"
@@ -84094,7 +83946,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-026_P1",
         "illustrator": "Ishibashi Yosuke",
         "note": "DC-1 2021",
         "type": "Textured - Stamped -\u00a0Top 64 Prize"
@@ -84102,7 +83954,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-026_P1-J",
         "illustrator": "Ishibashi Yosuke",
         "note": "DC-1 2021",
         "type": "Textured - Stamped -\u00a0Top 64 Prize"
@@ -84166,7 +84018,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-027_P1",
         "illustrator": "koki",
         "note": "Official Tournament Pack Vol. 3",
         "type": "No Foil -\u00a0Alternative Art"
@@ -84174,7 +84026,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-027_P1-J",
         "illustrator": "koki",
         "note": "1st Anniversary Adventure Pack",
         "type": "No Foil -\u00a0Alternative Art"
@@ -84239,13 +84091,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-028_P1",
         "illustrator": "Tonamikanji",
         "note": "Battle of Omni Pre-Release Promotion",
         "type": "Foil -\u00a01st Place Prize"
       },
       {
-        "id": "_P2",
+        "id": "BT2-028_P2",
         "illustrator": "Ishibashi Yosuke",
         "note": "DC-1 2021",
         "type": "Textured - Stamped -\u00a0Top 32 Prize"
@@ -84253,13 +84105,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-028_P1-J",
         "illustrator": "Tonamikanji",
         "note": "Tamer Battle Pack 4",
         "type": "No Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-028_P2-J",
         "illustrator": "Ishibashi Yosuke",
         "note": "DC-1 2021",
         "type": "Textured - Stamped -\u00a0Top 32 Prize"
@@ -84381,7 +84233,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-030_P1",
         "illustrator": "As'Maria",
         "note": "Dash Pack Ver. 1.0",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -84389,7 +84241,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-030_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-02: Booster Ultimate Power",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -84511,25 +84363,25 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-032_P1",
         "illustrator": "As'Maria",
         "note": "BT01-03: Release Special Booster Ver.1.5",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-032_P2",
         "illustrator": "sasasi",
         "note": "DC-1 2021",
         "type": "Textured - Stamped -\u00a0Top 8 Prize"
       },
       {
-        "id": "_P3",
+        "id": "BT2-032_P3",
         "illustrator": "sasasi",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Gold Foil - Gold Background -\u00a0Rare Pull"
       },
       {
-        "id": "_P4",
+        "id": "BT2-032_P4",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -84537,25 +84389,25 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-032_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-02: Booster Ultimate Power",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-032_P2-J",
         "illustrator": "sasasi",
         "note": "DC-1 2021",
         "type": "Textured - Stamped -\u00a0Top 8 Prize"
       },
       {
-        "id": "_P3",
+        "id": "BT2-032_P3-J",
         "illustrator": "sasasi",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Gold Foil - Gold Background -\u00a0Rare Pull"
       },
       {
-        "id": "_P4",
+        "id": "BT2-032_P4-J",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -84620,7 +84472,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-033_P1",
         "illustrator": "GOSSAN",
         "note": "PB-06: Tamer's Evolution Box 2",
         "type": "Foil -\u00a0Alternative Art"
@@ -84628,7 +84480,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-033_P1-J",
         "illustrator": "GOSSAN",
         "note": "PB-06: Tamer's Evolution Box 2",
         "type": "Foil -\u00a0Alternative Art"
@@ -84692,13 +84544,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-034_P1",
         "illustrator": "Ryodan",
         "note": "Official Tournament Pack Vol. 3",
         "type": "No Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-034_P2",
         "illustrator": "Teppei Tadokoro",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Uncommon"
@@ -84706,13 +84558,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-034_P1-J",
         "illustrator": "Ryodan",
         "note": "1st Anniversary Adventure Pack",
         "type": "No Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-034_P2-J",
         "illustrator": "Teppei Tadokoro",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Uncommon"
@@ -84778,19 +84630,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-035_P1",
         "illustrator": "sasasi",
         "note": "Regionals 2023 Participation Set 1",
         "type": "Foil - Participation Stamp -\u00a0Participation"
       },
       {
-        "id": "_P2",
+        "id": "BT2-035_P2",
         "illustrator": "sasasi",
         "note": "Regionals 2023 Finalist Set 1",
         "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
       },
       {
-        "id": "_P3",
+        "id": "BT2-035_P3",
         "illustrator": "sasasi",
         "note": "Regionals 2023 Champion Set 1",
         "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
@@ -84855,7 +84707,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-036_P1",
         "illustrator": "Kayo Horaguchi",
         "note": "PB-09: Memorial Collection 01 Playmat",
         "type": "Foil -\u00a0Alternative Art"
@@ -84863,7 +84715,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-036_P1-J",
         "illustrator": "Kayo Horaguchi",
         "note": "Memorial Collection 01",
         "type": "Foil -\u00a0Alternative Art"
@@ -84928,7 +84780,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-037_P1",
         "illustrator": "Ryodan",
         "note": "Official Tournament Pack Vol. 3",
         "type": "No Foil -\u00a0Alternative Art"
@@ -84936,7 +84788,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-037_P1-J",
         "illustrator": "Ryodan",
         "note": "1st Anniversary Adventure Pack",
         "type": "No Foil -\u00a0Alternative Art"
@@ -85001,19 +84853,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-038_P2",
         "illustrator": "Nakano Haito",
         "note": "PP01: Premium Pack Set 01",
-        "type": "Foil - Silver Background -\u00a0Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "Nakano Haito",
-        "note": "Official Tournament Pack Vol. 2",
         "type": "No Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P3",
+        "id": "BT2-038_P1",
+        "illustrator": "Nakano Haito",
+        "note": "Official Tournament Pack Vol. 2",
+        "type": "Foil - Silver Background -\u00a0Alternative Art"
+      },
+      {
+        "id": "BT2-038_P3",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Rare"
@@ -85021,19 +84873,19 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-038_P1-j",
         "illustrator": "Nakano Haito",
         "note": "Tamer Battle Pack 3",
         "type": "No Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-038_P2-j",
         "illustrator": "Nakano Haito",
         "note": "Tamer Battle (December 2020 & January 2021)",
         "type": "Foil - Silver Background -\u00a01st Place Prize"
       },
       {
-        "id": "_P3",
+        "id": "BT2-038_P3-J",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Rare"
@@ -85098,7 +84950,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-039_P1",
         "illustrator": "Ishibashi Yosuke",
         "note": "Across Time Pre-Release Promotion",
         "type": "Foil - Full Art -\u00a01st Place Prize"
@@ -85106,7 +84958,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-039_P1-J",
         "illustrator": "Ishibashi Yosuke",
         "note": "Tamer's Selection Box Super Tamer Battle 2022",
         "type": "Textured - Full Art -\u00a0Uncommon"
@@ -85228,13 +85080,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT2-041_P1",
         "illustrator": "As'Maria",
         "note": "BT01-03: Release Special Booster Ver.1.5",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-041_P2",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -85242,13 +85094,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT2-041_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-02: Booster Ultimate Power",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT2-041_P2-J",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -150371,7 +150223,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-010_P1",
         "illustrator": "shosuke",
         "note": "ST-11 Special Entry Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -150379,7 +150231,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-010_P1-J",
         "illustrator": "shosuke",
         "note": "ST-11: Starter Deck Special Entry Deck",
         "type": "No Foil -\u00a0Alternative Art"
@@ -150444,63 +150296,63 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-011_P1",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P0",
+        "id": "BT4-011_P0",
         "illustrator": "sasasi",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P3",
+        "id": "BT4-011_P2",
         "illustrator": "Nakano Haito",
         "note": "PB-06: Tamer's Evolution Box 2",
         "type": "Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P4",
-        "illustrator": "sasasi",
+        "id": "BT4-011_P3",
+        "illustrator": "Nakano Haito",
         "note": "Regionals 2023 Participation Set 1",
+        "type": "Foil -\u00a0Alternative Art"
+      },
+      {
+        "id": "BT4-011_P4",
+        "illustrator": "sasasi",
+        "note": "Regionals 2023 Finalist Set 1",
         "type": "Foil - Participation Stamp -\u00a0Participation"
       },
       {
-        "id": "_P5",
+        "id": "BT4-011_P5",
         "illustrator": "sasasi",
-        "note": "Regionals 2023 Finalist Set 1",
+        "note": "Regionals 2023 Champion Set 1",
         "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
       },
       {
-        "id": "_P6",
-        "illustrator": "sasasi",
-        "note": "Regionals 2023 Champion Set 1",
-        "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
-      },
-      {
-        "id": "_P7",
+        "id": "BT4-011_P6",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Uncommon"
+        "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
       }
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-011_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT4-011_P2-J",
         "illustrator": "Nakano Haito",
         "note": "PB-06: Tamer's Evolution Box 2",
         "type": "Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P3",
+        "id": "BT4-011_P3-J",
         "illustrator": "sasasi",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Uncommon"
@@ -150623,7 +150475,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-013_P0",
         "illustrator": "sasasi",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -150746,7 +150598,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-015_P1",
         "illustrator": "shosuke",
         "note": "ST-11 Special Entry Pack",
         "type": "Foil -\u00a0Alternative Art"
@@ -150754,7 +150606,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-015_P1-J",
         "illustrator": "shosuke",
         "note": "ST-11: Starter Deck Special Entry Deck",
         "type": "No Foil -\u00a0Alternative Art"
@@ -150819,7 +150671,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-016_P1",
         "illustrator": "Nakano Haito",
         "note": "1-Year Anniversary Promo Pack",
         "type": "Textured -\u00a0Alternative Art"
@@ -150827,7 +150679,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-016_P1-J",
         "illustrator": "Nakano Haito",
         "note": "1-Year Anniversary Promo Pack",
         "type": "Textured -\u00a0Alternative Art"
@@ -150892,31 +150744,31 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-017_P1",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT4-017_P2",
         "illustrator": "Tonamikanji",
         "note": "Regionals 2023 Participation Set 2",
         "type": "Foil - Participation Stamp -\u00a0Participation"
       },
       {
-        "id": "_P3",
+        "id": "BT4-017_P3",
         "illustrator": "Tonamikanji",
         "note": "Regionals 2023 Finalist Set 2",
         "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
       },
       {
-        "id": "_P4",
+        "id": "BT4-017_P4",
         "illustrator": "Tonamikanji",
         "note": "Regionals 2023 Champion Set 2",
         "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
       },
       {
-        "id": "_P5",
+        "id": "BT4-017_P5",
         "illustrator": "Tonamikanji",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -150924,13 +150776,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-017_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT4-017_P2-J",
         "illustrator": "Tonamikanji",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -151000,7 +150852,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-018_P0",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -151065,13 +150917,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-019_P1",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P0",
+        "id": "BT4-019_P0",
         "illustrator": "Ishibashi Yosuke",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -151079,7 +150931,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-019_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -151143,7 +150995,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-020_P0",
         "illustrator": "Shin Sasaki",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -151445,19 +151297,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-025_P1",
         "illustrator": "Kenji Watanabe",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P0",
+        "id": "BT4-025_P0",
         "illustrator": "Tonamikanji",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P3",
+        "id": "BT4-025_P2",
         "illustrator": "Tonamikanji",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Uncommon"
@@ -151465,13 +151317,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-025_P1-J",
         "illustrator": "Kenji Watanabe",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT4-025_P2-J",
         "illustrator": "Tonamikanji",
         "note": "RB-01: Resurgence Booster",
         "type": "Foil -\u00a0Uncommon"
@@ -151594,7 +151446,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-027_P0",
         "illustrator": "Tonamikanji",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -151659,7 +151511,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-028_P0",
         "illustrator": "Nakano Haito",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -151782,7 +151634,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-030_P1",
         "illustrator": "TANIMESO",
         "note": "Event Pack 2",
         "type": "Foil -\u00a0Alternative Art"
@@ -151847,7 +151699,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-031_P0-Errata",
         "illustrator": "Kenji Watanabe",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -151912,7 +151764,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-032_P0",
         "illustrator": "TANIMESO",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -151977,13 +151829,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-033_P1",
         "illustrator": "itohiro",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P0",
+        "id": "BT4-033_P0",
         "illustrator": "Ishibashi Yosuke",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -151991,7 +151843,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-033_P1-J",
         "illustrator": "itohiro",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -152113,7 +151965,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-035_P1",
         "illustrator": "itohiro",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -152121,7 +151973,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-035_P1-J",
         "illustrator": "itohiro",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -152301,13 +152153,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-038_P0",
         "illustrator": "Takase",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P2",
+        "id": "BT4-038_P1",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Event Pack 2",
         "type": "Foil -\u00a0Alternative Art"
@@ -152315,7 +152167,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-038_P1-J",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Special Promotion Pack 2022 Ver.2.0",
         "type": "No Foil -\u00a0Alternative Art"
@@ -152496,7 +152348,7 @@
   {
     "AAs": [
       {
-        "id": "-Errata",
+        "id": "BT4-041-Errata",
         "illustrator": "Teppei Tadokoro",
         "note": "Revision Pack 2021",
         "type": "No Foil - Errata Text -\u00a0Common"
@@ -152561,13 +152413,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-042_P1",
         "illustrator": "Ryuda",
         "note": "Judge Pack 1",
         "type": "Foil - Judge Stamp -\u00a0Common"
       },
       {
-        "id": "_P2",
+        "id": "BT4-042_P2",
         "illustrator": "tessy",
         "note": "Winner Pack X Record",
         "type": "No Foil -\u00a0Alternative Art"
@@ -152575,7 +152427,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-042_P1-J",
         "illustrator": "tessy",
         "note": "Tamer Battle Pack 10",
         "type": "No Foil -\u00a0Alternative Art"
@@ -152640,7 +152492,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-043_P0",
         "illustrator": "funbolt",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -152821,7 +152673,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-046_P0",
         "illustrator": "Shin Sasaki",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -152886,7 +152738,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-047_P0",
         "illustrator": "Teppei Tadokoro",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -152951,13 +152803,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-048_P1",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT4-048_P2",
         "illustrator": "tyuga",
         "note": "Judge Pack 1",
         "type": "Foil - Judge Stamp -\u00a0Super Rare"
@@ -152965,7 +152817,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-048_P1-J",
         "illustrator": "As'Maria",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -153029,7 +152881,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-049_P0",
         "illustrator": "itohiro",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -153210,7 +153062,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-052_P0",
         "illustrator": "Nakano Haito",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -153275,7 +153127,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-053_P0",
         "illustrator": "shosuke",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -153340,7 +153192,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-054_P0",
         "illustrator": "Nakano Haito",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -153579,7 +153431,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-058_P0",
         "illustrator": "Hisashi Fujiwara",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -153644,7 +153496,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-059_P1",
         "illustrator": "Takase",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -153652,7 +153504,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-059_P1-J",
         "illustrator": "Takase",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -153716,7 +153568,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-060_P0",
         "illustrator": "yuuki.",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -153781,7 +153633,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-061_P0",
         "illustrator": "Ishibashi Yosuke",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -153846,13 +153698,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-062_P1",
         "illustrator": "KISUKE",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT4-062_P2",
         "illustrator": "Hisashi Fujiwara",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -153860,13 +153712,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-062_P1-J",
         "illustrator": "KISUKE",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "BT4-062_P2-J",
         "illustrator": "Hisashi Fujiwara",
         "note": "RB-01: Resurgence Booster",
         "type": "Textured -\u00a0Super Rare"
@@ -153931,13 +153783,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-063_P0",
         "illustrator": "kaz",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT4-063_P1",
         "illustrator": "koki",
         "note": "BT-11: Booster Dimensional Phase",
         "type": "Textured -\u00a0Campaign Rare"
@@ -153945,7 +153797,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-063_P1-J",
         "illustrator": "koki",
         "note": "Tamer's Selection Box Evolution Cup 2022 Ver.2",
         "type": "Textured -\u00a0Alternative Art"
@@ -154009,7 +153861,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-064_P0",
         "illustrator": "Takase",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -154190,13 +154042,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-067_P0",
         "illustrator": "kaz",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P2",
+        "id": "BT4-067_P1",
         "illustrator": "kaz",
         "note": "Event Pack 1",
         "type": "Foil -\u00a0Alternative Art"
@@ -154261,7 +154113,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-068_P0",
         "illustrator": "Shin Sasaki",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -154500,7 +154352,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-072_P1",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Event Pack 2",
         "type": "Foil -\u00a0Alternative Art"
@@ -154565,7 +154417,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-073_P0",
         "illustrator": "funbolt",
         "note": "Great Legend Pre-Release Pack",
         "type": "No Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -154630,27 +154482,27 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-074_P0",
         "illustrator": "kaz",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "BT4-074_P1",
         "illustrator": "kaz",
         "note": "Digimon Card Game Fest - Fest Set",
         "type": "Foil - Fest Stamp -\u00a0Rare"
       },
       {
-        "id": "_P3",
+        "id": "BT4-074_P2",
         "illustrator": "kaz",
         "note": "Official Tournament Pack Vol. 12",
-        "type": "Foil -\u00a0Full Art"
+        "type": "Foil - Fest Stamp -\u00a0Rare"
       }
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-074_P1-J",
         "illustrator": "kaz",
         "note": "Tamer's Selection Box Super Tamer Battle 2022",
         "type": "Textured -\u00a0Full Art"
@@ -154714,7 +154566,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "BT4-075_P1",
         "illustrator": "Nakano Haito",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -154722,7 +154574,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "BT4-075_P1-J",
         "illustrator": "Nakano Haito",
         "note": "BT-04: Booster Great Legend",
         "type": "Gold Foil -\u00a0Alternative Art"
@@ -154844,7 +154696,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "BT4-077_P0",
         "illustrator": "Kenji Watanabe",
         "note": "Great Legend Pre-Release Pack",
         "type": "Gold Outline - Pre Release Stamp -\u00a0Rare"
@@ -216420,7 +216272,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-062_P1",
         "illustrator": "Tsunemi Aosa",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -216428,7 +216280,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-062_P1-J",
         "illustrator": "Tsunemi Aosa",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -216492,7 +216344,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-063_P1",
         "illustrator": "p!k@ru",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -216500,7 +216352,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-063_P1-J",
         "illustrator": "p!k@ru",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -216632,13 +216484,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-065_P1",
         "illustrator": "Teppei Tadokoro",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX12-065_P2",
         "illustrator": "Ryodan",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Special Rare"
@@ -216646,13 +216498,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-065_P1-J",
         "illustrator": "Teppei Tadokoro",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX12-065_P2-J",
         "illustrator": "Ryodan",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Special Rare"
@@ -216721,7 +216573,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-066_P1",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -216729,7 +216581,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-066_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -216787,7 +216639,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-067_P1",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -216795,7 +216647,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-067_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -216853,7 +216705,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-068_P1",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -216861,7 +216713,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-068_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -216919,7 +216771,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-069_P1",
         "illustrator": "Itohiro",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -216927,7 +216779,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-069_P1-J",
         "illustrator": "Itohiro",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -216985,7 +216837,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-070_P1",
         "illustrator": "Shoyama Seihou",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -216993,7 +216845,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-070_P1-J",
         "illustrator": "Shoyama Seihou",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -217051,7 +216903,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-071_P1",
         "illustrator": "Shoyama Seihou",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -217059,7 +216911,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-071_P1-J",
         "illustrator": "Shoyama Seihou",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -217117,7 +216969,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-072_P1",
         "illustrator": "Itohiro",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -217125,7 +216977,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-072_P1-J",
         "illustrator": "Itohiro",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -217183,7 +217035,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-073_P1",
         "illustrator": "Kazumasa Yasukuni",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -217191,7 +217043,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-073_P1-J",
         "illustrator": "Kazumasa Yasukuni",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Common"
@@ -217249,7 +217101,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-074_P1",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
@@ -217257,7 +217109,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-074_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
@@ -217367,13 +217219,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-076_P1",
         "illustrator": "Nakano Haito",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX12-076_P2",
         "illustrator": "Ryodan",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Rare Pull"
@@ -217381,13 +217233,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-076_P1-J",
         "illustrator": "Nakano Haito",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX12-076_P2-J",
         "illustrator": "Ryodan",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Rare Pull"
@@ -217451,7 +217303,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX12-077_P1",
         "illustrator": "Spareribs",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -217459,7 +217311,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX12-077_P1-J",
         "illustrator": "Spareribs",
         "note": "EX-12: EXTRA BOOSTER DIGITAL WORLD SHAMBALA",
         "type": "Alternative Art"
@@ -217528,7 +217380,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-001_P1",
         "illustrator": "tyuga",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217536,7 +217388,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-001_P1-J",
         "illustrator": "tyuga",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217594,7 +217446,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-002_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217602,7 +217454,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-002_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217660,7 +217512,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-003_P1",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217668,7 +217520,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-003_P1-J",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217726,7 +217578,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-004_P1",
         "illustrator": "naru",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217734,7 +217586,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-004_P1-J",
         "illustrator": "naru",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217792,7 +217644,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-005_P1",
         "illustrator": "koki",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217800,7 +217652,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-005_P1-J",
         "illustrator": "koki",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217858,7 +217710,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-006_P1",
         "illustrator": "Spareribs",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217866,7 +217718,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-006_P1-J",
         "illustrator": "Spareribs",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -217924,7 +217776,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-007_P1",
         "illustrator": "tyuga",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -217932,7 +217784,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-007_P1-J",
         "illustrator": "tyuga",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -217996,7 +217848,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-008_P1",
         "illustrator": "Souichirou Gunjima",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -218004,7 +217856,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-008_P1-J",
         "illustrator": "Souichirou Gunjima",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -218068,7 +217920,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-009_P1",
         "illustrator": "NAOKI AKAMINE",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -218076,7 +217928,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-009_P1-J",
         "illustrator": "NAOKI AKAMINE",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -218140,7 +217992,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-010_P1",
         "illustrator": "tyuga",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218148,7 +218000,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-010_P1-J",
         "illustrator": "tyuga",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218212,7 +218064,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-011_P1",
         "illustrator": "NAOKI AKAMINE",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218220,7 +218072,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-011_P1-J",
         "illustrator": "NAOKI AKAMINE",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218284,7 +218136,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-012_P1",
         "illustrator": "NAOKI AKAMINE",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -218292,7 +218144,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-012_P1-J",
         "illustrator": "NAOKI AKAMINE",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -218356,7 +218208,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-013_P1",
         "illustrator": "tyuga",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -218364,7 +218216,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-013_P1-J",
         "illustrator": "tyuga",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -218428,13 +218280,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-014_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-014_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -218442,13 +218294,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-014_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-014_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -218512,19 +218364,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-015_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-015_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
       },
       {
-        "id": "_P3",
+        "id": "EX13-015_P3",
         "illustrator": "sasasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Special Rare"
@@ -218532,19 +218384,19 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-015_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-015_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
       },
       {
-        "id": "_P3",
+        "id": "EX13-015_P3-J",
         "illustrator": "sasasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Special Rare"
@@ -218608,19 +218460,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-016_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-016_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
       },
       {
-        "id": "_P3",
+        "id": "EX13-016_P3",
         "illustrator": "sasasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Special Rare"
@@ -218628,19 +218480,19 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-016_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-016_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
       },
       {
-        "id": "_P3",
+        "id": "EX13-016_P3-J",
         "illustrator": "sasasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Special Rare"
@@ -218709,7 +218561,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-017_P1",
         "illustrator": "Tonamikanji",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -218717,7 +218569,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-017_P1-J",
         "illustrator": "Tonamikanji",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -218781,7 +218633,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-018_P1",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218789,7 +218641,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-018_P1-J",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218858,7 +218710,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-019_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218866,7 +218718,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-019_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -218930,19 +218782,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-020_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-020_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
       },
       {
-        "id": "_P3",
+        "id": "EX13-020_P3",
         "illustrator": "sasasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Special Rare"
@@ -218950,19 +218802,19 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-020_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-020_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
       },
       {
-        "id": "_P3",
+        "id": "EX13-020_P3-J",
         "illustrator": "sasasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Special Rare"
@@ -219031,7 +218883,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-021_P1",
         "illustrator": "BIRU YAMAGUCHI",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -219039,7 +218891,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-021_P1-J",
         "illustrator": "BIRU YAMAGUCHI",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -219108,7 +218960,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-022_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -219116,7 +218968,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-022_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -219180,13 +219032,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-023_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-023_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -219194,13 +219046,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-023_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-023_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -219327,7 +219179,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-025_P1",
         "illustrator": "k.Dra",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219335,7 +219187,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-025_P1-J",
         "illustrator": "k.Dra",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219399,7 +219251,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-026_P1",
         "illustrator": "SENNSU",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -219407,7 +219259,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-026_P1-J",
         "illustrator": "SENNSU",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -219471,7 +219323,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-027_P1",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219479,7 +219331,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-027_P1-J",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219548,7 +219400,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-028_P1",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219556,7 +219408,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-028_P1-J",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219625,7 +219477,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-029_P1",
         "illustrator": "k.Dra",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219633,7 +219485,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-029_P1-J",
         "illustrator": "k.Dra",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219702,7 +219554,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-030_P1",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219710,7 +219562,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-030_P1-J",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219895,7 +219747,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-033_P1",
         "illustrator": "k.Dra",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -219903,7 +219755,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-033_P1-J",
         "illustrator": "k.Dra",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -219972,7 +219824,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-034_P1",
         "illustrator": "Moyasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -219980,7 +219832,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-034_P1-J",
         "illustrator": "Moyasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220044,7 +219896,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-035_P1",
         "illustrator": "poroze",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
@@ -220052,7 +219904,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-035_P1-J",
         "illustrator": "poroze",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
@@ -220121,13 +219973,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-036_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-036_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220135,13 +219987,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-036_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-036_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220205,13 +220057,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-037_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-037_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220219,13 +220071,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-037_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-037_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220294,7 +220146,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-038_P1",
         "illustrator": "Kazumasa Yasukuni",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220302,7 +220154,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-038_P1-J",
         "illustrator": "Kazumasa Yasukuni",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220366,7 +220218,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-039_P1",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220374,7 +220226,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-039_P1-J",
         "illustrator": "SENNSU",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220443,7 +220295,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-040_P1",
         "illustrator": "Kazumasa Yasukuni",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220451,7 +220303,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-040_P1-J",
         "illustrator": "Kazumasa Yasukuni",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220515,7 +220367,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-041_P1",
         "illustrator": "BIRU YAMAGUCHI",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220523,7 +220375,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-041_P1-J",
         "illustrator": "BIRU YAMAGUCHI",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220650,13 +220502,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-043_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-043_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220664,13 +220516,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-043_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-043_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220797,13 +220649,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-045_P1",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-045_P2",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220811,13 +220663,13 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-045_P1-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "EX13-045_P2-J",
         "illustrator": "Tonamikanji",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Gold Foil -\u00a0Rare Pull"
@@ -220891,7 +220743,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-046_P1",
         "illustrator": "koki",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220899,7 +220751,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-046_P1-J",
         "illustrator": "koki",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220963,7 +220815,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-047_P1",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -220971,7 +220823,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-047_P1-J",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221035,7 +220887,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-048_P1",
         "illustrator": "Souichirou Gunjima",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221043,7 +220895,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-048_P1-J",
         "illustrator": "Souichirou Gunjima",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221107,7 +220959,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-049_P1",
         "illustrator": "Spareribs",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -221115,7 +220967,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-049_P1-J",
         "illustrator": "Spareribs",
         "note": "Box Promotion Pack: CHIVALROUS XIII",
         "type": "Full Art -\u00a0Box Topper"
@@ -221184,7 +221036,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-050_P1",
         "illustrator": "kaz",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221192,7 +221044,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-050_P1-J",
         "illustrator": "kaz",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221256,7 +221108,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-051_P1",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -221264,7 +221116,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-051_P1-J",
         "illustrator": "GOSSAN",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Uncommon"
@@ -221328,7 +221180,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-052_P1",
         "illustrator": "Moyasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221336,7 +221188,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-052_P1-J",
         "illustrator": "Moyasi",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221400,7 +221252,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-053_P1",
         "illustrator": "koki",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221408,7 +221260,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-053_P1-J",
         "illustrator": "koki",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221477,7 +221329,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "EX13-054_P1",
         "illustrator": "kaz",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -221485,7 +221337,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "EX13-054_P1-J",
         "illustrator": "kaz",
         "note": "EX-13: EXTRA BOOSTER CHIVALROUS XIII",
         "type": "Limited Common"
@@ -283793,14 +283645,7 @@
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
       }
     ],
-    "JAAs": [
-      {
-        "id": "P-201_P2-J",
-        "illustrator": "koki",
-        "note": "LM-08: LIMITED CARD PACK FINAL CREST",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
-      }
-    ],
+    "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -291608,27 +291453,21 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST12-12_P1",
         "illustrator": "Teppei Tadokoro",
         "note": "Judge Pack 5",
         "type": "Foil - Judge Stamp -\u00a0Alternative Art"
       },
       {
-        "id": "_P2",
+        "id": "ST12-12_P2",
         "illustrator": "tyuga",
         "note": "Event Pack 7",
         "type": "Foil -\u00a0Alternative Art"
-      },
-      {
-        "id": "_P3",
-        "illustrator": "tyuga",
-        "note": "Special Limited Set",
-        "type": "Alternative Art"
       }
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST12-12_P1-J",
         "illustrator": "tyuga",
         "note": "LM-02: Limited Card Pack DeathXmon",
         "type": "Foil -\u00a0Alternative Art"
@@ -291686,21 +291525,15 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST12-13_P1",
         "illustrator": "tyuga",
         "note": "Event Pack 7",
         "type": "Foil -\u00a0Alternative Art"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "tyuga",
-        "note": "Special Limited Set",
-        "type": "Alternative Art"
       }
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST12-13_P1-J",
         "illustrator": "tyuga",
         "note": "LM-02: Limited Card Pack DeathXmon",
         "type": "Foil -\u00a0Alternative Art"
@@ -291810,7 +291643,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST12-15_P1",
         "illustrator": "Takase",
         "note": "Judge Pack 3",
         "type": "Foil - Judge Stamp -\u00a0Common"
@@ -291818,7 +291651,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST12-15_P1-J",
         "illustrator": "Takase",
         "note": "LM-02: Limited Card Pack DeathXmon",
         "type": "Foil - Coloured Border -\u00a0Common"
@@ -292347,20 +292180,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST13-08_P1",
         "illustrator": "Takase",
-        "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
+        "note": "AD-01: Advanced Booster Digimon Generation",
         "type": "Foil -\u00a0Common"
       }
     ],
-    "JAAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Takase",
-        "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Common"
-      }
-    ],
+    "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -292845,19 +292671,19 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST13-16_P1",
         "illustrator": "Takase",
         "note": "Judge Pack 3",
         "type": "Foil - Judge Stamp -\u00a0Common"
       },
       {
-        "id": "_P2",
+        "id": "ST13-16_P2",
         "illustrator": "Takase",
         "note": "Store Championship 2023 Participant Pack",
         "type": "Gold Background & Participation Stamp -\u00a0Alternative Art"
       },
       {
-        "id": "_P3",
+        "id": "ST13-16_P3",
         "illustrator": "Takase",
         "note": "Store Championships 2023 Wave 1",
         "type": "Gold Background & Top 4 Stamp -\u00a0Top 4 Prize"
@@ -292865,7 +292691,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST13-16_P1-J",
         "illustrator": "Takase",
         "note": "Special Battle Area Set 2023",
         "type": "Gold Foil - Gold Background -\u00a0Alternative Art"
@@ -292923,26 +292749,19 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-01_P0",
         "illustrator": "Nakano Haito",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
       },
       {
-        "id": "_P2",
+        "id": "ST14-01_P1",
         "illustrator": "toriyufu",
         "note": "3 on 3 Battle",
         "type": "Textured - Stamped -\u00a0Participation"
       }
     ],
-    "JAAs": [
-      {
-        "id": "_P1",
-        "illustrator": "toriyufu",
-        "note": "DC-1 Grand Prix Set 2023",
-        "type": "Textured - Stamped -\u00a0Alternative Art"
-      }
-    ],
+    "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -292995,13 +292814,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST14-02_P1",
         "illustrator": "Naochika Morishita",
         "note": "3 on 3 Battle",
         "type": "Textured - Stamped -\u00a0Top 4 Prize"
       },
       {
-        "id": "_P2",
+        "id": "ST14-02_P2",
         "illustrator": "p!k@ru",
         "note": "EX-10: Legend Pack 2025",
         "type": "Full Art -\u00a0Box Topper"
@@ -293009,13 +292828,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
-        "illustrator": "Naochika Morishita",
-        "note": "DC-1 2023",
-        "type": "Textured - Stamped -\u00a0Top 16 Prize"
-      },
-      {
-        "id": "_P2",
+        "id": "ST14-02_P2-J",
         "illustrator": "p!k@ru",
         "note": "EX-10: Legend Pack 2025",
         "type": "Full Art -\u00a0Box Topper"
@@ -293079,7 +292892,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-03_P0",
         "illustrator": "p!k@ru",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -293144,7 +292957,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-04_P0",
         "illustrator": "koki",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -293209,7 +293022,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-05_P0",
         "illustrator": "koki",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -293274,7 +293087,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-06_P0",
         "illustrator": "p!k@ru",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -293339,13 +293152,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-07_P0",
         "illustrator": "sasasi",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "ST14-07_P1",
         "illustrator": "sasasi",
         "note": "Judge Pack 4",
         "type": "Foil - Judge Stamp -\u00a0Alternative Art"
@@ -293410,13 +293223,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST14-08_P1",
         "illustrator": "sasasi",
         "note": "ST-14: Advanced Deck Set Beelzemon",
         "type": "Textured -\u00a0Rare Pull"
       },
       {
-        "id": "_P2",
+        "id": "ST14-08_P2",
         "illustrator": "Naochika Morishita",
         "note": "3 on 3 Battle",
         "type": "Textured - Stamped -\u00a0Top 4 Prize"
@@ -293424,16 +293237,10 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST14-08_P1-J",
         "illustrator": "sasasi",
         "note": "ST-14: Advanced Deck Set Beelzemon",
         "type": "Textured -\u00a0Rare Pull"
-      },
-      {
-        "id": "_P2",
-        "illustrator": "Naochika Morishita",
-        "note": "DC-1 2023",
-        "type": "Textured - Stamped -\u00a0Top 4 Prize"
       }
     ],
     "aceEffect": "-",
@@ -293494,7 +293301,7 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST14-09_P1",
         "illustrator": "poroze",
         "note": "PB-23: Digimon Card Game Premium Heroines Set ver.2",
         "type": "Alternative Art"
@@ -293502,7 +293309,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST14-09_P1-J",
         "illustrator": "poroze",
         "note": "PB-23: Digimon Card Game Premium Heroines Set ver.2",
         "type": "Alternative Art"
@@ -293566,20 +293373,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST14-10_P1",
         "illustrator": "Naochika Morishita",
         "note": "3 on 3 Battle",
         "type": "Textured - Stamped -\u00a01st Place Prize"
       }
     ],
-    "JAAs": [
-      {
-        "id": "_P1",
-        "illustrator": "Naochika Morishita",
-        "note": "DC-1 2023",
-        "type": "Textured - Stamped -\u00a01st Place Prize"
-      }
-    ],
+    "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -293638,7 +293438,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-11_P0",
         "illustrator": "No Illustrator",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -293697,13 +293497,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST14-12_P0",
         "illustrator": "Kenji Watanabe",
         "note": "Beelzemon Cup Participation Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "ST14-12_P1",
         "illustrator": "Kenji Watanabe",
         "note": "Special Event Pack 2025",
         "type": "Foil - Coloured Border -\u00a0Alternative Art"
@@ -293711,7 +293511,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST14-12_P1-J",
         "illustrator": "Kenji Watanabe",
         "note": "LM-04: Limited Card Pack Torrid Weiss",
         "type": "Foil - Coloured Border -\u00a0Rare"
@@ -293769,7 +293569,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-01_P0",
         "illustrator": "sasasi",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -293828,13 +293628,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-02_P0",
         "illustrator": "sasasi",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "ST15-02_P1",
         "illustrator": "No Illustrator",
         "note": "Winter Holiday Event 2023",
         "type": "Textured -\u00a01st Place Prize"
@@ -293842,7 +293642,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST15-02_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-08: Legend Pack 2024",
         "type": "Foil -\u00a0Box Topper"
@@ -293906,7 +293706,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-03_P0",
         "illustrator": "poroze",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -293971,7 +293771,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-04_P0",
         "illustrator": "poroze",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -294036,7 +293836,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-05_P0",
         "illustrator": "GOSSAN",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -294101,7 +293901,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-06_P0",
         "illustrator": "koki",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -294166,7 +293966,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-07_P0",
         "illustrator": "poroze",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -294289,7 +294089,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-09_P0",
         "illustrator": "Spareribs",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -294354,7 +294154,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-10_P0",
         "illustrator": "GOSSAN",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -294419,13 +294219,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-11_P0",
         "illustrator": "sasasi",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "ST15-11_P1",
         "illustrator": "sasasi",
         "note": "GB-03: Gift Box 2023",
         "type": "Textured - Coloured Background -\u00a0Rare"
@@ -294490,13 +294290,13 @@
   {
     "AAs": [
       {
-        "id": "_P1",
+        "id": "ST15-12_P1",
         "illustrator": "sasasi",
         "note": "ST-15: Starter Deck Dragon of Courage",
         "type": "Textured -\u00a0Super Rare"
       },
       {
-        "id": "_P2",
+        "id": "ST15-12_P2",
         "illustrator": "tyuga",
         "note": "ST-15: Starter Deck Dragon of Courage",
         "type": "Textured -\u00a0Rare Pull"
@@ -294504,7 +294304,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST15-12_P1-J",
         "illustrator": "tyuga",
         "note": "BT-14: Booster Blast Ace",
         "type": "Textured -\u00a0Alternative Art"
@@ -294568,7 +294368,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-13_P0",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -294633,7 +294433,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-14_P0",
         "illustrator": "No Illustrator",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
@@ -294692,7 +294492,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-15_P0",
         "illustrator": "No Illustrator",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -294751,7 +294551,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST15-16_P0",
         "illustrator": "Nakano Haito",
         "note": "Dragon of Courage Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -294810,7 +294610,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-01_P0",
         "illustrator": "Tonamikanji",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -294869,7 +294669,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-02_P0",
         "illustrator": "koki",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -294934,13 +294734,13 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-03_P0",
         "illustrator": "Tonamikanji",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Rare"
       },
       {
-        "id": "_P2",
+        "id": "ST16-03_P1",
         "illustrator": "No Illustrator",
         "note": "Winter Holiday Event 2023",
         "type": "Foil -\u00a0Participation"
@@ -294948,7 +294748,7 @@
     ],
     "JAAs": [
       {
-        "id": "_P1",
+        "id": "ST16-03_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-08: Legend Pack 2024",
         "type": "Foil -\u00a0Box Topper"
@@ -295012,7 +294812,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-04_P0",
         "illustrator": "koki",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
@@ -295077,7 +294877,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-05_P0",
         "illustrator": "Takase",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -295142,7 +294942,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-06_P0",
         "illustrator": "koki",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -295207,7 +295007,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-07_P0",
         "illustrator": "Spareribs",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -295330,7 +295130,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-09_P0",
         "illustrator": "Takase",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Common"
@@ -295395,7 +295195,7 @@
   {
     "AAs": [
       {
-        "id": "_P0",
+        "id": "ST16-10_P0",
         "illustrator": "Spareribs",
         "note": "Wolf of Friendship Pre-Release Pack",
         "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
