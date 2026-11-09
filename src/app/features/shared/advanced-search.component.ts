@@ -66,13 +66,6 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
           tooltipPosition="top">
         </button>
       </div>
-      @if (!searchQuery()) {
-      <div class="mt-1 flex gap-1 overflow-x-auto" role="group" aria-label="Example searches">
-        @for (example of examples; track example.label) {
-          <button type="button" (click)="useExample(example.query)" class="h-8 shrink-0 rounded-full border border-line bg-ink-2 px-3 text-xs text-fg hover:border-accent">{{ example.label }}</button>
-        }
-      </div>
-      }
     </div>
 
     <!-- Help Dialog -->
@@ -261,20 +254,6 @@ import { SearchAutocompleteService, SearchSuggestion } from '@services';
 export class AdvancedSearchComponent implements OnInit, AfterViewInit {
   @Output() searchChange = new EventEmitter<string>();
   @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
-
-  examples = [
-    { label: 'Red Digimon', query: 'cardType == Digimon AND color == Red' },
-    { label: 'Level 4', query: 'cardLv == 4' },
-    { label: 'Options', query: 'cardType == Option' },
-    { label: 'Mega, DP 10000+', query: 'form == Mega AND dp >= 10000' },
-  ];
-
-  useExample(query: string) {
-    const el = this.searchInput.nativeElement;
-    el.value = query;
-    this.onInput({ target: el } as unknown as Event);
-    this.showSuggestions.set(false);
-  }
 
   private filterStore = inject(FilterStore);
   private destroyRef = inject(DestroyRef);

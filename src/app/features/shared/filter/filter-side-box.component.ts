@@ -31,7 +31,7 @@ import { VersionFilterComponent } from './version-filter.component';
 @Component({
   selector: 'digimon-filter-side-box',
   template: `
-    <div class="mx-1 flex h-full w-full flex-col pt-1 overflow-y-auto">
+    <div class="flex h-full w-full flex-col overflow-y-auto bg-ink-1 px-1 pt-1">
       <div class="mt-1 grid w-full grid-cols-4">
         <div></div>
 
@@ -137,13 +137,6 @@ import { VersionFilterComponent } from './version-filter.component';
       <digimon-version-filter></digimon-version-filter>
       <digimon-block-filter></digimon-block-filter>
 
-      <details class="mx-1 mt-1 border-t border-line pt-1" [open]="moreActive()">
-        <summary class="flex h-10 cursor-pointer items-center justify-center gap-2 text-xs font-bold text-fg">
-          More filters
-          @if (moreCount() > 0) {
-            <span class="rounded-full bg-accent px-2 text-accent-ink">{{ moreCount() }}</span>
-          }
-        </summary>
         <p-multiSelect
           [formControl]="keywordFilter"
           [options]="keywords"
@@ -263,7 +256,6 @@ import { VersionFilterComponent } from './version-filter.component';
           class="mx-auto mb-1 w-full max-w-[250px]"
           styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
         </p-multiSelect>
-      </details>
     </div>
   `,
   styleUrls: ['filter-side-box.component.scss'],
@@ -290,13 +282,6 @@ export class FilterSideBoxComponent {
 
   filterStore = inject(FilterStore);
   saveStore = inject(SaveStore);
-
-  // Rarely used filters sit under one disclosure; it opens by itself when one of them is set
-  moreCount = computed(() => {
-    const f = this.filterStore.filter() as unknown as Record<string, unknown[]>;
-    return ['keywordFilter', 'formFilter', 'attributeFilter', 'typeFilter', 'specialRequirementsFilter', 'illustratorFilter', 'restrictionsFilter', 'presetFilter'].filter((k) => f[k]?.length).length;
-  });
-  moreActive = computed(() => this.moreCount() > 0);
 
   collectionCountMax = computed(() => this.saveStore.settings().countMax);
 
