@@ -112,6 +112,7 @@ import { VersionFilterComponent } from './version-filter.component';
         </div>
       }
 
+      @if (!hideCollectionFilter) {
       <div class="flex flex-row mb-2">
         <digimon-range-slider
           [reset]="resetEmitter"
@@ -132,6 +133,7 @@ import { VersionFilterComponent } from './version-filter.component';
           <i class="pi pi-refresh"></i>
         </button>
       </div>
+      }
 
       <digimon-rarity-filter></digimon-rarity-filter>
       <digimon-version-filter></digimon-version-filter>
@@ -278,6 +280,8 @@ import { VersionFilterComponent } from './version-filter.component';
 })
 export class FilterSideBoxComponent {
   @Input() public showColors!: boolean;
+  // The owned-count slider only makes sense where owned counts are shown (deck builder, collection)
+  @Input() hideCollectionFilter = false;
   messageService = inject(MessageService);
 
   filterStore = inject(FilterStore);

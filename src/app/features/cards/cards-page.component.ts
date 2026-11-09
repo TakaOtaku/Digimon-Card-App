@@ -17,6 +17,7 @@ import { CardDetailPanelComponent } from './card-detail-panel.component';
           [collectionOnly]="true"
           [dialogOnView]="false"
           [showCollectionMode]="false"
+          [hideCollectionFilter]="true"
           (cardViewed)="select($event)"
           class="flex flex-row flex-1 min-w-0 h-full"></digimon-pagination-card-list>
         @if (preview() !== 'dialog') {

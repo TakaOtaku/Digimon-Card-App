@@ -76,14 +76,14 @@ import { CardMarketService } from '../../../services/card-market.service';
       </div>
     </div>
 
-    <digimon-filter-side-box *ngIf="showFilterBox()" class="hidden xl:flex"></digimon-filter-side-box>
+    <digimon-filter-side-box *ngIf="showFilterBox()" [hideCollectionFilter]="hideCollectionFilter" class="hidden xl:flex"></digimon-filter-side-box>
 
     <p-drawer
       [(visible)]="filterBox"
       dismissible="false"
       position="right"
       styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0 border-none">
-      <digimon-filter-side-box></digimon-filter-side-box>
+      <digimon-filter-side-box [hideCollectionFilter]="hideCollectionFilter"></digimon-filter-side-box>
     </p-drawer>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -111,6 +111,7 @@ export class PaginationCardListComponent {
   @Input() inputCollection: ICountCard[] = [];
   @Input() dialogOnView = true;
   @Input() showCollectionMode = true;
+  @Input() hideCollectionFilter = false;
   @Input() alwaysCollection = false;
   // Leaves room for the builder's mobile Pool/Deck/Stats tray
   @Input() bottomInset = false;
