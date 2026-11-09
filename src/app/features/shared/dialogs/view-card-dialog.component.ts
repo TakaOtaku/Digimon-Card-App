@@ -329,7 +329,7 @@ export class ViewCardDialogComponent {
   }
 
   openWiki() {
-    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + formatId(this.card.id);
+    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + formatId(this.card.cardNumber);
     window.open(wikiLink, '_blank');
   }
 
@@ -346,7 +346,7 @@ export class ViewCardDialogComponent {
   }
 
   openWikiIllustrator() {
-    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + this.card.illustrator;
+    const wikiLink = 'https://digimoncardgame.fandom.com/wiki/' + encodeURIComponent(this.card.illustrator.replace(/ /g, '_'));
     window.open(wikiLink, '_blank');
   }
 
