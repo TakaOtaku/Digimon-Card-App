@@ -61,3 +61,6 @@ __pycache__/
 # Local tooling
 /.claude/
 /graphify-out/
+
+# Impeccable design tool data
+.impeccable/
