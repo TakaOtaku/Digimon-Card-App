@@ -30,8 +30,7 @@ import { DeckViewComponent } from './components/deck-view.component';
           [collectionView]="collectionView"
           [poolVisible]="collectionView"
           [showcase]="!collectionView && wide"
-          (togglePool)="changeView()"
-          (hideStats)="statsDisplay = !statsDisplay"></digimon-deck-view>
+          (togglePool)="changeView()"></digimon-deck-view>
 
         <digimon-pagination-card-list
           *ngIf="collectionView"
@@ -43,13 +42,20 @@ import { DeckViewComponent } from './components/deck-view.component';
 
 
         @if (statsDisplay && deckView) {
-          <digimon-deck-stats class="fixed left-0 z-[300] hidden lg:block xl:hidden" [collectionView]="collectionView"></digimon-deck-stats>
+          <digimon-deck-stats class="fixed left-0 z-[300] hidden lg:block xl:hidden" [collectionView]="collectionView" [hideable]="true" (hide)="statsDisplay = false"></digimon-deck-stats>
         }
         @if (statsDisplay && deckView) {
           <!-- Wide screens: stats get their own column instead of the fixed bottom strip -->
           <digimon-deck-stats
             [column]="true"
+            [hideable]="true"
+            (hide)="statsDisplay = false"
             class="hidden xl:flex w-[20rem] shrink-0 h-full overflow-y-auto border-l border-line bg-ink-1 p-4"></digimon-deck-stats>
+        }
+        @if (!statsDisplay && deckView) {
+          <button type="button" (click)="statsDisplay = true" class="fixed right-0 top-28 z-[300] hidden h-10 items-center gap-1.5 rounded-l-lg border border-r-0 border-line bg-ink-1 px-3 text-xs font-semibold text-fg hover:border-accent lg:flex" aria-label="Show deck stats">
+            <i class="pi pi-angle-double-left"></i> Stats
+          </button>
         }
         @if (mobileTab === 'stats') {
           <digimon-deck-stats [column]="true" class="lg:hidden flex w-full h-full overflow-y-auto p-4 pb-20"></digimon-deck-stats>

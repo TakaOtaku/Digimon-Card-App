@@ -29,9 +29,6 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
       <button type="button" (click)="simulate()" class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 flex-1 md:flex-none" pTooltip="Simulate your draw hand and the security stack" tooltipPosition="top">
         <i class="pi pi-refresh"></i> Test hand
       </button>
-      <button type="button" (click)="hideStats.emit(true)" class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 flex-1 md:flex-none" pTooltip="Hide or show deck statistics" tooltipPosition="top">
-        <i class="pi pi-chart-bar"></i> Stats
-      </button>
       <button
         type="button"
         (click)="missingCardsChange.emit(!missingCards)"
@@ -132,7 +129,6 @@ export class DeckToolbarComponent {
 
   @Output() missingCardsChange = new EventEmitter<boolean>();
   @Output() save = new EventEmitter<any>();
-  @Output() hideStats = new EventEmitter<boolean>();
 
   websiteStore = inject(WebsiteStore);
   dialogStore = inject(DialogStore);

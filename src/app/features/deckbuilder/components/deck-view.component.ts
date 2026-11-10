@@ -36,8 +36,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
       <digimon-deck-toolbar
         [missingCards]="missingCards"
         (missingCardsChange)="missingCards = $event"
-        (save)="saveDeck($event)"
-        (hideStats)="hideStats.emit(true)"></digimon-deck-toolbar>
+        (save)="saveDeck($event)"></digimon-deck-toolbar>
     </div>
     } @else {
       <!-- Showcase: the whole screen for the deck, laid out for screenshots -->
@@ -245,7 +244,6 @@ export class DeckViewComponent {
   @Input() collectionView: boolean;
 
   @Output() onMainDeck = new EventEmitter<IDeckCard[]>();
-  @Output() hideStats = new EventEmitter<boolean>();
   @Output() togglePool = new EventEmitter<void>();
   @Input() poolVisible = true;
   // Pool hidden on a wide screen: hero header instead of the editing header
