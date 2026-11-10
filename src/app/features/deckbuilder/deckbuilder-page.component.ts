@@ -38,7 +38,19 @@ import { DeckViewComponent } from './components/deck-view.component';
           [bottomInset]="true"
           [filterBoxEnabled]="false"
           [ngClass]="{ 'w-3/5 max-w-[60%] xl:w-auto xl:max-w-none xl:flex-1 xl:min-w-0': deckView, 'w-full': !deckView }"
-          class="border-l max-h-full border-line flex flex-row  h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]"></digimon-pagination-card-list>
+          class="border-l max-h-full border-line flex flex-row  h-[calc(var(--app-vh)-7.5rem)] md:h-[calc(var(--app-vh)-5rem)]">
+          <!-- Brings the hidden stats back; sits beside Filter in the pool header and matches its size -->
+          <button
+            headerEnd
+            type="button"
+            (click)="statsDisplay = true"
+            [ngClass]="statsDisplay || !deckView ? 'hidden' : 'hidden lg:flex'"
+            class="primary-background h-8 w-24 items-center justify-center rounded p-2 text-xs font-semibold text-fg"
+            aria-label="Show deck stats">
+            <i class="pi pi-angle-double-left mr-3"></i>
+            <span>Stats</span>
+          </button>
+        </digimon-pagination-card-list>
 
 
         @if (statsDisplay && deckView) {
@@ -51,11 +63,6 @@ import { DeckViewComponent } from './components/deck-view.component';
             [hideable]="true"
             (hide)="statsDisplay = false"
             class="hidden xl:flex w-[20rem] shrink-0 h-full overflow-y-auto border-l border-line bg-ink-1 p-4"></digimon-deck-stats>
-        }
-        @if (!statsDisplay && deckView) {
-          <button type="button" (click)="statsDisplay = true" class="fixed right-0 top-28 z-[300] hidden h-10 items-center gap-1.5 rounded-l-lg border border-r-0 border-line bg-ink-1 px-3 text-xs font-semibold text-fg hover:border-accent lg:flex" aria-label="Show deck stats">
-            <i class="pi pi-angle-double-left"></i> Stats
-          </button>
         }
         @if (mobileTab === 'stats') {
           <digimon-deck-stats [column]="true" class="lg:hidden flex w-full h-full overflow-y-auto p-4 pb-20"></digimon-deck-stats>
