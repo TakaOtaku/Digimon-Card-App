@@ -106,10 +106,10 @@ export const Forms: string[] = [
   'Armor Form',
   'D-Reaper',
   'Appmon',
-  'Stnd.',
-  'Sup.',
-  'Ult.',
-  'God',
+  'Stnd./Appmon',
+  'Sup./Appmon',
+  'Ult./Appmon',
+  'God/Appmon',
   'Eater',
 ];
 
