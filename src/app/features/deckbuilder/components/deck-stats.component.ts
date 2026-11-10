@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
-import { Component, computed, inject, Input, Signal } from '@angular/core';
+import { Component, computed, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { IDeck, IDeckCard } from '../../../../models';
 import { deckChecks, mapToDeckCards, missingCards } from '../../../functions';
 import { PriceMetric } from '@models';
@@ -17,6 +17,14 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
   template: `
     @if (column) {
       <div class="flex flex-col gap-6 w-full">
+        @if (hideable) {
+          <div class="flex items-center justify-between">
+            <h2 class="m-0 font-display text-lg font-semibold text-fg">Deck stats</h2>
+            <button type="button" (click)="hide.emit()" class="flex h-8 items-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent" aria-label="Hide deck stats">
+              Hide <i class="pi pi-angle-double-right"></i>
+            </button>
+          </div>
+        }
         <section class="flex flex-col gap-2">
           <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Level curve</h3>
           <digimon-chart-containers [deck]="mainDeck()"></digimon-chart-containers>
@@ -69,7 +77,12 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
     <div *ngIf="showStats && !column" class="fixed bottom-16 md:bottom-0 z-[102] flex h-28 w-full flex-row" [ngClass]="{ 'lg:w-[350px]': collectionView }">
       <div
         [ngClass]="{ 'w-full': collectionView, 'border-l-2': !collectionView }"
-        class="surface-card flex flex-row border-r-2 border-t-2 border-white bg-opacity-25 lg:mx-auto">
+        class="surface-card relative flex flex-row border-r-2 border-t-2 border-white bg-opacity-25 lg:mx-auto">
+        @if (hideable) {
+          <button type="button" (click)="hide.emit()" class="absolute right-1 top-1 z-10 flex h-8 items-center gap-1.5 rounded-lg border border-line bg-ink-2 px-2 text-xs font-semibold text-fg hover:border-accent" aria-label="Hide deck stats">
+            Hide <i class="pi pi-angle-double-down"></i>
+          </button>
+        }
         <digimon-ddto-spread
           *ngIf="!collectionView"
           [deck]="deck()"
@@ -98,6 +111,9 @@ export class DeckStatsComponent {
   @Input() showStats = true;
   @Input() collectionView = false;
   @Input() column = false;
+  // Stats the user can hide again from inside the panel (desktop); the phone Stats tab is not hideable
+  @Input() hideable = false;
+  @Output() hide = new EventEmitter<void>();
 
   websiteStore = inject(WebsiteStore);
   digimonCardStore = inject(DigimonCardStore);
