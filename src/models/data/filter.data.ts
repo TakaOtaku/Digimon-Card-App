@@ -106,10 +106,10 @@ export const Forms: string[] = [
   'Armor Form',
   'D-Reaper',
   'Appmon',
-  'Stnd./Appmon',
-  'Sup./Appmon',
-  'Ult./Appmon',
-  'God/Appmon',
+  'Stnd.',
+  'Sup.',
+  'Ult.',
+  'God',
   'Eater',
 ];
 
@@ -145,6 +145,7 @@ export const Types: string[] = [
   'ADVENTURE',
   'Alien',
   'Alien Humanoid',
+  'ALYSION',
   'Amphibian',
   'Ancient',
   'Ancient Animal',
