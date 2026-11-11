@@ -531,7 +531,7 @@ function setPlaysetCompletion(cards: DigimonCard[], collection: ICountCard[], se
     if (restriction === 'Banned' || restriction === 'Restricted to 1') {
       goal = 1;
     } else if (cardsAllow50.includes(card.cardNumber)) {
-      goal = Math.max(1, settings.unlimitedCollectionMinimum ?? 4);
+      goal = Math.min(50, Math.max(1, settings.unlimitedCollectionMinimum ?? 4));
     }
 
     const totalOwned = owned.get(id) ?? 0;

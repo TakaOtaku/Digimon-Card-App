@@ -83,14 +83,16 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Playset tracking" hint="Tracks set completion as having at least a legal playset of a card regardless of art.">
           <p-toggleSwitch [(ngModel)]="playsetTracking"></p-toggleSwitch>
         </digimon-settings-row>
-        <digimon-settings-row title="Unlimited card collection goal" hint="How many copies of cards with a 50-copy deck limit are needed for completion.">
-          <p-inputNumber
-            [(ngModel)]="unlimitedCollectionCount"
-            [min]="1"
-            [max]="50"
-            mode="decimal">
-          </p-inputNumber>
-        </digimon-settings-row>
+        @if (playsetTracking) {
+          <digimon-settings-row title="Unlimited card collection goal" hint="How many copies of cards with a 50-copy deck limit are needed for completion.">
+            <p-inputNumber
+              [(ngModel)]="unlimitedCollectionCount"
+              [min]="1"
+              [max]="50"
+              mode="decimal">
+            </p-inputNumber>
+          </digimon-settings-row>
+        }
         <digimon-settings-row title="Collection filter max" hint="Highest value on the Number in Collection slider.">
           <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
@@ -238,6 +240,8 @@ export class GeneralSettingsComponent {
       this.deckDisplayTable = save.settings?.deckDisplayTable ?? true;
       this.fullscreenFilter = save.settings?.fullscreenFilter ?? true;
       this.collectionFilterMax = save.settings?.countMax ?? 5;
+      this.playsetTracking = save.settings?.playsetTracking ?? false;
+      this.unlimitedCollectionCount = save.settings?.unlimitedCollectionMinimum ?? 4;
 
       const filterMappings = [
         { setting: 'showNormalCards', value: 'Normal' },
