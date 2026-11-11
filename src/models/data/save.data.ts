@@ -31,6 +31,8 @@ export const emptySettings: ISettings = {
 
   fullscreenFilter: true,
   countMax: 5,
+  playsetTracking: false,
+  unlimitedCollectionMinimum: 4,
   showPrices: false,
   priceMetric: PriceMetric.Trend,
   cardPreview: 'right',
