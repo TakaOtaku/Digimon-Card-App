@@ -26,6 +26,8 @@ export interface ISettings {
   groupDeckByType?: boolean; // Group decks into Digi-Egg / Digimon / Tamer / Option ---- default = true
   fullscreenFilter: boolean; // Display Filter with big screen
   countMax: number; // How high do you want to set the count-filter
+  playsetTracking: boolean; // Changes set completion calcualtions to playsets instead of individual card arts ---- default = false
+  unlimitedCollectionMinimum: number; // How many "50 count" cards do you want to collect for a playset ---- default = 4
   showPrices: boolean; // Show Cardmarket prices on cards/decks/collection ---- default = false
   priceMetric: string; // Which price metric to display ---- default = 'trend'
   cardPreview?: 'dialog' | 'left' | 'right'; // Where the Cards page shows a clicked card ---- default = 'right'

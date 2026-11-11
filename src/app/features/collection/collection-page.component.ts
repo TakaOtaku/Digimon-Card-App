@@ -199,11 +199,12 @@ export class CollectionPageComponent {
   completedSets = computed(() => this.sets().filter((set) => set.owned >= set.total));
 
   goalSummary = computed(() => {
-    const { collectionMinimum, aaCollectionMinimum, collectionSets } = this.saveStore.settings();
+    const { collectionMinimum, aaCollectionMinimum, collectionSets, playsetTracking } = this.saveStore.settings();
     const copies = `${Math.max(collectionMinimum, 1)} ${Math.max(collectionMinimum, 1) === 1 ? 'copy' : 'copies'} per card`;
     const aa = aaCollectionMinimum > 0 ? `alt arts at ${aaCollectionMinimum}` : 'alt arts ignored';
+    const combine = playsetTracking ? `tracking playsets for set completion, ` : '';
     const sets = collectionSets?.length ? `${collectionSets.length} tracked sets` : 'all sets';
-    return `${copies}, ${aa}, ${sets}`;
+    return `${copies}, ${aa}, ${combine}${sets}`;
   });
 
   constructor() {

@@ -442,6 +442,20 @@ export interface CompletionSettings {
   collectionMinimum: number;
   aaCollectionMinimum: number;
   collectionSets: string[];
+  playsetTracking: boolean;
+  unlimitedCollectionMinimum: number;
+}
+
+/**
+ * Populates the SET COMPLETION section cards. Calculations are set by the Playset tracking settings
+ * in the Collection section. 
+ */
+export function setCompletion(cards: DigimonCard[], collection: ICountCard[], settings: CompletionSettings): SetCompletion[] {
+  if (settings.playsetTracking) {
+    return setPlaysetCompletion(cards, collection, settings);
+  }
+
+  return setStandardCompletion(cards, collection, settings);
 }
 
 /**
@@ -449,7 +463,7 @@ export interface CompletionSettings {
  * regular printings need collectionMinimum copies; other printings count only when aaCollectionMinimum > 0
  * and need that many; collectionSets (when not empty) limits which sets are tracked.
  */
-export function setCompletion(cards: DigimonCard[], collection: ICountCard[], settings: CompletionSettings): SetCompletion[] {
+function setStandardCompletion(cards: DigimonCard[], collection: ICountCard[], settings: CompletionSettings): SetCompletion[] {
   const owned = new Map(collection.map((c) => [withoutJ(c.id), c.count]));
   const counted = new Set<string>();
   const bySet = new Map<string, SetCompletion>();
@@ -467,6 +481,64 @@ export function setCompletion(cards: DigimonCard[], collection: ICountCard[], se
     entry.total++;
     const goal = Math.max(regular ? settings.collectionMinimum : settings.aaCollectionMinimum, 1);
     if ((owned.get(id) ?? 0) >= goal) entry.owned++;
+    bySet.set(set, entry);
+  });
+
+  return ReleaseOrder.filter((set) => bySet.has(set)).map((set) => bySet.get(set)!);
+}
+
+/**
+ * Owned printings per set, newest set first, using the Playset Tracking and Unlimited card collection goal 
+ * collection settings like the profile doughnuts:
+ * Playsets follow the following rules:
+ *    - Unrestricted cards need at least 4 copies.
+ *    - Banned and Restricted to 1 cards need at least 1 copy.
+ *    - 50 copy cards use the Unlimited card collection goal value which is defaulted to 4 copies.
+ * Playsets are calculated using all card art printings; collectionSets (when not empty) limits which sets are tracked.
+ */
+function setPlaysetCompletion(cards: DigimonCard[], collection: ICountCard[], settings: CompletionSettings): SetCompletion[] {
+  const owned = new Map<string, number>();
+  const bySet = new Map<string, SetCompletion>();
+  const tracked = settings.collectionSets ?? [];
+
+  // Aggregate collection quantities using normalized IDs.
+  collection.forEach((card) => {
+    const id = formatId(withoutJ(card.id));
+    owned.set(id, (owned.get(id) ?? 0) + card.count);
+  });
+
+  // Group all printings of the same card together.
+  const cardVariants = new Map<string, DigimonCard[]>();
+
+  cards.forEach((card) => {
+    const id = formatId(withoutJ(card.id));
+    if (!id.includes('-')) return;
+    const variants = cardVariants.get(id) ?? [];
+    variants.push(card);
+    cardVariants.set(id, variants);
+  });
+
+  cardVariants.forEach((variants, id) => {
+    // Prefer the normal printing for card metadata and set attribution.
+    const card = variants.find((c) => c.version === 'Normal') ?? variants[0];
+    const set = id.split('-')[0];
+    if (tracked.length && !tracked.includes(set)) return;
+    const entry = bySet.get(set) ?? { set, owned: 0, total: 0 };
+    entry.total++;
+
+    const restriction = card.restrictions?.english;
+    let goal = 4;
+    if (restriction === 'Banned' || restriction === 'Restricted to 1') {
+      goal = 1;
+    } else if (cardsAllow50.includes(card.cardNumber)) {
+      goal = Math.max(1, settings.unlimitedCollectionMinimum ?? 4);
+    }
+
+    const totalOwned = owned.get(id) ?? 0;
+    if (totalOwned >= goal) {
+      entry.owned++;
+    }
+
     bySet.set(set, entry);
   });
 

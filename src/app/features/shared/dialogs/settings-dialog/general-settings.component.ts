@@ -80,6 +80,17 @@ import { SettingsRowComponent } from '../../settings-row.component';
         <digimon-settings-row title="Alt art collection goal" hint="The same, for alternate art printings. 0 ignores them.">
           <p-inputNumber [(ngModel)]="aaCollectionCount" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
+        <digimon-settings-row title="Playset tracking" hint="Tracks set completion as having at least a legal playset of a card regardless of art.">
+          <p-toggleSwitch [(ngModel)]="playsetTracking"></p-toggleSwitch>
+        </digimon-settings-row>
+        <digimon-settings-row title="Unlimited card collection goal" hint="How many copies of cards with a 50-copy deck limit are needed for completion.">
+          <p-inputNumber
+            [(ngModel)]="unlimitedCollectionCount"
+            [min]="1"
+            [max]="50"
+            mode="decimal">
+          </p-inputNumber>
+        </digimon-settings-row>
         <digimon-settings-row title="Collection filter max" hint="Highest value on the Number in Collection slider.">
           <p-inputNumber [(ngModel)]="collectionFilterMax" mode="decimal"></p-inputNumber>
         </digimon-settings-row>
@@ -163,6 +174,8 @@ export class GeneralSettingsComponent {
   collectionCount = 1;
   aaCollectionCount = 1;
   collectionFilterMax = 5;
+  playsetTracking = false;
+  unlimitedCollectionCount = 4;
 
   userStats = true;
   deckDisplayTable = true;
@@ -266,6 +279,8 @@ export class GeneralSettingsComponent {
         collectionSets: this.setGoal,
         fullscreenFilter: this.fullscreenFilter,
         countMax: this.collectionFilterMax,
+        playsetTracking: this.playsetTracking,
+        unlimitedCollectionMinimum: this.unlimitedCollectionCount,
         showPrices: this.showPrices,
         priceMetric: this.priceMetric,
         cardPreview: this.cardPreview,
