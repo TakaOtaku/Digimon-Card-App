@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { isOptionType, replaceWithImageTags } from '@functions';
+import { formatId, isOptionType, replaceWithImageTags } from '@functions';
 import { DigimonCard } from '@models';
 import { DialogStore } from '@store';
 
@@ -15,7 +15,18 @@ const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim
         <img [digimonImgFallback]="card.cardImage" [alt]="card.cardNumber + ' ' + card.name.english" class="w-full rounded-xl" />
 
         <div class="flex flex-col gap-1">
-          <h2 class="m-0 font-display text-2xl font-bold text-fg">{{ card.name.english }}</h2>
+          <div class="flex items-start justify-between gap-2">
+            <h2 class="m-0 font-display text-2xl font-bold text-fg">{{ card.name.english }}</h2>
+            <a
+              [href]="'https://digimoncardgame.fandom.com/wiki/' + formatId(card.cardNumber)"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View card on wiki"
+              title="View card on wiki"
+              class="shrink-0 p-1 text-accent hover:underline"
+              ><i class="pi pi-external-link" aria-hidden="true"></i
+            ></a>
+          </div>
           <span class="font-mono text-sm text-muted">{{ subtitle() }}</span>
         </div>
 
@@ -55,6 +66,7 @@ const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim
 })
 export class CardDetailPanelComponent {
   card = input<DigimonCard | null>(null);
+  protected readonly formatId = formatId;
 
   private dialogStore = inject(DialogStore);
 
