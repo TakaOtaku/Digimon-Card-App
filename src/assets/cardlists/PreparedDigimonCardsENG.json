@@ -211662,7 +211662,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-016_P1.webp",
+    "cardImage": "assets/images/cards/BT27-016_P1-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-016",
     "cardType": "Digimon/Option",
@@ -211682,7 +211682,7 @@
     "effect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +6000 DP until your opponent's turn ends. Then, by returning 1 of your other Digimon or 1 [Jesmon] or [X Antibody] from this Digimon's digivolution cards to the bottom of the deck, activate 1 [Main] effect on this card's Option side.",
     "form": "Mega",
     "id": "BT27-016_P1",
-    "illustrator": "To be completed",
+    "illustrator": "sasasi",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -489795,7 +489795,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-01.webp",
+    "cardImage": "assets/images/cards/ST26-01-Sample.webp",
     "cardLv": "Lv.2",
     "cardNumber": "ST26-01",
     "cardType": "Digi-Egg",
@@ -489845,7 +489845,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-02.webp",
+    "cardImage": "assets/images/cards/ST26-02-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "ST26-02",
     "cardType": "Digimon",
@@ -489901,7 +489901,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-03.webp",
+    "cardImage": "assets/images/cards/ST26-03-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "ST26-03",
     "cardType": "Digimon",
@@ -489957,7 +489957,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-04.webp",
+    "cardImage": "assets/images/cards/ST26-04-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "ST26-04",
     "cardType": "Digimon",
@@ -490063,7 +490063,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-06.webp",
+    "cardImage": "assets/images/cards/ST26-06-Sample.webp",
     "cardLv": "-",
     "cardNumber": "ST26-06",
     "cardType": "Tamer",
