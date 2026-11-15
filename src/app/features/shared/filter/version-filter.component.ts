@@ -20,8 +20,7 @@ export class VersionFilterComponent {
   filterStore = inject(FilterStore);
   versionFilter: string[] = this.filterStore.versionFilter();
 
-  // Hidden from the sidebar only: the settings dialog still lists them so saved defaults can be changed
-  versionButtons = VersionButtons.filter((button) => !['Foil', 'Textured', 'Full Art', 'Stamp'].includes(button.value));
+  versionButtons = VersionButtons;
 
   filterChange = effect(() => {
     this.versionFilter = this.filterStore.versionFilter();

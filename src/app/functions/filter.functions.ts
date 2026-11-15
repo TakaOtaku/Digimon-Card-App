@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { DigimonCard, ICountCard, IFilter, ISave, ISort, RarityAbbreviationMap } from '../../models';
+import { DigimonCard, ICountCard, IFilter, ISave, ISort, RarityAbbreviationMap, VersionButtons } from '../../models';
 import { AdvancedSearchService } from '../services/advanced-search.service';
 
 export type PriceGetter = (cardId: string) => number | null;
@@ -20,6 +20,10 @@ export function filterCards(
   if (advancedSearchQuery && advancedSearchService) {
     filteredCards = advancedSearchService.applyAdvancedSearch(filteredCards, advancedSearchQuery);
   }
+
+  // Only versions the filter offers count: a saved default can still hold ones that were taken out (Foil, Textured, ...),
+  // which would keep alt arts visible while the panel shows just 'Normal'
+  const versionFilter = filter.versionFilter.filter((version) => VersionButtons.some((button) => button.value === version));
 
   const removeCards = new Set<DigimonCard>();
 
@@ -64,7 +68,7 @@ export function filterCards(
       removeCards.add(card);
       return;
     }
-    if (filter.versionFilter.length > 0 && applyVersionFilter(card, filter.versionFilter)) {
+    if (versionFilter.length > 0 && applyVersionFilter(card, versionFilter)) {
       removeCards.add(card);
       return;
     }
