@@ -11,3 +11,18 @@ describe('Appmon form filtering', () => {
     expect(filterCards(cards, emptySave, { ...emptyFilter, formFilter: [form] }, sort, new Map()).map((card) => card.form)).toEqual([form]);
   });
 });
+
+describe('Version filtering', () => {
+  const versions = ['Normal', 'Gold Foil - Alternative Art', 'Textured - Rare Pull'];
+  const cards = versions.map((version, index) => ({ ...dummyCard, id: `TEST-${index}`, version }));
+  const sort = { ascOrder: true, sortBy: { name: 'ID', element: 'id' } };
+  const pick = (versionFilter: string[]) => filterCards(cards, emptySave, { ...emptyFilter, versionFilter }, sort, new Map()).map((card) => card.version);
+
+  it('keeps only Normal cards when Normal is selected', () => {
+    expect(pick(['Normal'])).toEqual(['Normal']);
+  });
+
+  it('ignores saved versions the filter no longer offers', () => {
+    expect(pick(['Normal', 'Foil', 'Textured', 'Full Art', 'Stamp'])).toEqual(['Normal']);
+  });
+});
