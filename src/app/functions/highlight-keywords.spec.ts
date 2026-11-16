@@ -30,9 +30,9 @@ describe('highlightKeywords', () => {
     expect(highlightKeywords('[Assembly\u00a0-9]')).toContain('kw-assembly');
   });
 
-  it('colors DigiXros green like Assembly, and Digivolve orange', () => {
+  it('colors DigiXros green like Assembly, and Digivolve blue', () => {
     expect(highlightKeywords('[DigiXros -2] [A] x [B]')).toContain('<span class="kw kw-assembly">[DigiXros -2]</span>');
-    expect(highlightKeywords('[Digivolve] Lv.5: Cost 3')).toContain('<span class="kw kw-angle">[Digivolve]</span>');
+    expect(highlightKeywords('[Digivolve] Lv.5: Cost 3')).toContain('<span class="kw kw-bracket">[Digivolve]</span>');
   });
 
   it('finds the opponent phase timings', () => {
@@ -42,6 +42,24 @@ describe('highlightKeywords', () => {
   it('lets long keywords wrap and keeps short ones in one piece', () => {
     expect(highlightKeywords('＜Decode (Lv.4 or lower w/[Gammamon] in text or the [VB] trait)＞')).toContain('kw kw-angle kw-long');
     expect(highlightKeywords('[On Play]')).not.toContain('kw-long');
+  });
+
+  it('colors Rule, Hand, Counter, Link, Twice Per Turn and Overflow like the cards', () => {
+    expect(highlightKeywords('[Rule] Name: x')).toContain('kw kw-rule');
+    expect(highlightKeywords('[Hand] x')).toContain('kw kw-hand');
+    expect(highlightKeywords('[Counter] x')).toContain('kw kw-hand');
+    expect(highlightKeywords('[Link] [Appmon] trait')).toContain('<span class="kw kw-assembly">[Link]</span>');
+    expect(highlightKeywords('[Twice Per Turn] x')).toContain('kw kw-once');
+    expect(highlightKeywords('Overflow ＜-3＞ (lose 3 memory.)')).toContain('kw-overflow');
+  });
+
+  it('colors the names of card colors outside brackets only', () => {
+    const html = highlightKeywords('Delete 1 red, green or white Digimon with [Blue Flare] in its text.');
+    expect(html).toContain('<span class="kc kc-red">red</span>');
+    expect(html).toContain('<span class="kc kc-green">green</span>');
+    expect(html).toContain('<span class="kc kc-white">white</span>');
+    expect(html).not.toContain('kc-blue');
+    expect(html).toContain('[Blue Flare]');
   });
 
   it('leaves plain text alone', () => {

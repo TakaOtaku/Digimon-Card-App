@@ -114,15 +114,70 @@ h2.text-xs {
   background: #b8571a;
 }
 
-// [Assembly -4] and [DigiXros -2] are green on the cards
+// [Assembly -4], [DigiXros -2] and [Link] are green on the cards
 .kw-assembly {
   background: #1f7a52;
 }
 
-// [Once Per Turn] is red on the cards
+// [Once Per Turn] and [Twice Per Turn] are red on the cards
 .kw-once,
 .kw-other {
   background: #b8243f;
+}
+
+// [Rule] is black
+.kw-rule {
+  background: #11151c;
+}
+
+// [Hand] and [Counter] are purple-pink
+.kw-hand {
+  background: #94357f;
+}
+
+// Overflow <-3> is grey
+.kw-overflow {
+  background: #5d6878;
+}
+
+// Card colors named in the text, like the colored words on the wiki
+.kc {
+  display: inline;
+  padding: 0 0.35em;
+  border-radius: 0.3em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kc-red {
+  background: #c4343b;
+}
+
+.kc-blue {
+  background: #2b78d6;
+}
+
+.kc-yellow {
+  background: #f5c518;
+  color: #1a1a1a;
+}
+
+.kc-green {
+  background: #1f8f63;
+}
+
+.kc-black {
+  background: #14171d;
+}
+
+.kc-purple {
+  background: #7459c4;
+}
+
+.kc-white {
+  background: #f1f5f9;
+  color: #1a1a1a;
 }
 
 .primary-color {
