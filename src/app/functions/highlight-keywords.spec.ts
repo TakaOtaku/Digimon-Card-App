@@ -47,7 +47,9 @@ describe('highlightKeywords', () => {
   it('colors Rule, Hand, Counter, Link, Twice Per Turn and Overflow like the cards', () => {
     expect(highlightKeywords('[Rule] Name: x')).toContain('kw kw-rule');
     expect(highlightKeywords('[Hand] x')).toContain('kw kw-hand');
-    expect(highlightKeywords('[Counter] x')).toContain('kw kw-hand');
+    expect(highlightKeywords('[Counter] x')).toContain('kw kw-bracket');
+    expect(highlightKeywords('[Trash] x')).toContain('kw kw-hand');
+    expect(highlightKeywords('[Arts Digivolve] x')).toContain('kw kw-assembly');
     expect(highlightKeywords('[Link] [Appmon] trait')).toContain('<span class="kw kw-assembly">[Link]</span>');
     expect(highlightKeywords('[Twice Per Turn] x')).toContain('kw kw-once');
     expect(highlightKeywords('Overflow ＜-3＞ (lose 3 memory.)')).toContain('kw-overflow');
@@ -60,6 +62,18 @@ describe('highlightKeywords', () => {
     expect(html).toContain('<span class="kc kc-white">white</span>');
     expect(html).not.toContain('kc-blue');
     expect(html).toContain('[Blue Flare]');
+  });
+
+  it('colors capitalised colors in requirements and token descriptions', () => {
+    expect(highlightKeywords('[DNA Digivolve] Blue Lv.4 + Green Lv.4 : Cost 0')).toContain('<span class="kc kc-blue">Blue</span>');
+    expect(highlightKeywords('Token (Digimon/Red/6000 DP/＜Rush＞)')).toContain('<span class="kc kc-red">Red</span>');
+  });
+
+  it('italicises text in quotation marks, keywords inside included', () => {
+    expect(highlightKeywords('gains "[On Deletion] draw 1." for the turn')).toBe(
+      'gains <em>"<span class="kw kw-bracket">[On Deletion]</span> draw 1."</em> for the turn',
+    );
+    expect(highlightKeywords('He said “hello” twice')).toBe('He said <em>“hello”</em> twice');
   });
 
   it('leaves plain text alone', () => {

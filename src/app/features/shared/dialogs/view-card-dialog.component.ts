@@ -148,7 +148,7 @@ import { TooltipModule } from 'primeng/tooltip';
               [ngStyle]="{
                 backgroundColor: this.colorMap.get(digivolveCondition.color),
               }">
-              <span class="absolute left-[5px] top-[2px] text-2xs">Lv. {{ digivolveCondition.level }}</span>
+              <span class="absolute left-[5px] top-[2px] text-2xs">{{ isNumber(digivolveCondition.level) ? 'Lv. ' + digivolveCondition.level : digivolveCondition.level }}</span>
               <span class="absolute bottom-[0] left-[13px] text-sm font-bold">{{ digivolveCondition.cost }}</span>
             </div>
           </div>
@@ -396,6 +396,7 @@ export class ViewCardDialogComponent {
   }
 
   highlightKeywords = highlightKeywords;
+  isNumber = (value: string) => /^\d+$/.test(value);
 
   closeViewCard() {
     this.dialogStore.showViewCardDialog(false);

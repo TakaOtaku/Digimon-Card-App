@@ -127,7 +127,10 @@ export class CardDetailPanelComponent {
       // The color of the Digimon it digivolves from tints the tile instead of showing as a word
       ...(card.digivolveCondition ?? []).map((c) => {
         const colors = colorsOf(c.color);
-        return { label: `From Lv.${c.level}${colors.length ? '' : ' ' + c.color}`.trim(), value: c.cost, colors };
+        // Appmon and Hybrid levels (Stnd., Tamer, ...) are not numbers: no "Lv." and no "All"
+        const level = /^\d+$/.test(c.level) ? `Lv.${c.level}` : c.level;
+        const colorText = colors.length || c.color === 'All' ? '' : ' ' + c.color;
+        return { label: `From ${level}${colorText}`.trim(), value: c.cost, colors };
       }),
     ];
     return stats.filter((s) => filled(s.value)).map((s) => ({ ...s, style: tileStyle(s.colors) }));

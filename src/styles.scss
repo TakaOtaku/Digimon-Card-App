@@ -140,6 +140,11 @@ h2.text-xs {
   background: #5d6878;
 }
 
+// Quoted text on a card is italic
+em {
+  font-style: italic;
+}
+
 // Card colors named in the text, like the colored words on the wiki
 .kc {
   display: inline;
