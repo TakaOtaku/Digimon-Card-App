@@ -545,16 +545,36 @@ function setPlaysetCompletion(cards: DigimonCard[], collection: ICountCard[], se
   return ReleaseOrder.filter((set) => bySet.has(set)).map((set) => bySet.get(set)!);
 }
 
-/** Swaps effect keywords like [On Play] for their icon images (rendered via innerHTML). */
-export function replaceWithImageTags(effect: string): string {
-  let replacedText = effect;
-  for (const [pattern, imageTag, tooltip] of replacements) {
-    replacedText = replacedText.replace(
-      pattern,
-      `<img class="inline h-4 tooltip-keyword" data-tooltip="${tooltip}" src="assets/images/keywords/${imageTag}.webp"/>`,
-    );
+const escapeHtml = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/**
+ * Wraps the keywords of an effect text, like [On Play] or ＜Blocker＞, in a bold colored span (rendered via innerHTML).
+ * Known keywords come from the replacement table, any other ＜...＞ is a keyword too. The text itself is HTML-escaped.
+ */
+export function highlightKeywords(effect: string): string {
+  const found: { start: number; end: number; tooltip: string }[] = [];
+  for (const [pattern, , tooltip] of replacements) {
+    for (const m of effect.matchAll(new RegExp(pattern.source, 'g'))) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip });
   }
-  return replacedText;
+  for (const m of effect.matchAll(/＜[^＞]+＞/g)) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
+
+  // Longest first, so ＜Decode ([Aegiomon])＞ wins over a shorter pattern inside it
+  const matches: { start: number; end: number; tooltip: string }[] = [];
+  for (const m of found.sort((x, y) => y.end - y.start - (x.end - x.start) || x.start - y.start)) {
+    if (!matches.some((k) => m.start < k.end && m.end > k.start)) matches.push(m);
+  }
+  matches.sort((x, y) => x.start - y.start);
+
+  let html = '';
+  let at = 0;
+  for (const m of matches) {
+    const text = effect.slice(m.start, m.end);
+    const kind = text.startsWith('＜') ? 'kw-angle' : text.startsWith('[') ? 'kw-bracket' : 'kw-other';
+    html += escapeHtml(effect.slice(at, m.start));
+    html += `<span class="kw ${kind}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
+    at = m.end;
+  }
+  return html + escapeHtml(effect.slice(at));
 }
 
 export function withoutJ(id: string): string {

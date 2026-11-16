@@ -1,11 +1,20 @@
+import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { formatId, isOptionType, replaceWithImageTags } from '@functions';
+import { formatId, isOptionType, highlightKeywords } from '@functions';
 import { DigimonCard } from '@models';
 import { DialogStore } from '@store';
 
 // Wiki data uses '-' for "no value"
 const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim() !== '';
+
+const CARD_COLORS = ['Red', 'Blue', 'Yellow', 'Green', 'Black', 'Purple', 'White'];
+// "Red/Black" gives ['Red', 'Black']; anything that is not a card color gives no dots
+const colorsOf = (value?: string) =>
+  (value ?? '')
+    .split(/[/,&]/)
+    .map((c) => c.trim())
+    .filter((c) => CARD_COLORS.includes(c));
 
 @Component({
   selector: 'digimon-card-detail-panel',
@@ -31,8 +40,13 @@ const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim
         </div>
 
         <div class="flex flex-wrap gap-1.5">
-          @for (chip of chips(); track chip) {
-            <span class="rounded-full border border-line bg-ink-2 px-2.5 py-0.5 text-xs text-fg">{{ chip }}</span>
+          @for (chip of chips(); track chip.text) {
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-line bg-ink-2 px-2.5 py-0.5 text-xs text-fg">
+              @for (color of chip.colors; track color) {
+                <span class="h-2.5 w-2.5 rounded-full border border-white/30" [ngClass]="color" [title]="color"></span>
+              }
+              {{ chip.text }}
+            </span>
           }
         </div>
 
@@ -40,7 +54,12 @@ const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim
           <dl class="m-0 grid grid-cols-2 gap-2">
             @for (stat of stats(); track stat.label) {
               <div class="rounded-lg bg-ink-2 px-3 py-2">
-                <dt class="text-[11px] uppercase tracking-wider text-muted">{{ stat.label }}</dt>
+                <dt class="flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-muted">
+                  {{ stat.label }}
+                  @for (color of stat.colors; track color) {
+                    <span class="h-2.5 w-2.5 rounded-full border border-white/30" [ngClass]="color" [title]="color"></span>
+                  }
+                </dt>
                 <dd class="m-0 font-mono text-sm font-semibold text-fg">{{ stat.value }}</dd>
               </div>
             }
@@ -62,7 +81,7 @@ const filled = (value?: string) => !!value && value.trim() !== '-' && value.trim
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ImgFallbackDirective],
+  imports: [ImgFallbackDirective, NgClass],
 })
 export class CardDetailPanelComponent {
   card = input<DigimonCard | null>(null);
@@ -78,18 +97,24 @@ export class CardDetailPanelComponent {
 
   chips = computed(() => {
     const card = this.card()!;
-    return [card.color, card.form, card.attribute, card.type, card.rarity].filter(filled);
+    return [card.color, card.form, card.attribute, card.type, card.rarity]
+      .filter(filled)
+      .map((text) => ({ text, colors: text === card.color ? colorsOf(text) : [] }));
   });
 
   stats = computed(() => {
     const card = this.card()!;
-    const stats = [
+    const stats: { label: string; value: string; colors: string[] }[] = [
       // Options and Dual (Digimon/Option) cards are used, not played: same rule as the full card dialog
-      { label: isOptionType(card.cardType) ? 'Use cost' : 'Play cost', value: card.playCost },
-      { label: 'DP', value: card.dp },
-      { label: 'Link DP', value: card.linkDP },
-      { label: 'Option color req.', value: card.optionCardColourRequirement },
-      ...(card.digivolveCondition ?? []).map((c) => ({ label: `From Lv.${c.level} ${c.color}`.trim(), value: c.cost })),
+      { label: isOptionType(card.cardType) ? 'Use cost' : 'Play cost', value: card.playCost, colors: [] },
+      { label: 'DP', value: card.dp, colors: [] },
+      { label: 'Link DP', value: card.linkDP, colors: [] },
+      { label: 'Option color req.', value: card.optionCardColourRequirement, colors: colorsOf(card.optionCardColourRequirement) },
+      // The color of the Digimon it digivolves from gets dots instead of a word
+      ...(card.digivolveCondition ?? []).map((c) => {
+        const colors = colorsOf(c.color);
+        return { label: `From Lv.${c.level}${colors.length ? '' : ' ' + c.color}`.trim(), value: c.cost, colors };
+      }),
     ];
     return stats.filter((s) => filled(s.value));
   });
@@ -114,7 +139,7 @@ export class CardDetailPanelComponent {
       { label: 'Link effect', text: card.linkEffect },
     ]
       .filter((e) => filled(e.text))
-      .map((e) => ({ label: e.label, html: replaceWithImageTags(e.text) }));
+      .map((e) => ({ label: e.label, html: highlightKeywords(e.text) }));
   });
 
 

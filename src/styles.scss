@@ -82,6 +82,23 @@ h2.text-xs {
   color: var(--dc-label) !important;
 }
 
+// Effect keywords: bold colored text instead of images
+.kw {
+  font-weight: 700;
+}
+
+.kw-bracket {
+  color: var(--dc-accent);
+}
+
+.kw-angle {
+  color: #ffb454;
+}
+
+.kw-other {
+  color: #ff8a80;
+}
+
 .primary-color {
   color: var(--primary-color);
 }
