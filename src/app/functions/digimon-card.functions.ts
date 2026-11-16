@@ -559,17 +559,20 @@ const KEYWORD_FAMILIES = [
   /\[Twice Per Turn\]/g,
 ];
 
-// Card colors named in an effect text ("red or blue Digimon") become small colored labels, like on the wiki
-const COLOR_WORDS = /\b(red|blue|yellow|green|black|purple|white)\b/g;
+// Card colors named in a text ("red or blue Digimon", "Blue Lv.4", "Digimon/Red/6000 DP") become small colored labels, like on the wiki
+const COLOR_WORDS = /\b([Rr]ed|[Bb]lue|[Yy]ellow|[Gg]reen|[Bb]lack|[Pp]urple|[Ww]hite)\b/g;
+
+// Text a card gives out in quotation marks is shown in italics
+const QUOTES = /"[^"\n]*"|“[^”\n]*”/g;
 
 /** The badge style of a keyword, picked by how the printed card colors it. */
 function keywordKind(text: string): string {
   if (text.startsWith('＜')) return 'kw-angle';
   if (text.startsWith('Overflow')) return 'kw-overflow';
   if (text === '[Once Per Turn]' || text === '[Twice Per Turn]') return 'kw-once';
-  if (text.startsWith('[Assembly') || text.startsWith('[DigiXros') || text === '[Link]') return 'kw-assembly';
+  if (text.startsWith('[Assembly') || text.startsWith('[DigiXros') || text === '[Link]' || text === '[Arts Digivolve]') return 'kw-assembly';
   if (text === '[Rule]') return 'kw-rule';
-  if (text === '[Hand]' || text === '[Counter]') return 'kw-hand';
+  if (text === '[Hand]' || text === '[Trash]') return 'kw-hand';
   if (text.startsWith('[')) return 'kw-bracket';
   return 'kw-other';
 }
@@ -601,7 +604,7 @@ export function highlightKeywords(rawEffect: string): string {
   });
   for (const m of effect.matchAll(COLOR_WORDS)) {
     if (outside[m.index!] && outside[m.index! + m[0].length - 1]) {
-      found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '', cls: `kc kc-${m[0]}` });
+      found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '', cls: `kc kc-${m[0].toLowerCase()}` });
     }
   }
 
@@ -612,16 +615,35 @@ export function highlightKeywords(rawEffect: string): string {
   }
   matches.sort((x, y) => x.start - y.start);
 
-  let html = '';
-  let at = 0;
-  for (const m of matches) {
-    const text = effect.slice(m.start, m.end);
-    const cls = m.cls ?? `kw ${keywordKind(text)}${text.length > LONG_KEYWORD ? ' kw-long' : ''}`;
-    html += escapeHtml(effect.slice(at, m.start));
-    html += `<span class="${cls}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
-    at = m.end;
+  // Quote boundaries inside a keyword are ignored, so a badge is never cut in two
+  const inside = (pos: number) => matches.some((m) => pos > m.start && pos < m.end);
+  const quoteStarts = new Set<number>();
+  const quoteEnds = new Set<number>();
+  for (const q of effect.matchAll(QUOTES)) {
+    if (!inside(q.index!) && !inside(q.index! + q[0].length)) {
+      quoteStarts.add(q.index!);
+      quoteEnds.add(q.index! + q[0].length);
+    }
   }
-  return html + escapeHtml(effect.slice(at));
+  const cuts = [...new Set([0, effect.length, ...matches.flatMap((m) => [m.start, m.end]), ...quoteStarts, ...quoteEnds])].sort((x, y) => x - y);
+
+  let html = '';
+  for (let i = 0; i < cuts.length - 1; i++) {
+    const start = cuts[i];
+    const end = cuts[i + 1];
+    if (quoteEnds.has(start)) html += '</em>';
+    if (quoteStarts.has(start)) html += '<em>';
+    const m = matches.find((k) => k.start === start);
+    if (m) {
+      const text = effect.slice(m.start, m.end);
+      const cls = m.cls ?? `kw ${keywordKind(text)}${text.length > LONG_KEYWORD ? ' kw-long' : ''}`;
+      html += `<span class="${cls}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
+    } else {
+      html += escapeHtml(effect.slice(start, end));
+    }
+  }
+  if (quoteEnds.has(effect.length)) html += '</em>';
+  return html;
 }
 
 export function withoutJ(id: string): string {
