@@ -82,6 +82,104 @@ h2.text-xs {
   color: var(--dc-label) !important;
 }
 
+// Effect keywords look like the badges printed on the cards: a colored pill with bold white text
+.kw {
+  display: inline-block;
+  padding: 0 0.45em;
+  border-radius: 0.3em;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9em;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+// Long keywords like ＜Decode (Lv.4 or lower w/[Gammamon] in text or ...)＞ wrap, each line keeping its own pill ends
+.kw-long {
+  display: inline;
+  padding: 0.05em 0.45em;
+  white-space: normal;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+// [When Digivolving], [When Attacking], [On Play] ...
+.kw-bracket {
+  background: #2d6cc0;
+}
+
+// ＜Blocker＞, ＜Security Attack +1＞ ...
+.kw-angle {
+  background: #b8571a;
+}
+
+// [Assembly -4], [DigiXros -2] and [Link] are green on the cards
+.kw-assembly {
+  background: #1f7a52;
+}
+
+// [Once Per Turn] and [Twice Per Turn] are red on the cards
+.kw-once,
+.kw-other {
+  background: #b8243f;
+}
+
+// [Rule] is black
+.kw-rule {
+  background: #11151c;
+}
+
+// [Hand] and [Counter] are purple-pink
+.kw-hand {
+  background: #94357f;
+}
+
+// Overflow <-3> is grey
+.kw-overflow {
+  background: #5d6878;
+}
+
+// Card colors named in the text, like the colored words on the wiki
+.kc {
+  display: inline;
+  padding: 0 0.35em;
+  border-radius: 0.3em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.kc-red {
+  background: #c4343b;
+}
+
+.kc-blue {
+  background: #2b78d6;
+}
+
+.kc-yellow {
+  background: #f5c518;
+  color: #1a1a1a;
+}
+
+.kc-green {
+  background: #1f8f63;
+}
+
+.kc-black {
+  background: #14171d;
+}
+
+.kc-purple {
+  background: #7459c4;
+}
+
+.kc-white {
+  background: #f1f5f9;
+  color: #1a1a1a;
+}
+
 .primary-color {
   color: var(--primary-color);
 }

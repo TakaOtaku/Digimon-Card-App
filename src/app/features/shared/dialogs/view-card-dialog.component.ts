@@ -1,7 +1,7 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { formatId, isDigimonType, isOptionType, replaceWithImageTags, withoutJ } from '@functions';
+import { formatId, isDigimonType, isOptionType, highlightKeywords, withoutJ } from '@functions';
 import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { CardMarketService } from '@services';
@@ -156,32 +156,32 @@ import { TooltipModule } from 'primeng/tooltip';
             <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Special Digivolve</p>
             <span
               class="font-white whitespace-pre-wrap font-bold leading-[1.7em]"
-              [innerHTML]="replaceWithImageTags(card.specialDigivolve)">
+              [innerHTML]="highlightKeywords(card.specialDigivolve)">
             </span>
           </div>
           <div *ngIf="card.dnaDigivolve !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-DNA-Digivolve">
             <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">DNA Digivolve</p>
-            <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.dnaDigivolve)">
+            <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="highlightKeywords(card.dnaDigivolve)">
             </span>
           </div>
           <div *ngIf="card.digiXros !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-DigiXros">
             <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">DigiXros</p>
-            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.digiXros)"></p>
+            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="highlightKeywords(card.digiXros)"></p>
           </div>
           <div *ngIf="card.assembly !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-Assembly">
             <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Assembly</p>
-            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.assembly)"></p>
+            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="highlightKeywords(card.assembly)"></p>
           </div>
           <div
             *ngIf="card.burstDigivolve && card.burstDigivolve !== '-'"
             class="my-0.5 flex w-full flex-col rounded-full"
             id="Digimon-BurstDigivolve">
             <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Burst Digivolve</p>
-            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.burstDigivolve)"></p>
+            <p class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="highlightKeywords(card.burstDigivolve)"></p>
           </div>
           <div *ngIf="card.aceEffect && card.aceEffect !== '-'" class="my-0.5 flex w-full flex-col rounded-full" id="Digimon-ACE">
             <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">ACE</p>
-            <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="replaceWithImageTags(card.aceEffect)">
+            <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="highlightKeywords(card.aceEffect)">
             </span>
           </div>
           <div
@@ -199,32 +199,32 @@ import { TooltipModule } from 'primeng/tooltip';
       <div class="my-4 max-w-full" id="Effects">
         <div *ngIf="card.rule !== '-'" class="flex flex-col" id="Digimon-Rule">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Rule</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.rule)"></span>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.rule)"></span>
         </div>
 
         <div *ngIf="card.effect !== '-'" class="flex flex-col" id="Digimon-Effect">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Effect</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.effect)"></span>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.effect)"></span>
         </div>
 
         <div *ngIf="card.dualEffect && card.dualEffect !== '-'" class="flex flex-col" id="Dual-Effect">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Dual Effect</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.dualEffect)"></span>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.dualEffect)"></span>
         </div>
 
         <div *ngIf="card.optionCardEffect && card.optionCardEffect !== '-'" class="flex flex-col" id="Option-Card-Effect">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Option Card Effect</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.optionCardEffect)"></span>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.optionCardEffect)"></span>
         </div>
 
         <div *ngIf="card.digivolveEffect !== '-'" class="flex flex-col" id="Digimon-Digivolve-Effect">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Inherited effect</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.digivolveEffect)"></span>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.digivolveEffect)"></span>
         </div>
 
         <div *ngIf="card.securityEffect !== '-'" class="flex flex-col" id="Security-Effect">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Security effect</p>
-          <div class="font-white flex flex-row whitespace-pre-wrap font-bold" [innerHTML]="replaceWithImageTags(card.securityEffect)"></div>
+          <div class="font-white flex flex-row whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.securityEffect)"></div>
         </div>
 
         <div *ngIf="card.linkEffect !== '-'" class="flex flex-col" id="Digimon-Link">
@@ -233,15 +233,15 @@ import { TooltipModule } from 'primeng/tooltip';
             <p class="font-bold">Requirements:</p>
             <span
               class="font-white whitespace-pre-wrap font-bold col-span-4"
-              [innerHTML]="replaceWithImageTags(card.linkRequirement)"></span>
+              [innerHTML]="highlightKeywords(card.linkRequirement)"></span>
           </div>
           <div class="grid grid-cols-5">
             <p class="font-bold">Link Effect:</p>
-            <span class="font-white whitespace-pre-wrap font-bold col-span-4" [innerHTML]="replaceWithImageTags(card.linkEffect)"></span>
+            <span class="font-white whitespace-pre-wrap font-bold col-span-4" [innerHTML]="highlightKeywords(card.linkEffect)"></span>
           </div>
           <div class="grid grid-cols-5">
             <p class="font-bold">Link DP:</p>
-            <span class="font-white whitespace-pre-wrap font-bold col-span-4" [innerHTML]="replaceWithImageTags(card.linkDP)"></span>
+            <span class="font-white whitespace-pre-wrap font-bold col-span-4" [innerHTML]="highlightKeywords(card.linkDP)"></span>
           </div>
         </div>
       </div>
@@ -395,7 +395,7 @@ export class ViewCardDialogComponent {
     this.setupView();
   }
 
-  replaceWithImageTags = replaceWithImageTags;
+  highlightKeywords = highlightKeywords;
 
   closeViewCard() {
     this.dialogStore.showViewCardDialog(false);

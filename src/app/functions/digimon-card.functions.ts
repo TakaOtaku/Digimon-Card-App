@@ -545,16 +545,83 @@ function setPlaysetCompletion(cards: DigimonCard[], collection: ICountCard[], se
   return ReleaseOrder.filter((set) => bySet.has(set)).map((set) => bySet.get(set)!);
 }
 
-/** Swaps effect keywords like [On Play] for their icon images (rendered via innerHTML). */
-export function replaceWithImageTags(effect: string): string {
-  let replacedText = effect;
-  for (const [pattern, imageTag, tooltip] of replacements) {
-    replacedText = replacedText.replace(
-      pattern,
-      `<img class="inline h-4 tooltip-keyword" data-tooltip="${tooltip}" src="assets/images/keywords/${imageTag}.webp"/>`,
-    );
+const escapeHtml = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// Keywords longer than this (Decode, Partition, ...) may wrap onto several lines instead of running out of the box
+const LONG_KEYWORD = 22;
+
+// Keyword families with a number or phase in them. The wiki writes "[Assembly\u00a0-4]" with a no-break space,
+// so every pattern runs on text where that space is a normal one.
+const KEYWORD_FAMILIES = [
+  /\[Assembly [-\u2212\u2013]\d+\]/g,
+  /\[DigiXros [-\u2212\u2013]\d+\]/g,
+  /\[(?:Start|End) of (?:Your|Opponent's) (?:Turn|Main Phase|Attack)\]/g,
+  /\[Twice Per Turn\]/g,
+];
+
+// Card colors named in an effect text ("red or blue Digimon") become small colored labels, like on the wiki
+const COLOR_WORDS = /\b(red|blue|yellow|green|black|purple|white)\b/g;
+
+/** The badge style of a keyword, picked by how the printed card colors it. */
+function keywordKind(text: string): string {
+  if (text.startsWith('＜')) return 'kw-angle';
+  if (text.startsWith('Overflow')) return 'kw-overflow';
+  if (text === '[Once Per Turn]' || text === '[Twice Per Turn]') return 'kw-once';
+  if (text.startsWith('[Assembly') || text.startsWith('[DigiXros') || text === '[Link]') return 'kw-assembly';
+  if (text === '[Rule]') return 'kw-rule';
+  if (text === '[Hand]' || text === '[Counter]') return 'kw-hand';
+  if (text.startsWith('[')) return 'kw-bracket';
+  return 'kw-other';
+}
+
+/**
+ * Wraps the keywords of an effect text, like [On Play] or ＜Blocker＞, in a colored badge and names of card colors in a
+ * label of that color (rendered via innerHTML). Known keywords come from the replacement table, any other ＜...＞ is a
+ * keyword too. The text itself is HTML-escaped.
+ */
+export function highlightKeywords(rawEffect: string): string {
+  const effect = rawEffect.replace(/\u00a0/g, ' ');
+  type Found = { start: number; end: number; tooltip: string; cls?: string };
+  const found: Found[] = [];
+  for (const [pattern, , tooltip] of replacements) {
+    for (const m of effect.matchAll(new RegExp(pattern.source, 'g'))) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip });
   }
-  return replacedText;
+  for (const pattern of KEYWORD_FAMILIES) {
+    for (const m of effect.matchAll(pattern)) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
+  }
+  for (const m of effect.matchAll(/＜[^＞]+＞/g)) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
+
+  // Color names count only outside brackets, so [Blue Flare] or a card name stays plain
+  let depth = 0;
+  const outside = [...effect].map((c) => {
+    if (c === '[' || c === '＜') depth++;
+    const ok = depth === 0;
+    if (c === ']' || c === '＞') depth = Math.max(0, depth - 1);
+    return ok;
+  });
+  for (const m of effect.matchAll(COLOR_WORDS)) {
+    if (outside[m.index!] && outside[m.index! + m[0].length - 1]) {
+      found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '', cls: `kc kc-${m[0]}` });
+    }
+  }
+
+  // Longest first, so ＜Decode ([Aegiomon])＞ wins over a shorter pattern inside it
+  const matches: Found[] = [];
+  for (const m of found.sort((x, y) => y.end - y.start - (x.end - x.start) || x.start - y.start)) {
+    if (!matches.some((k) => m.start < k.end && m.end > k.start)) matches.push(m);
+  }
+  matches.sort((x, y) => x.start - y.start);
+
+  let html = '';
+  let at = 0;
+  for (const m of matches) {
+    const text = effect.slice(m.start, m.end);
+    const cls = m.cls ?? `kw ${keywordKind(text)}${text.length > LONG_KEYWORD ? ' kw-long' : ''}`;
+    html += escapeHtml(effect.slice(at, m.start));
+    html += `<span class="${cls}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
+    at = m.end;
+  }
+  return html + escapeHtml(effect.slice(at));
 }
 
 export function withoutJ(id: string): string {
