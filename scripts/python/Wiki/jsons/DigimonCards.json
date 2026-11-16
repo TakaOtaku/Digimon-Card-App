@@ -50337,7 +50337,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] If you have a Tamer with [Matt Ishida]\u00a0in its name, \uff1cDraw 1\uff1e\n If you don't have a Tamer with [Matt Ishida]\u00a0in its name, you may play 1 Tamer card with [Matt Ishida]\u00a0in its name from your hand with the play cost reduced by 3.",
+    "effect": "[When Digivolving] If you have a Tamer with [Matt Ishida]\u00a0in its name, \uff1cDraw 1\uff1e If you don't have a Tamer with [Matt Ishida]\u00a0in its name, you may play 1 Tamer card with [Matt Ishida]\u00a0in its name from your hand with the play cost reduced by 3.",
     "form": "Champion",
     "id": "BT15-024",
     "illustrator": "Kenji Watanabe",
@@ -50498,7 +50498,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] \uff1cDraw 1\uff1e Then, if you have 5 or more cards in your hand, trash 1 card in your hand.\n[All Turns] [Once Per Turn] When one of your Digimon's effects adds cards to your hand, 1 of your opponent's Digimon or Tamers can't suspend until the end of their turn.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e [On Play] [When Digivolving] \uff1cDraw 1\uff1e Then, if you have 5 or more cards in your hand, trash 1 card in your hand.\n[All Turns] [Once Per Turn] When one of your Digimon's effects adds cards to your hand, 1 of your opponent's Digimon or Tamers can't suspend until the end of their turn.",
     "form": "Ultimate",
     "id": "BT15-026",
     "illustrator": "Kenji Watanabe",
@@ -50744,7 +50744,7 @@
     "dnaDigivolve": "-",
     "dp": "10000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n[On Play] [On Deletion] Trash the top 2 digivolution cards of all of your opponent's Digimon. Then, return 1 of your opponent's Digimon with no digivolution cards to the bottom of the deck.",
+    "effect": "\uff1cBlocker\uff1e [On Play] [On Deletion] Trash the top 2 digivolution cards of all of your opponent's Digimon. Then, return 1 of your opponent's Digimon with no digivolution cards to the bottom of the deck.",
     "form": "Mega",
     "id": "BT15-030",
     "illustrator": "Ishibashi Yosuke",
@@ -54406,13 +54406,13 @@
         "id": "BT15-085_P1",
         "illustrator": "No Illustrator",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT15-085_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+        "type": "Rare (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [
@@ -54478,19 +54478,19 @@
         "id": "BT15-086_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT15-086_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+        "type": "Rare (Pre Release Stamp)\u00a0"
       },
       {
         "id": "BT15-086_P2",
         "illustrator": "No Illustrator",
         "note": "Judge Pack 6",
-        "type": "Foil - Judge Stamp -\u00a0Alternative Art"
+        "type": "Alternative Art (Judge Stamp)\u00a0"
       }
     ],
     "JAAs": [
@@ -54515,7 +54515,7 @@
     "color": "Black",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[All Turns] While this Digimon has the [Machine], [Cyborg] or [SoC]\u00a0trait, it gains \uff1cJamming\uff1e and \uff1cBlocker\uff1e [End of All Turns] You may play 1 [Marvin Jackson] from this Digimon's digivolution cards without paying the cost.",
+    "digivolveEffect": "[All Turns] While this Digimon has the [Machine], [Cyborg] or [SoC]\u00a0trait, it gains \uff1cJamming\uff1e and \uff1cBlocker\uff1e \n[End of All Turns] You may play 1 [Marvin Jackson] from this Digimon's digivolution cards without paying the cost.",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
@@ -54556,19 +54556,19 @@
         "id": "BT15-087_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT15-087_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+        "type": "Rare (Pre Release Stamp)\u00a0"
       },
       {
         "id": "BT15-087_P2",
         "illustrator": "No Illustrator",
         "note": "Judge Pack 6",
-        "type": "Foil - Judge Stamp -\u00a0Alternative Art"
+        "type": "Alternative Art (Judge Stamp)\u00a0"
       }
     ],
     "JAAs": [
@@ -54593,7 +54593,7 @@
     "color": "Black",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[All Turns] While this Digimon has the [X Antibody] or [DigiPolice]\u00a0trait, it gains \uff1cAlliance\uff1e and \uff1cReboot\uff1e [End of All Turns] You may play 1 [Shuu Yulin] from this Digimon's digivolution cards without paying the cost.",
+    "digivolveEffect": "[All Turns] While this Digimon has the [X Antibody] or [DigiPolice]\u00a0trait, it gains \uff1cAlliance\uff1e and \uff1cReboot\uff1e \n[End of All Turns] You may play 1 [Shuu Yulin] from this Digimon's digivolution cards without paying the cost.",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
@@ -54634,7 +54634,7 @@
         "id": "BT15-088_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -54797,7 +54797,7 @@
         "id": "BT15-091_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -54856,7 +54856,7 @@
         "id": "BT15-092_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -55019,7 +55019,7 @@
         "id": "BT15-095_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -55078,13 +55078,13 @@
         "id": "BT15-096_P0",
         "illustrator": "Shin Sasaki",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+        "type": "Rare (Pre Release Stamp)\u00a0"
       },
       {
         "id": "BT15-096_P1",
         "illustrator": "Shin Sasaki",
         "note": "LM-08: LIMITED CARD PACK FINAL CREST",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -55092,7 +55092,7 @@
         "id": "BT15-096_P1-J",
         "illustrator": "Shin Sasaki",
         "note": "LM-08: LIMITED CARD PACK FINAL CREST",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -55202,7 +55202,7 @@
         "id": "BT15-098_P0",
         "illustrator": "No Illustrator",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -55313,7 +55313,7 @@
         "id": "BT15-100_P0",
         "illustrator": "Shin Sasaki",
         "note": "Pre-Release Pack: Exceed Apocalypse",
-        "type": "Foil - Pre Release Stamp -\u00a0Rare"
+        "type": "Rare (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -55372,25 +55372,25 @@
         "id": "BT15-101_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT15-101_P2",
         "illustrator": "Tonamikanji",
         "note": "BT19-20: Special Booster Ver.2.5",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       },
       {
         "id": "BT15-101_P3",
         "illustrator": "Kenji Watanabe",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Secret Rare"
+        "type": "Secret Rare (Foil)\u00a0"
       },
       {
         "id": "BT15-101_P4",
         "illustrator": "Kenji Watanabe",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Gold Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Gold Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -55398,13 +55398,13 @@
         "id": "BT15-101_P1-J",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT15-101_P2-J",
         "illustrator": "Tonamikanji",
         "note": "MetalGarurumon GET Campaign",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -55432,7 +55432,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "While you have a Tamer with [Matt Ishida]\u00a0in its name and your opponent has a 10000 DP or higher Digimon, one of your [Gabumon] may digivolve into this card in your hand for a digivolution cost of 4, ignoring its digivolution requirements.\n\uff1cEvade\uff1e [When Digivolving] 3 of your opponent's Digimon and Tamers can't suspend until the end of their turn.\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, you may unsuspend it.",
+    "effect": "While you have a Tamer with [Matt Ishida]\u00a0in its name and your opponent has a 10000 DP or higher Digimon, one of your [Gabumon] may digivolve into this card in your hand for a digivolution cost of 4, ignoring its digivolution requirements.\n\uff1cEvade\uff1e \n[When Digivolving] 3 of your opponent's Digimon and Tamers can't suspend until the end of their turn.\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, you may unsuspend it.",
     "form": "Mega",
     "id": "BT15-101",
     "illustrator": "Kenji Watanabe",
@@ -55469,13 +55469,13 @@
         "id": "BT15-102_P1",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT15-102_P2",
         "illustrator": "No Illustrator",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Textured - Classic Art -\u00a0Rare Pull"
+        "type": "Rare Pull (Classic Art)\u00a0"
       }
     ],
     "JAAs": [
@@ -55483,13 +55483,13 @@
         "id": "BT15-102_P1-J",
         "illustrator": "Naochika Morishita",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT15-102_P2-J",
         "illustrator": "No Illustrator",
         "note": "BT-15: Booster Exceed Apocalypse",
-        "type": "Textured - Classic Art -\u00a0Rare Pull"
+        "type": "Rare Pull (Classic Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -55568,13 +55568,13 @@
         "id": "BT16-001_P1",
         "illustrator": "p!k@ru",
         "note": "Box Promotion Pack: Beginning Observer",
-        "type": "Foil -\u00a0Box Topper"
+        "type": "Box Topper (Foil)\u00a0"
       },
       {
         "id": "BT16-001_P0",
         "illustrator": "p!k@ru",
         "note": "Pre-Release Pack Beginning Observer",
-        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
       }
     ],
     "JAAs": [
@@ -55582,7 +55582,7 @@
         "id": "BT16-001_P1-J",
         "illustrator": "p!k@ru",
         "note": "Box Promotion Pack: Beginning Observer",
-        "type": "Foil -\u00a0Box Topper"
+        "type": "Box Topper (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -55640,19 +55640,19 @@
         "id": "BT16-002_P0",
         "illustrator": "p!k@ru",
         "note": "Pre-Release Pack Beginning Observer",
-        "type": "Foil - Pre Release Stamp -\u00a0Uncommon"
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
       },
       {
         "id": "BT16-002_P1",
         "illustrator": "p!k@ru",
         "note": "Box Promotion Pack: Beginning Observer",
-        "type": "Foil -\u00a0Box Topper"
+        "type": "Box Topper (Foil)\u00a0"
       },
       {
         "id": "BT16-002_P2",
         "illustrator": "p!k@ru",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Uncommon"
+        "type": "Uncommon (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -55660,7 +55660,7 @@
         "id": "BT16-002_P1-J",
         "illustrator": "p!k@ru",
         "note": "Box Promotion Pack: Beginning Observer",
-        "type": "Foil -\u00a0Box Topper"
+        "type": "Box Topper (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -114417,7 +114417,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[All Turns] When any of your Digimon or Tamers would leave the battle area by your opponent's effects, by suspending this Digimon, 1 of those Digimon or Tamers doesn't leave.\n[All Turns] [Once Per Turn] When this Digimon suspends, delete all of your opponent's Digimon with the lowest play cost.",
+    "effect": "\uff1cReboot\uff1e \uff1cBlocker\uff1e [All Turns] When any of your Digimon or Tamers would leave the battle area by your opponent's effects, by suspending this Digimon, 1 of those Digimon or Tamers doesn't leave.\n[All Turns] [Once Per Turn] When this Digimon suspends, delete all of your opponent's Digimon with the lowest play cost.",
     "form": "Mega",
     "id": "BT23-058",
     "illustrator": "Kakiken",
@@ -114475,7 +114475,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] By trashing 1 Option card in the battle area, delete 1 of your opponent's Digimon with the lowest play cost.\n[All Turns] [Once Per Turn] When Option cards in the battle area are trashed, this Digimon unsuspends. Then, your opponent's Digimon's effects don't affect this Digimon for the turn.",
+    "effect": "\uff1cBlocker\uff1e [On Play] [When Digivolving] [When Attacking] [Once Per Turn] By trashing 1 Option card in the battle area, delete 1 of your opponent's Digimon with the lowest play cost.\n[All Turns] [Once Per Turn] When Option cards in the battle area are trashed, this Digimon unsuspends. Then, your opponent's Digimon's effects don't affect this Digimon for the turn.",
     "form": "Mega",
     "id": "BT23-059",
     "illustrator": "kaz",
@@ -114502,7 +114502,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve] [Justimon: Accel Arm]/[Justimon: Critical Arm]: Cost 1\n[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 3 ",
+    "specialDigivolve": "[Digivolve] [Justimon: Accel Arm]/[Justimon: Critical Arm]: Cost 1[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 3 ",
     "type": "Cyborg/Hudie/CS",
     "version": "Normal"
   },
@@ -114527,7 +114527,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n[On Play] [When Digivolving] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, delete 1 of their Digimon with 8000 DP or less.\n[When Attacking] [Once Per Turn] Activate 1 [On Play] effect on a face-up [Zaxon]\u00a0trait Digimon card in your security stack as an effect of this Digimon.",
+    "effect": "\uff1cSecurity A. +1\uff1e \uff1cReboot\uff1e [On Play] [When Digivolving] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, delete 1 of their Digimon with 8000 DP or less.\n[When Attacking] [Once Per Turn] Activate 1 [On Play] effect on a face-up [Zaxon]\u00a0trait Digimon card in your security stack as an effect of this Digimon.",
     "form": "Mega",
     "id": "BT23-060",
     "illustrator": "tyuga",
@@ -114890,7 +114890,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cScapegoat\uff1e \n[On Play] [When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon. Then, if digivolving from the trash, you may play 1 play cost 3 or lower card with the [Undead] or [CS]\u00a0trait from your trash without paying the cost.",
+    "effect": "\uff1cScapegoat\uff1e [On Play] [When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon. Then, if digivolving from the trash, you may play 1 play cost 3 or lower card with the [Undead] or [CS]\u00a0trait from your trash without paying the cost.",
     "form": "Ultimate",
     "id": "BT23-066",
     "illustrator": "Itohiro",
@@ -114953,7 +114953,7 @@
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
-    "effect": "When this card would be played from the hand, if you have [Angewomon] or [Mirei Mikagura], reduce the play cost by 3.\n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon.",
+    "effect": "When this card would be played from the hand, if you have [Angewomon] or [Mirei Mikagura], reduce the play cost by 3.\n\uff1cBlocker\uff1e [On Play] [When Digivolving] Delete 1 of your opponent's level 4 or lower Digimon.",
     "form": "Ultimate",
     "id": "BT23-067",
     "illustrator": "Gamazo",
@@ -115083,7 +115083,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cExecute\uff1e \n[On Play] [On Deletion] You may play 1 level 5 or lower Digimon card with the [Ghost]\u00a0trait from your trash without paying the cost.\n[All Turns] When another Digimon attacks, by deleting this Digimon, delete 1 of your opponent's level 6 or lower Digimon. If this effect didn't delete your opponent's Digimon, you may end that attack.",
+    "effect": "\uff1cExecute\uff1e [On Play] [On Deletion] You may play 1 level 5 or lower Digimon card with the [Ghost]\u00a0trait from your trash without paying the cost.\n[All Turns] When another Digimon attacks, by deleting this Digimon, delete 1 of your opponent's level 6 or lower Digimon. If this effect didn't delete your opponent's Digimon, you may end that attack.",
     "form": "Mega",
     "id": "BT23-069",
     "illustrator": "k.Dra",
@@ -115155,7 +115155,7 @@
     "dnaDigivolve": "-",
     "dp": "14000",
     "dualEffect": "-",
-    "effect": "\uff1cRush\uff1e \n\uff1cPiercing\uff1e \n[When Digivolving] Delete all of your opponent's Digimon with the highest level. Then, if a card with [Belphemon]\u00a0in its name is in this Digimon's digivolution cards, this Digimon attacks without suspending.\n[End of Attack] This Digimon may digivolve into [Belphemon: Sleep Mode] in the trash, ignoring digivolution requirements and without paying the cost.",
+    "effect": "\uff1cRush\uff1e \uff1cPiercing\uff1e [When Digivolving] Delete all of your opponent's Digimon with the highest level. Then, if a card with [Belphemon]\u00a0in its name is in this Digimon's digivolution cards, this Digimon attacks without suspending.\n[End of Attack] This Digimon may digivolve into [Belphemon: Sleep Mode] in the trash, ignoring digivolution requirements and without paying the cost.",
     "form": "Mega",
     "id": "BT23-070",
     "illustrator": "Nakano Haito",
@@ -115227,7 +115227,7 @@
     "dnaDigivolve": "-",
     "dp": "14000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cExecute\uff1e \n[When Digivolving] Delete 1 of your opponent's Digimon with the highest level. If this effect didn't delete, this Digimon gets +5000 DP for the turn.\n[On Deletion] You may play 1 level 6 or lower Digimon card with the [Ghost]\u00a0trait from your trash without paying the cost.",
+    "effect": "\uff1cPiercing\uff1e \uff1cSecurity A. +1\uff1e \uff1cExecute\uff1e [When Digivolving] Delete 1 of your opponent's Digimon with the highest level. If this effect didn't delete, this Digimon gets +5000 DP for the turn.\n[On Deletion] You may play 1 level 6 or lower Digimon card with the [Ghost]\u00a0trait from your trash without paying the cost.",
     "form": "Mega",
     "id": "BT23-071",
     "illustrator": "k.Dra",
@@ -115279,7 +115279,7 @@
     "dnaDigivolve": "-",
     "dp": "9000",
     "dualEffect": "-",
-    "effect": "[Hand] [Main] By paying 3 cost and placing this card as the bottom digivolution card of your [King Drasil_7D6] or [Mother Eater] in the breeding area, \uff1cDraw 1\uff1e \n[All Turns] When any of your Digimon with the [Royal Knight] or [CS]\u00a0trait are played, by suspending this Digimon, 1 of the played Digimon gains \uff1cRush\uff1e , \uff1cRaid\uff1e , \uff1cReboot\uff1e and \uff1cBlocker\uff1e until your opponent's turn ends. ",
+    "effect": "[Hand] [Main] By paying 3 cost and placing this card as the bottom digivolution card of your [King Drasil_7D6] or [Mother Eater] in the breeding area, \uff1cDraw 1\uff1e [All Turns] When any of your Digimon with the [Royal Knight] or [CS]\u00a0trait are played, by suspending this Digimon, 1 of the played Digimon gains \uff1cRush\uff1e , \uff1cRaid\uff1e , \uff1cReboot\uff1e and \uff1cBlocker\uff1e until your opponent's turn ends. ",
     "form": "Mega",
     "id": "BT23-072",
     "illustrator": "Kakiken",
@@ -115383,7 +115383,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cAlliance\uff1e \n\uff1cReboot\uff1e \n[On Play] [When Digivolving] If you have [Mother Eater] in the breeding area, you may play up to 6 play cost's total worth of Digimon cards with the [Eater]\u00a0trait from your hand without paying the costs.",
+    "effect": "\uff1cAlliance\uff1e \uff1cReboot\uff1e [On Play] [When Digivolving] If you have [Mother Eater] in the breeding area, you may play up to 6 play cost's total worth of Digimon cards with the [Eater]\u00a0trait from your hand without paying the costs.",
     "form": "Eater",
     "id": "BT23-074",
     "illustrator": "Itohiro",
@@ -115487,7 +115487,7 @@
     "dnaDigivolve": "-",
     "dp": "3000",
     "dualEffect": "-",
-    "effect": "[On Play] Add your top security card to the hand. Then, \uff1cRecovery +1 (Deck)\uff1e \n[Your Turn] When this Digimon suspends, 1 of your other Digimon may digivolve into a Digimon card with [Huckmon]\u00a0in its name or the [Royal Knight] or [CS]\u00a0trait in the hand or trash with the digivolution cost reduced by 1.",
+    "effect": "[On Play] Add your top security card to the hand. Then, \uff1cRecovery +1 (Deck)\uff1e [Your Turn] When this Digimon suspends, 1 of your other Digimon may digivolve into a Digimon card with [Huckmon]\u00a0in its name or the [Royal Knight] or [CS]\u00a0trait in the hand or trash with the digivolution cost reduced by 1.",
     "form": "Rookie",
     "id": "BT23-076",
     "illustrator": "banira",
@@ -115539,7 +115539,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n[On Play] Delete 1 of your opponent's Digimon with a play cost of 4 or less.\n[All Turns] When this Digimon suspends, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
+    "effect": "\uff1cBlocker\uff1e [On Play] Delete 1 of your opponent's Digimon with a play cost of 4 or less.\n[All Turns] When this Digimon suspends, \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "form": "Champion",
     "id": "BT23-077",
     "illustrator": "banira",
@@ -116089,7 +116089,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] If you have a [CS]\u00a0trait Digimon, gain 1 memory.\n[On Play] Until your opponent's turn ends, their effects can't reduce the DP of 1 of your [Hudie]\u00a0trait Digimon, and it gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e \n[All Turns] When any of your [Hudie]\u00a0trait Digimon suspend, by suspending this Tamer, you may use 1 single-color [CS]\u00a0trait Option card from your hand without paying the cost.",
+    "effect": "[Start of Your Main Phase] If you have a [CS]\u00a0trait Digimon, gain 1 memory.\n[On Play] Until your opponent's turn ends, their effects can't reduce the DP of 1 of your [Hudie]\u00a0trait Digimon, and it gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e [All Turns] When any of your [Hudie]\u00a0trait Digimon suspend, by suspending this Tamer, you may use 1 single-color [CS]\u00a0trait Option card from your hand without paying the cost.",
     "form": "-",
     "id": "BT23-085",
     "illustrator": "Takase",
@@ -117052,7 +117052,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cAlliance\uff1e \n[On Play] [When Digivolving] You may play 1 play cost 5 or lower [CS]\u00a0trait card from your hand without paying the cost. Then, to 1 of your opponent's Digimon, give -3000 DP for the turn for each of your [Hudie]\u00a0trait Digimon.\n[When Attacking] [Once Per Turn] By returning 1 of your [CS]\u00a0trait Tamers to the hand, activate 1 of this Digimon's [On Play] effects.",
+    "effect": "\uff1cAlliance\uff1e [On Play] [When Digivolving] You may play 1 play cost 5 or lower [CS]\u00a0trait card from your hand without paying the cost. Then, to 1 of your opponent's Digimon, give -3000 DP for the turn for each of your [Hudie]\u00a0trait Digimon.\n[When Attacking] [Once Per Turn] By returning 1 of your [CS]\u00a0trait Tamers to the hand, activate 1 of this Digimon's [On Play] effects.",
     "form": "Champion",
     "id": "BT23-101",
     "illustrator": "Takeuchi Moto",
@@ -117079,7 +117079,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve] Lv.3 w/[CS]\u00a0trait: Cost 4\n[Digivolve] While you have 4 or more [Hudie]\u00a0trait Tamers, [Erika Mishima]: Cost 3 ",
+    "specialDigivolve": "[Digivolve] Lv.3 w/[CS]\u00a0trait: Cost 4[Digivolve] While you have 4 or more [Hudie]\u00a0trait Tamers, [Erika Mishima]: Cost 3 ",
     "type": "Insectoid/Hudie/CS",
     "version": "Normal"
   },
@@ -117141,7 +117141,7 @@
     "dnaDigivolve": "[Digivolve] Lv.5 w/[CS]\u00a0trait: Cost 5 [DNA Digivolve] Yellow Lv.5 + Purple Lv.5\u00a0: Cost 0",
     "dp": "13000",
     "dualEffect": "-",
-    "effect": "\uff1cBarrier\uff1e \n\uff1cPartition ([Angewomon] & [LadyDevimon])\uff1e \n[When Digivolving] You may play 1 level 5 or lower yellow or purple card from your hand or trash without paying the cost. Then, if this Digimon's stack has 2 or more same-level cards, trash the top cards of both players' security stacks so that they have 3 cards left.\n[All Turns] [Once Per Turn] When security stacks are removed from, you may place 1 Digimon as the bottom security card.",
+    "effect": "\uff1cBarrier\uff1e \uff1cPartition ([Angewomon] & [LadyDevimon])\uff1e [When Digivolving] You may play 1 level 5 or lower yellow or purple card from your hand or trash without paying the cost. Then, if this Digimon's stack has 2 or more same-level cards, trash the top cards of both players' security stacks so that they have 3 cards left.\n[All Turns] [Once Per Turn] When security stacks are removed from, you may place 1 Digimon as the bottom security card.",
     "form": "Mega",
     "id": "BT23-102",
     "illustrator": "Gamazo",
@@ -117703,7 +117703,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n[On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
+    "effect": "\uff1cBlocker\uff1e [On Deletion] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "form": "Champion",
     "id": "BT24-010",
     "illustrator": "Souichirou Gunjima",
@@ -117761,7 +117761,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cRush\uff1e \n\uff1cRaid\uff1e ",
+    "effect": "\uff1cRush\uff1e \uff1cRaid\uff1e ",
     "form": "Champion",
     "id": "BT24-011",
     "illustrator": "Kakiken",
@@ -117819,7 +117819,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n[All Turns] When any of your other Digimon with the [Reptile] or [Dragonkin]\u00a0trait would leave the battle area by your opponent's effects, by returning this Digimon to the hand, they don't leave.",
+    "effect": "\uff1cBlocker\uff1e [All Turns] When any of your other Digimon with the [Reptile] or [Dragonkin]\u00a0trait would leave the battle area by your opponent's effects, by returning this Digimon to the hand, they don't leave.",
     "form": "Champion",
     "id": "BT24-012",
     "illustrator": "koki",
@@ -117882,7 +117882,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "When this card is trashed from the hand, if you have 5 or fewer cards in your hand, \uff1cDraw 1\uff1e \n[On Play] [When Attacking] [Once Per Turn] By trashing 1 card in your hand, delete 1 of your opponent's Digimon with 6000 DP or less.",
+    "effect": "When this card is trashed from the hand, if you have 5 or fewer cards in your hand, \uff1cDraw 1\uff1e [On Play] [When Attacking] [Once Per Turn] By trashing 1 card in your hand, delete 1 of your opponent's Digimon with 6000 DP or less.",
     "form": "Champion",
     "id": "BT24-013",
     "illustrator": "Kazumasa Yasukuni",
@@ -117959,7 +117959,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cDecode ([Aegiomon])\uff1e \n[When Digivolving] 1 of your opponent's Digimon gets -5000 DP for the turn. Then, if you have 3 or fewer security cards, delete 1 of your opponent's Digimon with 7000 DP or less.",
+    "effect": "\uff1cSecurity A. +1\uff1e \uff1cDecode ([Aegiomon])\uff1e [When Digivolving] 1 of your opponent's Digimon gets -5000 DP for the turn. Then, if you have 3 or fewer security cards, delete 1 of your opponent's Digimon with 7000 DP or less.",
     "form": "Ultimate",
     "id": "BT24-014",
     "illustrator": "Nakano Haito",
@@ -118022,7 +118022,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "[Security] If your opponent has a level 6 or higher Digimon, play this card without battling and without paying the cost.\n\uff1cBlocker\uff1e \n[All Turns] [Once Per Turn] When attack targets change, delete 1 of your opponent's Digimon with the lowest DP.",
+    "effect": "[Security] If your opponent has a level 6 or higher Digimon, play this card without battling and without paying the cost.\n\uff1cBlocker\uff1e [All Turns] [Once Per Turn] When attack targets change, delete 1 of your opponent's Digimon with the lowest DP.",
     "form": "Ultimate",
     "id": "BT24-015",
     "illustrator": "Souichirou Gunjima",
@@ -118145,7 +118145,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e \n\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n[When Digivolving] Delete 1 of your opponent's lowest DP Digimon. Then, by returning 2 cards from their trash to the bottom of the deck, they play 2 [Petrification] Tokens. (Digimon/White/3000 DP/[Your Turn] This Digimon can't suspend.\n[On Deletion] Trash your top security card.) After, this Digimon gets +2000 DP for each of your opponent's Digimon until their turn ends.",
+    "effect": "\uff1cRaid\uff1e \uff1cProgress\uff1e \uff1cPiercing\uff1e [When Digivolving] Delete 1 of your opponent's lowest DP Digimon. Then, by returning 2 cards from their trash to the bottom of the deck, they play 2 [Petrification] Tokens. (Digimon/White/3000 DP/[Your Turn] This Digimon can't suspend.\n[On Deletion] Trash your top security card.) After, this Digimon gets +2000 DP for each of your opponent's Digimon until their turn ends.",
     "form": "Mega",
     "id": "BT24-017",
     "illustrator": "koki",
@@ -118223,7 +118223,7 @@
     "dnaDigivolve": "-",
     "dp": "14000",
     "dualEffect": "-",
-    "effect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cArmor Purge\uff1e \n[When Digivolving] You may trash any 1 of your opponent's security cards. Then, this Digimon may unsuspend.\n[All Turns] [Once Per Turn] When your opponent's security stack is removed from, you may delete 1 of their Digimon.\n[All Turns] [Once Per Turn] When any of your [Reptile] or [Dragonkin]\u00a0trait Digimon would leave the battle area, by deleting 1 of your opponent's lowest DP Digimon, they don't leave.",
+    "effect": "\uff1cProgress\uff1e \uff1cPiercing\uff1e \uff1cBlocker\uff1e \uff1cArmor Purge\uff1e [When Digivolving] You may trash any 1 of your opponent's security cards. Then, this Digimon may unsuspend.\n[All Turns] [Once Per Turn] When your opponent's security stack is removed from, you may delete 1 of their Digimon.\n[All Turns] [Once Per Turn] When any of your [Reptile] or [Dragonkin]\u00a0trait Digimon would leave the battle area, by deleting 1 of your opponent's lowest DP Digimon, they don't leave.",
     "form": "Mega",
     "id": "BT24-018",
     "illustrator": "koki",
@@ -118474,7 +118474,7 @@
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
-    "effect": "\uff1cJamming\uff1e \n[On Play] [When Digivolving] Trash the top 2 digivolution cards of 1 of your opponent's Digimon. Then, 1 of their Digimon with as many or fewer digivolution cards as this Digimon can't suspend until their turn ends.",
+    "effect": "\uff1cJamming\uff1e [On Play] [When Digivolving] Trash the top 2 digivolution cards of 1 of your opponent's Digimon. Then, 1 of their Digimon with as many or fewer digivolution cards as this Digimon can't suspend until their turn ends.",
     "form": "Champion",
     "id": "BT24-022",
     "illustrator": "NAOKI AKAMINE",
@@ -118532,7 +118532,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n\uff1cDecode ([Lanamon])\uff1e \n[On Play] [When Digivolving] Return 1 of your opponent's level 4 or lower Digimon to the bottom of the deck. Then, if played by effects, 1 of their Digimon or Tamers can't suspend until their turn ends.",
+    "effect": "\uff1cBlocker\uff1e \uff1cDecode ([Lanamon])\uff1e [On Play] [When Digivolving] Return 1 of your opponent's level 4 or lower Digimon to the bottom of the deck. Then, if played by effects, 1 of their Digimon or Tamers can't suspend until their turn ends.",
     "form": "Hybrid",
     "id": "BT24-023",
     "illustrator": "banira",
@@ -118559,7 +118559,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve] [Lanamon]: Cost 1\n[Digivolve] Lv.3 w/[TS]\u00a0trait: Cost 3 ",
+    "specialDigivolve": "[Digivolve] [Lanamon]: Cost 1[Digivolve] Lv.3 w/[TS]\u00a0trait: Cost 3 ",
     "type": "Aquatic/Titan/TS",
     "version": "Normal"
   },
@@ -118595,7 +118595,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cArmor Purge\uff1e \n[When Attacking] [Once Per Turn] You may play 1 Tamer card with the [TS]\u00a0trait from your hand with the play cost reduced by 2.",
+    "effect": "\uff1cArmor Purge\uff1e [When Attacking] [Once Per Turn] You may play 1 Tamer card with the [TS]\u00a0trait from your hand with the play cost reduced by 2.",
     "form": "Armor Form",
     "id": "BT24-024",
     "illustrator": "BIRU YAMAGUCHI",
@@ -129968,13 +129968,13 @@
         "id": "BT25-103_P1",
         "illustrator": "sasasi",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT25-103_P2",
         "illustrator": "To be completed",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -129982,13 +129982,13 @@
         "id": "BT25-103_P1-J",
         "illustrator": "sasasi",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT25-103_P2-J",
         "illustrator": "To be completed",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -130020,7 +130020,7 @@
     "dnaDigivolve": "[Digivolve] Lv.6 w/[TS]\u00a0trait: Cost 5 [DNA Digivolve] Red Lv.6 + Blue Lv.6\u00a0: Cost 0",
     "dp": "15000",
     "dualEffect": "-",
-    "effect": "\uff1cSecurity A. +1\uff1e \uff1cIceclad\uff1e \uff1cPartition ([Apollomon] & [Dianamon])\uff1e [When Digivolving] [When Attacking] Return 1 of your opponent's Digimon with as many or fewer digivolution cards as this Digimon to the bottom of the deck.\n[When Attacking] [Counter] [Once Per Turn] For each of this Digimon's digivolution cards, you may trash any 1 digivolution card from your opponent's Digimon. Then, you may end this attack.",
+    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cIceclad\uff1e \n\uff1cPartition ([Apollomon] & [Dianamon])\uff1e \n[When Digivolving] [When Attacking] Return 1 of your opponent's Digimon with as many or fewer digivolution cards as this Digimon to the bottom of the deck.\n[When Attacking] [Counter] [Once Per Turn] For each of this Digimon's digivolution cards, you may trash any 1 digivolution card from your opponent's Digimon. Then, you may end this attack.",
     "form": "Mega",
     "id": "BT25-103",
     "illustrator": "Tonamikanji",
@@ -130057,13 +130057,13 @@
         "id": "BT25-104_P1",
         "illustrator": "Tonamikanji",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT25-104_P2",
         "illustrator": "Tonamikanji",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -130071,13 +130071,13 @@
         "id": "BT25-104_P1-J",
         "illustrator": "Tonamikanji",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT25-104_P2-J",
         "illustrator": "Tonamikanji",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -130109,7 +130109,7 @@
     "dnaDigivolve": "-",
     "dp": "15000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "\uff1cRaid\uff1e \uff1cPiercing\uff1e \uff1cSecurity A. +1\uff1e \uff1cBlocker\uff1e \uff1cBarrier\uff1e [When Digivolving] [When Attacking] [Once Per Turn] Activate 1 [Main] effect on this card's Option side.\n[Your Turn] All of your [Marcus Damon]s are also treated as 12000 DP Digimon and gain \uff1cRush\uff1e ",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Activate 1 [Main] effect on this card's Option side.\n[Your Turn] All of your [Marcus Damon]s are also treated as 12000 DP Digimon and gain \uff1cRush\uff1e ",
     "form": "Mega",
     "id": "BT25-104",
     "illustrator": "tyuga",
@@ -130125,7 +130125,7 @@
     },
     "notes": "\u25b9BOOSTER DUAL REVOLUTION [BT-25]",
     "optionCardColourRequirement": "Red/Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e [Main] 1 of your opponent's Digimon gets -15000 DP for the turn. Then, you may play 1 Tamer card from your hand without paying the cost.",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -15000 DP for the turn. Then, you may play 1 Tamer card from your hand without paying the cost.",
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
@@ -130568,7 +130568,7 @@
         "id": "BT26-009_P1",
         "illustrator": "Spareribs",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "JAAs": [
@@ -130576,7 +130576,7 @@
         "id": "BT26-009_P1-J",
         "illustrator": "Spareribs",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "aceEffect": "-",
@@ -130661,12 +130661,12 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e [When Attacking] By trashing 1 [Game], [Open] or [Seven Code]\u00a0trait card from your hand, \uff1cDraw 2\uff1e ",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[When Attacking] By trashing 1 [Game], [Open] or [Seven Code]\u00a0trait card from your hand, \uff1cDraw 2\uff1e ",
     "form": "Stnd./Appmon",
     "id": "BT26-010",
     "illustrator": "YAMURETSU",
     "linkDP": "+3000 DP",
-    "linkEffect": "\uff1cProgress\uff1e \uff1cPiercing\uff1e ",
+    "linkEffect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e ",
     "linkRequirement": "[Link] [Appmon]\u00a0trait: Cost 3 ",
     "name": {
       "english": "Roleplaymon",
@@ -130719,7 +130719,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e [On Play] [When Digivolving] By trashing 1 card with [Chronomon]\u00a0in its text or the [Shaman]\u00a0trait from your hand, \uff1cDraw 2\uff1e ",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with [Chronomon]\u00a0in its text or the [Shaman]\u00a0trait from your hand, \uff1cDraw 2\uff1e ",
     "form": "Champion",
     "id": "BT26-011",
     "illustrator": "Spareribs",
@@ -130845,7 +130845,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e [On Play] [On Deletion] By trashing 1 card in your hand, delete 1 of your opponent's Digimon with 6000 DP or less.",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [On Deletion] By trashing 1 card in your hand, delete 1 of your opponent's Digimon with 6000 DP or less.",
     "form": "Champion",
     "id": "BT26-013",
     "illustrator": "NIJIMAARC",
@@ -131048,7 +131048,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \uff1cEngage\uff1e [On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may delete 1 of your opponent's Digimon with as much DP as this Digimon or less. Then, by returning 3 cards in trashes to the bottom of the deck, \uff1cRecovery +1\uff1e [All Turns] [Once Per Turn] When this Digimon would leave the battle area, by returning your top security card to the bottom of the deck, it doesn't leave.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] You may delete 1 of your opponent's Digimon with as much DP as this Digimon or less. Then, by returning 3 cards in trashes to the bottom of the deck, \uff1cRecovery +1\uff1e \n[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by returning your top security card to the bottom of the deck, it doesn't leave.",
     "form": "Mega",
     "id": "BT26-016",
     "illustrator": "Spareribs",
@@ -131111,7 +131111,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \uff1cRetaliation\uff1e [On Play] [When Digivolving] 1 of your Digimon with the [Shambala]\u00a0trait gains \uff1cSecurity A. +1\uff1e and \uff1cProgress\uff1e for the turn.\n[On Deletion] You may play 1 [Shambala] or [TS]\u00a0trait card with a play cost of 5 or less from your trash without paying the cost.",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cRetaliation\uff1e \n[On Play] [When Digivolving] 1 of your Digimon with the [Shambala]\u00a0trait gains \uff1cSecurity A. +1\uff1e and \uff1cProgress\uff1e for the turn. \n[On Deletion] You may play 1 [Shambala] or [TS]\u00a0trait card with a play cost of 5 or less from your trash without paying the cost.",
     "form": "Mega",
     "id": "BT26-017",
     "illustrator": "NIJIMAARC",
@@ -131227,7 +131227,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e [When Attacking] If your hand has 7 or fewer cards, \uff1cDraw 1\uff1e ",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[When Attacking] If your hand has 7 or fewer cards, \uff1cDraw 1\uff1e ",
     "form": "Stnd./Appmon",
     "id": "BT26-019",
     "illustrator": "YAMURETSU",
@@ -131411,7 +131411,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "[On Play] [When Digivolving] Add your top security card to the hand and \uff1cRecovery +1\uff1e [End of Your Turn] If you have a red or purple Digimon, by placing this Digimon as the bottom security card, you may play 1 blue or red [Iliad]\u00a0trait Digimon card from your hand with the cost reduced by 4.",
+    "effect": "[On Play] [When Digivolving] Add your top security card to the hand and \uff1cRecovery +1\uff1e \n[End of Your Turn] If you have a red or purple Digimon, by placing this Digimon as the bottom security card, you may play 1 blue or red [Iliad]\u00a0trait Digimon card from your hand with the cost reduced by 4.",
     "form": "Champion",
     "id": "BT26-022",
     "illustrator": "itohiro",
@@ -131469,7 +131469,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cTraining\uff1e \uff1cJamming\uff1e [On Play] [When Attacking] By placing 1 card in your hand face down as this Digimon's bottom digivolution card, return 1 of your opponent's level 4 or lower Digimon to the bottom of the deck.",
+    "effect": "\uff1cTraining\uff1e \n\uff1cJamming\uff1e \n[On Play] [When Attacking] By placing 1 card in your hand face down as this Digimon's bottom digivolution card, return 1 of your opponent's level 4 or lower Digimon to the bottom of the deck.",
     "form": "Champion",
     "id": "BT26-023",
     "illustrator": "GOSSAN",
@@ -131648,7 +131648,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cBarrier\uff1e [When Attacking] [Once Per Turn] By trashing the bottom face-down card from under any of your Tamers or your top security card, you may use 1 Option card with the [Glowing Dawn]\u00a0trait from your hand with the cost reduced by 2.",
+    "effect": "\uff1cBarrier\uff1e \n[When Attacking] [Once Per Turn] By trashing the bottom face-down card from under any of your Tamers or your top security card, you may use 1 Option card with the [Glowing Dawn]\u00a0trait from your hand with the cost reduced by 2.",
     "form": "Champion",
     "id": "BT26-026",
     "illustrator": "Souichirou Gunjima",
@@ -131774,7 +131774,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cBarrier\uff1e \uff1cDetach ([Seven Code] trait)\uff1e [On Play] [When Digivolving] You may link 1 level 3 Digimon card with the [Life], [System] or [Seven Code]\u00a0trait from this Digimon's digivolution cards to this Digimon without paying the cost.",
+    "effect": "\uff1cBarrier\uff1e \n\uff1cDetach ([Seven Code] trait)\uff1e \n[On Play] [When Digivolving] You may link 1 level 3 Digimon card with the [Life], [System] or [Seven Code]\u00a0trait from this Digimon's digivolution cards to this Digimon without paying the cost.",
     "form": "Sup./Appmon",
     "id": "BT26-028",
     "illustrator": "YAMURETSU",
@@ -131837,7 +131837,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cDecode ([Aegiomon])\uff1e \uff1cAscension\uff1e [On Play] [When Digivolving] By trashing your top security card, until your opponent's turn ends, their effects can't reduce the DP of 1 of your Digimon, trash any of its stacked cards, or return them to hands or decks.\n[All Turns] [Once Per Turn] When your security stack is removed from, 3 of your opponent's Digimon get -5000 DP for the turn.",
+    "effect": "\uff1cDecode ([Aegiomon])\uff1e \n\uff1cAscension\uff1e \n[On Play] [When Digivolving] By trashing your top security card, until your opponent's turn ends, their effects can't reduce the DP of 1 of your Digimon, trash any of its stacked cards, or return them to hands or decks.\n[All Turns] [Once Per Turn] When your security stack is removed from, 3 of your opponent's Digimon get -5000 DP for the turn.",
     "form": "Ultimate",
     "id": "BT26-029",
     "illustrator": "Nakano Haito",
@@ -131993,7 +131993,7 @@
     },
     "notes": "\u25b9BOOSTER TIMELESS BONDS [BT-26]",
     "optionCardColourRequirement": "Yellow",
-    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e [Main] 1 of your opponent's Digimon gets -8000 DP until their turn ends. By trashing your top security card, it further gets -5000 DP.",
+    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] 1 of your opponent's Digimon gets -8000 DP until their turn ends. By trashing your top security card, it further gets -5000 DP.",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -132054,7 +132054,7 @@
     "dnaDigivolve": "-",
     "dp": "13000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "\uff1cAlliance\uff1e \uff1cSuccession ([Ceresmon])\uff1e [When Digivolving] All of your opponent's suspended Digimon get -5000 DP until their turn ends. Then, by suspending 1 Digimon, if it's your turn, you may play or use 1 [Vegetation] or [TS]\u00a0trait card from your hand with the cost reduced by 5.",
+    "effect": "\uff1cAlliance\uff1e \n\uff1cSuccession ([Ceresmon])\uff1e \n[When Digivolving] All of your opponent's suspended Digimon get -5000 DP until their turn ends. Then, by suspending 1 Digimon, if it's your turn, you may play or use 1 [Vegetation] or [TS]\u00a0trait card from your hand with the cost reduced by 5.",
     "form": "Mega",
     "id": "BT26-032",
     "illustrator": "NIJIMAARC",
@@ -132070,7 +132070,7 @@
     },
     "notes": "\u25b9BOOSTER TIMELESS BONDS [BT-26]",
     "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e [Main] You may suspend 2 of your opponent's Digimon or Tamers. Then, 3 of their Digimon or Tamers can't unsuspend until their turn ends.",
+    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] You may suspend 2 of your opponent's Digimon or Tamers. Then, 3 of their Digimon or Tamers can't unsuspend until their turn ends.",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -132091,7 +132091,7 @@
         "id": "BT26-033_P1",
         "illustrator": "toriyufu",
         "note": "BT-26: BOOSTER TIMELESS BONDS",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT26-033_P2",
@@ -132105,7 +132105,7 @@
         "id": "BT26-033_P1-J",
         "illustrator": "toriyufu",
         "note": "BT-26: BOOSTER TIMELESS BONDS",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT26-033_P2-J",
@@ -132143,7 +132143,7 @@
     "dnaDigivolve": "-",
     "dp": "13000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "\uff1cRaid\uff1e \uff1cAlliance\uff1e \uff1cEngage\uff1e [When Digivolving] Add your top security card to the hand. Then, if it's your turn, you may play or use 1 [Iliad] card from your hand with the cost reduced by 5.\n[All Turns] When any of your [TS]\u00a0trait Digimon or Tamers would leave the battle area, by placing this Digimon's top stacked card as the bottom security card, they don't leave.",
+    "effect": "\uff1cRaid\uff1e \n\uff1cAlliance\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] Add your top security card to the hand. Then, if it's your turn, you may play or use 1 [Iliad] card from your hand with the cost reduced by 5.\n[All Turns] When any of your [TS]\u00a0trait Digimon or Tamers would leave the battle area, by placing this Digimon's top stacked card as the bottom security card, they don't leave.",
     "form": "Mega",
     "id": "BT26-033",
     "illustrator": "Takeuchi Moto",
@@ -132159,7 +132159,7 @@
     },
     "notes": "\u25b9BOOSTER TIMELESS BONDS [BT-26]",
     "optionCardColourRequirement": "Yellow/Red",
-    "optionCardEffect": "For each of your security cards, add 1 to this card's use cost.\n\uff1cUse Req. ([TS] trait)\uff1e [Main] Delete all of your opponent's Digimon with the lowest DP. Then, \uff1cRecovery +1\uff1e ",
+    "optionCardEffect": "For each of your security cards, add 1 to this card's use cost.\n\uff1cUse Req. ([TS] trait)\uff1e \n[Main] Delete all of your opponent's Digimon with the lowest DP. Then, \uff1cRecovery +1\uff1e ",
     "playCost": "2",
     "rarity": "SR",
     "restrictions": {
@@ -132380,7 +132380,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \uff1cDetach ([Seven Code] trait)\uff1e [On Play] [When Digivolving] You may link 1 level 3 Digimon card with the [Navi], [System] or [Seven Code]\u00a0trait from this Digimon's digivolution cards to this Digimon without paying the cost.",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cDetach ([Seven Code] trait)\uff1e \n[On Play] [When Digivolving] You may link 1 level 3 Digimon card with the [Navi], [System] or [Seven Code]\u00a0trait from this Digimon's digivolution cards to this Digimon without paying the cost.",
     "form": "Sup./Appmon",
     "id": "BT26-037",
     "illustrator": "YAMURETSU",
@@ -132554,7 +132554,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cTraining\uff1e \uff1cPiercing\uff1e [When Moving] [On Play] Suspend 1 of your opponent's Digimon. Then, by placing 1 card in your hand face down as this Digimon's bottom digivolution card, this Digimon gets +1000 DP until your opponent's turn ends for each of its face-down digivolution cards.",
+    "effect": "\uff1cTraining\uff1e \n\uff1cPiercing\uff1e \n[When Moving] [On Play] Suspend 1 of your opponent's Digimon. Then, by placing 1 card in your hand face down as this Digimon's bottom digivolution card, this Digimon gets +1000 DP until your opponent's turn ends for each of its face-down digivolution cards.",
     "form": "Champion",
     "id": "BT26-040",
     "illustrator": "Kazumasa Yasukuni",
@@ -132733,7 +132733,7 @@
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e [On Play] [When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. Then, by placing your deck's top card face down as this Digimon's bottom digivolution card, for each of this Digimon's face-down digivolution cards, 1 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.",
+    "effect": "\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. Then, by placing your deck's top card face down as this Digimon's bottom digivolution card, for each of this Digimon's face-down digivolution cards, 1 of your opponent's Digimon or Tamers can't unsuspend until their turn ends.",
     "form": "Ultimate",
     "id": "BT26-043",
     "illustrator": "GOSSAN",
@@ -132912,7 +132912,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "When this card would be played, if there are 2 or more suspended Digimon, reduce the cost by 4. \uff1cPiercing\uff1e \uff1cVortex\uff1e [On Play] [When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. 1 of their Digimon or Tamers can't unsuspend until their turn ends. Then, 1 of your Digimon can't be deleted in battle until their turn ends.",
+    "effect": "When this card would be played, if there are 2 or more suspended Digimon, reduce the cost by 4. \uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n[On Play] [When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. 1 of their Digimon or Tamers can't unsuspend until their turn ends. Then, 1 of your Digimon can't be deleted in battle until their turn ends.",
     "form": "Mega",
     "id": "BT26-046",
     "illustrator": "tessy",
@@ -133033,7 +133033,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cAlliance\uff1e \uff1cVortex\uff1e [When Digivolving] [When Attacking] By trashing any of your Digimon's bottom face-down digivolution card, you may play 1 6000 DP or lower [Ver.4]\u00a0trait Digimon card from your hand without paying the cost.\n[All Turns] When effects trash face-down digivolution cards from your Digimon, 1 of your opponent's Digimon gets -6000 DP for the turn.",
+    "effect": "\uff1cAlliance\uff1e \n\uff1cVortex\uff1e \n[When Digivolving] [When Attacking] By trashing any of your Digimon's bottom face-down digivolution card, you may play 1 6000 DP or lower [Ver.4]\u00a0trait Digimon card from your hand without paying the cost.\n[All Turns] When effects trash face-down digivolution cards from your Digimon, 1 of your opponent's Digimon gets -6000 DP for the turn.",
     "form": "Mega",
     "id": "BT26-048",
     "illustrator": "NAOKI AKAMINE",
@@ -133179,7 +133179,7 @@
     },
     "notes": "\u25b9BOOSTER TIMELESS BONDS [BT-26]",
     "optionCardColourRequirement": "Green",
-    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e [Main] Suspend 2 of your opponent's Digimon or Tamers. Then, until their turn ends, none of their suspended Digimon or Tamers can digivolve or unsuspend.",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Suspend 2 of your opponent's Digimon or Tamers. Then, until their turn ends, none of their suspended Digimon or Tamers can digivolve or unsuspend.",
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
@@ -133221,7 +133221,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e [Your Turn] [Once Per Turn] When this Digimon gets linked, 1 of your Digimon with the [Social], [Tool], [Open] or [Seven Code]\u00a0trait gains \uff1cCollision\uff1e and +3000 DP for the turn.",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[Your Turn] [Once Per Turn] When this Digimon gets linked, 1 of your Digimon with the [Social], [Tool], [Open] or [Seven Code]\u00a0trait gains \uff1cCollision\uff1e and +3000 DP for the turn.",
     "form": "Stnd./Appmon",
     "id": "BT26-051",
     "illustrator": "YAMURETSU",
@@ -133258,7 +133258,7 @@
         "id": "BT26-052_P1",
         "illustrator": "tessy",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "JAAs": [
@@ -133266,7 +133266,7 @@
         "id": "BT26-052_P1-J",
         "illustrator": "tessy",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "aceEffect": "-",
@@ -133351,7 +133351,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e [All Turns] [Once Per Turn] When attack targets change, by trashing the bottom face-down card from under any of your Tamers, you may use 1 Option card with the [Glowing Dawn]\u00a0trait and a use cost of 4 or less from your hand without paying the cost.",
+    "effect": "\uff1cBlocker\uff1e \n[All Turns] [Once Per Turn] When attack targets change, by trashing the bottom face-down card from under any of your Tamers, you may use 1 Option card with the [Glowing Dawn]\u00a0trait and a use cost of 4 or less from your hand without paying the cost.",
     "form": "Champion",
     "id": "BT26-053",
     "illustrator": "tessy",
@@ -133472,7 +133472,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cFragment (2)\uff1e [On Play] [When Digivolving] [Counter] [Once Per Turn] You may place 1 card in your hand face down as this Digimon's bottom digivolution card. Then, you may delete 1 of your Digimon with the [Ver.3]\u00a0trait and all of your opponent's Digimon with the lowest play cost.",
+    "effect": "\uff1cFragment (2)\uff1e \n[On Play] [When Digivolving] [Counter] [Once Per Turn] You may place 1 card in your hand face down as this Digimon's bottom digivolution card. Then, you may delete 1 of your Digimon with the [Ver.3]\u00a0trait and all of your opponent's Digimon with the lowest play cost.",
     "form": "Ultimate",
     "id": "BT26-055",
     "illustrator": "BIRU YAMAGUCHI",
@@ -133535,7 +133535,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "\uff1cJamming\uff1e \uff1cReboot\uff1e \uff1cBlocker\uff1e [On Deletion] You may play 1 level 4 or lower Digimon card with the [Titan]\u00a0trait from your trash without paying the cost.",
+    "effect": "\uff1cJamming\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Deletion] You may play 1 level 4 or lower Digimon card with the [Titan]\u00a0trait from your trash without paying the cost.",
     "form": "Ultimate",
     "id": "BT26-056",
     "illustrator": "k.Dra",
@@ -133551,7 +133551,7 @@
     },
     "notes": "\u25b9BOOSTER TIMELESS BONDS [BT-26]",
     "optionCardColourRequirement": "Black",
-    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e [Main] Trash 1 card in your hand. Then, \uff1cDe-Digivolve 3\uff1e 1 of your opponent's Digimon. ",
+    "optionCardEffect": "\uff1cUse Req. ([TS] trait)\uff1e \n[Main] Trash 1 card in your hand. Then, \uff1cDe-Digivolve 3\uff1e 1 of your opponent's Digimon. ",
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
@@ -133562,7 +133562,7 @@
     },
     "rule": "[Rule] Trait: Has [Dark Animal] Type.",
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve] [Cerberusmon]: Cost 1[Digivolve] Lv.4 w/[TS]\u00a0trait: Cost 3 ",
+    "specialDigivolve": "[Digivolve] [Cerberusmon]: Cost 1\n[Digivolve] Lv.4 w/[TS]\u00a0trait: Cost 3 ",
     "type": "Wizard/Titan/TS",
     "version": "Normal"
   },
@@ -133628,7 +133628,7 @@
     },
     "notes": "\u25b9BOOSTER TIMELESS BONDS [BT-26]",
     "optionCardColourRequirement": "Black",
-    "optionCardEffect": "\uff1cUse Req. ([GlowingDawn] trait)\uff1e [Main] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, give 1 of your opponent's Digimon \"[Start of Your Main Phase] This Digimon attacks.\" until their turn ends.",
+    "optionCardEffect": "\uff1cUse Req. ([GlowingDawn] trait)\uff1e \n[Main] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, give 1 of your opponent's Digimon \"[Start of Your Main Phase] This Digimon attacks.\" until their turn ends.",
     "playCost": "4",
     "rarity": "SR",
     "restrictions": {
@@ -133675,7 +133675,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cReboot\uff1e \uff1cBlocker\uff1e [When Digivolving] [When Attacking] [Once Per Turn] Your opponent's Digimon effects don't affect 1 of your [CS]\u00a0trait Digimon until their turn ends.\n[All Turns] When any of your [CS]\u00a0trait Digimon would leave the battle area, by placing this Digimon's top stacked card as its bottom digivolution card, they don't leave.",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Your opponent's Digimon effects don't affect 1 of your [CS]\u00a0trait Digimon until their turn ends.\n[All Turns] When any of your [CS]\u00a0trait Digimon would leave the battle area, by placing this Digimon's top stacked card as its bottom digivolution card, they don't leave.",
     "form": "Mega",
     "id": "BT26-058",
     "illustrator": "NAOKI AKAMINE",
@@ -133712,7 +133712,7 @@
         "id": "BT26-059_P1",
         "illustrator": "toriyufu",
         "note": "BT-26: BOOSTER TIMELESS BONDS",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT26-059_P2",
@@ -133726,7 +133726,7 @@
         "id": "BT26-059_P1-J",
         "illustrator": "toriyufu",
         "note": "BT-26: BOOSTER TIMELESS BONDS",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT26-059_P2-J",
@@ -133801,7 +133801,7 @@
         "id": "BT26-060_P1",
         "illustrator": "k.Dra",
         "note": "BT-26: BOOSTER TIMELESS BONDS",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT26-060_P2",
@@ -133815,7 +133815,7 @@
         "id": "BT26-060_P1-J",
         "illustrator": "k.Dra",
         "note": "BT-26: BOOSTER TIMELESS BONDS",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "BT26-060_P2-J",
@@ -133853,7 +133853,7 @@
     "dnaDigivolve": "-",
     "dp": "16000",
     "dualEffect": "-",
-    "effect": "\uff1cSecurity A. +1\uff1e \uff1cReboot\uff1e \uff1cBlocker\uff1e \uff1cSuccession (Lv.6 w/[Chronomon] in name)\uff1e [On Play] [When Digivolving] Return the top 5 stacked cards of 3 of your opponent's Digimon to the top of the deck.\n[All Turns] [Once Per Turn] When your effects add to decks, you may delete 1 of your opponent's Digimon.",
+    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cSuccession (Lv.6 w/[Chronomon] in name)\uff1e \n[On Play] [When Digivolving] Return the top 5 stacked cards of 3 of your opponent's Digimon to the top of the deck.\n[All Turns] [Once Per Turn] When your effects add to decks, you may delete 1 of your opponent's Digimon.",
     "form": "Mega",
     "id": "BT26-060",
     "illustrator": "Spareribs",
@@ -133890,7 +133890,7 @@
         "id": "BT26-061_P1",
         "illustrator": "Takeuchi Moto",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "JAAs": [
@@ -133898,7 +133898,7 @@
         "id": "BT26-061_P1-J",
         "illustrator": "Takeuchi Moto",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "aceEffect": "-",
@@ -134046,7 +134046,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e [Your Turn] [Once Per Turn] When this Digimon gets linked, reveal the top 3 cards of your deck. Add 1 card with the [Entertainment], [Open] or [Seven Code]\u00a0trait among them to the hand. Return the rest to the top or bottom of the deck.",
+    "effect": "\uff1cDetach ([Seven Code] trait)\uff1e \n[Your Turn] [Once Per Turn] When this Digimon gets linked, reveal the top 3 cards of your deck. Add 1 card with the [Entertainment], [Open] or [Seven Code]\u00a0trait among them to the hand. Return the rest to the top or bottom of the deck.",
     "form": "Stnd./Appmon",
     "id": "BT26-063",
     "illustrator": "YAMURETSU",
@@ -134083,7 +134083,7 @@
         "id": "BT26-064_P1",
         "illustrator": "NAOKI AKAMINE",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "JAAs": [
@@ -134091,7 +134091,7 @@
         "id": "BT26-064_P1-J",
         "illustrator": "NAOKI AKAMINE",
         "note": "Box Promotion Pack: TIMELESS BONDS",
-        "type": "Full Art -\u00a0Box Topper"
+        "type": "Box Topper"
       }
     ],
     "aceEffect": "-",
@@ -134355,7 +134355,7 @@
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
-    "effect": "[On Play] [When Digivolving] If your hand has 5 or fewer cards, both players \uff1cDraw 2\uff1e [All Turns] [Once Per Turn] When effects add to your opponent's hand, by trashing 1 card in your hand, your opponent trashes 1 card in their hand.",
+    "effect": "[On Play] [When Digivolving] If your hand has 5 or fewer cards, both players \uff1cDraw 2\uff1e \n[All Turns] [Once Per Turn] When effects add to your opponent's hand, by trashing 1 card in your hand, your opponent trashes 1 card in their hand.",
     "form": "Champion",
     "id": "BT26-068",
     "illustrator": "NAOKI AKAMINE",
@@ -187998,7 +187998,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Your Turn] When one of your Digimon with the [X Antibody]\u00a0trait is moved from your breeding area to your battle area, gain 1 memory and \uff1cDraw 1\uff1e \n[Your Turn] When one of your black Digimon with the [X Antibody]\u00a0trait attacks, you may suspend this Tamer to place 1 card with the [X Antibody]\u00a0trait from your hand under that Digimon as its bottom digivolution card.",
+    "effect": "[Your Turn] When one of your Digimon with the [X Antibody]\u00a0trait is moved from your breeding area to your battle area, gain 1 memory and \uff1cDraw 1\uff1e [Your Turn] When one of your black Digimon with the [X Antibody]\u00a0trait attacks, you may suspend this Tamer to place 1 card with the [X Antibody]\u00a0trait from your hand under that Digimon as its bottom digivolution card.",
     "form": "-",
     "id": "BT8-092",
     "illustrator": "Kenji Watanabe",
@@ -188149,7 +188149,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[All Turns] When one of your opponent's level 5 or lower Digimon is deleted, you may suspend this Tamer to \uff1cDraw 1\uff1e \n[Opponent's Turn] When one of your opponent's level 3 Digimon is moved from their breeding area to their battle area, gain 2 memory.",
+    "effect": "[All Turns] When one of your opponent's level 5 or lower Digimon is deleted, you may suspend this Tamer to \uff1cDraw 1\uff1e [Opponent's Turn] When one of your opponent's level 3 Digimon is moved from their breeding area to their battle area, gain 2 memory.",
     "form": "-",
     "id": "BT8-094",
     "illustrator": "No Illustrator",
@@ -188241,7 +188241,7 @@
       "korean": "Unrestricted"
     },
     "rule": "-",
-    "securityEffect": "[Security] Delete 1 of your opponent's Digimon with \uff1cBlocker\uff1e\n",
+    "securityEffect": "[Security] Delete 1 of your opponent's Digimon with \uff1cBlocker\uff1e",
     "specialDigivolve": "-",
     "type": "-",
     "version": "Normal"
@@ -190254,7 +190254,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] \uff1cBlitz\uff1e \n[Your Turn] While this Digimon has [OmniShoutmon] or [X Antibody] in its digivolution cards, this Digimon can also attack your opponent's unsuspended Digimon.",
+    "effect": "[When Digivolving] \uff1cBlitz\uff1e [Your Turn] While this Digimon has [OmniShoutmon] or [X Antibody] in its digivolution cards, this Digimon can also attack your opponent's unsuspended Digimon.",
     "form": "Ultimate",
     "id": "BT9-013",
     "illustrator": "Tonamikanji",
@@ -191478,7 +191478,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] Unsuspend this Digimon, and it gains \uff1cBlocker\uff1e until your opponent's turn ends. \n[Your Turn] [Once Per Turn] When this Digimon becomes unsuspended, if [MetalGarurumon] or [X Antibody] is in its digivolution cards, return all of your opponent's Digimon with the lowest level to their owner's hand.",
+    "effect": "[When Digivolving] Unsuspend this Digimon, and it gains \uff1cBlocker\uff1e until your opponent's turn ends.\n[Your Turn] [Once Per Turn] When this Digimon becomes unsuspended, if [MetalGarurumon] or [X Antibody] is in its digivolution cards, return all of your opponent's Digimon with the lowest level to their owner's hand.",
     "form": "Mega",
     "id": "BT9-031",
     "illustrator": "sasasi",
@@ -191841,7 +191841,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cArmor Purge\uff1e \n[When Attacking] 1 of your opponent's Digimon gets -2000 DP for the turn.",
+    "effect": "\uff1cArmor Purge\uff1e [When Attacking] 1 of your opponent's Digimon gets -2000 DP for the turn.",
     "form": "Armor Form",
     "id": "BT9-037",
     "illustrator": "Teppei Tadokoro",
@@ -191906,7 +191906,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cArmor Purge\uff1e \n[When Digivolving] 1 of your opponent's Digimon gains \uff1cSecurity A. -1\uff1e until the end of your opponent's turn.",
+    "effect": "\uff1cArmor Purge\uff1e [When Digivolving] 1 of your opponent's Digimon gains \uff1cSecurity A. -1\uff1e until the end of your opponent's turn.",
     "form": "Armor Form",
     "id": "BT9-038",
     "illustrator": "Teppei Tadokoro",
@@ -200488,7 +200488,7 @@
         "id": "EX1-049_P1",
         "illustrator": "tessy",
         "note": "Premium Deck Set Lucky Pack",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -200496,7 +200496,7 @@
         "id": "EX1-049_P1-J",
         "illustrator": "tessy",
         "note": "Special Promotion Pack 2023 Ver.1.0",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -200561,13 +200561,13 @@
         "id": "EX1-050_P1",
         "illustrator": "Tonamikanji",
         "note": "Store Championship 2022 Participant Pack",
-        "type": "Foil - Participation Stamp -\u00a0Alternative Art"
+        "type": "Alternative Art (Participation Stamp)\u00a0"
       },
       {
         "id": "EX1-050_P2",
         "illustrator": "Tonamikanji",
         "note": "Store Championships 2022",
-        "type": "Foil - Champion Stamp -\u00a01st Place Prize"
+        "type": "1st Place Prize (Champion Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -200690,7 +200690,7 @@
         "id": "EX1-052_P1",
         "illustrator": "Hisashi Fujiwara",
         "note": "DP-01: Double Pack Set 1",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       }
     ],
     "JAAs": [],
@@ -200755,13 +200755,13 @@
         "id": "EX1-053-Errata",
         "illustrator": "No Illustrator",
         "note": "Revision Pack 2023",
-        "type": "No Foil - Errata Text -\u00a0Uncommon"
+        "type": "Uncommon (Errata Text)\u00a0"
       },
       {
         "id": "EX1-053_P1",
         "illustrator": "Hisashi Fujiwara",
         "note": "Official Tournament Pack Vol. 12",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [],
@@ -200847,7 +200847,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cReboot\uff1e [When Digivolving] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
+    "effect": "\uff1cReboot\uff1e \n[When Digivolving] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. ",
     "form": "Mega",
     "id": "EX1-054",
     "illustrator": "No Illustrator",
@@ -200963,7 +200963,7 @@
     "dnaDigivolve": "-",
     "dp": "2000",
     "dualEffect": "-",
-    "effect": "\uff1cRetaliation\uff1e [Your Turn] While you don't have a Digimon with [Myotismon]\u00a0in its name in play, this Digimon can't attack your opponent's Digimon.",
+    "effect": "\uff1cRetaliation\uff1e \n[Your Turn] While you don't have a Digimon with [Myotismon]\u00a0in its name in play, this Digimon can't attack your opponent's Digimon.",
     "form": "Rookie",
     "id": "EX1-056",
     "illustrator": "No Illustrator",
@@ -201116,7 +201116,7 @@
         "id": "EX1-059_P1",
         "illustrator": "No Illustrator",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured - Variant Art -\u00a0Alternative Art"
+        "type": "Alternative Art (Variant Art)\u00a0"
       }
     ],
     "JAAs": [
@@ -201124,7 +201124,7 @@
         "id": "EX1-059_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured - Variant Art -\u00a0Alternative Art"
+        "type": "Alternative Art (Variant Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -201188,7 +201188,7 @@
         "id": "EX1-060_P1",
         "illustrator": "Kariki Hakime",
         "note": "Illustration Competition Promotion Pack 2023",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -201196,7 +201196,7 @@
         "id": "EX1-060_P1-J",
         "illustrator": "Kariki Hakime",
         "note": "Illustration Competition Promotion Pack 2023",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -201260,7 +201260,7 @@
         "id": "EX1-061_P1",
         "illustrator": "koki",
         "note": "Winner Pack X Record",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -201268,7 +201268,7 @@
         "id": "EX1-061_P1-J",
         "illustrator": "koki",
         "note": "Tamer Battle Pack 10",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -201358,7 +201358,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cSecurity A. +1\uff1e [End of Attack] Delete this Digimon.\n[On Deletion] You may play 1 [Agumon] from your trash suspended without paying its memory cost.",
+    "effect": "\uff1cSecurity A. +1\uff1e \n[End of Attack] Delete this Digimon.\n[On Deletion] You may play 1 [Agumon] from your trash suspended without paying its memory cost.",
     "form": "Ultimate",
     "id": "EX1-062",
     "illustrator": "No Illustrator",
@@ -201395,7 +201395,7 @@
         "id": "EX1-063_P1",
         "illustrator": "No Illustrator",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured - Classic Art -\u00a0Alternative Art"
+        "type": "Alternative Art (Classic Art)\u00a0"
       }
     ],
     "JAAs": [
@@ -201403,7 +201403,7 @@
         "id": "EX1-063_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured - Classic Art -\u00a0Alternative Art"
+        "type": "Alternative Art (Classic Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -201430,7 +201430,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cRetaliation\uff1e [When Attacking] [Once Per Turn] You may play 1 purple level 4 or lower Digimon card with \uff1cRetaliation\uff1e from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.",
+    "effect": "\uff1cRetaliation\uff1e \n[When Attacking] [Once Per Turn] You may play 1 purple level 4 or lower Digimon card with \uff1cRetaliation\uff1e from your trash without paying its memory cost. Any [On Play] effects on Digimon played with this effect don't activate.",
     "form": "Mega",
     "id": "EX1-063",
     "illustrator": "No Illustrator",
@@ -201525,7 +201525,7 @@
         "id": "EX1-065_P1",
         "illustrator": "No Illustrator",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured - Classic Art -\u00a0Alternative Art"
+        "type": "Alternative Art (Classic Art)\u00a0"
       }
     ],
     "JAAs": [
@@ -201533,7 +201533,7 @@
         "id": "EX1-065_P1-J",
         "illustrator": "No Illustrator",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured - Classic Art -\u00a0Alternative Art"
+        "type": "Alternative Art (Classic Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -201597,31 +201597,31 @@
         "id": "EX1-066_P1",
         "illustrator": "Kenji Watanabe",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "EX1-066_P2",
         "illustrator": "Kenji Watanabe",
         "note": "Championship 2024 Tamers Pack",
-        "type": "Foil - Championship Stamp -\u00a0Alternative Art"
+        "type": "Alternative Art (Championship Stamp)\u00a0"
       },
       {
         "id": "EX1-066_P3",
         "illustrator": "sasasi",
         "note": "Special Event Pack 2025",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "EX1-066_P4",
         "illustrator": "Kenji Watanabe",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Rare"
+        "type": "Rare (Foil)\u00a0"
       },
       {
         "id": "EX1-066_P5",
         "illustrator": "Kenji Watanabe",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Gold Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Gold Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -201629,25 +201629,25 @@
         "id": "EX1-066_P1-J",
         "illustrator": "Kenji Watanabe",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "EX1-066_P2-J",
         "illustrator": "Kenji Watanabe",
         "note": "PB-15: Digimon Card Game 3rd Anniversary Set",
-        "type": "Textured - Gold Background -\u00a0Alternative Art"
+        "type": "Alternative Art (Gold Background)\u00a0"
       },
       {
         "id": "EX1-066_P3-J",
         "illustrator": "Kenji Watanabe",
         "note": "LM-04: Limited Card Pack Torrid Weiss",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       },
       {
         "id": "EX1-066_P4-J",
         "illustrator": "sasasi",
         "note": "LM-05: Limited Card Pack Final Elysion",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -201721,7 +201721,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Main] Delete 1 of your opponent's Digimon with 6000 DP or less and \uff1cBlocker\uff1e",
+    "effect": "[Main] Delete 1 of your opponent's Digimon with 6000 DP or less and \uff1cBlocker\uff1e\n",
     "form": "-",
     "id": "EX1-067",
     "illustrator": "No Illustrator",
@@ -201758,7 +201758,7 @@
         "id": "EX1-068_P1",
         "illustrator": "GOSSAN",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -201766,7 +201766,7 @@
         "id": "EX1-068_P1-J",
         "illustrator": "GOSSAN",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -201928,7 +201928,7 @@
         "id": "EX1-071_P1",
         "illustrator": "Shin Sasaki",
         "note": "PB-06: Tamer's Evolution Box 2",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -201936,7 +201936,7 @@
         "id": "EX1-071_P1-J",
         "illustrator": "Shin Sasaki",
         "note": "PB-06: Tamer's Evolution Box 2",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -201994,7 +201994,7 @@
         "id": "EX1-072_P1",
         "illustrator": "koki",
         "note": "DP-01: Double Pack Set 1",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       }
     ],
     "JAAs": [],
@@ -202053,25 +202053,25 @@
         "id": "EX1-073-Errata",
         "illustrator": "sasasi",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "EX1-073_P2",
         "illustrator": "sasasi",
         "note": "BT-11: Booster Dimensional Phase",
-        "type": "Gold Foil - Gold Background -\u00a0Rare Pull"
+        "type": "Rare Pull (Gold Background)\u00a0"
       },
       {
         "id": "EX1-073_P3",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Special Booster Ver.2.0 Celebration Event",
-        "type": "Participation"
+        "type": "Participation "
       },
       {
         "id": "EX1-073_P4",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Special Booster Ver.2.0 Celebration Event",
-        "type": "Foil -\u00a01st Place Prize"
+        "type": "1st Place Prize (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -202079,25 +202079,25 @@
         "id": "EX1-073_P1-J",
         "illustrator": "sasasi",
         "note": "EX-01: Theme Booster Classic Collection",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "EX1-073_P2-J",
         "illustrator": "sasasi",
         "note": "BT-11: Booster Dimensional Phase",
-        "type": "Gold Foil - Gold Background -\u00a0Rare Pull"
+        "type": "Rare Pull (Gold Background)\u00a0"
       },
       {
         "id": "EX1-073_P3-J",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Elemental Successor BT-18 Release Tournament",
-        "type": "Participation"
+        "type": "Participation "
       },
       {
         "id": "EX1-073_P4-J",
         "illustrator": "Kazumasa Yasukuni",
         "note": "Elemental Successor BT-18 Release Tournament",
-        "type": "Foil -\u00a01st Place Prize"
+        "type": "1st Place Prize (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202166,7 +202166,7 @@
         "id": "EX10-001_P1",
         "illustrator": "Iori Sunakura",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -202174,7 +202174,7 @@
         "id": "EX10-001_P1-J",
         "illustrator": "Iori Sunakura",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202232,7 +202232,7 @@
         "id": "EX10-002_P1",
         "illustrator": "itohiro",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -202240,7 +202240,7 @@
         "id": "EX10-002_P1-J",
         "illustrator": "itohiro",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202298,7 +202298,7 @@
         "id": "EX10-003_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -202306,7 +202306,7 @@
         "id": "EX10-003_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202364,7 +202364,7 @@
         "id": "EX10-004_P1",
         "illustrator": "Iori Sunakura",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -202372,7 +202372,7 @@
         "id": "EX10-004_P1-J",
         "illustrator": "Iori Sunakura",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202430,7 +202430,7 @@
         "id": "EX10-005_P1",
         "illustrator": "banira",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -202438,7 +202438,7 @@
         "id": "EX10-005_P1-J",
         "illustrator": "banira",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202496,7 +202496,7 @@
         "id": "EX10-006_P1",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -202504,7 +202504,7 @@
         "id": "EX10-006_P1-J",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202573,7 +202573,7 @@
         "id": "EX10-007_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -202581,7 +202581,7 @@
         "id": "EX10-007_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -202613,7 +202613,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e [On Play] [When Digivolving] 1 Digimon gets +3000 DP until your opponent's turn ends.",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] 1 Digimon gets +3000 DP until your opponent's turn ends.",
     "form": "Champion",
     "id": "EX10-007",
     "illustrator": "Tomotake Kinoshita",
@@ -202676,7 +202676,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cReboot\uff1e [On Play] [When Digivolving] Give 1 of your opponent's Digimon \uff1cCollision\uff1e and \"[Start of Your Main Phase] This Digimon attacks.\" until their turn ends.",
+    "effect": "\uff1cReboot\uff1e \n[On Play] [When Digivolving] Give 1 of your opponent's Digimon \uff1cCollision\uff1e and \"[Start of Your Main Phase] This Digimon attacks.\" until their turn ends.",
     "form": "Ultimate",
     "id": "EX10-008",
     "illustrator": "GOSSAN",
@@ -202790,13 +202790,13 @@
         "id": "EX10-010_P1",
         "illustrator": "Takeuchi Moto",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "EX10-010_P2",
         "illustrator": "sasasi",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -202804,13 +202804,13 @@
         "id": "EX10-010_P1-J",
         "illustrator": "Takeuchi Moto",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "EX10-010_P2-J",
         "illustrator": "sasasi",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Rare Pull"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "aceEffect": "Overflow \uff1c-4\uff1e ",
@@ -202842,7 +202842,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \uff1cRaid\uff1e \uff1cReboot\uff1e \uff1cBlocker\uff1e [On Play] [When Digivolving] Delete 1 of your opponent's play cost 7 or lower Digimon or Tamers.\n[All Turns] While your opponent has a Digimon with 13000 DP or more, your opponent's Digimon's effects don't affect this Digimon, and it gets +3000 DP.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n\uff1cRaid\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Delete 1 of your opponent's play cost 7 or lower Digimon or Tamers.\n[All Turns] While your opponent has a Digimon with 13000 DP or more, your opponent's Digimon's effects don't affect this Digimon, and it gets +3000 DP.",
     "form": "Mega",
     "id": "EX10-010",
     "illustrator": "sasasi",
@@ -203042,7 +203042,7 @@
     "dnaDigivolve": "-",
     "dp": "10000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e [Breeding] [When Digivolving] This Digimon may move.\n[End of Your Turn] By returning 5 cards with [Lucemon]\u00a0in their texts from your trash to the bottom of the deck, this Digimon may digivolve into [Lucemon: Chaos Mode] in the trash without paying the cost.",
+    "effect": "\uff1cBlocker\uff1e \n[Breeding] [When Digivolving] This Digimon may move.\n[End of Your Turn] By returning 5 cards with [Lucemon]\u00a0in their texts from your trash to the bottom of the deck, this Digimon may digivolve into [Lucemon: Chaos Mode] in the trash without paying the cost.",
     "form": "Rookie",
     "id": "EX10-013",
     "illustrator": "Souichirou Gunjima",
@@ -203079,7 +203079,7 @@
         "id": "EX10-014_P1",
         "illustrator": "banira",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -203087,7 +203087,7 @@
         "id": "EX10-014_P1-J",
         "illustrator": "banira",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -203156,7 +203156,7 @@
         "id": "EX10-015_P1",
         "illustrator": "p!k@ru",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -203164,7 +203164,7 @@
         "id": "EX10-015_P1-J",
         "illustrator": "p!k@ru",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -203233,7 +203233,7 @@
         "id": "EX10-016_P1",
         "illustrator": "Minato Sashima",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -203241,7 +203241,7 @@
         "id": "EX10-016_P1-J",
         "illustrator": "Minato Sashima",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -203336,7 +203336,7 @@
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
-    "effect": "\uff1cJamming\uff1e \uff1cRetaliation\uff1e [Your Turn] [Once Per Turn] When this Digimon gets linked, if you have 1 or fewer Tamers, you may play 1 Tamer card with the [Leviathan]\u00a0trait from your hand without paying the cost.",
+    "effect": "\uff1cJamming\uff1e \n\uff1cRetaliation\uff1e \n[Your Turn] [Once Per Turn] When this Digimon gets linked, if you have 1 or fewer Tamers, you may play 1 Tamer card with the [Leviathan]\u00a0trait from your hand without paying the cost.",
     "form": "Sup./Appmon",
     "id": "EX10-017",
     "illustrator": "sasasi",
@@ -203399,7 +203399,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cFortitude\uff1e [On Play] [When Digivolving] You may play 1 play cost 4 or lower card with \uff1cSave\uff1e\u00a0in its text from under your Tamers without paying the cost.",
+    "effect": "\uff1cFortitude\uff1e \n[On Play] [When Digivolving] You may play 1 play cost 4 or lower card with \uff1cSave\uff1e\u00a0in its text from under your Tamers without paying the cost.",
     "form": "Ultimate",
     "id": "EX10-018",
     "illustrator": "koki",
@@ -203426,7 +203426,7 @@
     },
     "rule": "-",
     "securityEffect": "-",
-    "specialDigivolve": "[Digivolve] [Psychemon]: Cost 5[Digivolve] Lv.4 w/\uff1cSave\uff1e\u00a0in text: Cost 3 ",
+    "specialDigivolve": "[Digivolve] [Psychemon]: Cost 5\n[Digivolve] Lv.4 w/\uff1cSave\uff1e\u00a0in text: Cost 3 ",
     "type": "Wizard",
     "version": "Normal"
   },
@@ -203481,7 +203481,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cFortitude\uff1e [On Play] [When Digivolving] You may link 1 level 4 or lower Digimon card from your trash or this Digimon's digivolution cards to this Digimon without paying the cost.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may suspend 1 of your opponent's Digimon or Tamers. It can't unsuspend in their next unsuspend phase.",
+    "effect": "\uff1cFortitude\uff1e \n[On Play] [When Digivolving] You may link 1 level 4 or lower Digimon card from your trash or this Digimon's digivolution cards to this Digimon without paying the cost.\n[All Turns] [Once Per Turn] When this Digimon gets linked, you may suspend 1 of your opponent's Digimon or Tamers. It can't unsuspend in their next unsuspend phase.",
     "form": "Ult./Appmon",
     "id": "EX10-019",
     "illustrator": "sasasi",
@@ -203584,7 +203584,7 @@
         "id": "EX10-021_P1",
         "illustrator": "koki",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -203592,7 +203592,7 @@
         "id": "EX10-021_P1-J",
         "illustrator": "koki",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -203696,7 +203696,7 @@
     "dnaDigivolve": "-",
     "dp": "14000",
     "dualEffect": "-",
-    "effect": "\uff1cFortitude\uff1e [Start of Your Main Phase] Suspend all of your opponent's level 5 or lower Digimon. Then, if you have 6 or fewer cards in your hand, this Digimon gains \uff1cPiercing\uff1e , \uff1cSecurity A. +2\uff1e and +3000 DP for the turn.\n[Start of Your Main Phase] [On Play] [When Digivolving] Delete 1 of your opponent's suspended Digimon or Tamers.",
+    "effect": "\uff1cFortitude\uff1e \n[Start of Your Main Phase] Suspend all of your opponent's level 5 or lower Digimon. Then, if you have 6 or fewer cards in your hand, this Digimon gains \uff1cPiercing\uff1e , \uff1cSecurity A. +2\uff1e and +3000 DP for the turn.\n[Start of Your Main Phase] [On Play] [When Digivolving] Delete 1 of your opponent's suspended Digimon or Tamers.",
     "form": "Mega",
     "id": "EX10-022",
     "illustrator": "koki",
@@ -203733,7 +203733,7 @@
         "id": "EX10-023_P1",
         "illustrator": "koki",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "EX10-023_P2",
@@ -203747,7 +203747,7 @@
         "id": "EX10-023_P1-J",
         "illustrator": "koki",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "Overflow \uff1c-5\uff1e ",
@@ -203779,7 +203779,7 @@
     "dnaDigivolve": "-",
     "dp": "15000",
     "dualEffect": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e [On Play] [When Digivolving] Suspend all other Digimon and Tamers.\n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's suspended Digimon.\n[All Turns] Other than this Digimon, no Digimon or Tamers can unsuspend in the unsuspend phase.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] Suspend all other Digimon and Tamers.\n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's suspended Digimon.\n[All Turns] Other than this Digimon, no Digimon or Tamers can unsuspend in the unsuspend phase.",
     "form": "Mega",
     "id": "EX10-023",
     "illustrator": "Kazumasa Yasukuni",
@@ -203816,7 +203816,7 @@
         "id": "EX10-024_P1",
         "illustrator": "Iori Sunakura",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -203824,7 +203824,7 @@
         "id": "EX10-024_P1-J",
         "illustrator": "Iori Sunakura",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -203888,7 +203888,7 @@
         "id": "EX10-025_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -203896,7 +203896,7 @@
         "id": "EX10-025_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -203960,7 +203960,7 @@
         "id": "EX10-026_P1",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -203968,7 +203968,7 @@
         "id": "EX10-026_P1-J",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204037,7 +204037,7 @@
         "id": "EX10-027_P1",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -204045,7 +204045,7 @@
         "id": "EX10-027_P1-J",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204114,7 +204114,7 @@
         "id": "EX10-028_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -204122,7 +204122,7 @@
         "id": "EX10-028_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204186,7 +204186,7 @@
         "id": "EX10-029_P1",
         "illustrator": "GOSSAN",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -204194,7 +204194,7 @@
         "id": "EX10-029_P1-J",
         "illustrator": "GOSSAN",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204263,7 +204263,7 @@
         "id": "EX10-030_P1",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -204271,7 +204271,7 @@
         "id": "EX10-030_P1-J",
         "illustrator": "tessy",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204308,7 +204308,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cCollision\uff1e [On Play] [When Digivolving] You may link 1 level 4 or lower Digimon card from your hand or this Digimon's digivolution cards to this Digimon without paying the cost.\n[All Turns] [Once Per Turn] When effects trash any of this Digimon's link cards, 1 of your opponent's Digimon gets -8000 DP for the turn.",
+    "effect": "\uff1cCollision\uff1e \n[On Play] [When Digivolving] You may link 1 level 4 or lower Digimon card from your hand or this Digimon's digivolution cards to this Digimon without paying the cost.\n[All Turns] [Once Per Turn] When effects trash any of this Digimon's link cards, 1 of your opponent's Digimon gets -8000 DP for the turn.",
     "form": "Ult./Appmon",
     "id": "EX10-030",
     "illustrator": "tessy",
@@ -204345,7 +204345,7 @@
         "id": "EX10-031_P1",
         "illustrator": "k.Dra",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       },
       {
         "id": "EX10-031_P2",
@@ -204359,7 +204359,7 @@
         "id": "EX10-031_P1-J",
         "illustrator": "k.Dra",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       },
       {
         "id": "EX10-031_P2-J",
@@ -204434,13 +204434,13 @@
         "id": "EX10-032_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       },
       {
         "id": "EX10-032_P2",
         "illustrator": "Tomotake Kinoshita",
         "note": "Judge Pack 2026 Season 1",
-        "type": "Foil - Judge Stamp -\u00a0Alternative Art"
+        "type": "Alternative Art (Judge Stamp)\u00a0"
       }
     ],
     "JAAs": [
@@ -204448,7 +204448,7 @@
         "id": "EX10-032_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204533,7 +204533,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cFragment (3)\uff1e [When Digivolving] [When Attacking] [Once Per Turn] You may place up to 3 [Mineral] or [Rock]\u00a0trait cards from your trash as this Digimon's bottom digivolution cards.\n[When Digivolving] [When Attacking] By trashing up to 3 [Mineral] or [Rock]\u00a0trait cards from any of your Digimon's digivolution cards, to 1 of your opponent's Digimon, reduce the play cost by 2 until their turn ends for each card trashed.",
+    "effect": "\uff1cFragment (3)\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may place up to 3 [Mineral] or [Rock]\u00a0trait cards from your trash as this Digimon's bottom digivolution cards.\n[When Digivolving] [When Attacking] By trashing up to 3 [Mineral] or [Rock]\u00a0trait cards from any of your Digimon's digivolution cards, to 1 of your opponent's Digimon, reduce the play cost by 2 until their turn ends for each card trashed.",
     "form": "Mega",
     "id": "EX10-033",
     "illustrator": "Tomotake Kinoshita",
@@ -204596,7 +204596,7 @@
     "dnaDigivolve": "-",
     "dp": "13000",
     "dualEffect": "-",
-    "effect": "\uff1cCollision\uff1e \uff1cFragment (3)\uff1e \uff1cBlocker\uff1e [On Play] [When Digivolving] Until your opponent's turn ends, give 1 of their Digimon \"[Start of Your Main Phase] This Digimon attacks.\"[All Turns] [Once Per Turn] When Digimon attack, by trashing any 2 of this Digimon's digivolution cards, this Digimon gains \uff1cSecurity A. +1\uff1e and +3000 DP until your turn ends.",
+    "effect": "\uff1cCollision\uff1e \n\uff1cFragment (3)\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Until your opponent's turn ends, give 1 of their Digimon \"[Start of Your Main Phase] This Digimon attacks.\"[All Turns] [Once Per Turn] When Digimon attack, by trashing any 2 of this Digimon's digivolution cards, this Digimon gains \uff1cSecurity A. +1\uff1e and +3000 DP until your turn ends.",
     "form": "Mega",
     "id": "EX10-034",
     "illustrator": "Itohiro",
@@ -204662,7 +204662,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "[Hand] [Main] If you don't have any Digimon other than Digimon with [Dark Masters]\u00a0in their texts, you may play this card with the play cost reduced by 5. At turn end, delete the Digimon this effect played.\n[On Play] [When Attacking]\uff1cDe-Digivolve 2\uff1e 2 of your opponent's Digimon.\n[All Turns] This Digimon can only digivolve into [Apocalymon].\n[On Deletion] If you have no black face-up security cards, place this Digimon face up as the bottom security card.",
+    "effect": "[Hand] [Main] If you don't have any Digimon other than Digimon with [Dark Masters]\u00a0in their texts, you may play this card with the play cost reduced by 5. At turn end, delete the Digimon this effect played.\n[On Play] [When Attacking]\uff1cDe-Digivolve 2\uff1e 2 of your opponent's Digimon. \n[All Turns] This Digimon can only digivolve into [Apocalymon].\n[On Deletion] If you have no black face-up security cards, place this Digimon face up as the bottom security card.",
     "form": "Mega",
     "id": "EX10-035",
     "illustrator": "Gamazo",
@@ -204734,7 +204734,7 @@
     "dnaDigivolve": "-",
     "dp": "14000",
     "dualEffect": "-",
-    "effect": "\uff1cFragment (3)\uff1e [When Digivolving] [When Attacking] By trashing 3 [Mineral] or [Rock]\u00a0trait cards from any of your Digimon's digivolution cards, delete 1 of your opponent's Digimon and trash their top security card.\n[When Digivolving] [When Attacking] [Once Per Turn] By placing 3 [Mineral] or [Rock]\u00a0trait cards from your trash as this Digimon's bottom digivolution cards, it unsuspends.",
+    "effect": "\uff1cFragment (3)\uff1e \n[When Digivolving] [When Attacking] By trashing 3 [Mineral] or [Rock]\u00a0trait cards from any of your Digimon's digivolution cards, delete 1 of your opponent's Digimon and trash their top security card.\n[When Digivolving] [When Attacking] [Once Per Turn] By placing 3 [Mineral] or [Rock]\u00a0trait cards from your trash as this Digimon's bottom digivolution cards, it unsuspends.",
     "form": "Mega",
     "id": "EX10-036",
     "illustrator": "Tomotake Kinoshita",
@@ -204771,7 +204771,7 @@
         "id": "EX10-037_P1",
         "illustrator": "banira",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -204779,7 +204779,7 @@
         "id": "EX10-037_P1-J",
         "illustrator": "banira",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204901,7 +204901,7 @@
         "id": "EX10-039_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -204909,7 +204909,7 @@
         "id": "EX10-039_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -204973,7 +204973,7 @@
         "id": "EX10-040_P1",
         "illustrator": "NIJIMAARC",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -204981,7 +204981,7 @@
         "id": "EX10-040_P1-J",
         "illustrator": "NIJIMAARC",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -205045,7 +205045,7 @@
         "id": "EX10-041_P1",
         "illustrator": "NIJIMAARC",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -205053,7 +205053,7 @@
         "id": "EX10-041_P1-J",
         "illustrator": "NIJIMAARC",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -205085,7 +205085,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "When effects trash this card from the deck or security stack, give 1 of your opponent's Digimon \uff1cSecurity A. -1\uff1e until their turn ends.\n[On Play] [When Digivolving] By trashing your top security card, trash the top 2 cards of your deck and all of your opponent's Digimon get -3000 DP for the turn.",
+    "effect": "When effects trash this card from the deck or security stack, give 1 of your opponent's Digimon \uff1cSecurity A. -1\uff1e until their turn ends. \n[On Play] [When Digivolving] By trashing your top security card, trash the top 2 cards of your deck and all of your opponent's Digimon get -3000 DP for the turn.",
     "form": "Champion",
     "id": "EX10-041",
     "illustrator": "NIJIMAARC",
@@ -205122,7 +205122,7 @@
         "id": "EX10-042_P1",
         "illustrator": "IWAO",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -205130,7 +205130,7 @@
         "id": "EX10-042_P1-J",
         "illustrator": "IWAO",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -205199,7 +205199,7 @@
         "id": "EX10-043_P1",
         "illustrator": "Itohiro",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -205207,7 +205207,7 @@
         "id": "EX10-043_P1-J",
         "illustrator": "Itohiro",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -205276,7 +205276,7 @@
         "id": "EX10-044_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -205284,7 +205284,7 @@
         "id": "EX10-044_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -205311,7 +205311,7 @@
     "dnaDigivolve": "-",
     "dp": "3000",
     "dualEffect": "-",
-    "effect": "[On Play] By placing 1 [Bagra Army]\u00a0trait Digimon card from your hand or trash under any of your Tamers, \uff1cDraw 1\uff1e [On Deletion] You may play 1 [Tuwarmon] with a play cost of 7 or less from under your Tamers without paying the cost. Then, \uff1cSave\uff1e ",
+    "effect": "[On Play] By placing 1 [Bagra Army]\u00a0trait Digimon card from your hand or trash under any of your Tamers, \uff1cDraw 1\uff1e \n[On Deletion] You may play 1 [Tuwarmon] with a play cost of 7 or less from under your Tamers without paying the cost. Then, \uff1cSave\uff1e ",
     "form": "Champion",
     "id": "EX10-044",
     "illustrator": "Tomotake Kinoshita",
@@ -205348,7 +205348,7 @@
         "id": "EX10-045_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -205356,7 +205356,7 @@
         "id": "EX10-045_P1-J",
         "illustrator": "Tomotake Kinoshita",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Uncommon"
+        "type": "Limited Uncommon (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -205388,7 +205388,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cRush\uff1e \uff1cCollision\uff1e [On Play] [When Digivolving] [When Attacking] [Once Per Turn] By trashing any 1 digivolution card of your [Bagra Army]\u00a0trait Digimon, 1 of your [Bagra Army]\u00a0trait Digimon gains \uff1cBlocker\uff1e and \uff1cRetaliation\uff1e until your opponent's turn ends.\n[On Deletion] \uff1cSave\uff1e ",
+    "effect": "\uff1cRush\uff1e \n\uff1cCollision\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] By trashing any 1 digivolution card of your [Bagra Army]\u00a0trait Digimon, 1 of your [Bagra Army]\u00a0trait Digimon gains \uff1cBlocker\uff1e and \uff1cRetaliation\uff1e until your opponent's turn ends.\n[On Deletion] \uff1cSave\uff1e ",
     "form": "Champion",
     "id": "EX10-045",
     "illustrator": "Tomotake Kinoshita",
@@ -205425,7 +205425,7 @@
         "id": "EX10-046_P1",
         "illustrator": "NIJIMAARC",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [
@@ -205433,7 +205433,7 @@
         "id": "EX10-046_P1-J",
         "illustrator": "NIJIMAARC",
         "note": "EX-10: EXTRA BOOSTER SINISTER ORDER",
-        "type": "Foil - Coloured Border -\u00a0Limited Common"
+        "type": "Limited Common (Coloured Border)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -254979,7 +254979,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cFortitude\uff1e \n[On Play] [When Digivolving] You may suspend 1 Digimon. Then, if this Digimon is suspended, delete 1 of your opponent's Digimon with 8000 DP or less.",
+    "effect": "\uff1cFortitude\uff1e [On Play] [When Digivolving] You may suspend 1 Digimon. Then, if this Digimon is suspended, delete 1 of your opponent's Digimon with 8000 DP or less.",
     "form": "Ultimate",
     "id": "EX8-014",
     "illustrator": "sasasi",
@@ -255146,7 +255146,7 @@
     "dnaDigivolve": "-",
     "dp": "13000",
     "dualEffect": "-",
-    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cFortitude\uff1e \n[On Play] [When Digivolving] You may suspend 1 Digimon. Then, delete 1 of your opponent's suspended Digimon with the lowest DP.\n[Opponent's Turn] While this Digimon is suspended, all of your opponent's Digimon can only attack suspended Digimon.",
+    "effect": "\uff1cSecurity A. +1\uff1e \uff1cFortitude\uff1e [On Play] [When Digivolving] You may suspend 1 Digimon. Then, delete 1 of your opponent's suspended Digimon with the lowest DP.\n[Opponent's Turn] While this Digimon is suspended, all of your opponent's Digimon can only attack suspended Digimon.",
     "form": "Mega",
     "id": "EX8-016",
     "illustrator": "sasasi",
@@ -255567,7 +255567,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cIceclad\uff1e \n[On Play] [When Digivolving] Trash the bottom 2 digivolution cards from 1 of your opponent's Digimon. Then, if your opponent has no Digimon with digivolution cards, gain 1 memory.",
+    "effect": "\uff1cIceclad\uff1e [On Play] [When Digivolving] Trash the bottom 2 digivolution cards from 1 of your opponent's Digimon. Then, if your opponent has no Digimon with digivolution cards, gain 1 memory.",
     "form": "Champion",
     "id": "EX8-022",
     "illustrator": "koki",
@@ -255644,7 +255644,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cIceclad\uff1e \n[On Play] [When Digivolving] Trash any 2 digivolution cards from your opponent's Digimon. Then, 1 of your opponent's Digimon with no digivolution cards can't suspend or activate [When Digivolving] effects until the end of their turn.",
+    "effect": "\uff1cIceclad\uff1e [On Play] [When Digivolving] Trash any 2 digivolution cards from your opponent's Digimon. Then, 1 of your opponent's Digimon with no digivolution cards can't suspend or activate [When Digivolving] effects until the end of their turn.",
     "form": "Ultimate",
     "id": "EX8-023",
     "illustrator": "koki",
@@ -255776,7 +255776,7 @@
       }
     ],
     "digivolveEffect": "[Your Turn] This Digimon's attack target can't be switched.",
-    "dnaDigivolve": "[Digivolve] Lv.4 w/[DS]\u00a0trait: Cost 3\n[DNA Digivolve] Blue Lv.4 + Black/Purple Lv.4: Cost 0 ",
+    "dnaDigivolve": "[Digivolve] Lv.4 w/[DS]\u00a0trait: Cost 3[DNA Digivolve] Blue Lv.4 + Black/Purple Lv.4: Cost 0 ",
     "dp": "8000",
     "dualEffect": "-",
     "effect": "[On Play] [When Digivolving] You may place 1 Digimon card with the [DS]\u00a0trait from your trash as this Digimon's bottom digivolution card.\n[End of Attack] [Once Per Turn] You may play 1 [DS]\u00a0trait Digimon card with a play cost of 5 or less from this Digimon's digivolution cards without paying the cost.",
@@ -255868,7 +255868,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, return 1 of your opponent's Digimon with a play cost of 7 or less to the bottom of the deck.\n[All Turns] While you have 1 or more memory, none of your opponent's Digimon can suspend.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e [On Play] [When Digivolving] \uff1cDe-Digivolve 1\uff1e 1 of your opponent's Digimon. Then, return 1 of your opponent's Digimon with a play cost of 7 or less to the bottom of the deck.\n[All Turns] While you have 1 or more memory, none of your opponent's Digimon can suspend.",
     "form": "Mega",
     "id": "EX8-026",
     "illustrator": "sasasi",
@@ -256009,7 +256009,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cIceclad\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] You may play 1 level 4 or lower [Ice-Snow]\u00a0trait Digimon card from your hand without paying the cost. For each of your opponent's Digimon with no digivolution cards, add 1 to this effect's level maximum.\n[When Digivolving] [When Attacking] [Once Per Turn] By placing 1 Digimon with no digivolution cards as the bottom security card, this Digimon unsuspends.",
+    "effect": "\uff1cIceclad\uff1e \uff1cBarrier\uff1e [When Digivolving] You may play 1 level 4 or lower [Ice-Snow]\u00a0trait Digimon card from your hand without paying the cost. For each of your opponent's Digimon with no digivolution cards, add 1 to this effect's level maximum.\n[When Digivolving] [When Attacking] [Once Per Turn] By placing 1 Digimon with no digivolution cards as the bottom security card, this Digimon unsuspends.",
     "form": "Mega",
     "id": "EX8-028",
     "illustrator": "koki",
@@ -256100,7 +256100,7 @@
       }
     ],
     "digivolveEffect": "-",
-    "dnaDigivolve": "[DNA Digivolve] Blue/Purple Lv.6 + Black/Yellow Lv.6\u00a0: Cost 0\n[DNA Digivolve] [Plesiomon] + Lv.5 w/[Seadramon]\u00a0in name: Cost 0 ",
+    "dnaDigivolve": "[DNA Digivolve] Blue/Purple Lv.6 + Black/Yellow Lv.6\u00a0: Cost 0[DNA Digivolve] [Plesiomon] + Lv.5 w/[Seadramon]\u00a0in name: Cost 0 ",
     "dp": "15000",
     "dualEffect": "-",
     "effect": "[When Digivolving] Return up to 14 play cost's total worth of your opponent's Digimon to the bottom of the deck. If DNA digivolving, you may play up to 12 play cost's total worth of [DS]\u00a0trait cards from this Digimon's digivolution cards without paying the costs.\n[All Turns] While you have 1 or more memory, none of your [DS]\u00a0trait Digimon are affected by your opponent's Digimon's effects. While you have 1 or less, none of your opponent's Digimon can activate [On Play] effects.",
@@ -256392,7 +256392,7 @@
       }
     ],
     "digivolveEffect": "[On Deletion] \uff1cRecovery +1 (Deck)\uff1e ",
-    "dnaDigivolve": "[Digivolve] Lv.4 w/[NSo]\u00a0trait: Cost 3\n[DNA Digivolve] Yellow Lv.4 + Purple/Red Lv.4: Cost 0 ",
+    "dnaDigivolve": "[Digivolve] Lv.4 w/[NSo]\u00a0trait: Cost 3[DNA Digivolve] Yellow Lv.4 + Purple/Red Lv.4: Cost 0 ",
     "dp": "6000",
     "dualEffect": "-",
     "effect": "[On Play] [When Digivolving] Return 1 card with the [NSo]\u00a0trait from your trash to the hand.\n[On Deletion] 1 of your opponent's Digimon gets -4000 DP for the turn.",
@@ -257050,7 +257050,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cFortitude\uff1e \n[All Turns] While this Digimon is suspended, it gets +3000 DP.",
+    "effect": "\uff1cFortitude\uff1e [All Turns] While this Digimon is suspended, it gets +3000 DP.",
     "form": "Ultimate",
     "id": "EX8-042",
     "illustrator": "Ishibashi Yosuke",
@@ -257211,7 +257211,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e \n[On Play] [When Digivolving] You may suspend up to 3 Digimon. For each of your opponent's Digimon suspended by this effect, gain 1 memory.\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, 1 of your Digimon gains \uff1cPiercing\uff1e and gets +3000 DP until the end of your opponent's turn.",
+    "effect": "[Hand] [Counter] \uff1cBlast Digivolve\uff1e [On Play] [When Digivolving] You may suspend up to 3 Digimon. For each of your opponent's Digimon suspended by this effect, gain 1 memory.\n[All Turns] [Once Per Turn] When this Digimon becomes suspended, 1 of your Digimon gains \uff1cPiercing\uff1e and gets +3000 DP until the end of your opponent's turn.",
     "form": "Mega",
     "id": "EX8-044",
     "illustrator": "Tonamikanji",
@@ -257285,7 +257285,7 @@
       }
     ],
     "digivolveEffect": "-",
-    "dnaDigivolve": "[Digivolve] Lv.5 w/[NSo]\u00a0trait: Cost 3\n[DNA Digivolve] Green/Purple Lv.5 + Red/Yellow Lv.5\u00a0: Cost 0",
+    "dnaDigivolve": "[Digivolve] Lv.5 w/[NSo]\u00a0trait: Cost 3[DNA Digivolve] Green/Purple Lv.5 + Red/Yellow Lv.5\u00a0: Cost 0",
     "dp": "12000",
     "dualEffect": "-",
     "effect": "[When Digivolving] Suspend 1 of your opponent's Digimon or Tamers. Then, return 1 of their suspended Tamers to the bottom of the deck.\n[Your Turn] For each color in this Digimon's digivolution cards, it gets +1000 DP. While your opponent has no Digimon with equal or higher DP, this Digimon gets \uff1cPiercing\uff1e and \uff1cSecurity A. +1\uff1e ",
@@ -257654,7 +257654,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n[On Deletion] Reveal the top 3 cards of your deck. You may play 1 Digimon card with the [Mineral] or [Rock]\u00a0trait and a play cost of 5 or less among them without paying the cost. Trash the rest.",
+    "effect": "\uff1cBlocker\uff1e [On Deletion] Reveal the top 3 cards of your deck. You may play 1 Digimon card with the [Mineral] or [Rock]\u00a0trait and a play cost of 5 or less among them without paying the cost. Trash the rest.",
     "form": "Ultimate",
     "id": "EX8-050",
     "illustrator": "SENNSU",
@@ -257731,7 +257731,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "\uff1cCollision\uff1e \n\uff1cPiercing\uff1e \n\uff1cFragment (3)\uff1e ",
+    "effect": "\uff1cCollision\uff1e \uff1cPiercing\uff1e \uff1cFragment (3)\uff1e ",
     "form": "Ultimate",
     "id": "EX8-051",
     "illustrator": "GOSSAN",
@@ -257855,7 +257855,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e \n[All Turns] While your opponent has a Digimon with 13000 DP or more, this Digimon gets +5000 DP.\n[On Deletion] Reveal the top 3 cards of your deck. You may play 1 [Mineral] or [Rock]\u00a0trait Digimon card with a play cost of 8 or less among them without paying the cost. Trash the rest.",
+    "effect": "\uff1cBlocker\uff1e [All Turns] While your opponent has a Digimon with 13000 DP or more, this Digimon gets +5000 DP.\n[On Deletion] Reveal the top 3 cards of your deck. You may play 1 [Mineral] or [Rock]\u00a0trait Digimon card with a play cost of 8 or less among them without paying the cost. Trash the rest.",
     "form": "Mega",
     "id": "EX8-053",
     "illustrator": "SENNSU",
@@ -257927,7 +257927,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cRush\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n[When Attacking] [Once Per Turn] Activate 1 [When Digivolving] effect of 1 Digimon card with [Justimon]\u00a0in its name in this Digimon's digivolution cards as an effect of this Digimon.\n[End of Your Turn] [Once Per Turn] If your opponent has an unsuspended Digimon, this Digimon may attack a player.",
+    "effect": "\uff1cRush\uff1e \uff1cPiercing\uff1e \uff1cSecurity A. +1\uff1e [When Attacking] [Once Per Turn] Activate 1 [When Digivolving] effect of 1 Digimon card with [Justimon]\u00a0in its name in this Digimon's digivolution cards as an effect of this Digimon.\n[End of Your Turn] [Once Per Turn] If your opponent has an unsuspended Digimon, this Digimon may attack a player.",
     "form": "Mega",
     "id": "EX8-054",
     "illustrator": "kaz",
@@ -258005,7 +258005,7 @@
     "dnaDigivolve": "-",
     "dp": "12000",
     "dualEffect": "-",
-    "effect": "\uff1cFragment (3)\uff1e \n[When Digivolving] [When Attacking] By trashing any 3 digivolution cards with the [Mineral] or [Rock]\u00a0trait from your Digimon, this Digimon unsuspends and gains \uff1cSecurity A. +1\uff1e for the turn. \n[End of Your Turn] [Once Per Turn] You may place up to 3 cards with the [Mineral] or [Rock]\u00a0trait from your trash as this Digimon's bottom digivolution cards.",
+    "effect": "\uff1cFragment (3)\uff1e [When Digivolving] [When Attacking] By trashing any 3 digivolution cards with the [Mineral] or [Rock]\u00a0trait from your Digimon, this Digimon unsuspends and gains \uff1cSecurity A. +1\uff1e for the turn.\n[End of Your Turn] [Once Per Turn] You may place up to 3 cards with the [Mineral] or [Rock]\u00a0trait from your trash as this Digimon's bottom digivolution cards.",
     "form": "Mega",
     "id": "EX8-055",
     "illustrator": "GOSSAN",
@@ -268800,7 +268800,7 @@
     "dnaDigivolve": "-",
     "dp": "13000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "\uff1cPiercing\uff1e \uff1cVortex\uff1e \uff1cBlocker\uff1e [When Digivolving] [When Attacking] [Once Per Turn] You may unsuspend 1 Digimon. Then, this Digimon may battle 1 of your opponent's Digimon.\n[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by suspending 1 Digimon, it doesn't leave.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cVortex\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may unsuspend 1 Digimon. Then, this Digimon may battle 1 of your opponent's Digimon.\n[All Turns] [Once Per Turn] When this Digimon would leave the battle area other than by your effects, by suspending 1 Digimon, it doesn't leave.",
     "form": "Mega",
     "id": "LM-066",
     "illustrator": "Koma",
@@ -268858,7 +268858,7 @@
     "dnaDigivolve": "-",
     "dp": "13000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "\uff1cReboot\uff1e \uff1cBlocker\uff1e \uff1cFragment (3)\uff1e [When Digivolving] [Counter] [Once Per Turn] Reveal the top 6 cards of your deck. You may play or use 1 play or use cost 6 or lower [Three Musketeers]\u00a0text card among them without paying the cost. Return the rest to the bottom of the deck.\n[When Digivolving] [When Attacking] By trashing up to 3 [Three Musketeers]\u00a0text cards from any of your Digimon's digivolution cards, for each one trashed, delete 1 of your opponent's play cost 7 or lower Digimon.",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cFragment (3)\uff1e \n[When Digivolving] [Counter] [Once Per Turn] Reveal the top 6 cards of your deck. You may play or use 1 play or use cost 6 or lower [Three Musketeers]\u00a0text card among them without paying the cost. Return the rest to the bottom of the deck.\n[When Digivolving] [When Attacking] By trashing up to 3 [Three Musketeers]\u00a0text cards from any of your Digimon's digivolution cards, for each one trashed, delete 1 of your opponent's play cost 7 or lower Digimon.",
     "form": "Mega",
     "id": "LM-067",
     "illustrator": "robomisutya",
@@ -268874,7 +268874,7 @@
     },
     "notes": "LM-09: LIMITED CARD PACK DISTANCIA CERO",
     "optionCardColourRequirement": "Black",
-    "optionCardEffect": "\uff1cUse Req. ([Three Musketeers] in text)\uff1e [Main] \uff1cDe-Digivolve 3\uff1e 3 of your opponent's Digimon. Then, you may place 1 [Three Musketeers]\u00a0trait card from your hand or trash as any of your Digimon's bottom digivolution card.",
+    "optionCardEffect": "\uff1cUse Req. ([Three Musketeers] in text)\uff1e \n[Main] \uff1cDe-Digivolve 3\uff1e 3 of your opponent's Digimon. Then, you may place 1 [Three Musketeers]\u00a0trait card from your hand or trash as any of your Digimon's bottom digivolution card.",
     "playCost": "6",
     "rarity": "P",
     "restrictions": {
@@ -268921,7 +268921,7 @@
     "dnaDigivolve": "-",
     "dp": "13000",
     "dualEffect": "[Arts Digivolve] ",
-    "effect": "\uff1cSecurity A. +1\uff1e [When Digivolving] [End of Attack] If your hand has 4 or fewer cards, you may play 1 level 4 or lower Digimon card with the [Evil], [Dark Dragon] or [Evil Dragon]\u00a0trait from your trash to the field without paying the cost.\n[When Digivolving] [On Deletion] Trash 2 cards in your hand. Then, you may activate 1 [Main] effect on this card's Option side.",
+    "effect": "\uff1cSecurity A. +1\uff1e \n[When Digivolving] [End of Attack] If your hand has 4 or fewer cards, you may play 1 level 4 or lower Digimon card with the [Evil], [Dark Dragon] or [Evil Dragon]\u00a0trait from your trash to the field without paying the cost.\n[When Digivolving] [On Deletion] Trash 2 cards in your hand. Then, you may activate 1 [Main] effect on this card's Option side.",
     "form": "Mega",
     "id": "LM-068",
     "illustrator": "tessy",
@@ -268958,13 +268958,13 @@
         "id": "P-001_P1",
         "illustrator": "Ishibashi Yosuke",
         "note": "PB-06: Tamer's Evolution Box 2",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-001_P2",
         "illustrator": "sasasi",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Gold Foil - Gold Background -\u00a0Promo"
+        "type": "Promo (Gold Background)\u00a0"
       }
     ],
     "JAAs": [
@@ -268972,7 +268972,7 @@
         "id": "P-001_P1-J",
         "illustrator": "Ishibashi Yosuke",
         "note": "PB-06: Tamer's Evolution Box 2",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269036,7 +269036,7 @@
         "id": "P-002_P1",
         "illustrator": "KISUKE",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Gold Foil - Gold Background -\u00a0Promo"
+        "type": "Promo (Gold Background)\u00a0"
       }
     ],
     "JAAs": [],
@@ -269101,7 +269101,7 @@
         "id": "P-003_P1",
         "illustrator": "As'Maria",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Gold Foil - Gold Background -\u00a0Promo"
+        "type": "Promo (Gold Background)\u00a0"
       }
     ],
     "JAAs": [],
@@ -269166,19 +269166,19 @@
         "id": "P-004_P1",
         "illustrator": "Takumi Kousaka",
         "note": "Digimon Card Game Fest - Vault Set",
-        "type": "Foil - Stamped -\u00a0Promo"
+        "type": "Promo (Stamped)\u00a0"
       },
       {
         "id": "P-004_P2",
         "illustrator": "Kayo Horaguchi",
         "note": "PB-09: Memorial Collection 01 Playmat",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-004_P3",
         "illustrator": "Takumi Kousaka",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Gold Foil - Gold Background -\u00a0Promo"
+        "type": "Promo (Gold Background)\u00a0"
       }
     ],
     "JAAs": [
@@ -269186,7 +269186,7 @@
         "id": "P-004_P1-J",
         "illustrator": "Kayo Horaguchi",
         "note": "Memorial Collection 01",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269244,13 +269244,13 @@
         "id": "P-005_P1",
         "illustrator": "mojuke",
         "note": "Digimon Illustration Competition Promotion Pack 2022",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "P-005_P2",
         "illustrator": "Nakano Haito",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Gold Foil - Gold Background -\u00a0Promo"
+        "type": "Promo (Gold Background)\u00a0"
       }
     ],
     "JAAs": [
@@ -269258,7 +269258,7 @@
         "id": "P-005_P1-J",
         "illustrator": "mojuke",
         "note": "Digimon Illustration Competition Promotion Pack 2022",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269323,7 +269323,7 @@
         "id": "P-006_P1",
         "illustrator": "Tonamikanji",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Gold Foil - Gold Background -\u00a0Promo"
+        "type": "Promo (Gold Background)\u00a0"
       }
     ],
     "JAAs": [],
@@ -269388,7 +269388,7 @@
         "id": "P-007_P1",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -269396,7 +269396,7 @@
         "id": "P-007_P1-J",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269461,31 +269461,31 @@
         "id": "P-008_P1",
         "illustrator": "koki",
         "note": "Regionals 2021 Participation Set",
-        "type": "Foil - Participation Stamp -\u00a0Participation"
+        "type": "Participation (Participation Stamp)\u00a0"
       },
       {
         "id": "P-008_P2",
         "illustrator": "koki",
         "note": "Regionals 2021 Finalist Set / Regionals 2022 May-July 2021 Finalist Set",
-        "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
+        "type": "Top 32 Prize (Finalist Stamp)\u00a0"
       },
       {
         "id": "P-008_P3",
         "illustrator": "koki",
         "note": "Regionals 2021 Champion Set / Regionals 2022 May-July 2021 Champion Set",
-        "type": "Foil - Champion Stamp -\u00a01st Place Prize"
+        "type": "1st Place Prize (Champion Stamp)\u00a0"
       },
       {
         "id": "P-008_P4",
         "illustrator": "Takase",
         "note": "GB-02: Digimon Card Game Gift Box 2",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       },
       {
         "id": "P-008_P5",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -269493,7 +269493,7 @@
         "id": "P-008_P1-J",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269558,13 +269558,13 @@
         "id": "P-009_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "Digimon Card Game Fest - Vault Set",
-        "type": "Foil - Stamped -\u00a0Promo"
+        "type": "Promo (Stamped)\u00a0"
       },
       {
         "id": "P-009_P2",
         "illustrator": "Tomotake Kinoshita",
         "note": "GB-02: Digimon Card Game Gift Box 2",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [],
@@ -269629,19 +269629,19 @@
         "id": "P-010_P1",
         "illustrator": "Tomotake Kinoshita",
         "note": "Regionals 2023 Participation Set 1",
-        "type": "Foil - Participation Stamp -\u00a0Participation"
+        "type": "Participation (Participation Stamp)\u00a0"
       },
       {
         "id": "P-010_P2",
         "illustrator": "Tomotake Kinoshita",
         "note": "Regionals 2023 Finalist Set 1",
-        "type": "Foil - Finalist Stamp -\u00a0Top 32 Prize"
+        "type": "Top 32 Prize (Finalist Stamp)\u00a0"
       },
       {
         "id": "P-010_P3",
         "illustrator": "Tomotake Kinoshita",
         "note": "Regionals 2023 Champion Set 1",
-        "type": "Foil - Champion Stamp -\u00a0Top 2 Prize"
+        "type": "Top 2 Prize (Champion Stamp)\u00a0"
       }
     ],
     "JAAs": [],
@@ -269706,7 +269706,7 @@
         "id": "P-011_P1",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -269714,7 +269714,7 @@
         "id": "P-011_P1-J",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269779,13 +269779,13 @@
         "id": "P-012-Errata",
         "illustrator": "TENYA YABUNO",
         "note": "Special Box Promotion Pack",
-        "type": "Holographic - Errata Text -\u00a0Promo"
+        "type": "Promo (Errata Text)\u00a0"
       },
       {
         "id": "P-012_P1",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil - New Block -\u00a0Promo"
+        "type": "Promo (New Block)\u00a0"
       }
     ],
     "JAAs": [
@@ -269793,7 +269793,7 @@
         "id": "P-012_P1-J",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil - New Block -\u00a0Promo"
+        "type": "Promo (New Block)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269852,13 +269852,13 @@
         "id": "P-013_P1",
         "illustrator": "Takase",
         "note": "Event Pack 3",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       },
       {
         "id": "P-013_P2",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -269866,7 +269866,7 @@
         "id": "P-013_P1-J",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -269931,7 +269931,7 @@
         "id": "P-014_P1",
         "illustrator": "koki",
         "note": "Event Pack 3",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       }
     ],
     "JAAs": [],
@@ -269959,7 +269959,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "\uff1cBlocker\uff1e [When Attacking] Lose 2 memory.",
+    "effect": "\uff1cBlocker\uff1e \n[When Attacking] Lose 2 memory.",
     "form": "Champion",
     "id": "P-014",
     "illustrator": "koki",
@@ -270054,37 +270054,37 @@
         "id": "P-016_P1",
         "illustrator": "As'Maria",
         "note": "Judge Pack 1",
-        "type": "Foil - Judge Stamp -\u00a0Promo"
+        "type": "Promo (Judge Stamp)\u00a0"
       },
       {
         "id": "P-016_P2",
         "illustrator": "As'Maria",
         "note": "Digimon Card Game Fest - Vault Set",
-        "type": "Foil - Fest Stamp -\u00a0Promo"
+        "type": "Promo (Fest Stamp)\u00a0"
       },
       {
         "id": "P-016_P3",
         "illustrator": "toriyufu",
         "note": "Event Pack 3",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-016_P4",
         "illustrator": "As'Maria",
         "note": "GB-02: Digimon Card Game Gift Box 2",
-        "type": "Foil - Judge Stamp -\u00a0Alternative Art"
+        "type": "Alternative Art (Judge Stamp)\u00a0"
       },
       {
         "id": "P-016_P5",
         "illustrator": "toriyufu",
         "note": "Event Pack 3 Alt-Art Gold Stamp Set",
-        "type": "Foil - Stamped -\u00a0Alternative Art"
+        "type": "Alternative Art (Stamped)\u00a0"
       },
       {
         "id": "P-016_P6",
         "illustrator": "As'Maria",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -270092,7 +270092,7 @@
         "id": "P-016_P1-J",
         "illustrator": "As'Maria",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270157,7 +270157,7 @@
         "id": "P-017_P1",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -270165,7 +270165,7 @@
         "id": "P-017_P1-J",
         "illustrator": "Takase",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270230,7 +270230,7 @@
         "id": "P-018_P1",
         "illustrator": "Kenji Watanabe",
         "note": "25th Special Memorial Pack",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -270238,7 +270238,7 @@
         "id": "P-018_P1-J",
         "illustrator": "Kenji Watanabe",
         "note": "Memorial Collection 25th Anniversary",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270360,7 +270360,7 @@
         "id": "P-020_P1",
         "illustrator": "koki",
         "note": "Premium Deck Set Lucky Pack",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -270368,7 +270368,7 @@
         "id": "P-020_P1-J",
         "illustrator": "koki",
         "note": "Tamer's Selection Box Evolution Cup 2022",
-        "type": "Textured - Full Art -\u00a0Alternative Art"
+        "type": "Alternative Art (Full Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270640,7 +270640,7 @@
         "id": "P-025_P1",
         "illustrator": "Shin Sasaki",
         "note": "Winner Pack Across Time",
-        "type": "No Foil - Full Art -\u00a0Promo"
+        "type": "Promo (Full Art)\u00a0"
       }
     ],
     "JAAs": [
@@ -270648,7 +270648,7 @@
         "id": "P-025_P1-J",
         "illustrator": "Shin Sasaki",
         "note": "Tamer's Selection Box DC-1 Grand Prix 2022",
-        "type": "Textured - Full Art -\u00a0Promo"
+        "type": "Promo (Full Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270712,7 +270712,7 @@
         "id": "P-026_P1",
         "illustrator": "Nakano Haito",
         "note": "Winner Pack Across Time",
-        "type": "Full Art -\u00a0Promo"
+        "type": "Promo (Full Art)\u00a0"
       }
     ],
     "JAAs": [
@@ -270720,7 +270720,7 @@
         "id": "P-026_P1-J",
         "illustrator": "Nakano Haito",
         "note": "Tamer's Selection Box DC-1 Grand Prix 2022",
-        "type": "Textured - Full Art -\u00a0Promo"
+        "type": "Promo (Full Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270784,7 +270784,7 @@
         "id": "P-027_P1",
         "illustrator": "Tonamikanji",
         "note": "Winner Pack Across Time",
-        "type": "Full Art -\u00a0Promo"
+        "type": "Promo (Full Art)\u00a0"
       }
     ],
     "JAAs": [
@@ -270792,7 +270792,7 @@
         "id": "P-027_P1-J",
         "illustrator": "Tonamikanji",
         "note": "Tamer's Selection Box DC-1 Grand Prix 2022",
-        "type": "Textured - Full Art -\u00a0Promo"
+        "type": "Promo (Full Art)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270856,19 +270856,19 @@
         "id": "P-028_P1",
         "illustrator": "Ryuda",
         "note": "Double Diamond Pre-Release Promotion",
-        "type": "Foil -\u00a01st Place Prize"
+        "type": "1st Place Prize (Foil)\u00a0"
       },
       {
         "id": "P-028_P2",
         "illustrator": "Nakano Haito",
         "note": "Digimon Card Game Fest - Vault Set",
-        "type": "Foil - Stamped -\u00a0Promo"
+        "type": "Promo (Stamped)\u00a0"
       },
       {
         "id": "P-028_P3",
         "illustrator": "Ryuda",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil - New Block -\u00a0Promo"
+        "type": "Promo (New Block)\u00a0"
       }
     ],
     "JAAs": [
@@ -270876,13 +270876,13 @@
         "id": "P-028_P1-J",
         "illustrator": "Ryuda",
         "note": "Tamer Meeting / Bandai TCG Online Festival / BT-06 DOUBLE DIAMOND online launch event",
-        "type": "No Foil -\u00a0Participation"
+        "type": "Participation (No Foil)\u00a0"
       },
       {
         "id": "P-028_P2-J",
         "illustrator": "Ryuda",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil - New Block -\u00a0Promo"
+        "type": "Promo (New Block)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -270911,7 +270911,7 @@
     "dnaDigivolve": "-",
     "dp": "2000",
     "dualEffect": "-",
-    "effect": "[On Play] If you have 3 or more security cards, \uff1cDraw 1\uff1e If you have 3 or fewer security cards, gain 1 memory.",
+    "effect": "[On Play] If you have 3 or more security cards, \uff1cDraw 1\uff1e\n If you have 3 or fewer security cards, gain 1 memory.",
     "form": "Rookie",
     "id": "P-028",
     "illustrator": "Nakano Haito",
@@ -270948,13 +270948,13 @@
         "id": "P-029-Errata",
         "illustrator": "Ryuda",
         "note": "Revision Pack 2021 / Revision Pack 2023",
-        "type": "No Foil - Errata Text -\u00a0Promo"
+        "type": "Promo (Errata Text)\u00a0"
       },
       {
         "id": "P-029_P1",
         "illustrator": "Naochika Morishita",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -270962,7 +270962,7 @@
         "id": "P-029_P1-J",
         "illustrator": "Naochika Morishita",
         "note": "PB-12: Digimon Frontier 20th Memorial Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -271026,13 +271026,13 @@
         "id": "P-030-Errata",
         "illustrator": "Ryuda",
         "note": "Revision Pack 2021 / Revision Pack 2023",
-        "type": "No Foil - Errata Text -\u00a0Promo"
+        "type": "Promo (Errata Text)\u00a0"
       },
       {
         "id": "P-030_P1",
         "illustrator": "Naochika Morishita",
         "note": "PB-12E: Digimon Card Game 2nd Anniversary Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -271040,7 +271040,7 @@
         "id": "P-030_P1-J",
         "illustrator": "Naochika Morishita",
         "note": "PB-12: Digimon Frontier 20th Memorial Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -271104,7 +271104,7 @@
         "id": "P-031_P1",
         "illustrator": "banira",
         "note": "Blast Ace Pre-Release Promotion",
-        "type": "No Foil -\u00a0Participation"
+        "type": "Participation (No Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -271112,7 +271112,7 @@
         "id": "P-031_P1-J",
         "illustrator": "banira",
         "note": "Tamer Battle Pack 18",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -271140,7 +271140,7 @@
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
-    "effect": "[Opponent's Turn] While you have a purple Digimon in play, this Digimon gains \uff1cBlocker\uff1e [On Play] If you have 3 or fewer security cards, \uff1cRecovery +1 (Deck)\uff1e ",
+    "effect": "[Opponent's Turn] While you have a purple Digimon in play, this Digimon gains \uff1cBlocker\uff1e \n[On Play] If you have 3 or fewer security cards, \uff1cRecovery +1 (Deck)\uff1e ",
     "form": "Champion",
     "id": "P-031",
     "illustrator": "Qacoro",
@@ -271177,13 +271177,13 @@
         "id": "P-032_P1",
         "illustrator": "Kirita",
         "note": "Digimon Card Game Fest - Vault Set",
-        "type": "Foil - Stamped -\u00a0Promo"
+        "type": "Promo (Stamped)\u00a0"
       },
       {
         "id": "P-032_P2",
         "illustrator": "Kirita",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil - New Block -\u00a0Promo"
+        "type": "Promo (New Block)\u00a0"
       }
     ],
     "JAAs": [
@@ -271191,7 +271191,7 @@
         "id": "P-032_P1-J",
         "illustrator": "Kirita",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil - New Block -\u00a0Promo"
+        "type": "Promo (New Block)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -271256,13 +271256,13 @@
         "id": "P-033_P1",
         "illustrator": "KISUKE",
         "note": "GB-02: Digimon Card Game Gift Box 2",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       },
       {
         "id": "P-033_P2",
         "illustrator": "GOSSAN",
         "note": "ST-14: Advanced Deck Set Beelzemon",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       }
     ],
     "JAAs": [
@@ -271270,7 +271270,7 @@
         "id": "P-033_P1-J",
         "illustrator": "GOSSAN",
         "note": "ST-14: Advanced Deck Set Beelzemon",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -271392,31 +271392,31 @@
         "id": "P-035_P1",
         "illustrator": "Takase",
         "note": "Box Promotion Pack -Next Adventure-",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-035_P2",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-035_P3",
         "illustrator": "p!k@ru",
         "note": "AB-02: Adventure Box 2",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-035_P4",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-035_P5",
         "illustrator": "Shin Sasaki",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Super Rare"
+        "type": "Super Rare (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -271424,25 +271424,25 @@
         "id": "P-035_P1-J",
         "illustrator": "Takase",
         "note": "Memorial Collection 03",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-035_P2-J",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-035_P3-J",
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-035_P4-J",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -271502,37 +271502,37 @@
         "id": "P-036_P1",
         "illustrator": "Takase",
         "note": "Box Promotion Pack -Next Adventure-",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-036_P2",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-036_P3",
         "illustrator": "p!k@ru",
         "note": "AB-02: Adventure Box 2",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-036_P4",
         "illustrator": "No Illustrator",
         "note": "Demo Deck: Imperialdramon",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "P-036_P5",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-036_P6",
         "illustrator": "Shin Sasaki",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Super Rare"
+        "type": "Super Rare (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -271540,31 +271540,31 @@
         "id": "P-036_P1-J",
         "illustrator": "Takase",
         "note": "Memorial Collection 03",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-036_P2-J",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-036_P3-J",
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-036_P4-J",
         "illustrator": "No Illustrator",
         "note": "Demo Deck: Imperialdramon",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "P-036_P5-J",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -271624,37 +271624,37 @@
         "id": "P-037_P1",
         "illustrator": "Takase",
         "note": "Box Promotion Pack -Next Adventure-",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-037_P2",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-037_P3",
         "illustrator": "p!k@ru",
         "note": "AB-02: Adventure Box 2",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-037_P4",
         "illustrator": "Shin Sasaki",
         "note": "ST-19: Starter Deck Fable Waltz",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-037_P5",
         "illustrator": "Tonamikanji",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-037_P7",
         "illustrator": "Shin Sasaki",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Super Rare"
+        "type": "Super Rare (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -271662,31 +271662,31 @@
         "id": "P-037_P1-J",
         "illustrator": "Takase",
         "note": "Memorial Collection 03",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-037_P2-J",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-037_P3-J",
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-037_P4-J",
         "illustrator": "Shin Sasaki",
         "note": "ST-19: Starter Deck Fable Waltz",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-037_P5-J",
         "illustrator": "Tonamikanji",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -271747,37 +271747,37 @@
         "id": "P-038_P1",
         "illustrator": "Takase",
         "note": "Box Promotion Pack -Next Adventure-",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-038_P2",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-038_P3",
         "illustrator": "p!k@ru",
         "note": "AB-02: Adventure Box 2",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-038_P4",
         "illustrator": "Shin Sasaki",
         "note": "ST-18: Starter Deck Guardian Vortex",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-038_P5",
         "illustrator": "Tonamikanji",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-038_P6",
         "illustrator": "Shin Sasaki",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Super Rare"
+        "type": "Super Rare (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -271785,31 +271785,31 @@
         "id": "P-038_P1-J",
         "illustrator": "Takase",
         "note": "Memorial Collection 03",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-038_P2-J",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-038_P3-J",
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-038_P4-J",
         "illustrator": "Shin Sasaki",
         "note": "ST-18: Starter Deck Guardian Vortex",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-038_P5-J",
         "illustrator": "Tonamikanji",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -271870,31 +271870,31 @@
         "id": "P-039_P1",
         "illustrator": "Takase",
         "note": "Box Promotion Pack -Next Adventure-",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-039_P2",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-039_P3",
         "illustrator": "p!k@ru",
         "note": "AB-02: Adventure Box 2",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-039_P4",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-039_P5",
         "illustrator": "Shin Sasaki",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Super Rare"
+        "type": "Super Rare (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -271902,25 +271902,25 @@
         "id": "P-039_P1-J",
         "illustrator": "Takase",
         "note": "Memorial Collection 03",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-039_P2-J",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-039_P3-J",
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-039_P4-J",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -271980,31 +271980,31 @@
         "id": "P-040_P1",
         "illustrator": "Takase",
         "note": "Box Promotion Pack -Next Adventure-",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-040_P2",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-040_P3",
         "illustrator": "p!k@ru",
         "note": "AB-02: Adventure Box 2",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-040_P4",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       },
       {
         "id": "P-040_P5",
         "illustrator": "Shin Sasaki",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Super Rare"
+        "type": "Super Rare (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -272012,25 +272012,25 @@
         "id": "P-040_P1-J",
         "illustrator": "Takase",
         "note": "Memorial Collection 03",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-040_P2-J",
         "illustrator": "Shin Sasaki",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured - New Block -\u00a0Super Rare"
+        "type": "Super Rare (New Block)\u00a0"
       },
       {
         "id": "P-040_P3-J",
         "illustrator": "p!k@ru",
         "note": "RB-01: Resurgence Booster",
-        "type": "Textured -\u00a0Alternative Art"
+        "type": "Alternative Art (Textured)\u00a0"
       },
       {
         "id": "P-040_P4-J",
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
       }
     ],
     "aceEffect": "-",
@@ -272090,19 +272090,19 @@
         "id": "P-041_P1",
         "illustrator": "Naochika Morishita",
         "note": "DC-1 2022",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-041_P2",
         "illustrator": "banira",
         "note": "PB-13: Digimon Card Game Royal Knights Binder Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       },
       {
         "id": "P-041_P3",
         "illustrator": "tessy",
         "note": "AD-01: ADVANCED BOOSTER DIGIMON GENERATION",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -272110,13 +272110,13 @@
         "id": "P-041_P1-J",
         "illustrator": "Naochika Morishita",
         "note": "DC-1 2022",
-        "type": "Foil - Stamped -\u00a0Participation"
+        "type": "Participation (Stamped)\u00a0"
       },
       {
         "id": "P-041_P2-J",
         "illustrator": "banira",
         "note": "PB-13: Digimon Card Game Royal Knights Binder Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -272181,13 +272181,13 @@
         "id": "P-042_P1",
         "illustrator": "Takase",
         "note": "Event Pack 4",
-        "type": "Foil - Coloured Border -\u00a0Alternative Art"
+        "type": "Alternative Art (Coloured Border)\u00a0"
       },
       {
         "id": "P-042_P2",
         "illustrator": "Ryodan",
         "note": "Winner Pack: Blast Ace",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -272195,7 +272195,7 @@
         "id": "P-042_P1-J",
         "illustrator": "Ryodan",
         "note": "Tamer Battle Pack 17",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -272260,7 +272260,7 @@
         "id": "P-043_P1",
         "illustrator": "Nakano Haito",
         "note": "PB-13: Digimon Card Game Royal Knights Binder Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -272268,7 +272268,7 @@
         "id": "P-043_P1-J",
         "illustrator": "Nakano Haito",
         "note": "PB-13: Digimon Card Game Royal Knights Binder Set",
-        "type": "Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -272390,7 +272390,7 @@
         "id": "P-045-Errata",
         "illustrator": "Ryodan",
         "note": "Revision Pack 2023",
-        "type": "No Foil - Errata Text -\u00a0Promo"
+        "type": "Promo (Errata Text)\u00a0"
       }
     ],
     "JAAs": [],
@@ -272455,7 +272455,7 @@
         "id": "P-046_P1",
         "illustrator": "hokuyuu",
         "note": "Digimon Card Game Fest - Vault Set",
-        "type": "Foil - Stamped -\u00a0Promo"
+        "type": "Promo (Stamped)\u00a0"
       }
     ],
     "JAAs": [],
@@ -272520,7 +272520,7 @@
         "id": "P-047_P1",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -272528,7 +272528,7 @@
         "id": "P-047_P1-J",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -272593,7 +272593,7 @@
         "id": "P-048_P1",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -272601,7 +272601,7 @@
         "id": "P-048_P1-J",
         "illustrator": "TENYA YABUNO",
         "note": "RB-01: Resurgence Booster",
-        "type": "Foil -\u00a0Promo"
+        "type": "Promo (Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -272687,7 +272687,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] If you have a Tamer in play, this Digimon gains \uff1cSecurity A. +1\uff1e for the turn.\n[Your Turn] [Once Per Turn] When this Digimon is blocked, trash the top card of your opponent's security stack.",
+    "effect": "[When Digivolving] If you have a Tamer in play, this Digimon gains \uff1cSecurity A. +1\uff1e for the turn. \n[Your Turn] [Once Per Turn] When this Digimon is blocked, trash the top card of your opponent's security stack.",
     "form": "Mega",
     "id": "P-049",
     "illustrator": "No Illustrator",
@@ -272724,7 +272724,7 @@
         "id": "P-050_P1",
         "illustrator": "E_Volution_",
         "note": "Illustration Competition Promotion Pack 2023",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -272732,7 +272732,7 @@
         "id": "P-050_P1-J",
         "illustrator": "E_Volution_",
         "note": "Illustration Competition Promotion Pack 2023",
-        "type": "No Foil -\u00a0Alternative Art"
+        "type": "Alternative Art (No Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -272817,7 +272817,7 @@
     "dnaDigivolve": "-",
     "dp": "11000",
     "dualEffect": "-",
-    "effect": "[When Digivolving] If you have a Tamer in play, \uff1cDraw 2\uff1e [Opponent's Turn] This Digimon can't be attacked.",
+    "effect": "[When Digivolving] If you have a Tamer in play, \uff1cDraw 2\uff1e \n[Opponent's Turn] This Digimon can't be attacked.",
     "form": "Mega",
     "id": "P-051",
     "illustrator": "No Illustrator",
