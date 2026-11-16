@@ -551,10 +551,18 @@ const escapeHtml = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '
  * Wraps the keywords of an effect text, like [On Play] or ＜Blocker＞, in a bold colored span (rendered via innerHTML).
  * Known keywords come from the replacement table, any other ＜...＞ is a keyword too. The text itself is HTML-escaped.
  */
-export function highlightKeywords(effect: string): string {
+// Keyword families with a number or phase in them. The wiki writes "[Assembly\u00a0-4]" with a no-break space,
+// so every pattern runs on text where that space is a normal one.
+const KEYWORD_FAMILIES = [/\[Assembly [-\u2212\u2013]\d+\]/g, /\[DigiXros [-\u2212\u2013]\d+\]/g, /\[(?:Start|End) of (?:Your|Opponent's) (?:Turn|Main Phase|Attack)\]/g];
+
+export function highlightKeywords(rawEffect: string): string {
+  const effect = rawEffect.replace(/\u00a0/g, ' ');
   const found: { start: number; end: number; tooltip: string }[] = [];
   for (const [pattern, , tooltip] of replacements) {
     for (const m of effect.matchAll(new RegExp(pattern.source, 'g'))) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip });
+  }
+  for (const pattern of KEYWORD_FAMILIES) {
+    for (const m of effect.matchAll(pattern)) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
   }
   for (const m of effect.matchAll(/＜[^＞]+＞/g)) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
 
@@ -569,7 +577,17 @@ export function highlightKeywords(effect: string): string {
   let at = 0;
   for (const m of matches) {
     const text = effect.slice(m.start, m.end);
-    const kind = text.startsWith('＜') ? 'kw-angle' : text === '[Once Per Turn]' ? 'kw-once' : text.startsWith('[') ? 'kw-bracket' : 'kw-other';
+    const kind = text.startsWith('＜')
+      ? 'kw-angle'
+      : text === '[Once Per Turn]'
+        ? 'kw-once'
+        : text.startsWith('[Assembly') || text.startsWith('[DigiXros')
+          ? 'kw-assembly'
+          : text === '[Digivolve]'
+            ? 'kw-angle'
+            : text.startsWith('[')
+              ? 'kw-bracket'
+              : 'kw-other';
     html += escapeHtml(effect.slice(at, m.start));
     html += `<span class="kw ${kind}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
     at = m.end;

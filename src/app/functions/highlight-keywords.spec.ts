@@ -24,6 +24,21 @@ describe('highlightKeywords', () => {
     expect(highlightKeywords('[Once Per Turn] Draw 1.')).toContain('<span class="kw kw-once">[Once Per Turn]</span>');
   });
 
+  it('finds Assembly written with a no-break space, for every number', () => {
+    const html = highlightKeywords('[Assembly\u00a0-4] [MetalGreymon: Alterous Mode] x [Greymon]');
+    expect(html).toContain('<span class="kw kw-assembly">[Assembly -4]</span>');
+    expect(highlightKeywords('[Assembly\u00a0-9]')).toContain('kw-assembly');
+  });
+
+  it('colors DigiXros green like Assembly, and Digivolve orange', () => {
+    expect(highlightKeywords('[DigiXros -2] [A] x [B]')).toContain('<span class="kw kw-assembly">[DigiXros -2]</span>');
+    expect(highlightKeywords('[Digivolve] Lv.5: Cost 3')).toContain('<span class="kw kw-angle">[Digivolve]</span>');
+  });
+
+  it('finds the opponent phase timings', () => {
+    expect(highlightKeywords("[Start of Opponent's Main Phase] Do it.")).toContain('kw-bracket');
+  });
+
   it('leaves plain text alone', () => {
     expect(highlightKeywords('Gain 1 memory.')).toBe('Gain 1 memory.');
   });
