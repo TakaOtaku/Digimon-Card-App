@@ -82,21 +82,33 @@ h2.text-xs {
   color: var(--dc-label) !important;
 }
 
-// Effect keywords: bold colored text instead of images
+// Effect keywords look like the badges printed on the cards: a colored pill with bold white text
 .kw {
+  display: inline-block;
+  padding: 0 0.45em;
+  border-radius: 0.3em;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
   font-weight: 700;
+  font-size: 0.9em;
+  line-height: 1.45;
+  white-space: nowrap;
 }
 
+// [When Digivolving], [When Attacking], [On Play] ...
 .kw-bracket {
-  color: var(--dc-accent);
+  background: #2d6cc0;
 }
 
+// ＜Blocker＞, ＜Security Attack +1＞ ...
 .kw-angle {
-  color: #ffb454;
+  background: #b8571a;
 }
 
+// [Once Per Turn] is red on the cards
+.kw-once,
 .kw-other {
-  color: #ff8a80;
+  background: #b8243f;
 }
 
 .primary-color {

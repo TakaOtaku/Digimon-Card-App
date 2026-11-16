@@ -20,6 +20,10 @@ describe('highlightKeywords', () => {
     expect(highlightKeywords('<img src=x onerror=1> [On Play]')).toBe('&lt;img src=x onerror=1&gt; <span class="kw kw-bracket">[On Play]</span>');
   });
 
+  it('colors Once Per Turn red like the cards do', () => {
+    expect(highlightKeywords('[Once Per Turn] Draw 1.')).toContain('<span class="kw kw-once">[Once Per Turn]</span>');
+  });
+
   it('leaves plain text alone', () => {
     expect(highlightKeywords('Gain 1 memory.')).toBe('Gain 1 memory.');
   });

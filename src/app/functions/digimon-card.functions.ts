@@ -569,7 +569,7 @@ export function highlightKeywords(effect: string): string {
   let at = 0;
   for (const m of matches) {
     const text = effect.slice(m.start, m.end);
-    const kind = text.startsWith('＜') ? 'kw-angle' : text.startsWith('[') ? 'kw-bracket' : 'kw-other';
+    const kind = text.startsWith('＜') ? 'kw-angle' : text === '[Once Per Turn]' ? 'kw-once' : text.startsWith('[') ? 'kw-bracket' : 'kw-other';
     html += escapeHtml(effect.slice(at, m.start));
     html += `<span class="kw ${kind}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
     at = m.end;
