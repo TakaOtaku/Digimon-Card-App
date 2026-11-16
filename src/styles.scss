@@ -95,6 +95,15 @@ h2.text-xs {
   white-space: nowrap;
 }
 
+// Long keywords like ＜Decode (Lv.4 or lower w/[Gammamon] in text or ...)＞ wrap, each line keeping its own pill ends
+.kw-long {
+  display: inline;
+  padding: 0.05em 0.45em;
+  white-space: normal;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 // [When Digivolving], [When Attacking], [On Play] ...
 .kw-bracket {
   background: #2d6cc0;

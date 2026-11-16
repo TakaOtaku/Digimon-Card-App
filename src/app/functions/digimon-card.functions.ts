@@ -551,6 +551,9 @@ const escapeHtml = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '
  * Wraps the keywords of an effect text, like [On Play] or ＜Blocker＞, in a bold colored span (rendered via innerHTML).
  * Known keywords come from the replacement table, any other ＜...＞ is a keyword too. The text itself is HTML-escaped.
  */
+// Keywords longer than this (Decode, Partition, ...) may wrap onto several lines instead of running out of the box
+const LONG_KEYWORD = 22;
+
 // Keyword families with a number or phase in them. The wiki writes "[Assembly\u00a0-4]" with a no-break space,
 // so every pattern runs on text where that space is a normal one.
 const KEYWORD_FAMILIES = [/\[Assembly [-\u2212\u2013]\d+\]/g, /\[DigiXros [-\u2212\u2013]\d+\]/g, /\[(?:Start|End) of (?:Your|Opponent's) (?:Turn|Main Phase|Attack)\]/g];
@@ -589,7 +592,7 @@ export function highlightKeywords(rawEffect: string): string {
               ? 'kw-bracket'
               : 'kw-other';
     html += escapeHtml(effect.slice(at, m.start));
-    html += `<span class="kw ${kind}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
+    html += `<span class="kw ${kind}${text.length > LONG_KEYWORD ? ' kw-long' : ''}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
     at = m.end;
   }
   return html + escapeHtml(effect.slice(at));

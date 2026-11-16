@@ -39,6 +39,11 @@ describe('highlightKeywords', () => {
     expect(highlightKeywords("[Start of Opponent's Main Phase] Do it.")).toContain('kw-bracket');
   });
 
+  it('lets long keywords wrap and keeps short ones in one piece', () => {
+    expect(highlightKeywords('＜Decode (Lv.4 or lower w/[Gammamon] in text or the [VB] trait)＞')).toContain('kw kw-angle kw-long');
+    expect(highlightKeywords('[On Play]')).not.toContain('kw-long');
+  });
+
   it('leaves plain text alone', () => {
     expect(highlightKeywords('Gain 1 memory.')).toBe('Gain 1 memory.');
   });
