@@ -577,6 +577,17 @@ function keywordKind(text: string): string {
   return 'kw-other';
 }
 
+/** [Security] locations effects remain pink. */
+function keywordKind(text: string): string {
+  if (text === '[Security] [All Turns]') return 'kw-hand';
+  if (text === '[Security] [Your Turn]') return 'kw-hand';
+  if (text === '[Security] [Opponent\'s Turn]') return 'kw-hand';
+  if (text === '[Security] [End of Your Turn] ') return 'kw-hand';
+  if (text === '[Security] [End of Opponent\'s Turn]') return 'kw-hand';
+  if (text === '[Security] [End of All Turns]') return 'kw-hand';
+  if (text === '[All Turns]' || text === '[Your Turn]' || text === '[Opponent\'s Turn]' || text === '[End of Your Turn]' || text === '[End of Opponent\'s Turn]' || text === '[End of All Turns') return 'kw-bracket';
+}
+
 /**
  * Wraps the keywords of an effect text, like [On Play] or ＜Blocker＞, in a colored badge and names of card colors in a
  * label of that color (rendered via innerHTML). Known keywords come from the replacement table, any other ＜...＞ is a
