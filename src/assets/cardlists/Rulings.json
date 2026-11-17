@@ -2337,16 +2337,16 @@
   ],
   "BT12-110": [
     {
-      "answer": "A: When this card is in your trash, the effect can activate when one of your Digimon digivolves into [Beelzemon (X Antibody)]. [Trash] means that the card needs to be in your trash for the effect to activate.[1]",
-      "question": "Q: When exactly is the timing for \"[Trash] [Your Turn]\"?"
+      "answer": "A: When this card is in your trash, the effect can activate when one of your Digimon digivolves into [Beelzemon (X Antibody)]. {Trash} means that the card needs to be in your trash for the effect to activate.[1]",
+      "question": "Q: When exactly is the timing for \"{Trash} [Your Turn]\"?"
     },
     {
       "answer": "A: When activating the effect from your trash, it's not considered to be using an Option card, so there are no color requirements and no cost to be paid.[1]",
-      "question": "Q: What happens to the color requirements and cost when I activate this card's [Trash] effect?"
+      "question": "Q: What happens to the color requirements and cost when I activate this card's {Trash} effect?"
     },
     {
       "answer": "A: No. Activating an effect from your trash isn't considered to be using an Option card, so they don't trigger.[1]",
-      "question": "Q: Are \"when using an Option card\" effects triggered if I activate this card's [Trash] effect?"
+      "question": "Q: Are \"when using an Option card\" effects triggered if I activate this card's {Trash} effect?"
     }
   ],
   "BT12-112": [
@@ -4020,7 +4020,7 @@
     },
     {
       "answer": "A: Yes, you can.[1]",
-      "question": "Q: When this card was in the trash, my [Leviamon] attacked a player, and a Digimon or Tamer was played by a [Security] effect upon the security check.  In such cases, can I use this card's [Trash] [All Turns] effect to digivolve the attacking [Leviamon] into this card?"
+      "question": "Q: When this card was in the trash, my [Leviamon] attacked a player, and a Digimon or Tamer was played by a [Security] effect upon the security check.  In such cases, can I use this card's {Trash} [All Turns] effect to digivolve the attacking [Leviamon] into this card?"
     },
     {
       "answer": "A: No, it only gets 1 additional security check.  [EX5-063 Leviamon]'s \uff1cSecurity A. +1\uff1e is lost upon the digivolution but it gains \uff1cSecurity A. +2\uff1e, so the total possible security checks will be 3.  In the situation from your question, you have already performed 2 security checks, so you have 1 security check remaining.[1]",
@@ -5235,16 +5235,16 @@
   ],
   "BT17-065": [
     {
-      "answer": "A: It triggers at the timing when this card is in the trash and your [Dorugamon] would be deleted.  [Trash] means that an effect can trigger and activate when the card is in the trash.[1]",
-      "question": "Q: When exactly is the timing when this card's [Trash] [All Turns] effect triggers?"
+      "answer": "A: It triggers at the timing when this card is in the trash and your [Dorugamon] would be deleted.  {Trash} means that an effect can trigger and activate when the card is in the trash.[1]",
+      "question": "Q: When exactly is the timing when this card's {Trash} [All Turns] effect triggers?"
     },
     {
-      "answer": "A: Yes, you can.  However, the DP-reducing effect will be carried over after the [Trash] effect activates and digivolution occurs, therefore deletion will occur again if the DP is still 0 after the effect activates and digivolution occurs.[1]",
-      "question": "Q: If I use this card's [Trash] effect to digivolve when my [Dorugamon] would be deleted by its DP becoming 0, can I prevent that deletion?"
+      "answer": "A: Yes, you can.  However, the DP-reducing effect will be carried over after the {Trash} effect activates and digivolution occurs, therefore deletion will occur again if the DP is still 0 after the effect activates and digivolution occurs.[1]",
+      "question": "Q: If I use this card's {Trash} effect to digivolve when my [Dorugamon] would be deleted by its DP becoming 0, can I prevent that deletion?"
     },
     {
       "answer": "A: No, you can't activate it.  The Digimon is deleted before the [When Digivolving] effect activates.[1]",
-      "question": "Q: I used this card's [Trash] effect to digivolve when my [Dorugamon] would be deleted due to its DP being reduced by 10000. Its DP became 0 due to the DP-reducing effect, but can I activate this card's [When Digivolving] effect after it digivolves at such times?"
+      "question": "Q: I used this card's {Trash} effect to digivolve when my [Dorugamon] would be deleted due to its DP being reduced by 10000. Its DP became 0 due to the DP-reducing effect, but can I activate this card's [When Digivolving] effect after it digivolves at such times?"
     },
     {
       "answer": "A: No, it activates instead of \"Then, \uff1cDraw 1\uff1e.\"[1]",
@@ -5253,16 +5253,16 @@
   ],
   "BT17-067": [
     {
-      "answer": "A: It triggers at the timing when this card is in the trash and your [DoruGreymon] would be deleted.  [Trash] means that an effect can trigger and activate when the card is in the trash.[1]",
-      "question": "Q: When exactly is the timing when this card's [Trash] [All Turns] effect triggers?"
+      "answer": "A: It triggers at the timing when this card is in the trash and your [DoruGreymon] would be deleted.  {Trash} means that an effect can trigger and activate when the card is in the trash.[1]",
+      "question": "Q: When exactly is the timing when this card's {Trash} [All Turns] effect triggers?"
     },
     {
       "answer": "A: Yes, you can.  However, the DP-reducing effect will be carried over after the [DoruGreymon] effect activates and digivolution occurs, therefore deletion will occur again if the DP is still 0 after the effect activates and digivolution occurs.[1]",
-      "question": "Q: If I use this card's [Trash] effect to digivolve when my [DoruGreymon] would be deleted by its DP becoming 0, can I prevent that deletion?"
+      "question": "Q: If I use this card's {Trash} effect to digivolve when my [DoruGreymon] would be deleted by its DP becoming 0, can I prevent that deletion?"
     },
     {
       "answer": "A: No, you can't activate it.  The Digimon is deleted before the [When Digivolving] effect activates.[1]",
-      "question": "Q: I used this card's [Trash] effect to digivolve when my [DoruGreymon] would be deleted due to its DP being reduced by 10000. Its DP became 0 due to the DP-reducing effect, but can I activate this card's [When Digivolving] effect after it digivolves at such times?"
+      "question": "Q: I used this card's {Trash} effect to digivolve when my [DoruGreymon] would be deleted due to its DP being reduced by 10000. Its DP became 0 due to the DP-reducing effect, but can I activate this card's [When Digivolving] effect after it digivolves at such times?"
     },
     {
       "answer": "A: No, it activates instead of \"Then, \uff1cDraw 1\uff1e.\"[1]",
@@ -5331,12 +5331,12 @@
   ],
   "BT17-073": [
     {
-      "answer": "A: It triggers at the timing when this card is in the trash and your [Dorugoramon] would be deleted.  [Trash] means that an effect can trigger and activate when the card is in the trash.[1]",
-      "question": "Q: When exactly is the timing when this card's [Trash] [All Turns] effect triggers?"
+      "answer": "A: It triggers at the timing when this card is in the trash and your [Dorugoramon] would be deleted.  {Trash} means that an effect can trigger and activate when the card is in the trash.[1]",
+      "question": "Q: When exactly is the timing when this card's {Trash} [All Turns] effect triggers?"
     },
     {
       "answer": "A: Yes, you can.  However, the DP-reducing effect will be carried over after the [Dorugoramon] effect activates and digivolution occurs, therefore deletion will occur again if the DP is still 0 after the effect activates and digivolution occurs.[1]",
-      "question": "Q: If I use this card's [Trash] effect to digivolve when my [Dorugoramon] would be deleted by its DP becoming 0, can I prevent that deletion?"
+      "question": "Q: If I use this card's {Trash} effect to digivolve when my [Dorugoramon] would be deleted by its DP becoming 0, can I prevent that deletion?"
     }
   ],
   "BT17-074": [
@@ -5667,8 +5667,8 @@
   ],
   "BT17-101": [
     {
-      "answer": "A: It triggers at the timing when this card is in the trash and your level 6 Digimon with [Pulsemon] in its text is played.  [Trash] means that an effect can trigger and activate when the card is in the trash.[1]",
-      "question": "Q: When exactly is the timing when this card's [Trash] [Your Turn] effect triggers?"
+      "answer": "A: It triggers at the timing when this card is in the trash and your level 6 Digimon with [Pulsemon] in its text is played.  {Trash} means that an effect can trigger and activate when the card is in the trash.[1]",
+      "question": "Q: When exactly is the timing when this card's {Trash} [Your Turn] effect triggers?"
     }
   ],
   "BT17-102": [
@@ -5919,24 +5919,24 @@
   ],
   "BT18-026": [
     {
-      "answer": "A: Effects with the [Hand] icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
-      "question": "Q: How do I activate this card's [Hand] [Main] effect?"
+      "answer": "A: Effects with the {Hand} icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
+      "question": "Q: How do I activate this card's {Hand} [Main] effect?"
     },
     {
-      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's [Hand] [Main] effect to be met, you must place 1 [Kumamon] and 1 [Korikakumon] under your Tamer.[1]",
-      "question": "Q: Can I use this card's [Hand] [Main] effect to place just 1 [Kumamon] or [Korikakumon] from my trash under my Tamer?"
+      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's {Hand} [Main] effect to be met, you must place 1 [Kumamon] and 1 [Korikakumon] under your Tamer.[1]",
+      "question": "Q: Can I use this card's {Hand} [Main] effect to place just 1 [Kumamon] or [Korikakumon] from my trash under my Tamer?"
     },
     {
       "answer": "A: No, it digivolves from the Tamer as-is.[1]",
-      "question": "Q: Does this card's [Hand] [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
+      "question": "Q: Does this card's {Hand} [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's [Hand] [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer would digivolve using this card's [Hand] [Main] effect, is it considered a Digimon that would digivolve?"
+      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's {Hand} [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer would digivolve using this card's {Hand} [Main] effect, is it considered a Digimon that would digivolve?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's [Hand] [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer digivolves using this card's [Hand] [Main] effect, is it considered a Digimon that digivolves?"
+      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's {Hand} [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer digivolves using this card's {Hand} [Main] effect, is it considered a Digimon that digivolves?"
     }
   ],
   "BT18-027": [
@@ -5965,8 +5965,8 @@
   ],
   "BT18-033": [
     {
-      "answer": "A: Effects with the [Hand] icon can activate when their card is revealed from the hand.  If your breeding area is empty, this effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
-      "question": "Q: How do I activate this card's [Hand] [Main] effect?"
+      "answer": "A: Effects with the {Hand} icon can activate when their card is revealed from the hand.  If your breeding area is empty, this effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
+      "question": "Q: How do I activate this card's {Hand} [Main] effect?"
     }
   ],
   "BT18-034": [
@@ -6101,24 +6101,24 @@
   ],
   "BT18-053": [
     {
-      "answer": "A: Effects with the [Hand] icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
-      "question": "Q: How do I activate this card's [Hand] [Main] effect?"
+      "answer": "A: Effects with the {Hand} icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
+      "question": "Q: How do I activate this card's {Hand} [Main] effect?"
     },
     {
-      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's [Hand] [Main] effect to be met, you must place 1 [Kazemon] and 1 [Zephyrmon] under your Tamer.[1]",
-      "question": "Q: Can I use this card's [Hand] [Main] effect to place just 1 [Kazemon] or [Zephyrmon] from my trash under my Tamer?"
+      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's {Hand} [Main] effect to be met, you must place 1 [Kazemon] and 1 [Zephyrmon] under your Tamer.[1]",
+      "question": "Q: Can I use this card's {Hand} [Main] effect to place just 1 [Kazemon] or [Zephyrmon] from my trash under my Tamer?"
     },
     {
       "answer": "A: No, it digivolves from the Tamer as-is.[1]",
-      "question": "Q: Does this card's [Hand] [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
+      "question": "Q: Does this card's {Hand} [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's [Hand] [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer would digivolve using this card's [Hand] [Main] effect, is it considered a Digimon that would digivolve?"
+      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's {Hand} [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer would digivolve using this card's {Hand} [Main] effect, is it considered a Digimon that would digivolve?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's [Hand] [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer digivolves using this card's [Hand] [Main] effect, is it considered a Digimon that digivolves?"
+      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's {Hand} [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer digivolves using this card's {Hand} [Main] effect, is it considered a Digimon that digivolves?"
     }
   ],
   "BT18-056": [
@@ -6225,24 +6225,24 @@
   ],
   "BT18-070": [
     {
-      "answer": "A: Effects with the [Hand] icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
-      "question": "Q: How do I activate this card's [Hand] [Main] effect?"
+      "answer": "A: Effects with the {Hand} icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
+      "question": "Q: How do I activate this card's {Hand} [Main] effect?"
     },
     {
-      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's [Hand] [Main] effect to be met, you must place 1 [Beetlemon] and 1 [MetalKabuterimon] under your Tamer.[1]",
-      "question": "Q: Can I use this card's [Hand] [Main] effect to place just 1 [Beetlemon] or [MetalKabuterimon] from my trash under my Tamer?"
+      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's {Hand} [Main] effect to be met, you must place 1 [Beetlemon] and 1 [MetalKabuterimon] under your Tamer.[1]",
+      "question": "Q: Can I use this card's {Hand} [Main] effect to place just 1 [Beetlemon] or [MetalKabuterimon] from my trash under my Tamer?"
     },
     {
       "answer": "A: No, it digivolves from the Tamer as-is.[1]",
-      "question": "Q: Does this card's [Hand] [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
+      "question": "Q: Does this card's {Hand} [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's [Hand] [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer would digivolve using this card's [Hand] [Main] effect, is it considered a Digimon that would digivolve?"
+      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's {Hand} [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer would digivolve using this card's {Hand} [Main] effect, is it considered a Digimon that would digivolve?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's [Hand] [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer digivolves using this card's [Hand] [Main] effect, is it considered a Digimon that digivolves?"
+      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's {Hand} [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer digivolves using this card's {Hand} [Main] effect, is it considered a Digimon that digivolves?"
     }
   ],
   "BT18-073": [
@@ -6357,24 +6357,24 @@
   ],
   "BT18-081": [
     {
-      "answer": "A: Effects with the [Hand] icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
-      "question": "Q: How do I activate this card's [Hand] [Main] effect?"
+      "answer": "A: Effects with the {Hand} icon can activate when their card is revealed from the hand.  This effect can activate during the main phase when you reveal this card from the hand and process the effect.[1]",
+      "question": "Q: How do I activate this card's {Hand} [Main] effect?"
     },
     {
-      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's [Hand] [Main] effect to be met, you must place 1 [Beetlemon] and 1 [MetalKabuterimon] under your Tamer.[1]",
-      "question": "Q: Can I use this card's [Hand] [Main] effect to place just 1 [Beetlemon] or [MetalKabuterimon] from my trash under my Tamer?"
+      "answer": "A: No, you can't.  A \"by doing X\" condition can't be met if only some of the required actions are performed.  In order for the conditions for this card's {Hand} [Main] effect to be met, you must place 1 [Beetlemon] and 1 [MetalKabuterimon] under your Tamer.[1]",
+      "question": "Q: Can I use this card's {Hand} [Main] effect to place just 1 [Beetlemon] or [MetalKabuterimon] from my trash under my Tamer?"
     },
     {
       "answer": "A: No, it digivolves from the Tamer as-is.[1]",
-      "question": "Q: Does this card's [Hand] [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
+      "question": "Q: Does this card's {Hand} [Main] effect where it can digivolve from a Tamer mean that the Tamer that will become a digivolution card is treated as a Digimon when it digivolves?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's [Hand] [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer would digivolve using this card's [Hand] [Main] effect, is it considered a Digimon that would digivolve?"
+      "answer": "A: No, it isn't considered a Digimon that would digivolve.  When a Tamer would digivolve using this card's {Hand} [Main] effect, \"when a Digimon would digivolve\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer would digivolve using this card's {Hand} [Main] effect, is it considered a Digimon that would digivolve?"
     },
     {
-      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's [Hand] [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
-      "question": "Q: When a Tamer digivolves using this card's [Hand] [Main] effect, is it considered a Digimon that digivolves?"
+      "answer": "A: No, it isn't considered a Digimon that digivolves.  When a Tamer digivolves using this card's {Hand} [Main] effect, \"when a Digimon digivolves\" effects don't trigger.[1]",
+      "question": "Q: When a Tamer digivolves using this card's {Hand} [Main] effect, is it considered a Digimon that digivolves?"
     }
   ],
   "BT18-082": [
@@ -12980,7 +12980,7 @@
   "BT9-029": [
     {
       "answer": "A: When this card is in your hand, you can activate it by revealing it from your hand during your main phase.[1]",
-      "question": "Q: What timing can I activate this card\u2019s [Hand][Main] effect at?"
+      "question": "Q: What timing can I activate this card\u2019s {Hand}[Main] effect at?"
     }
   ],
   "BT9-031": [
@@ -13024,7 +13024,7 @@
   "BT9-042": [
     {
       "answer": "A: This effect will be activated during the Main Phase, by revealing this card from your hand.",
-      "question": "Q: When is the timing of this card effect [Hand] [Main] activated?"
+      "question": "Q: When is the timing of this card effect {Hand} [Main] activated?"
     },
     {
       "answer": "A: Yes, you can reveal this card and not pay the cost. The card will be returned to your hand.",
@@ -13108,7 +13108,7 @@
   "BT9-054": [
     {
       "answer": "A: This effect will be activated during the Main Phase, by revealing this card from your hand.",
-      "question": "Q: When is the timing of this card effect [Hand] [Main] activated?"
+      "question": "Q: When is the timing of this card effect {Hand} [Main] activated?"
     },
     {
       "answer": "A: Yes, you can reveal this card and not pay the cost. The card will be returned to your hand.",
@@ -15010,7 +15010,7 @@
   "EX4-011": [
     {
       "answer": "A: It means that the effect will activate at the specified timing if this card is in your trash.[1]",
-      "question": "Q: What does [Trash] in this card's [End of Your Turn] effect mean?"
+      "question": "Q: What does {Trash} in this card's [End of Your Turn] effect mean?"
     },
     {
       "answer": "A: Yes, the effect reads \u201cyou may play,\" so you can choose not to play it.[1]",
