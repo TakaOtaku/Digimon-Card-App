@@ -138,7 +138,6 @@ python -B -m unittest discover -s scripts/python/tests
 | ST25-01 | None | Wiki gallery lists print without a scan |
 | ST25-02 | None | Wiki card page absent |
 | ST25-03 | None | Wiki card page absent |
-| ST25-15 | None | Wiki card page absent |
 | ST26-01 | None | Wiki gallery lists print without a scan |
 
 ## Wiki Evidence And Parser Replay
