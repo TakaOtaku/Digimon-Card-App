@@ -5579,17 +5579,6 @@ Before/after replay starts with fresh table rows, not previously resolved varian
 }
 ```
 
-### ST25-15
-
-[Card](https://digimoncardgame.fandom.com/wiki/ST25-15) | [Gallery](https://digimoncardgame.fandom.com/wiki/ST25-15/Gallery)
-
-```json
-{
-  "card": "ST25-15",
-  "error": "ValueError: missingtitle"
-}
-```
-
 ### ST26-01
 
 [Card](https://digimoncardgame.fandom.com/wiki/ST26-01) | [Gallery](https://digimoncardgame.fandom.com/wiki/ST26-01/Gallery)
