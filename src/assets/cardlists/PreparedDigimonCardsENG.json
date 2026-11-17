@@ -211652,7 +211652,7 @@
     },
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "White",
-    "optionCardEffect": "\uff1cUse Req. ([Huckmon] text)\uff1e \n[Main] By placing 1 of your opponent's lowest DP Digimon as the bottom security card, trash their top security card.",
+    "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] By placing 1 of your opponent's lowest DP Digimon as the bottom security card, trash their top security card.",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -211708,7 +211708,7 @@
     },
     "notes": "BT-27: BOOSTER IGNITION OF X",
     "optionCardColourRequirement": "White",
-    "optionCardEffect": "\uff1cUse Req. ([Huckmon] text)\uff1e \n[Main] By placing 1 of your opponent's lowest DP Digimon as the bottom security card, trash their top security card.",
+    "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] By placing 1 of your opponent's lowest DP Digimon as the bottom security card, trash their top security card.",
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
@@ -212082,7 +212082,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-022.webp",
+    "cardImage": "assets/images/cards/BT27-022-Sample.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-022",
     "cardType": "Digimon",
@@ -212095,14 +212095,14 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[When Attacking] If this Digimon has the [Ice-Snow]\u00a0trait, you may change the attack target to 1 of your opponent's unsuspended Digimon with the fewest digivolution cards.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "2000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[On Play] Reveal the top 3 cards of your deck. Add 1 [Ice-Snow] or [ALYSION]\u00a0trait card and 1 blue Tamer card among them to the hand. Return the rest to the bottom of the deck.",
     "form": "Rookie",
     "id": "BT27-022",
-    "illustrator": "To be completed",
+    "illustrator": "banira",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -212116,8 +212116,8 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
+    "playCost": "3",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -212372,7 +212372,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-027.webp",
+    "cardImage": "assets/images/cards/BT27-027-Sample.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-027",
     "cardType": "Digimon",
@@ -212385,14 +212385,14 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[End of Attack] [Once Per Turn] Gain 1 memory.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "5000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cIceclad\uff1e \n[On Play] [When Digivolving] Trash the bottom 2 digivolution cards of 1 of your opponent's Digimon. Then, you may place 1 level 4 or lower [Ice-Snow]\u00a0trait Digimon card from your hand as any of your Digimon's bottom digivolution card.",
     "form": "Champion",
     "id": "BT27-027",
-    "illustrator": "To be completed",
+    "illustrator": "banira",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -212406,7 +212406,7 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "5",
     "rarity": "C",
     "restrictions": {
       "chinese": "Not released",
@@ -212484,7 +212484,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-029.webp",
+    "cardImage": "assets/images/cards/BT27-029-Sample.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-029",
     "cardType": "Digimon",
@@ -212497,14 +212497,14 @@
         "level": "4"
       }
     ],
-    "digivolveEffect": "-",
+    "digivolveEffect": "[End of Your Turn] [Once Per Turn] Trash the bottom 2 digivolution cards of 1 of your opponent's Digimon. If this effect didn't trash, this [Ice-Snow]\u00a0trait Digimon may unsuspend.",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "7000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cIceclad\uff1e \n[On Play] [When Digivolving] Trash any 3 digivolution cards from your opponent's Digimon. Then, if they don't have a Digimon with digivolution cards, this Digimon gains \uff1cBlocker\uff1e and can't be deleted other than in battle until their turn ends.",
     "form": "Ultimate",
     "id": "BT27-029",
-    "illustrator": "To be completed",
+    "illustrator": "banira",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -212518,7 +212518,7 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "7",
     "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
@@ -212707,13 +212707,13 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Ice-Snow]\u00a0trait",
     "attribute": "Virus",
     "block": [
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-033.webp",
+    "cardImage": "assets/images/cards/BT27-033-Sample.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-033",
     "cardType": "Digimon",
@@ -212728,12 +212728,12 @@
     ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cIceclad\uff1e \n\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Trash the top 2 digivolution cards of all of your opponent's Digimon. Then, until their turn ends, none of their Digimon without digivolution cards can digivolve or suspend.\n[End of Your Turn] [Once Per Turn] If your opponent has no Digimon with digivolution cards, 1 of your [Ice-Snow]\u00a0trait Digimon may gain \uff1cRush\uff1e for the turn and attack.",
     "form": "Mega",
     "id": "BT27-033",
-    "illustrator": "To be completed",
+    "illustrator": "banira",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -212747,7 +212747,7 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "12",
     "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
@@ -212763,7 +212763,7 @@
   },
   {
     "aceEffect": "-",
-    "assembly": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Ice-Snow]\u00a0trait",
     "attribute": "Virus",
     "block": [
       "06"
@@ -212784,9 +212784,9 @@
     ],
     "digivolveEffect": "-",
     "dnaDigivolve": "-",
-    "dp": "-",
+    "dp": "12000",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "\uff1cIceclad\uff1e \n\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Trash the top 2 digivolution cards of all of your opponent's Digimon. Then, until their turn ends, none of their Digimon without digivolution cards can digivolve or suspend.\n[End of Your Turn] [Once Per Turn] If your opponent has no Digimon with digivolution cards, 1 of your [Ice-Snow]\u00a0trait Digimon may gain \uff1cRush\uff1e for the turn and attack.",
     "form": "Mega",
     "id": "BT27-033_P1",
     "illustrator": "Tonamikanji",
@@ -212803,7 +212803,7 @@
     "notes": "BT-27: BOOSTER IGNITION OF X",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "12",
     "rarity": "SR",
     "restrictions": {
       "chinese": "Not released",
@@ -212956,7 +212956,7 @@
     "block": [
       "06"
     ],
-    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
     "cardImage": "assets/images/cards/BT27-035-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-035",
@@ -213017,7 +213017,7 @@
     "block": [
       "06"
     ],
-    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
     "cardImage": "assets/images/cards/BT27-035_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-035",
@@ -213078,7 +213078,7 @@
     "block": [
       "06"
     ],
-    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
     "cardImage": "assets/images/cards/BT27-035_P2.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-035",
@@ -216631,7 +216631,7 @@
     "block": [
       "06"
     ],
-    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
     "cardImage": "assets/images/cards/BT27-085-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-085",
@@ -216692,7 +216692,7 @@
     "block": [
       "06"
     ],
-    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
     "cardImage": "assets/images/cards/BT27-085_P1-Sample.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-085",
@@ -216753,7 +216753,7 @@
     "block": [
       "06"
     ],
-    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5 [Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
     "cardImage": "assets/images/cards/BT27-085_P2.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-085",
@@ -216915,7 +216915,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-088.webp",
+    "cardImage": "assets/images/cards/BT27-088-Sample.webp",
     "cardLv": "-",
     "cardNumber": "BT27-088",
     "cardType": "Tamer",
@@ -216926,10 +216926,10 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Ice-Snow]\u00a0trait, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have the [Ice-Snow]\u00a0trait, by suspending this Tamer, Trash the bottom 2 digivolution cards from 1 of your opponent's Digimon. After, if they don't have a Digimon with digivolution cards, gain 1 memory.",
     "form": "-",
     "id": "BT27-088",
-    "illustrator": "To be completed",
+    "illustrator": "banira",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -216943,7 +216943,7 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
-    "playCost": "-",
+    "playCost": "3",
     "rarity": "R",
     "restrictions": {
       "chinese": "Not released",
