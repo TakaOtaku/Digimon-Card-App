@@ -4549,6 +4549,112 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD04-01.webp",
+    "cardLv": "Lv.2",
+    "cardNumber": "BD04-01",
+    "cardType": "Digi-Egg",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "[On Deletion] If this Digimon had [Leomon]\u00a0in its name or the [Boss]\u00a0trait, gain 1 memory.",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "In-Training",
+    "id": "BD04-01",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Frimon",
+      "japanese": "\u30d5\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "GREAT LEGEND [BD-04]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Lesser",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD04-02.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BD04-02",
+    "cardType": "Digimon",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "2",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] If you have as many or fewer security cards as your opponent, 1 of your opponent's Digimon gets -2000 DP for the turn.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "Ultimate",
+    "id": "BD04-02",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Garudamon",
+      "japanese": "\u30ac\u30eb\u30c0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "GREAT LEGEND [BD-04]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Birdkin",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Vaccine",
     "block": [
       "06"
@@ -4585,7 +4691,7 @@
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
-    "notes": "BD-04: GREAT LEGEND",
+    "notes": "GREAT LEGEND [BD-04]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "3",
@@ -4600,6 +4706,118 @@
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Holy Beast",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD04-04.webp",
+    "cardLv": "Lv.4",
+    "cardNumber": "BD04-04",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "2",
+        "level": "3"
+      }
+    ],
+    "digivolveEffect": "[On Deletion] 1 of your opponent's Digimon can't unsuspend during their next unsuspend phase.",
+    "dnaDigivolve": "-",
+    "dp": "5000",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "Champion",
+    "id": "BD04-04",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Leomon",
+      "japanese": "\u30ec\u30aa\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "GREAT LEGEND [BD-04]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "5",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Beastkin",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD04-05.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BD04-05",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon with [Leomon]\u00a0in its name or the [Boss]\u00a0trait gains \uff1cSecurity A. +1\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "7000",
+    "dualEffect": "-",
+    "effect": "[When Digivolving] This Digimon gains \"[On Deletion] If this Digimon had [Leomon]\u00a0in its name or the [Boss]\u00a0trait, play this card suspended without paying the cost.\" until your opponent's turn ends.",
+    "form": "Ultimate",
+    "id": "BD04-05",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "GrapLeomon",
+      "japanese": "\u30b0\u30e9\u30c3\u30d7\u30ec\u30aa\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "GREAT LEGEND [BD-04]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "8",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Beastkin",
     "version": "Normal"
   },
   {
@@ -4641,7 +4859,7 @@
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
-    "notes": "BD-04: GREAT LEGEND",
+    "notes": "GREAT LEGEND [BD-04]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "12",
@@ -4656,6 +4874,112 @@
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beastkin/Boss",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD04-07.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BD04-07",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] Return 1 purple Option card with a use cost of 6 from your trash to the hand.",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "\uff1cJamming\uff1e ",
+    "form": "Ultimate",
+    "id": "BD04-07",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Digitamamon",
+      "japanese": "\u30c7\u30b8\u30bf\u30de\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "GREAT LEGEND [BD-04]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Perfect",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD04-08.webp",
+    "cardLv": "-",
+    "cardNumber": "BD04-08",
+    "cardType": "Tamer",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Leomon]\u00a0in its name or the [Boss]\u00a0trait, gain 1 memory.\n[All Turns] When any of your Digimon with [Leomon]\u00a0in their names or the [Boss]\u00a0trait are deleted, by suspending this Tamer, gain 1 memory.",
+    "form": "-",
+    "id": "BD04-08",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Shishiko Sakigake",
+      "japanese": "\u9b41\u30b7\u30b7\u30b3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "GREAT LEGEND [BD-04]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "-",
     "version": "Normal"
   },
   {
@@ -4691,7 +5015,7 @@
       "simplifiedChinese": "-",
       "traditionalChinese": "-"
     },
-    "notes": "BD-04: GREAT LEGEND",
+    "notes": "GREAT LEGEND [BD-04]",
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "2",
@@ -4704,6 +5028,56 @@
     },
     "rule": "-",
     "securityEffect": "[Security] Suspend 1 of your opponent's Digimon. Then, add this card to your hand.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD04-10.webp",
+    "cardLv": "-",
+    "cardNumber": "BD04-10",
+    "cardType": "Option",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] Delete 1 of your opponent's level 5 or lower Digimon. Then, 1 of your [Shaman]\u00a0trait Digimon unsuspends and gains \uff1cBlocker\uff1e until your opponent's turn ends. ",
+    "form": "-",
+    "id": "BD04-10",
+    "illustrator": "To be completed",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Dark Retribution",
+      "japanese": "\u6697\u95c7\u306e\u51a5\u7f70",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "GREAT LEGEND [BD-04]",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "6",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Delete 1 of your opponent's level 6 or lower Digimon.",
     "specialDigivolve": "-",
     "type": "-",
     "version": "Normal"
