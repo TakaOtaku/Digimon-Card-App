@@ -572,7 +572,7 @@ function keywordKind(text: string): string {
   if (text === '[Once Per Turn]' || text === '[Twice Per Turn]') return 'kw-once';
   if (text.startsWith('[Assembly') || text.startsWith('[DigiXros') || text === '[Link]' || text === '[Arts Digivolve]') return 'kw-assembly';
   if (text === '[Rule]') return 'kw-rule';
-  if (text === '"{Hand}"' || text === '"{Trash}"' || text === '"{Breeding}"' || text === '"{Security}"') return 'kw-hand';
+  if (text === '{Hand}' || text === '{Trash}' || text === '{Breeding}' || text === '{Security}') return 'kw-hand';
   if (text.startsWith('[')) return 'kw-bracket';
   return 'kw-other';
 }
