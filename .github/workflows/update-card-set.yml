@@ -84,7 +84,15 @@ on:
           - LM-07
           - LM-08
           - LM-09
-
+          - BD-01
+          - BD-02
+          - BD-03
+          - BD-04
+          - ED-01
+          - ED-02
+          - SD-01
+          - SD-02
+          
 jobs:
   update-set:
     runs-on: ubuntu-latest
