@@ -25,6 +25,7 @@ export const CARD_SETS: CardSet[] = [
   { name: 'ST26', category: 'Starter' }, // Dec 4 2026, Digimon Alysion Yukinamon
   { name: 'ST25', category: 'Starter' }, // Dec 4 2026, Digimon Alysion Rubeusdramon
   // Digimon Alysion products: release dates are still "to be confirmed" on the wiki
+  { name: 'BD04', category: 'Alysion' },
   { name: 'BD03', category: 'Alysion' },
   { name: 'BD02', category: 'Alysion' },
   { name: 'BD01', category: 'Alysion' },
