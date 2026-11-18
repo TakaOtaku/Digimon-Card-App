@@ -46,9 +46,9 @@ describe('highlightKeywords', () => {
 
   it('colors Rule, Hand, Counter, Link, Twice Per Turn and Overflow like the cards', () => {
     expect(highlightKeywords('[Rule] Name: x')).toContain('kw kw-rule');
-    expect(highlightKeywords('"{Hand}" x')).toContain('kw kw-hand');
+    expect(highlightKeywords('{Hand} x')).toContain('kw kw-hand');
     expect(highlightKeywords('[Counter] x')).toContain('kw kw-bracket');
-    expect(highlightKeywords('"{Trash}" x')).toContain('kw kw-hand');
+    expect(highlightKeywords('{Trash} x')).toContain('kw kw-hand');
     expect(highlightKeywords('[Arts Digivolve] x')).toContain('kw kw-assembly');
     expect(highlightKeywords('[Link] [Appmon] trait')).toContain('<span class="kw kw-assembly">[Link]</span>');
     expect(highlightKeywords('[Twice Per Turn] x')).toContain('kw kw-once');
