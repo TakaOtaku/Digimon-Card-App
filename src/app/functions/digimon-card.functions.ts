@@ -557,6 +557,8 @@ const KEYWORD_FAMILIES = [
   /\[DigiXros [-\u2212\u2013]\d+\]/g,
   /\[(?:Start|End) of (?:Your|Opponent's) (?:Turn|Main Phase|Attack)\]/g,
   /\[Twice Per Turn\]/g,
+  // Add this line so all {Trash}, {Hand}, etc. are detected:
+  {(?:Hand|Trash|Breeding|Security)\}\"?/g,
 ];
 
 // Card colors named in a text ("red or blue Digimon", "Blue Lv.4", "Digimon/Red/6000 DP") become small colored labels, like on the wiki
