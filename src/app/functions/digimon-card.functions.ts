@@ -503,7 +503,7 @@ function setPlaysetCompletion(cards: DigimonCard[], collection: ICountCard[], se
 
   // Aggregate collection quantities using normalized IDs.
   collection.forEach((card) => {
-    const id = formatId(withoutJ(card.id));
+    const id = formatId(withoutJ(card.id)).split('-Errata')[0];
     owned.set(id, (owned.get(id) ?? 0) + card.count);
   });
 
@@ -511,7 +511,7 @@ function setPlaysetCompletion(cards: DigimonCard[], collection: ICountCard[], se
   const cardVariants = new Map<string, DigimonCard[]>();
 
   cards.forEach((card) => {
-    const id = formatId(withoutJ(card.id));
+    const id = formatId(withoutJ(card.id)).split('-Errata')[0];
     if (!id.includes('-')) return;
     const variants = cardVariants.get(id) ?? [];
     variants.push(card);
