@@ -45,8 +45,6 @@ def replaceStrings():
   replace_string_in_json(').[', ')\n[')
   replace_string_in_json(') .[', ')\n[')
   replace_string_in_json('.[', '.\n[')
-  replace_string_in_json('."{"', '.\n"{"')
-  replace_string_in_json('＞ "{"', '＞\n"{"')
   replace_string_in_json('. [', '.\n[')
   replace_string_in_json('＞＜', '＞\n＜')
   replace_string_in_json(')＜', ')\n＜')
