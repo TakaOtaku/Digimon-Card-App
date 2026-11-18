@@ -62,6 +62,41 @@ describe('highlightKeywords', () => {
     expect(highlightKeywords('Overflow ＜-3＞ (lose 3 memory.)')).toContain('kw-overflow');
   });
 
+  it.each(['Hand', 'Trash', 'Security', 'Breeding'])('colors {%s} as a location badge', (zone) => {
+    expect(highlightKeywords(`{${zone}} [Your Turn]`)).toBe(
+      `<span class="kw kw-hand">{${zone}}</span> <span class="kw kw-bracket">[Your Turn]</span>`,
+    );
+  });
+
+  it.each(['All Turns', 'Your Turn', "Opponent's Turn", 'End of Your Turn', "End of Opponent's Turn", 'End of All Turns'])(
+    'colors both Security and %s pink with or without a space',
+    (timing) => {
+      for (const separator of ['', ' ']) {
+        const html = highlightKeywords(`[Security]${separator}[${timing}]`);
+        expect(html).toBe(
+          `<span class="kw kw-hand">[Security]</span>${separator}<span class="kw kw-hand${timing.length + 2 > 22 ? ' kw-long' : ''}">[${timing}]</span>`,
+        );
+      }
+    },
+  );
+
+  it.each(['On Deletion', 'When Digivolving', 'On Play'])('keeps Security and %s blue', (timing) => {
+    for (const separator of ['', ' ']) {
+      expect(highlightKeywords(`[Security]${separator}[${timing}]`)).toBe(
+        `<span class="kw kw-bracket">[Security]</span>${separator}<span class="kw kw-bracket">[${timing}]</span>`,
+      );
+    }
+  });
+
+  it('does not recolor unrelated or separated Security keywords', () => {
+    expect(highlightKeywords('[Security] text [Your Turn]')).toBe(
+      '<span class="kw kw-bracket">[Security]</span> text <span class="kw kw-bracket">[Your Turn]</span>',
+    );
+    expect(highlightKeywords('[Security]\n[Your Turn]')).toContain('<span class="kw kw-bracket">[Security]</span>');
+    expect(highlightKeywords('＜[Security] [Your Turn]＞')).toBe('<span class="kw kw-angle kw-long">＜[Security] [Your Turn]＞</span>');
+    expect(highlightKeywords('"{Trash} <script>"')).toBe('<em>"<span class="kw kw-hand">{Trash}</span> &lt;script&gt;"</em>');
+  });
+
   it('colors the names of card colors outside brackets only', () => {
     const html = highlightKeywords('Delete 1 red, green or white Digimon with [Blue Flare] in its text.');
     expect(html).toContain('<span class="kc kc-red">red</span>');

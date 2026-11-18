@@ -593,6 +593,16 @@ export function highlightKeywords(rawEffect: string): string {
     for (const m of effect.matchAll(pattern)) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
   }
   for (const m of effect.matchAll(/＜[^＞]+＞/g)) found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
+  for (const m of effect.matchAll(/\{(?:Hand|Trash|Breeding|Security)\}/g))
+    found.push({ start: m.index!, end: m.index! + m[0].length, tooltip: '' });
+
+  const pinkSecurity = new Set<number>();
+  for (const m of effect.matchAll(
+    /\[Security\]([ \t]*)\[(?:All Turns|Your Turn|Opponent's Turn|End of Your Turn|End of Opponent's Turn|End of All Turns)\]/g,
+  )) {
+    pinkSecurity.add(m.index!);
+    pinkSecurity.add(m.index! + '[Security]'.length + m[1].length);
+  }
 
   // Color names count only outside brackets, so [Blue Flare] or a card name stays plain
   let depth = 0;
@@ -636,7 +646,7 @@ export function highlightKeywords(rawEffect: string): string {
     const m = matches.find((k) => k.start === start);
     if (m) {
       const text = effect.slice(m.start, m.end);
-      const cls = m.cls ?? `kw ${keywordKind(text)}${text.length > LONG_KEYWORD ? ' kw-long' : ''}`;
+      const cls = m.cls ?? `kw ${pinkSecurity.has(m.start) ? 'kw-hand' : keywordKind(text)}${text.length > LONG_KEYWORD ? ' kw-long' : ''}`;
       html += `<span class="${cls}"${m.tooltip ? ` title="${escapeHtml(m.tooltip)}"` : ''}>${escapeHtml(text)}</span>`;
     } else {
       html += escapeHtml(effect.slice(start, end));

@@ -81,10 +81,25 @@ const colorsOf = (value?: string) =>
         }
 
         @for (effect of effects(); track effect.label) {
-          <section class="flex flex-col gap-1">
-            <h3 class="m-0 text-[11px] font-semibold uppercase tracking-wider text-muted">{{ effect.label }}</h3>
-            <p class="m-0 whitespace-pre-wrap rounded-lg bg-ink-2 p-3 text-sm leading-relaxed text-fg" [innerHTML]="effect.html"></p>
-          </section>
+          @if (effect.label === 'Option color req.') {
+            <dl class="m-0">
+              <div
+                class="rounded-lg border px-3 py-2"
+                [ngClass]="effect.colors.length ? '' : 'border-transparent bg-ink-2'"
+                [style]="effect.style"
+                [title]="effect.colors.join(' / ')">
+                <dt class="text-[11px] uppercase tracking-wider" [ngClass]="effect.colors.length ? 'text-fg' : 'text-muted'">
+                  {{ effect.label }}
+                </dt>
+                <dd class="m-0 font-mono text-sm font-semibold text-fg">{{ effect.text }}</dd>
+              </div>
+            </dl>
+          } @else {
+            <section class="flex flex-col gap-1">
+              <h3 class="m-0 text-[11px] font-semibold uppercase tracking-wider text-muted">{{ effect.label }}</h3>
+              <p class="m-0 whitespace-pre-wrap rounded-lg bg-ink-2 p-3 text-sm leading-relaxed text-fg" [innerHTML]="effect.html"></p>
+            </section>
+          }
         }
 
         <button type="button" (click)="openDialog(card)" class="self-start text-sm text-accent hover:underline">Full details, rulings and prices</button>
@@ -122,8 +137,6 @@ export class CardDetailPanelComponent {
       // Options and Dual (Digimon/Option) cards are used, not played: same rule as the full card dialog
       { label: isOptionType(card.cardType) ? 'Use cost' : 'Play cost', value: card.playCost, colors: [] },
       { label: 'DP', value: card.dp, colors: [] },
-      { label: 'Link DP', value: card.linkDP, colors: [] },
-      { label: 'Option color req.', value: card.optionCardColourRequirement, colors: colorsOf(card.optionCardColourRequirement) },
       // The color of the Digimon it digivolves from tints the tile instead of showing as a word
       ...(card.digivolveCondition ?? []).map((c) => {
         const colors = colorsOf(c.color);
@@ -148,15 +161,20 @@ export class CardDetailPanelComponent {
       { label: 'ACE', text: card.aceEffect },
       { label: 'Rule', text: card.rule },
       { label: 'Effect', text: card.effect },
-      { label: 'Dual effect', text: card.dualEffect },
+      { label: 'Option color req.', text: card.optionCardColourRequirement },
       { label: 'Option card effect', text: card.optionCardEffect },
+      { label: 'Dual effect', text: card.dualEffect },
       { label: 'Inherited effect', text: card.digivolveEffect },
       { label: 'Security effect', text: card.securityEffect },
       { label: 'Link requirement', text: card.linkRequirement },
       { label: 'Link effect', text: card.linkEffect },
+      { label: 'Link DP', text: card.linkDP },
     ]
       .filter((e) => filled(e.text))
-      .map((e) => ({ label: e.label, html: highlightKeywords(e.text) }));
+      .map((e) => {
+        const colors = e.label === 'Option color req.' ? colorsOf(e.text) : [];
+        return { ...e, html: highlightKeywords(e.text), colors, style: tileStyle(colors) };
+      });
   });
 
 

@@ -129,10 +129,6 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/\[Rule\]/g, 'rule', ''],
   [/＜Save＞/g, 'save', ''],
   [/＜Scapegoat＞/g, 'scapegoat', ''],
-  [/\[Security\]\[All Turns]/g, 'security_all_turns', ''],
-  [/\[Security\]\[Opponent\'s Turn]/g, 'security_opponents_turn', ''],
-  [/\[Security\]\[Your Turn]/g, 'security_your_turn', ''],  
-  [/\[Security\]/g, 'security', ''],
   [/\[Security\]/g, 'security', ''],
   [/＜Security Attack＞/g, 'security_attack', ''],
   [/＜Security Attack -＞/g, 'security_attack_-', ''],
@@ -163,4 +159,3 @@ export const replacements: Array<[RegExp, string, string]> = [
   [/\[When Moving\]/g, 'when_moving', ''],
   [/\[Your Turn\]/g, 'your_turn', ''],
 ];
-

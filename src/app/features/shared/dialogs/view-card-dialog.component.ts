@@ -184,15 +184,6 @@ import { TooltipModule } from 'primeng/tooltip';
             <span class="font-white whitespace-pre-wrap font-bold leading-[1.7em]" [innerHTML]="highlightKeywords(card.aceEffect)">
             </span>
           </div>
-          <div
-            *ngIf="card.optionCardColourRequirement && card.optionCardColourRequirement !== '-'"
-            class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
-            id="Option-Colour-Requirement">
-            <p [ngStyle]="{ color }" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Option Color Req.</p>
-            <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
-              {{ card.optionCardColourRequirement }}
-            </p>
-          </div>
         </div>
       </div>
 
@@ -207,14 +198,24 @@ import { TooltipModule } from 'primeng/tooltip';
           <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.effect)"></span>
         </div>
 
-        <div *ngIf="card.dualEffect && card.dualEffect !== '-'" class="flex flex-col" id="Dual-Effect">
-          <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Dual Effect</p>
-          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.dualEffect)"></span>
+        <div
+          *ngIf="card.optionCardColourRequirement && card.optionCardColourRequirement !== '-'"
+          class="my-0.5 flex w-full flex-row rounded-full border border-slate-200 backdrop-brightness-150"
+          id="Option-Colour-Requirement">
+          <p [ngStyle]="{ color }" class="text-black-outline-xs ml-1.5 text-lg font-extrabold">Option Color Req.</p>
+          <p class="font-white ml-auto mr-1.5 font-bold leading-[1.7em]">
+            {{ card.optionCardColourRequirement }}
+          </p>
         </div>
 
         <div *ngIf="card.optionCardEffect && card.optionCardEffect !== '-'" class="flex flex-col" id="Option-Card-Effect">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Option Card Effect</p>
           <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.optionCardEffect)"></span>
+        </div>
+
+        <div *ngIf="card.dualEffect && card.dualEffect !== '-'" class="flex flex-col" id="Dual-Effect">
+          <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Dual Effect</p>
+          <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.dualEffect)"></span>
         </div>
 
         <div *ngIf="card.digivolveEffect !== '-'" class="flex flex-col" id="Digimon-Digivolve-Effect">
@@ -229,21 +230,23 @@ import { TooltipModule } from 'primeng/tooltip';
 
         <div *ngIf="card.linkEffect !== '-'" class="flex flex-col" id="Digimon-Link">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Link</p>
-          <div class="grid grid-cols-5">
+          <div class="grid grid-cols-[auto_minmax(0,1fr)] gap-x-2">
             <p class="font-bold">Requirements:</p>
             <span
-              class="font-white whitespace-pre-wrap font-bold col-span-4"
+              class="font-white whitespace-pre-wrap font-bold"
               [innerHTML]="highlightKeywords(card.linkRequirement)"></span>
           </div>
-          <div class="grid grid-cols-5">
+          <div class="grid grid-cols-[auto_minmax(0,1fr)] gap-x-2">
             <p class="font-bold">Link Effect:</p>
-            <span class="font-white whitespace-pre-wrap font-bold col-span-4" [innerHTML]="highlightKeywords(card.linkEffect)"></span>
-          </div>
-          <div class="grid grid-cols-5">
-            <p class="font-bold">Link DP:</p>
-            <span class="font-white whitespace-pre-wrap font-bold col-span-4" [innerHTML]="highlightKeywords(card.linkDP)"></span>
+            <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.linkEffect)"></span>
           </div>
         </div>
+        @if (card.linkDP && card.linkDP !== '-') {
+          <div class="grid grid-cols-[auto_minmax(0,1fr)] gap-x-2" id="Link-DP">
+            <p class="font-bold">Link DP:</p>
+            <span class="font-white whitespace-pre-wrap font-bold" [innerHTML]="highlightKeywords(card.linkDP)"></span>
+          </div>
+        }
       </div>
 
       <div *ngIf="card.restrictions.english !== 'Unrestricted'" class="my-4 max-w-full" id="Restriction">
