@@ -137387,8 +137387,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-008_P1",
+        "illustrator": "Murakami Hisashi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-008_P1-J",
+        "illustrator": "Murakami Hisashi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -138883,8 +138897,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-032_P1",
+        "illustrator": "SENNSU",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-032_P1-J",
+        "illustrator": "SENNSU",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -142169,8 +142197,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-083_P1",
+        "illustrator": "Moyasi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-083_P1-J",
+        "illustrator": "Moyasi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -142393,8 +142435,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-086_P1",
+        "illustrator": "KISUKE",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-086_P1-J",
+        "illustrator": "KISUKE",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -142497,8 +142553,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-088_P1",
+        "illustrator": "banira",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-088_P1-J",
+        "illustrator": "banira",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",

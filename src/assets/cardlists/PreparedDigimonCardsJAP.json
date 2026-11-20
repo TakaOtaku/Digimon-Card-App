@@ -165074,6 +165074,67 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-008_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT27-008",
+    "cardType": "Digimon",
+    "color": "Red/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "1",
+        "level": "2"
+      },
+      {
+        "color": "Black",
+        "cost": "1",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cRaid\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] By trashing 1 card with the [Chronicle]\u00a0trait from your hand, \uff1cDraw 1\uff1e and gain 1 memory.",
+    "form": "Rookie",
+    "id": "BT27-008_P1",
+    "illustrator": "Murakami Hisashi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Ryudamon",
+      "japanese": "\u30ea\u30e5\u30a6\u30c0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Kyokomon]/Black Lv.2 w/[X Antibody]\u00a0trait: Cost 0 ",
+    "type": "Beast/X Antibody/Chronicle",
+    "version": "Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-009-J.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-009",
@@ -166688,6 +166749,67 @@
     "specialDigivolve": "[Digivolve] Lv.5 w/[Gaogamon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Beast Knight/DATA SQUAD",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-032_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-032",
+    "cardType": "Digimon/Option",
+    "color": "Blue/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[When Digivolving] For every 4 cards your opponent's hand has, 1 of their Digimon or Tamers can't suspend until their turn ends.\n[All Turns] [Once Per Turn] When effects add to your opponent's hand, or effects trash cards under your Tamers, you may activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-032_P1",
+    "illustrator": "SENNSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "MirageGaogamon/Full Moon Blaster",
+      "japanese": "\u30df\u30e9\u30fc\u30b8\u30e5\u30ac\u30aa\u30ac\u30e2\u30f3/\u30d5\u30eb\u30e0\u30fc\u30f3\u30d6\u30e9\u30b9\u30bf\u30fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: IGNITION OF X",
+    "optionCardColourRequirement": "Blue",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Return 1 of your opponent's highest level Digimon to the hand.",
+    "playCost": "5",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Gaogamon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Beast Knight/DATA SQUAD",
+    "version": "Box Topper"
   },
   {
     "aceEffect": "-",
@@ -170550,6 +170672,62 @@
   {
     "aceEffect": "-",
     "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-083_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-083",
+    "cardType": "Digimon/Option",
+    "color": "Purple/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cRetaliation\uff1e \n[When Digivolving] Your opponent trashes any 1 card from their hand or security stack.\n[On Deletion] If your opponent's hand has 7 or fewer cards, you may play 1 play cost 7 or lower purple Digimon card with [Avian] or [Bird]\u00a0in any of its traits from your trash without paying the cost.",
+    "form": "Mega",
+    "id": "BT27-083_P1",
+    "illustrator": "Moyasi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Ravemon/Ame-no-Ohabari",
+      "japanese": "\u30ec\u30a4\u30f4\u30e2\u30f3/\u5929\u4e4b\u5c3e\u7fbd\u5f35",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: IGNITION OF X",
+    "optionCardColourRequirement": "Purple",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Your opponent trashes cards in their hand so that they have 7 left. If this effect didn't trash, delete 1 of their Digimon.",
+    "playCost": "5",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "[Rule] Trait: Has [Birdkin] Type.",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Crowmon]/Lv.5 w/[DATA SQUAD]\u00a0trait: Cost 3 ",
+    "type": "Cyborg/DATA SQUAD",
+    "version": "Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
     "attribute": "Virus",
     "block": [
       "06"
@@ -170910,6 +171088,56 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-086_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BT27-086",
+    "cardType": "Tamer",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Gemmon]\u00a0in its text, gain 1 memory.\n[Your Turn] When your Digimon are played or digivolve, if any of them have the [ALYSION]\u00a0trait, by suspending this Tamer, 1 of your Digimon gets +3000 DP for the turn. After, if you have a Digimon with 8000 DP or more, \uff1cDraw 1\uff1e ",
+    "form": "-",
+    "id": "BT27-086_P1",
+    "illustrator": "KISUKE",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kanata Hondo",
+      "japanese": "\u672c\u5802\u30ab\u30ca\u30bf",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Box Topper"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT27-087-J.webp",
     "cardLv": "-",
     "cardNumber": "BT27-087",
@@ -171001,6 +171229,56 @@
     "specialDigivolve": "-",
     "type": "ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-088_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BT27-088",
+    "cardType": "Tamer",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with the [Ice-Snow]\u00a0trait, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have the [Ice-Snow]\u00a0trait, by suspending this Tamer, Trash the bottom 2 digivolution cards from 1 of your opponent's Digimon. After, if they don't have a Digimon with digivolution cards, gain 1 memory.",
+    "form": "-",
+    "id": "BT27-088_P1",
+    "illustrator": "banira",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Valner Dragnogh",
+      "japanese": "\u30f4\u30a1\u30eb\u30ca\u30fc\n\u30fb\u30c9\u30e9\u30b0\u30ce\u30d5",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "Box Promotion Pack: IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Box Topper"
   },
   {
     "aceEffect": "-",
