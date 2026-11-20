@@ -1486,7 +1486,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e ",
     "form": "Hybrid",
     "id": "AD1-015",
     "illustrator": "No Illustrator",
@@ -1542,7 +1542,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e ",
     "form": "Hybrid",
     "id": "AD1-015_P1",
     "illustrator": "IWAO",
@@ -2961,10 +2961,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3017,10 +3017,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3129,10 +3129,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3403,10 +3403,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3509,10 +3509,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3565,10 +3565,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3621,10 +3621,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3839,10 +3839,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -156268,7 +156268,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "While you have no face-up security cards, you can ignore this card's color requirements.\n{Security} [Your Turn] All of your red or blue [TS]\u00a0trait Digimon gain \uff1cAlliance\uff1e. While you have [Apollomon] or [Dianamon], they also gain \uff1cRush\uff1e \n[Main] Add your bottom security card to the hand and place this card face up as the bottom security card. Then, you may play 1 red or blue [TS]\u00a0trait Digimon card from your hand with the cost reduced by 3.",
+    "effect": "While you have no face-up security cards, you can ignore this card's color requirements.\n{Security} [Your Turn] All of your red or blue [TS]\u00a0trait Digimon gain \uff1cAlliance\uff1e While you have [Apollomon] or [Dianamon], they also gain \uff1cRush\uff1e \n[Main] Add your bottom security card to the hand and place this card face up as the bottom security card. Then, you may play 1 red or blue [TS]\u00a0trait Digimon card from your hand with the cost reduced by 3.",
     "form": "-",
     "id": "BT25-094",
     "illustrator": "Itohiro",
@@ -164677,10 +164677,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -164727,10 +164727,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -164777,10 +164777,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -164827,10 +164827,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -164877,10 +164877,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -164933,10 +164933,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [ALYSION]\u00a0trait and 1 red Tamer card among them to the hand. Return the rest to the bottom of the deck.",
     "securityEffect": "-",
@@ -164994,10 +164994,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Flame] Type.",
     "securityEffect": "-",
@@ -165055,10 +165055,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165116,10 +165116,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165172,10 +165172,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165228,10 +165228,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165289,10 +165289,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165350,10 +165350,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165406,10 +165406,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165467,16 +165467,77 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Hisyaryumon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 3 ",
     "type": "Beast Dragon/X Antibody/Chronicle",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-015_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-015",
+    "cardType": "Digimon",
+    "color": "Red/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "[All Turns] [Once Per Turn] When security stacks are removed from, this [Alphamon: Ouryuken] may unsuspend.",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Delete 1 of your opponent's Digimon with as much DP as 1 of your Digimon or less. Then, if during an attack, Trash their top security card.\n[All Turns] [Once Per Turn] When security stacks are removed from, you may play or use 1 [Chronicle]\u00a0trait Tamer or Option card from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT27-015_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Ouryumon",
+      "japanese": "\u30aa\u30a6\u30ea\u30e5\u30a6\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Hisyaryumon]/Lv.5 w/[Chronicle]\u00a0trait: Cost 3 ",
+    "type": "Beast Dragon/X Antibody/Chronicle",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -165523,16 +165584,128 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Jesmon]: Cost 1 ",
     "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-016_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-016",
+    "cardType": "Digimon/Option",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +6000 DP until your opponent's turn ends. Then, by returning 1 of your other Digimon or 1 [Jesmon] or [X Antibody] from this Digimon's digivolution cards to the bottom of the deck, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-016_P1",
+    "illustrator": "sasasi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Jesmon (X Antibody)/Ultimate Seibaken",
+      "japanese": "\u30b8\u30a8\u30b9\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u5203\u8056\u8987\u5263",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "White",
+    "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] By placing 1 of your opponent's lowest DP Digimon as the bottom security card, trash their top security card.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Jesmon]: Cost 1 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-016_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-016",
+    "cardType": "Digimon/Option",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +6000 DP until your opponent's turn ends. Then, by returning 1 of your other Digimon or 1 [Jesmon] or [X Antibody] from this Digimon's digivolution cards to the bottom of the deck, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-016_P2",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Jesmon (X Antibody)/Ultimate Seibaken",
+      "japanese": "\u30b8\u30a8\u30b9\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u5203\u8056\u8987\u5263",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "White",
+    "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] By placing 1 of your opponent's lowest DP Digimon as the bottom security card, trash their top security card.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Jesmon]: Cost 1 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Special Rare"
   },
   {
     "aceEffect": "-",
@@ -165584,10 +165757,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165640,16 +165813,72 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Gemmon]\u00a0in text: Cost 3 ",
     "type": "Dragon Warrior/ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Red w/[Gemmon]\u00a0in text",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-018_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-018",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cRush\uff1e \n\uff1cProgress\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] For every 8000 DP this Digimon has, you may activate the effect below:\n\u30fbDelete 1 of your opponent's lowest DP Digimon.\n[All Turns] [Once Per Turn] When any of your opponent's Digimon are deleted, trash their top security card.",
+    "form": "Mega",
+    "id": "BT27-018_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Rubeusdramon",
+      "japanese": "\u30eb\u30d3\u30a6\u30b9\u30c9\u30e9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Gemmon]\u00a0in text: Cost 3 ",
+    "type": "Dragon Warrior/ALYSION",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -165696,10 +165925,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165752,10 +165981,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -165818,10 +166047,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -165874,10 +166103,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -165991,10 +166220,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166047,10 +166276,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -166108,10 +166337,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166164,10 +166393,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -166220,10 +166449,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -166276,10 +166505,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -166332,10 +166561,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166388,10 +166617,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -166449,10 +166678,10 @@
     "playCost": "5",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166505,16 +166734,72 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Ice-Snow/ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Ice-Snow]\u00a0trait",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-033_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-033",
+    "cardType": "Digimon",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "-",
+    "effect": "\uff1cIceclad\uff1e \n\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] Trash the top 2 digivolution cards of all of your opponent's Digimon. Then, until their turn ends, none of their Digimon without digivolution cards can digivolve or suspend.\n[End of Your Turn] [Once Per Turn] If your opponent has no Digimon with digivolution cards, 1 of your [Ice-Snow]\u00a0trait Digimon may gain \uff1cRush\uff1e for the turn and attack.",
+    "form": "Mega",
+    "id": "BT27-033_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Yukinamon",
+      "japanese": "\u30e6\u30ad\u30ca\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "12",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Ice-Snow/ALYSION",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -166571,16 +166856,82 @@
     "playCost": "6",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Examon]: Cost 2 ",
     "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-034_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT27-034",
+    "cardType": "Digimon/Option",
+    "color": "Blue/Red/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "16000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n\uff1cDecode (Green Lv.5)\uff1e \n\uff1cDecode (Blue Lv.5)\uff1e \n[When Digivolving] [When Attacking] [Counter] [Once Per Turn] You may suspend up to 3 Digimon or Tamers. Then, by trashing 1 [Examon] or [X Antibody] from this Digimon's digivolution cards, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-034_P1",
+    "illustrator": "k.Dra",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Examon (X Antibody)/Ultimate Battle Dragonlance Ambrose",
+      "japanese": "\u30a8\u30b0\u30b6\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u7adc\u69cd\u30a2\u30f3\u30d6\u30ed\u30b8\u30a6\u30b9",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Red",
+    "optionCardEffect": "[Main] Delete up to 9000 DP's total worth of your opponent's Digimon. For each of their Digimon and Tamers, add 3000 to this effect's DP maximum. If this effect didn't delete, trash 1 of their Option cards in the battle area.",
+    "playCost": "6",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Examon]: Cost 2 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -166632,16 +166983,138 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Beast Knight/DATA SQUAD",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
+    "cardImage": "assets/images/cards/BT27-035_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT27-035",
+    "cardType": "Digimon/Option",
+    "color": "Blue/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "15000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may activate 1 [Main] effect on this card's Option side.\n[When Digivolving] [When Attacking] If your opponent's hand has 8 or more cards, by returning cards without looking to the bottom of the deck so that it has 7 left, return their top security card to the bottom of the deck.",
+    "form": "Mega",
+    "id": "BT27-035_P1",
+    "illustrator": "toriyufu",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "MirageGaogamon: Burst Mode/Full Moon Meteor Impact",
+      "japanese": "\u30df\u30e9\u30fc\u30b8\u30e5\u30ac\u30aa\u30ac\u30e2\u30f3\uff1a\u30d0\u30fc\u30b9\u30c8\u30e2\u30fc\u30c9/\u30d5\u30eb\u30e0\u30fc\u30f3\u30e1\u30c6\u30aa\u30a4\u30f3\u30d1\u30af\u30c8",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Blue",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Return 1 of your opponent's Digimon to the hand. Then, if their hand has 8 or more cards, 1 of your Digimon may unsuspend.",
+    "playCost": "6",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Beast Knight/DATA SQUAD",
+    "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
+    "cardImage": "assets/images/cards/BT27-035_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT27-035",
+    "cardType": "Digimon/Option",
+    "color": "Blue/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Blue",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "15000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may activate 1 [Main] effect on this card's Option side.\n[When Digivolving] [When Attacking] If your opponent's hand has 8 or more cards, by returning cards without looking to the bottom of the deck so that it has 7 left, return their top security card to the bottom of the deck.",
+    "form": "Mega",
+    "id": "BT27-035_P2",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "MirageGaogamon: Burst Mode/Full Moon Meteor Impact",
+      "japanese": "\u30df\u30e9\u30fc\u30b8\u30e5\u30ac\u30aa\u30ac\u30e2\u30f3\uff1a\u30d0\u30fc\u30b9\u30c8\u30e2\u30fc\u30c9/\u30d5\u30eb\u30e0\u30fc\u30f3\u30e1\u30c6\u30aa\u30a4\u30f3\u30d1\u30af\u30c8",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Blue",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Return 1 of your opponent's Digimon to the hand. Then, if their hand has 8 or more cards, 1 of your Digimon may unsuspend.",
+    "playCost": "6",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Beast Knight/DATA SQUAD",
+    "version": "Special Rare"
   },
   {
     "aceEffect": "-",
@@ -166693,10 +167166,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166754,10 +167227,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166815,10 +167288,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166876,10 +167349,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166937,10 +167410,10 @@
     "playCost": "8",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -166998,10 +167471,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -167059,10 +167532,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -167115,16 +167588,72 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Kentaurosmon]: Cost 2 ",
     "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-043_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-043",
+    "cardType": "Digimon/Option",
+    "color": "Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Yellow",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n\uff1cAscension\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] By trashing your top security card, this Digimon unsuspends.\n[All Turns] [Once Per Turn] When your security stack is removed from, by placing 1 [Kentaurosmon] or [X Antibody] from this Digimon's digivolution cards as the bottom security card, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-043_P1",
+    "illustrator": "As'Maria",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kentaurosmon (X Antibody)/Ultimate Crossbow Einherjar",
+      "japanese": "\u30b9\u30ec\u30a4\u30d7\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u5f29\u5f13\u30a8\u30a4\u30f3\u30d8\u30ea\u30a2\u30eb",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Yellow",
+    "optionCardEffect": "[Main] 1 of your opponent's Digimon gets -20000 DP until their turn ends. For each card in both players' security stacks, add 1000 to this effect's DP reduction.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Kentaurosmon]: Cost 2 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -167171,16 +167700,72 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
     "type": "Reptile/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-044_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT27-044",
+    "cardType": "Digimon",
+    "color": "Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] This Digimon gets +2000 DP.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[Your Turn] When this Digimon would digivolve into a green Digimon card with the [BEATBREAK]\u00a0trait, reduce the cost by 1.",
+    "form": "Rookie",
+    "id": "BT27-044_P1",
+    "illustrator": "poroze",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gekkomon",
+      "japanese": "\u30b2\u30c3\u30b3\u30fc\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "C",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
+    "type": "Reptile/Glowing Dawn/BEATBREAK",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -167232,10 +167817,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
@@ -167288,10 +167873,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -167410,10 +167995,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Dinosaur] Type.",
     "securityEffect": "-",
@@ -167471,10 +168056,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
@@ -167527,10 +168112,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -167588,10 +168173,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Holy Beast] Type.",
     "securityEffect": "-",
@@ -167649,16 +168234,138 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Glowing Dawn]\u00a0trait: Cost 4\n[Digivolve] [Atratusmon] w/o play Cost: Cost 2 ",
     "type": "Mutant/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Glowing Dawn]\u00a0trait",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-052_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-052",
+    "cardType": "Digimon",
+    "color": "Green/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon may battle 1 of your opponent's Digimon.\n[On Play] [When Digivolving] By trashing 2 bottom face-down cards from under any of your Tamers, you may play or use 1 play or use cost 6 or lower [Glowing Dawn]\u00a0trait card from your hand or your Digimon's digivolution cards without paying the cost.",
+    "form": "Mega",
+    "id": "BT27-052_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Atratusmon",
+      "japanese": "\u30a2\u30c8\u30e9\u30bf\u30b9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Glowing Dawn]\u00a0trait: Cost 4\n[Digivolve] [Atratusmon] w/o play Cost: Cost 2 ",
+    "type": "Mutant/Glowing Dawn/BEATBREAK",
+    "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Glowing Dawn]\u00a0trait",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-052_P2-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-052",
+    "cardType": "Digimon",
+    "color": "Green/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "\uff1cSecurity A. +1\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon may battle 1 of your opponent's Digimon.\n[On Play] [When Digivolving] By trashing 2 bottom face-down cards from under any of your Tamers, you may play or use 1 play or use cost 6 or lower [Glowing Dawn]\u00a0trait card from your hand or your Digimon's digivolution cards without paying the cost.",
+    "form": "Mega",
+    "id": "BT27-052_P2",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Atratusmon",
+      "japanese": "\u30a2\u30c8\u30e9\u30bf\u30b9\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Glowing Dawn]\u00a0trait: Cost 4\n[Digivolve] [Atratusmon] w/o play Cost: Cost 2 ",
+    "type": "Mutant/Glowing Dawn/BEATBREAK",
+    "version": "Special Rare"
   },
   {
     "aceEffect": "-",
@@ -167710,16 +168417,77 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Leomon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 4 ",
     "type": "Beastkin/Boss/DATA SQUAD",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-053_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-053",
+    "cardType": "Digimon",
+    "color": "Green/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "5"
+      },
+      {
+        "color": "Yellow",
+        "cost": "5",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "-",
+    "effect": "When this card would be played, if your opponent has a Digimon with 11000 DP or more, reduce the cost by 6.\n\uff1cBlocker\uff1e \n\uff1cFortitude\uff1e \n[On Play] [When Digivolving] [When Attacking] [Once Per Turn] This Digimon may battle 1 of your opponent's Digimon.\n[On Deletion] You may play or use 1 Tamer or Option card with the [Boss] or [DATA SQUAD]\u00a0trait from your hand without paying the cost.",
+    "form": "Mega",
+    "id": "BT27-053_P1",
+    "illustrator": "Murakami Hisashi",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "BanchoLeomon",
+      "japanese": "\u30d0\u30f3\u30c1\u30e7\u30fc\u30ec\u30aa\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "13",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Leomon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 4 ",
+    "type": "Beastkin/Boss/DATA SQUAD",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -167766,10 +168534,10 @@
     "playCost": "11",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -167827,10 +168595,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -167883,16 +168651,72 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
     "type": "Puppet/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-056_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT27-056",
+    "cardType": "Digimon",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "\uff1cReboot\uff1e ",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[Your Turn] When this Digimon would digivolve into a black Digimon card with the [BEATBREAK]\u00a0trait, reduce the cost by 1.",
+    "form": "Rookie",
+    "id": "BT27-056_P1",
+    "illustrator": "koki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Pristimon",
+      "japanese": "\u30d7\u30ea\u30b9\u30c6\u30a3\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
+    "type": "Puppet/Glowing Dawn/BEATBREAK",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -167944,10 +168768,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168000,10 +168824,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168056,10 +168880,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168117,10 +168941,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
@@ -168178,10 +169002,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168234,10 +169058,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168290,10 +169114,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168346,10 +169170,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168407,10 +169231,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168468,10 +169292,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168529,16 +169353,77 @@
     "playCost": "-",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Glowing Dawn]\u00a0trait: Cost 3 ",
     "type": "Beastkin/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-067_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-067",
+    "cardType": "Digimon/Option",
+    "color": "Black/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cRaid\uff1e \n\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[All Turns] [Once Per Turn] When this Digimon would leave the battle area, by trashing 2 bottom face-down cards from under any of your Tamers, it doesn't leave.\n[All Turns] [Once Per Turn] When attack targets change or effects trash cards from under your Tamers, you may activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-067_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Artiomon/Doom Buster",
+      "japanese": "\u30a2\u30eb\u30c6\u30a3\u30aa\u30e2\u30f3/\u30c9\u30a5\u30fc\u30e0\u30d0\u30b9\u30bf\u30fc",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Black",
+    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] \uff1cDe-Digivolve 2\uff1e 1 of your opponent's Digimon. Then, 1 of your Digimon unsuspends and gets +5000 DP until your turn ends.",
+    "playCost": "-",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Glowing Dawn]\u00a0trait: Cost 3 ",
+    "type": "Beastkin/Glowing Dawn/BEATBREAK",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -168587,19 +169472,80 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "White",
     "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] Return 1 of your opponent's 12000 DP or higher Digimon to the top of the deck. If this effect didn't return, delete 1 of your opponent's lowest play cost Digimon.",
-    "playCost": "6",
+    "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Gankoomon]: Cost 2 ",
-    "type": "Holy Warrior/X Antibody",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-068_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-068",
+    "cardType": "Digimon",
+    "color": "Black/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Red",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cCollision\uff1e \n\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[All Turns] When this Digimon would leave the battle area, by returning 1 of your other Digimon or 1 [Gankoomon] or [X Antibody] from this Digimon's digivolution cards to the bottom of the deck, it doesn't leave.\n[All Turns] [Once Per Turn] When any of your Digimon leave the battle area, you may activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-068_P1",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gankoomon (X Antibody)/Ultimate Sengi Tengyouken",
+      "japanese": "\u30ac\u30f3\u30af\u30a5\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u6280\u5929\u4ef0\u62f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "White",
+    "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] Return 1 of your opponent's 12000 DP or higher Digimon to the top of the deck. If this effect didn't return, delete 1 of your opponent's lowest play cost Digimon.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Gankoomon]: Cost 2 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -168651,10 +169597,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168707,16 +169653,72 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Craniamon]: Cost 2 ",
     "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-070_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-070",
+    "cardType": "Digimon/Option",
+    "color": "Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "13000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n[All Turns] When any of your Digimon would leave the battle area, by suspending this Digimon, they don't leave.\n[All Turns] [Once Per Turn] When this Digimon suspends, you may delete all of your opponent's lowest DP Digimon. Then, by trashing 1 [Craniamon] or [X Antibody] from this Digimon's digivolution cards, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-070_P1",
+    "illustrator": "As'Maria",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Craniamon (X Antibody)/Ultimate Crossblade D\u00e1insleif",
+      "japanese": "\u30af\u30ec\u30cb\u30a2\u30e0\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u5341\u5263\u30c0\u30a4\u30f3\u30b9\u30ec\u30a4\u30f4",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Black",
+    "optionCardEffect": "[Main] Until your opponent's turn ends, 1 of your Digimon with \uff1cBlocker\uff1e isn't affected by their Digimon effects and gets +5000 DP. Then, 1 of your Digimon may unsuspend.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Craniamon]: Cost 2 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -168768,10 +169770,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168824,10 +169826,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168880,16 +169882,72 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
     "type": "Mammal/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-073_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BT27-073",
+    "cardType": "Digimon",
+    "color": "Purple",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e and trash 1 card in your hand.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "[Your Turn] When this Digimon would digivolve into a purple Digimon card with the [BEATBREAK]\u00a0trait, reduce the cost by 1.",
+    "form": "Rookie",
+    "id": "BT27-073_P1",
+    "illustrator": "tyuga",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Chiropmon",
+      "japanese": "\u30ad\u30ed\u30d7\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.2 w/[Glowing Dawn]\u00a0trait: Cost 0 ",
+    "type": "Mammal/Glowing Dawn/BEATBREAK",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -168936,10 +169994,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -168986,10 +170044,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169036,10 +170094,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169092,10 +170150,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169148,10 +170206,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169198,10 +170256,10 @@
     "playCost": "9",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169254,10 +170312,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169310,10 +170368,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169366,16 +170424,72 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[Glowing Dawn]\u00a0trait: Cost 3 ",
     "type": "Undead/Glowing Dawn/BEATBREAK",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-082_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-082",
+    "cardType": "Digimon/Option",
+    "color": "Purple/Yellow",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cExecute\uff1e \n\uff1cAscension\uff1e \n[Security] [On Deletion] Delete 1 of your opponent's Digimon with the lowest level. If this effect didn't delete, Trash their top security card.\n[When Digivolving] [When Attacking] [Once Per Turn] By trashing 2 bottom face-down cards from under any of your Tamers, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-082_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Nosferamon/Rampage Bullet",
+      "japanese": "\u30ce\u30b9\u30d5\u30a7\u30e9\u30e2\u30f3/\u30e9\u30f3\u30da\u30fc\u30b8\u30d0\u30ec\u30c3\u30c8",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Purple",
+    "optionCardEffect": "\uff1cUse Req. ([Glowing Dawn] trait)\uff1e \n[Main] Delete 1 of your opponent's level 6 or higher Digimon. Then, you may play 1 play cost 4 or lower [BEATBREAK]\u00a0trait card from your trash without paying the cost.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] Lv.5 w/[Glowing Dawn]\u00a0trait: Cost 3 ",
+    "type": "Undead/Glowing Dawn/BEATBREAK",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -169422,10 +170536,10 @@
     "playCost": "5",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Birdkin] Type.",
     "securityEffect": "-",
@@ -169483,16 +170597,77 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [LordKnightmon]: Cost 2 ",
     "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Virus",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-084_P1-J.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-084",
+    "cardType": "Digimon/Option",
+    "color": "Purple/Black",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "4",
+        "level": "5"
+      },
+      {
+        "color": "Black",
+        "cost": "4",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cAlliance\uff1e \n\uff1cCollision\uff1e \n\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] You may play up to 8 play cost's total worth of cards with [Knightmon]\u00a0in their texts from your hand without paying the cost.\n[All Turns] [Once Per Turn] When any of your other Digimon are played or deleted, by trashing 1 [LordKnightmon] or [X Antibody] from this Digimon's digivolution cards, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-084_P1",
+    "illustrator": "Spareribs",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "LordKnightmon (X Antibody)/Ultimate Thrusting Sword Gran Rozerio",
+      "japanese": "\u30ed\u30fc\u30c9\u30ca\u30a4\u30c8\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u7a81\u5263\u30b0\u30e9\u30f3\u30ed\u30fc\u30bc\u30ea\u30aa",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Purple/Black",
+    "optionCardEffect": "[Main] Delete 1 of your opponent's lowest level Digimon. If this effect didn't delete, until your turn ends, all of your Digimon with [Knightmon]\u00a0in their texts gain \uff1cBlocker\uff1e , your opponent's Digimon effects don't affect them and they get +3000 DP.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [LordKnightmon]: Cost 2 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Alternative Art"
   },
   {
     "aceEffect": "-",
@@ -169544,16 +170719,138 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "Cyborg/DATA SQUAD",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
+    "cardImage": "assets/images/cards/BT27-085_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT27-085",
+    "cardType": "Digimon/Option",
+    "color": "Purple/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "15000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] You may activate 1 [Main] effect on this card's Option side.\n[All Turns] [Once Per Turn] When your opponent's hand is trashed from, this Digimon may unsuspend.",
+    "form": "Mega",
+    "id": "BT27-085_P1",
+    "illustrator": "k.Dra",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Ravemon: Burst Mode/Mourning Dance",
+      "japanese": "\u30ec\u30a4\u30f4\u30e2\u30f3\uff1a\u30d0\u30fc\u30b9\u30c8\u30e2\u30fc\u30c9/\u6012\u6d9b\u95c7\u4f9b\u55aa\u4e4b\u821e",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Purple",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Your opponent trashes any 1 card from their hand or security stack. Then, delete 1 of their Digimon with a level as high as the number of cards in their hand or higher.",
+    "playCost": "6",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Cyborg/DATA SQUAD",
+    "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
+    "cardImage": "assets/images/cards/BT27-085_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT27-085",
+    "cardType": "Digimon/Option",
+    "color": "Purple/Green",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Purple",
+        "cost": "5",
+        "level": "6"
+      },
+      {
+        "color": "Green",
+        "cost": "5",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "15000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n[When Digivolving] [When Attacking] You may activate 1 [Main] effect on this card's Option side.\n[All Turns] [Once Per Turn] When your opponent's hand is trashed from, this Digimon may unsuspend.",
+    "form": "Mega",
+    "id": "BT27-085_P2",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Ravemon: Burst Mode/Mourning Dance",
+      "japanese": "\u30ec\u30a4\u30f4\u30e2\u30f3\uff1a\u30d0\u30fc\u30b9\u30c8\u30e2\u30fc\u30c9/\u6012\u6d9b\u95c7\u4f9b\u55aa\u4e4b\u821e",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Purple",
+    "optionCardEffect": "\uff1cUse Req. ([DATA SQUAD] trait)\uff1e \n[Main] Your opponent trashes any 1 card from their hand or security stack. Then, delete 1 of their Digimon with a level as high as the number of cards in their hand or higher.",
+    "playCost": "6",
+    "rarity": "UR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Cyborg/DATA SQUAD",
+    "version": "Special Rare"
   },
   {
     "aceEffect": "-",
@@ -169594,10 +170891,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -169644,10 +170941,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -169694,10 +170991,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -169744,10 +171041,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -169794,10 +171091,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169844,10 +171141,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -169894,10 +171191,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -169944,10 +171241,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -169994,10 +171291,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -170044,10 +171341,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -170094,10 +171391,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -170144,10 +171441,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -170194,10 +171491,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -170244,10 +171541,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Place 1 of your opponent's Digimon with the lowest DP as their top security card.",
@@ -170294,10 +171591,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Delete all of your opponent's Digimon with the lowest play cost. Then, add this card to the hand.",
@@ -170344,10 +171641,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 [Falcomon] or [Keenan Crier] from your hand or trash without paying the cost. Then, add this card to the hand.",
@@ -170394,10 +171691,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 5 or lower [Kurata's Army]\u00a0trait card from your hand or trash without paying the cost.",
@@ -170460,16 +171757,148 @@
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "-",
     "type": "NO DATA/X Antibody/Royal Knight/Chronicle",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-103_P1-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT27-103",
+    "cardType": "Digimon/Option",
+    "color": "Black/Yellow/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Yellow",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[DNA Digivolve] [Alphamon] + [Ouryumon]\u00a0: Cost 0",
+    "dp": "16000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cPartition ([Alphamon] & [Ouryumon])\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may delete 1 of your opponent's Digimon. Then, if DNA digivolving, \uff1cRecovery +2\uff1e \n[All Turns] During attacks, your opponent's effects don't affect this Digimon.",
+    "form": "Mega",
+    "id": "BT27-103_P1",
+    "illustrator": "k.Dra",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Alphamon: Ouryuken/Ultimate Ouryuken",
+      "japanese": "\u30a2\u30eb\u30d5\u30a1\u30e2\u30f3\uff1a\u738b\u7adc\u5263/\u7a76\u6975\u6226\u5203\u738b\u7adc\u5263",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Black",
+    "optionCardEffect": "[Main] Delete 1 of your opponent's Digimon. Then, 2 of your Digimon may DNA digivolve into this card.",
+    "playCost": "6",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "NO DATA/X Antibody/Royal Knight/Chronicle",
+    "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-103_P2-J.webp",
+    "cardLv": "Lv.7",
+    "cardNumber": "BT27-103",
+    "cardType": "Digimon/Option",
+    "color": "Black/Yellow/Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Black",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Yellow",
+        "cost": "6",
+        "level": "6"
+      },
+      {
+        "color": "Red",
+        "cost": "6",
+        "level": "6"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "[DNA Digivolve] [Alphamon] + [Ouryumon]\u00a0: Cost 0",
+    "dp": "16000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cPartition ([Alphamon] & [Ouryumon])\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may delete 1 of your opponent's Digimon. Then, if DNA digivolving, \uff1cRecovery +2\uff1e \n[All Turns] During attacks, your opponent's effects don't affect this Digimon.",
+    "form": "Mega",
+    "id": "BT27-103_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Alphamon: Ouryuken/Ultimate Ouryuken",
+      "japanese": "\u30a2\u30eb\u30d5\u30a1\u30e2\u30f3\uff1a\u738b\u7adc\u5263/\u7a76\u6975\u6226\u5203\u738b\u7adc\u5263",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "Black",
+    "optionCardEffect": "[Main] Delete 1 of your opponent's Digimon. Then, 2 of your Digimon may DNA digivolve into this card.",
+    "playCost": "6",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "NO DATA/X Antibody/Royal Knight/Chronicle",
+    "version": "Rare Pull (Gold Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -170510,16 +171939,116 @@
     "playCost": "4",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
     "type": "TS",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-104_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BT27-104",
+    "cardType": "Tamer",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] By placing 1 card from your hand under this Tamer, \uff1cDraw 1\uff1e and gain 1 memory.\n[End of Your Turn] By suspending this Tamer, activate 1 of the effects below:\n\u30fb1 of your Digimon may digivolve into a [Royal Knight]\u00a0trait card under this Tamer with the cost reduced by 2.\n\u30fbYou may use 1 use cost 5 or higher [Royal Knight]\u00a0trait Option card from your hand or under this Tamer with the cost reduced by 3.",
+    "form": "-",
+    "id": "BT27-104_P1",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "King Drasil",
+      "japanese": "\u30a4\u30b0\u30c9\u30e9\u30b7\u30eb",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "TS",
+    "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-104_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BT27-104",
+    "cardType": "Tamer",
+    "color": "White",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] By placing 1 card from your hand under this Tamer, \uff1cDraw 1\uff1e and gain 1 memory.\n[End of Your Turn] By suspending this Tamer, activate 1 of the effects below:\n\u30fb1 of your Digimon may digivolve into a [Royal Knight]\u00a0trait card under this Tamer with the cost reduced by 2.\n\u30fbYou may use 1 use cost 5 or higher [Royal Knight]\u00a0trait Option card from your hand or under this Tamer with the cost reduced by 3.",
+    "form": "-",
+    "id": "BT27-104_P2",
+    "illustrator": "Tonamikanji",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "King Drasil",
+      "japanese": "\u30a4\u30b0\u30c9\u30e9\u30b7\u30eb",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "4",
+    "rarity": "SEC",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "TS",
+    "version": "Rare Pull (Gold Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -236453,10 +237982,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -236509,10 +238038,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -236559,16 +238088,66 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Add this card to the hand.",
     "specialDigivolve": "-",
     "type": "ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ED01-09_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "ED01-09",
+    "cardType": "Option",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] You may play 1 red [Gemmon] or [Kanata Hondo] from your hand without paying the cost. Then, place this card in the battle area.\n[Your Turn] When one of your red [ALYSION]\u00a0trait Digimon attacks, \uff1cDelay\uff1e \n\u30fbThat Digimon gains \uff1cSecurity A. +1\uff1e and +3000 DP for the turn.",
+    "form": "-",
+    "id": "ED01-09_P2",
+    "illustrator": "naru",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bond of Rubies",
+      "japanese": "\u7d05\u7389\u306e\u7d46",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Super Rare (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -236609,16 +238188,66 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Add this card to the hand.",
     "specialDigivolve": "-",
     "type": "ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ED01-10_P2-J.webp",
+    "cardLv": "-",
+    "cardNumber": "ED01-10",
+    "cardType": "Option",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] You may play 1 blue [Renamon] or [Valner Dragnogh] from your hand without paying the cost. Then, place this card in the battle area.\n[End of Your Turn] \uff1cDelay\uff1e \n\u30fbChoose 1 of your blue [ALYSION]\u00a0trait Digimon and it attacks 1 of your opponent's Digimon with fewer digivolution cards than it. It can also attack your opponent's unsuspended Digimon with this effect.",
+    "form": "-",
+    "id": "ED01-10_P2",
+    "illustrator": "naru",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bond of Snowflakes",
+      "japanese": "\u96ea\u7247\u306e\u7d46",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Super Rare (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -258209,7 +259838,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e. If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
+    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
     "form": "-",
     "id": "EX11-058",
     "illustrator": "Shin Sasaki",
@@ -258259,7 +259888,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e. If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
+    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
     "form": "-",
     "id": "EX11-058_P1",
     "illustrator": "Souichirou Gunjima",
@@ -260964,7 +262593,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e ",
     "form": "Champion",
     "id": "EX12-012",
     "illustrator": "BIRU YAMAGUCHI",
@@ -261020,7 +262649,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e ",
     "form": "Champion",
     "id": "EX12-012_P1",
     "illustrator": "BIRU YAMAGUCHI",
@@ -262267,7 +263896,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "2000",
     "dualEffect": "-",
@@ -262674,7 +264303,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
@@ -262735,7 +264364,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
@@ -263964,7 +265593,7 @@
     "dnaDigivolve": "[Digivolve] Lv.6 w/[ME]/[VB]\u00a0trait: Cost 5\n[DNA Digivolve] Blue/Yellow Lv.6 + Red/Black Lv.6\u00a0: Cost 0",
     "dp": "15000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e ",
     "form": "Mega",
     "id": "EX12-037",
     "illustrator": "tyuga",
@@ -264030,7 +265659,7 @@
     "dnaDigivolve": "[Digivolve] Lv.6 w/[ME]/[VB]\u00a0trait: Cost 5\n[DNA Digivolve] Blue/Yellow Lv.6 + Red/Black Lv.6\u00a0: Cost 0",
     "dp": "15000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e ",
     "form": "Mega",
     "id": "EX12-037_P1",
     "illustrator": "Takeuchi Moto",
@@ -275336,7 +276965,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
     "form": "Ultimate",
     "id": "EX13-057",
     "illustrator": "Spareribs",
@@ -275397,7 +277026,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
     "form": "Ultimate",
     "id": "EX13-057_P1",
     "illustrator": "Spareribs",
@@ -276784,7 +278413,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e. After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
     "form": "-",
     "id": "EX13-069",
     "illustrator": "Murakami Hisashi",
@@ -276834,7 +278463,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e. After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
     "form": "-",
     "id": "EX13-069_P1",
     "illustrator": "Takase",
@@ -334879,6 +336508,57 @@
       "05"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/LM-027_P4-J.webp",
+    "cardLv": "-",
+    "cardNumber": "LM-027",
+    "cardType": "Option",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] 1 of your red Digimon may digivolve into a red Digimon card in the hand with the digivolution cost reduced by 3. Then, place this card in the battle area.\n[Start of Your Turn] If your opponent has a Digimon, \uff1cDelay\uff1e \n\u30fbReturn 1 red Digimon card from your trash to the top of the deck. Then, if you don't have a Digimon, you may play 1 red Digimon card with 2000 DP or less from your trash without paying the cost.",
+    "form": "-",
+    "id": "LM-027_P4",
+    "illustrator": "YAMURETSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Red Scramble",
+      "japanese": "\u30ec\u30c3\u30c9\n\u30fb\u30b9\u30af\u30e9\u30f3\u30d6\u30eb",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "2",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] You may play 1 red Digimon card with 2000 DP or less from your trash without paying the cost. Then, add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Super Rare (Holographic Foil)\u00a0"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "03",
+      "05"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/LM-028-J.webp",
     "cardLv": "-",
     "cardNumber": "LM-028",
@@ -335022,6 +336702,57 @@
     "specialDigivolve": "-",
     "type": "-",
     "version": "Alternative Art (Foil)\u00a0"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "03",
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/LM-028_P4-J.webp",
+    "cardLv": "-",
+    "cardNumber": "LM-028",
+    "cardType": "Option",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] 1 of your blue Digimon may digivolve into a blue Digimon card in the hand with the digivolution cost reduced by 3. Then, place this card in the battle area.\n[Start of Your Turn] If your opponent has a Digimon, \uff1cDelay\uff1e \n\u30fbReturn 1 blue Digimon card from your trash to the top of the deck. Then, if you don't have a Digimon, you may play 1 blue Digimon card with 2000 DP or less from your trash without paying the cost.",
+    "form": "-",
+    "id": "LM-028_P4",
+    "illustrator": "YAMURETSU",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Blue Scramble",
+      "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30b9\u30af\u30e9\u30f3\u30d6\u30eb",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "2",
+    "rarity": "P",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] You may play 1 blue Digimon card with 2000 DP or less from your trash without paying the cost. Then, add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Super Rare (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -341577,6 +343308,58 @@
     "specialDigivolve": "-",
     "type": "-",
     "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "01",
+      "02",
+      "05"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/P-036_P7-J.webp",
+    "cardLv": "-",
+    "cardNumber": "P-036",
+    "cardType": "Option",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] Reveal the top 4 cards of your deck. Add 1 blue Digimon card among them to the hand. Place the remaining cards at the bottom of your deck in any order. Then, place this card in your battle area.\n[Main] \uff1cDelay\uff1e \n\u30fbGain 2 memory.",
+    "form": "-",
+    "id": "P-036_P7",
+    "illustrator": "Shin Sasaki",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Blue Memory Boost!",
+      "japanese": "\u30d6\u30eb\u30fc\n\u30fb\u30e1\u30e2\u30ea\u30fc\u30d6\u30fc\u30b9\u30c8\uff01\uff01",
+      "korean": "\ube14\ub8e8\n\u30fb\uba54\ubaa8\ub9ac \ubd80\uc2a4\ud2b8!!",
+      "simplifiedChinese": "\u84dd\u8272\n\u30fb\u5185\u5b58\u503c\u63a8\u8fdb\uff01\uff01",
+      "traditionalChinese": "\u85cd\n\u30fb\u8a18\u61b6\u9ad4\u63d0\u5347\u203c"
+    },
+    "notes": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Place this card in the battle area.",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Super Rare (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -365990,10 +367773,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -366046,10 +367829,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -366102,10 +367885,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -366364,10 +368147,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -366420,10 +368203,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -366476,10 +368259,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385308,10 +387091,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385364,10 +387147,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385420,10 +387203,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385476,10 +387259,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385532,10 +387315,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385582,10 +387365,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -385682,10 +387465,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385738,10 +387521,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -385794,10 +387577,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -385850,10 +387633,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -385906,10 +387689,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -385956,10 +387739,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",

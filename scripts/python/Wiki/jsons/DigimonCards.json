@@ -1036,7 +1036,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e ",
     "form": "Hybrid",
     "id": "AD1-015",
     "illustrator": "No Illustrator",
@@ -1917,10 +1917,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -1975,10 +1975,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -2091,10 +2091,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -2375,10 +2375,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -2485,10 +2485,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -2543,10 +2543,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -2601,10 +2601,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -2827,10 +2827,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -129897,7 +129897,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "While you have no face-up security cards, you can ignore this card's color requirements.\n{Security} [Your Turn] All of your red or blue [TS]\u00a0trait Digimon gain \uff1cAlliance\uff1e. While you have [Apollomon] or [Dianamon], they also gain \uff1cRush\uff1e \n[Main] Add your bottom security card to the hand and place this card face up as the bottom security card. Then, you may play 1 red or blue [TS]\u00a0trait Digimon card from your hand with the cost reduced by 3.",
+    "effect": "While you have no face-up security cards, you can ignore this card's color requirements.\n{Security} [Your Turn] All of your red or blue [TS]\u00a0trait Digimon gain \uff1cAlliance\uff1e While you have [Apollomon] or [Dianamon], they also gain \uff1cRush\uff1e \n[Main] Add your bottom security card to the hand and place this card face up as the bottom security card. Then, you may play 1 red or blue [TS]\u00a0trait Digimon card from your hand with the cost reduced by 3.",
     "form": "-",
     "id": "BT25-094",
     "illustrator": "Itohiro",
@@ -137046,10 +137046,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137098,10 +137098,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137150,10 +137150,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137202,10 +137202,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137254,10 +137254,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137312,10 +137312,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [ALYSION]\u00a0trait and 1 red Tamer card among them to the hand. Return the rest to the bottom of the deck.",
     "securityEffect": "-",
@@ -137375,10 +137375,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Flame] Type.",
     "securityEffect": "-",
@@ -137438,10 +137438,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137501,10 +137501,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137559,10 +137559,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137617,10 +137617,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137680,10 +137680,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137743,10 +137743,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137801,10 +137801,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137821,7 +137821,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-015_P1-J",
+        "illustrator": "Spareribs",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Chronicle]\u00a0trait",
     "attribute": "Vaccine",
@@ -137871,10 +137878,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137888,10 +137895,29 @@
         "id": "BT27-016_P1",
         "illustrator": "sasasi",
         "note": "BT-27: BOOSTER IGNITION OF X",
-        "type": "Alternative Art"
+        "type": "Alternative Art "
+      },
+      {
+        "id": "BT27-016_P2",
+        "illustrator": "Nakano Haito",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Special Rare"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-016_P1-J",
+        "illustrator": "sasasi",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art "
+      },
+      {
+        "id": "BT27-016_P2-J",
+        "illustrator": "Nakano Haito",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Special Rare"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -137936,10 +137962,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -137999,10 +138025,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138019,7 +138045,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-018_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all Red w/[Gemmon]\u00a0in text",
     "attribute": "Vaccine",
@@ -138064,10 +138097,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138122,10 +138155,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138180,10 +138213,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -138248,10 +138281,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138306,10 +138339,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -138427,10 +138460,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138485,10 +138518,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -138548,10 +138581,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138606,10 +138639,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -138664,10 +138697,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -138722,10 +138755,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -138780,10 +138813,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138838,10 +138871,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -138901,10 +138934,10 @@
     "playCost": "5",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138921,7 +138954,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-033_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Ice-Snow]\u00a0trait",
     "attribute": "Virus",
@@ -138966,10 +139006,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -138986,7 +139026,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-034_P1-J",
+        "illustrator": "k.Dra",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -139041,10 +139088,10 @@
     "playCost": "6",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139067,7 +139114,20 @@
         "type": "Special Rare"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-035_P1-J",
+        "illustrator": "toriyufu",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art "
+      },
+      {
+        "id": "BT27-035_P2-J",
+        "illustrator": "Nakano Haito",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Special Rare"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -139117,10 +139177,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139180,10 +139240,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139243,10 +139303,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139306,10 +139366,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139369,10 +139429,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139432,10 +139492,10 @@
     "playCost": "8",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139495,10 +139555,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139558,10 +139618,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139578,7 +139638,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-043_P1-J",
+        "illustrator": "As'Maria",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -139623,10 +139690,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139643,7 +139710,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-044_P1-J",
+        "illustrator": "poroze",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -139688,10 +139762,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139751,10 +139825,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
@@ -139809,10 +139883,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -139935,10 +140009,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Dinosaur] Type.",
     "securityEffect": "-",
@@ -139998,10 +140072,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
@@ -140056,10 +140130,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140119,10 +140193,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Holy Beast] Type.",
     "securityEffect": "-",
@@ -140145,7 +140219,20 @@
         "type": "Special Rare"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-052_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art "
+      },
+      {
+        "id": "BT27-052_P2-J",
+        "illustrator": "Nakano Haito",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Special Rare"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "[Assembly\u00a0-5] Lv.5 \u00d7 Lv.4 \u00d7 Lv.3, all w/[Glowing Dawn]\u00a0trait",
     "attribute": "Data",
@@ -140195,10 +140282,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140215,7 +140302,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-053_P1-J",
+        "illustrator": "Murakami Hisashi",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -140265,10 +140359,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140323,10 +140417,10 @@
     "playCost": "11",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140386,10 +140480,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140406,7 +140500,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-056_P1-J",
+        "illustrator": "koki",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -140451,10 +140552,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140514,10 +140615,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140572,10 +140673,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140630,10 +140731,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140693,10 +140794,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
@@ -140756,10 +140857,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140814,10 +140915,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140872,10 +140973,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140930,10 +141031,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -140993,10 +141094,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141056,10 +141157,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141076,7 +141177,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-067_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -141126,10 +141234,10 @@
     "playCost": "-",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141146,7 +141254,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-068_P1-J",
+        "illustrator": "Nakano Haito",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -141193,18 +141308,18 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "White",
     "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] Return 1 of your opponent's 12000 DP or higher Digimon to the top of the deck. If this effect didn't return, delete 1 of your opponent's lowest play cost Digimon.",
-    "playCost": "6",
+    "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Gankoomon]: Cost 2 ",
-    "type": "Holy Warrior/X Antibody",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
   },
   {
@@ -141259,10 +141374,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141279,7 +141394,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-070_P1-J",
+        "illustrator": "As'Maria",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -141324,10 +141446,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141387,10 +141509,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141445,10 +141567,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141465,7 +141587,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-073_P1-J",
+        "illustrator": "tyuga",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -141510,10 +141639,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141568,10 +141697,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141620,10 +141749,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141672,10 +141801,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141730,10 +141859,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141788,10 +141917,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141840,10 +141969,10 @@
     "playCost": "9",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141898,10 +142027,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141956,10 +142085,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -141976,7 +142105,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-082_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -142021,10 +142157,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -142079,10 +142215,10 @@
     "playCost": "5",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Birdkin] Type.",
     "securityEffect": "-",
@@ -142099,7 +142235,14 @@
         "type": "Alternative Art"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-084_P1-J",
+        "illustrator": "Spareribs",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Virus",
@@ -142149,10 +142292,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -142175,7 +142318,20 @@
         "type": "Special Rare"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-085_P1-J",
+        "illustrator": "k.Dra",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art "
+      },
+      {
+        "id": "BT27-085_P2-J",
+        "illustrator": "Nakano Haito",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Special Rare"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -142225,10 +142381,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -142277,10 +142433,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142329,10 +142485,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142381,10 +142537,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142433,10 +142589,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142485,10 +142641,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -142537,10 +142693,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142589,10 +142745,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -142641,10 +142797,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142693,10 +142849,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142745,10 +142901,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142797,10 +142953,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142849,10 +143005,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142901,10 +143057,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -142953,10 +143109,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Place 1 of your opponent's Digimon with the lowest DP as their top security card.",
@@ -143005,10 +143161,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Delete all of your opponent's Digimon with the lowest play cost. Then, add this card to the hand.",
@@ -143057,10 +143213,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 [Falcomon] or [Keenan Crier] from your hand or trash without paying the cost. Then, add this card to the hand.",
@@ -143109,10 +143265,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 5 or lower [Kurata's Army]\u00a0trait card from your hand or trash without paying the cost.",
@@ -143130,12 +143286,25 @@
       },
       {
         "id": "BT27-103_P2",
-        "illustrator": "To be completed",
+        "illustrator": "Tonamikanji",
         "note": "BT-27: BOOSTER IGNITION OF X",
         "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-103_P1-J",
+        "illustrator": "k.Dra",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art "
+      },
+      {
+        "id": "BT27-103_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Rare Pull (Gold Foil)\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -143190,10 +143359,10 @@
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -143216,7 +143385,20 @@
         "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
-    "JAAs": [],
+    "JAAs": [
+      {
+        "id": "BT27-104_P1-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Alternative Art "
+      },
+      {
+        "id": "BT27-104_P2-J",
+        "illustrator": "Tonamikanji",
+        "note": "BT-27: BOOSTER IGNITION OF X",
+        "type": "Rare Pull (Gold Foil)\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -143255,10 +143437,10 @@
     "playCost": "4",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -197332,10 +197514,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -197390,10 +197572,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -197402,8 +197584,28 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "ED01-09_P2",
+        "illustrator": "naru",
+        "note": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+        "type": "Super Rare (Holographic Foil)\u00a0"
+      },
+      {
+        "id": "ED01-09_P3",
+        "illustrator": "Teppei Tadokoro",
+        "note": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+        "type": "Rare Pull (Gold Foil)\u00a0"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "ED01-09_P2-J",
+        "illustrator": "naru",
+        "note": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+        "type": "Super Rare (Holographic Foil)\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -197442,10 +197644,10 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Add this card to the hand.",
@@ -197454,8 +197656,28 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "ED01-10_P2",
+        "illustrator": "naru",
+        "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+        "type": "Super Rare (Holographic Foil)\u00a0"
+      },
+      {
+        "id": "ED01-10_P3",
+        "illustrator": "Teppei Tadokoro",
+        "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+        "type": "Rare Pull (Gold Foil)\u00a0"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "ED01-10_P2-J",
+        "illustrator": "naru",
+        "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+        "type": "Super Rare (Holographic Foil)\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -197494,10 +197716,10 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Add this card to the hand.",
@@ -212080,7 +212302,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e. If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
+    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
     "form": "-",
     "id": "EX11-058",
     "illustrator": "Shin Sasaki",
@@ -213943,7 +214165,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e ",
     "form": "Champion",
     "id": "EX12-012",
     "illustrator": "BIRU YAMAGUCHI",
@@ -214762,7 +214984,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "2000",
     "dualEffect": "-",
@@ -215060,7 +215282,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
@@ -215849,7 +216071,7 @@
     "dnaDigivolve": "[Digivolve] Lv.6 w/[ME]/[VB]\u00a0trait: Cost 5\n[DNA Digivolve] Blue/Yellow Lv.6 + Red/Black Lv.6\u00a0: Cost 0",
     "dp": "15000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e ",
     "form": "Mega",
     "id": "EX12-037",
     "illustrator": "tyuga",
@@ -222986,7 +223208,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
     "form": "Ultimate",
     "id": "EX13-057",
     "illustrator": "Spareribs",
@@ -223848,7 +224070,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e. After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
     "form": "-",
     "id": "EX13-069",
     "illustrator": "Murakami Hisashi",
@@ -266851,6 +267073,12 @@
         "illustrator": "Kazumasa Yasukuni",
         "note": "ST-21: STARTER DECK HERO OF HOPE",
         "type": "Alternative Art (Foil)\u00a0"
+      },
+      {
+        "id": "LM-027_P4-J",
+        "illustrator": "YAMURETSU",
+        "note": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+        "type": "Super Rare (Holographic Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -266942,6 +267170,12 @@
         "illustrator": "Kazumasa Yasukuni",
         "note": "ST-21: STARTER DECK HERO OF HOPE",
         "type": "Alternative Art (Foil)\u00a0"
+      },
+      {
+        "id": "LM-028_P4-J",
+        "illustrator": "YAMURETSU",
+        "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+        "type": "Super Rare (Holographic Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -272025,6 +272259,12 @@
         "illustrator": "sasasi",
         "note": "PREMIUM CARD COLLECTION Memory Boost! Set",
         "type": "Alternative Art "
+      },
+      {
+        "id": "P-036_P7-J",
+        "illustrator": "Shin Sasaki",
+        "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+        "type": "Super Rare (Holographic Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -289895,10 +290135,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -289953,10 +290193,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -290011,10 +290251,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -290283,10 +290523,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -290341,10 +290581,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -290399,10 +290639,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -306495,10 +306735,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -306553,10 +306793,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -306611,10 +306851,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -306669,10 +306909,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -306727,10 +306967,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -306779,10 +307019,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -306883,10 +307123,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -306941,10 +307181,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -306999,10 +307239,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -307057,10 +307297,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -307115,10 +307355,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -307167,10 +307407,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",

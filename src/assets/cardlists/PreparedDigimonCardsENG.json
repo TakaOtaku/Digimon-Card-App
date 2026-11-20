@@ -1536,7 +1536,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e ",
     "form": "Hybrid",
     "id": "AD1-015",
     "illustrator": "No Illustrator",
@@ -1592,7 +1592,7 @@
     "dnaDigivolve": "-",
     "dp": "8000",
     "dualEffect": "-",
-    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cJamming\uff1e \n[When Digivolving] [When Attacking] 1 of your opponent's Digimon gets -4000 DP for the turn.\n[End of Attack] [On Deletion] You may play 1 yellow, black or purple Tamer card with inherited effects from your hand or trash without paying the cost. Then, by placing 1 [Hybrid] or [Ten Warriors]\u00a0trait card from your hand under this under this Digimon or your Tamers, \uff1cDraw 2\uff1e ",
     "form": "Hybrid",
     "id": "AD1-015_P1",
     "illustrator": "IWAO",
@@ -2974,7 +2974,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD01-02-Sample.webp",
+    "cardImage": "assets/images/cards/BD01-02.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BD01-02",
     "cardType": "Digimon",
@@ -3011,10 +3011,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3030,7 +3030,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD01-03-Sample.webp",
+    "cardImage": "assets/images/cards/BD01-03.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BD01-03",
     "cardType": "Digimon",
@@ -3067,10 +3067,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3142,7 +3142,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD01-05-Sample.webp",
+    "cardImage": "assets/images/cards/BD01-05.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BD01-05",
     "cardType": "Digimon",
@@ -3179,10 +3179,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3422,7 +3422,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD01-10-Sample.webp",
+    "cardImage": "assets/images/cards/BD01-10.webp",
     "cardLv": "-",
     "cardNumber": "BD01-10",
     "cardType": "Digimon",
@@ -3453,10 +3453,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3522,7 +3522,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD02-02-Sample.webp",
+    "cardImage": "assets/images/cards/BD02-02.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BD02-02",
     "cardType": "Digimon",
@@ -3559,10 +3559,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3578,7 +3578,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD02-03-Sample.webp",
+    "cardImage": "assets/images/cards/BD02-03.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BD02-03",
     "cardType": "Digimon",
@@ -3615,10 +3615,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3634,7 +3634,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD02-04-Sample.webp",
+    "cardImage": "assets/images/cards/BD02-04.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BD02-04",
     "cardType": "Digimon",
@@ -3671,10 +3671,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -3858,7 +3858,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BD02-08-Sample.webp",
+    "cardImage": "assets/images/cards/BD02-08.webp",
     "cardLv": "-",
     "cardNumber": "BD02-08",
     "cardType": "Tamer",
@@ -3889,10 +3889,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -202714,7 +202714,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "While you have no face-up security cards, you can ignore this card's color requirements.\n{Security} [Your Turn] All of your red or blue [TS]\u00a0trait Digimon gain \uff1cAlliance\uff1e. While you have [Apollomon] or [Dianamon], they also gain \uff1cRush\uff1e \n[Main] Add your bottom security card to the hand and place this card face up as the bottom security card. Then, you may play 1 red or blue [TS]\u00a0trait Digimon card from your hand with the cost reduced by 3.",
+    "effect": "While you have no face-up security cards, you can ignore this card's color requirements.\n{Security} [Your Turn] All of your red or blue [TS]\u00a0trait Digimon gain \uff1cAlliance\uff1e While you have [Apollomon] or [Dianamon], they also gain \uff1cRush\uff1e \n[Main] Add your bottom security card to the hand and place this card face up as the bottom security card. Then, you may play 1 red or blue [TS]\u00a0trait Digimon card from your hand with the cost reduced by 3.",
     "form": "-",
     "id": "BT25-094",
     "illustrator": "Itohiro",
@@ -211092,7 +211092,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-001-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-001.webp",
     "cardLv": "Lv.2",
     "cardNumber": "BT27-001",
     "cardType": "Digi-Egg",
@@ -211123,10 +211123,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211142,7 +211142,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-002-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-002.webp",
     "cardLv": "Lv.2",
     "cardNumber": "BT27-002",
     "cardType": "Digi-Egg",
@@ -211173,10 +211173,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211192,7 +211192,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-003-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-003.webp",
     "cardLv": "Lv.2",
     "cardNumber": "BT27-003",
     "cardType": "Digi-Egg",
@@ -211223,10 +211223,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211242,7 +211242,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-004-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-004.webp",
     "cardLv": "Lv.2",
     "cardNumber": "BT27-004",
     "cardType": "Digi-Egg",
@@ -211273,10 +211273,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211292,7 +211292,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-005-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-005.webp",
     "cardLv": "Lv.2",
     "cardNumber": "BT27-005",
     "cardType": "Digi-Egg",
@@ -211323,10 +211323,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211342,7 +211342,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-006-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-006.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-006",
     "cardType": "Digimon",
@@ -211379,10 +211379,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[On Play] Reveal the top 3 cards of your deck. Add 1 card with the [ALYSION]\u00a0trait and 1 red Tamer card among them to the hand. Return the rest to the bottom of the deck.",
     "securityEffect": "-",
@@ -211398,7 +211398,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-007-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-007.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-007",
     "cardType": "Digimon",
@@ -211440,10 +211440,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Flame] Type.",
     "securityEffect": "-",
@@ -211459,7 +211459,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-008-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-008-J.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-008",
     "cardType": "Digimon",
@@ -211501,10 +211501,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211520,7 +211520,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-009-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-009.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-009",
     "cardType": "Digimon",
@@ -211562,10 +211562,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211581,7 +211581,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-010-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-010.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-010",
     "cardType": "Digimon",
@@ -211618,10 +211618,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211637,7 +211637,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-011-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-011.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-011",
     "cardType": "Digimon",
@@ -211674,10 +211674,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211693,7 +211693,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-012-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-012.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-012",
     "cardType": "Digimon",
@@ -211735,10 +211735,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211754,7 +211754,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-013-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-013.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-013",
     "cardType": "Digimon",
@@ -211796,10 +211796,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211815,7 +211815,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-014-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-014.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-014",
     "cardType": "Digimon",
@@ -211852,10 +211852,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211871,7 +211871,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-015-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-015.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-015",
     "cardType": "Digimon",
@@ -211913,10 +211913,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211932,7 +211932,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-015_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-015_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-015",
     "cardType": "Digimon",
@@ -211974,10 +211974,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -211993,7 +211993,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-016-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-016.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-016",
     "cardType": "Digimon/Option",
@@ -212030,10 +212030,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212049,7 +212049,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-016_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-016_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-016",
     "cardType": "Digimon/Option",
@@ -212086,16 +212086,72 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Jesmon]: Cost 1 ",
     "type": "Holy Warrior/X Antibody/Royal Knight",
-    "version": "Alternative Art"
+    "version": "Alternative Art "
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Data",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BT27-016_P2.webp",
+    "cardLv": "Lv.6",
+    "cardNumber": "BT27-016",
+    "cardType": "Digimon/Option",
+    "color": "Red/White",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "3",
+        "level": "5"
+      }
+    ],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "12000",
+    "dualEffect": "[Arts Digivolve] ",
+    "effect": "\uff1cProgress\uff1e \n\uff1cPiercing\uff1e \n\uff1cEngage\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] This Digimon gets +6000 DP until your opponent's turn ends. Then, by returning 1 of your other Digimon or 1 [Jesmon] or [X Antibody] from this Digimon's digivolution cards to the bottom of the deck, activate 1 [Main] effect on this card's Option side.",
+    "form": "Mega",
+    "id": "BT27-016_P2",
+    "illustrator": "Nakano Haito",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Jesmon (X Antibody)/Ultimate Seibaken",
+      "japanese": "\u30b8\u30a8\u30b9\u30e2\u30f3X\u6297\u4f53/\u7a76\u6975\u6226\u5203\u8056\u8987\u5263",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "BT-27: BOOSTER IGNITION OF X",
+    "optionCardColourRequirement": "White",
+    "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] By placing 1 of your opponent's lowest DP Digimon as the bottom security card, trash their top security card.",
+    "playCost": "5",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "[Digivolve] [Jesmon]: Cost 1 ",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
+    "version": "Special Rare"
   },
   {
     "aceEffect": "-",
@@ -212105,7 +212161,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-017-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-017.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-017",
     "cardType": "Digimon",
@@ -212147,10 +212203,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212166,7 +212222,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-018-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-018.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-018",
     "cardType": "Digimon",
@@ -212203,10 +212259,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212222,7 +212278,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-018_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-018_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-018",
     "cardType": "Digimon",
@@ -212259,10 +212315,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212278,7 +212334,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-019-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-019.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-019",
     "cardType": "Digimon",
@@ -212315,10 +212371,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212334,7 +212390,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-020-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-020.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-020",
     "cardType": "Digimon",
@@ -212371,10 +212427,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -212390,7 +212446,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-021-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-021.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-021",
     "cardType": "Digimon",
@@ -212437,10 +212493,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212456,7 +212512,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-022-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-022.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-022",
     "cardType": "Digimon",
@@ -212493,10 +212549,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -212512,7 +212568,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-023-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-023.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-023",
     "cardType": "Digimon",
@@ -212573,7 +212629,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-024-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-024.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-024",
     "cardType": "Digimon",
@@ -212610,10 +212666,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212629,7 +212685,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-025-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-025.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-025",
     "cardType": "Digimon",
@@ -212666,10 +212722,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -212685,7 +212741,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-026-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-026.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-026",
     "cardType": "Digimon",
@@ -212727,10 +212783,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212746,7 +212802,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-027-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-027.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-027",
     "cardType": "Digimon",
@@ -212783,10 +212839,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -212802,7 +212858,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-028-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-028.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-028",
     "cardType": "Digimon",
@@ -212839,10 +212895,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -212858,7 +212914,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-029-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-029.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-029",
     "cardType": "Digimon",
@@ -212895,10 +212951,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -212914,7 +212970,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-030-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-030.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-030",
     "cardType": "Digimon",
@@ -212951,10 +213007,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -212970,7 +213026,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-031-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-031.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-031",
     "cardType": "Digimon",
@@ -213007,10 +213063,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Aquatic] Type.",
     "securityEffect": "-",
@@ -213026,7 +213082,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-032-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-032.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-032",
     "cardType": "Digimon/Option",
@@ -213068,10 +213124,10 @@
     "playCost": "5",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213087,7 +213143,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-033-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-033.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-033",
     "cardType": "Digimon",
@@ -213124,10 +213180,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213143,7 +213199,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-033_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-033_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-033",
     "cardType": "Digimon",
@@ -213180,10 +213236,10 @@
     "playCost": "12",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213199,7 +213255,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-034-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-034.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-034",
     "cardType": "Digimon/Option",
@@ -213246,10 +213302,10 @@
     "playCost": "6",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213265,7 +213321,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-034_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-034_P1.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-034",
     "cardType": "Digimon/Option",
@@ -213312,10 +213368,10 @@
     "playCost": "6",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213331,7 +213387,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
-    "cardImage": "assets/images/cards/BT27-035-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-035.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-035",
     "cardType": "Digimon/Option",
@@ -213373,10 +213429,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213392,7 +213448,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
-    "cardImage": "assets/images/cards/BT27-035_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-035_P1.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-035",
     "cardType": "Digimon/Option",
@@ -213434,10 +213490,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213453,7 +213509,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [MirageGaogamon]: Cost 0 by returning 1 [Thomas H. Norstein] to the hand.",
-    "cardImage": "assets/images/cards/BT27-035_P2-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-035_P2.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-035",
     "cardType": "Digimon/Option",
@@ -213495,10 +213551,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213514,7 +213570,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-036-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-036.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-036",
     "cardType": "Digimon",
@@ -213556,10 +213612,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213575,7 +213631,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-037-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-037.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-037",
     "cardType": "Digimon",
@@ -213617,10 +213673,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213636,7 +213692,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-038-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-038.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-038",
     "cardType": "Digimon",
@@ -213678,10 +213734,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213697,7 +213753,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-039-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-039.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-039",
     "cardType": "Digimon",
@@ -213739,10 +213795,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213758,7 +213814,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-040-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-040.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-040",
     "cardType": "Digimon",
@@ -213800,10 +213856,10 @@
     "playCost": "8",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213819,7 +213875,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-041-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-041.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-041",
     "cardType": "Digimon",
@@ -213861,10 +213917,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213880,7 +213936,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-042-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-042.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-042",
     "cardType": "Digimon",
@@ -213922,10 +213978,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213941,7 +213997,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-043-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-043.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-043",
     "cardType": "Digimon/Option",
@@ -213978,10 +214034,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -213997,7 +214053,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-043_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-043_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-043",
     "cardType": "Digimon/Option",
@@ -214034,10 +214090,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214053,7 +214109,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-044-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-044.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-044",
     "cardType": "Digimon",
@@ -214090,10 +214146,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214109,7 +214165,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-044_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-044_P1.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-044",
     "cardType": "Digimon",
@@ -214146,10 +214202,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214165,7 +214221,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-045-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-045.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-045",
     "cardType": "Digimon",
@@ -214207,10 +214263,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
@@ -214226,7 +214282,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-046-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-046.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-046",
     "cardType": "Digimon",
@@ -214263,10 +214319,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214282,7 +214338,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-047-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-047.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-047",
     "cardType": "Digimon",
@@ -214343,7 +214399,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-048-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-048.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-048",
     "cardType": "Digimon",
@@ -214385,10 +214441,10 @@
     "playCost": "5",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Dinosaur] Type.",
     "securityEffect": "-",
@@ -214404,7 +214460,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-049-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-049.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-049",
     "cardType": "Digimon",
@@ -214446,10 +214502,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Leomon].",
     "securityEffect": "-",
@@ -214465,7 +214521,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-050-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-050.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-050",
     "cardType": "Digimon",
@@ -214502,10 +214558,10 @@
     "playCost": "7",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214521,7 +214577,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-051-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-051.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-051",
     "cardType": "Digimon",
@@ -214563,10 +214619,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Holy Beast] Type.",
     "securityEffect": "-",
@@ -214582,7 +214638,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-052-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-052.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-052",
     "cardType": "Digimon",
@@ -214624,10 +214680,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214643,7 +214699,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-052_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-052_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-052",
     "cardType": "Digimon",
@@ -214685,10 +214741,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214704,7 +214760,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-052_P2-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-052_P2.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-052",
     "cardType": "Digimon",
@@ -214746,10 +214802,10 @@
     "playCost": "13",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214765,7 +214821,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-053-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-053.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-053",
     "cardType": "Digimon",
@@ -214807,10 +214863,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214826,7 +214882,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-053_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-053_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-053",
     "cardType": "Digimon",
@@ -214868,10 +214924,10 @@
     "playCost": "13",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214887,7 +214943,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-054-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-054.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-054",
     "cardType": "Digimon",
@@ -214924,10 +214980,10 @@
     "playCost": "11",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -214943,7 +214999,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-055-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-055.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-055",
     "cardType": "Digimon",
@@ -214985,10 +215041,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215004,7 +215060,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-056-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-056.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-056",
     "cardType": "Digimon",
@@ -215041,10 +215097,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215060,7 +215116,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-056_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-056_P1.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-056",
     "cardType": "Digimon",
@@ -215097,10 +215153,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215116,7 +215172,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-057-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-057.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-057",
     "cardType": "Digimon",
@@ -215158,10 +215214,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215177,7 +215233,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-058-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-058.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-058",
     "cardType": "Digimon",
@@ -215214,10 +215270,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215233,7 +215289,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-059-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-059.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-059",
     "cardType": "Digimon",
@@ -215270,10 +215326,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215289,7 +215345,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-060-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-060.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-060",
     "cardType": "Digimon",
@@ -215331,10 +215387,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Name: Treated as including [Mamemon].",
     "securityEffect": "-",
@@ -215350,7 +215406,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-061-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-061.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-061",
     "cardType": "Digimon",
@@ -215392,10 +215448,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215411,7 +215467,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-062-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-062.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-062",
     "cardType": "Digimon",
@@ -215448,10 +215504,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215467,7 +215523,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-063-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-063.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-063",
     "cardType": "Digimon",
@@ -215504,10 +215560,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215523,7 +215579,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-064-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-064.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-064",
     "cardType": "Digimon",
@@ -215560,10 +215616,10 @@
     "playCost": "7",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215579,7 +215635,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-065-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-065.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-065",
     "cardType": "Digimon",
@@ -215621,10 +215677,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215640,7 +215696,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-066-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-066.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-066",
     "cardType": "Digimon",
@@ -215682,10 +215738,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215701,7 +215757,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-067-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-067.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-067",
     "cardType": "Digimon/Option",
@@ -215743,10 +215799,10 @@
     "playCost": "-",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215762,7 +215818,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-067_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-067_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-067",
     "cardType": "Digimon/Option",
@@ -215804,10 +215860,10 @@
     "playCost": "-",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -215823,7 +215879,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-068-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-068.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-068",
     "cardType": "Digimon",
@@ -215862,18 +215918,18 @@
     "notes": "\u25b9BOOSTER IGNITION OF X [BT-27]",
     "optionCardColourRequirement": "White",
     "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] Return 1 of your opponent's 12000 DP or higher Digimon to the top of the deck. If this effect didn't return, delete 1 of your opponent's lowest play cost Digimon.",
-    "playCost": "6",
+    "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Gankoomon]: Cost 2 ",
-    "type": "Holy Warrior/X Antibody",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Normal"
   },
   {
@@ -215884,7 +215940,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-068_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-068_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-068",
     "cardType": "Digimon",
@@ -215923,18 +215979,18 @@
     "notes": "BT-27: BOOSTER IGNITION OF X",
     "optionCardColourRequirement": "White",
     "optionCardEffect": "\uff1cUse Req. ([Huckmon] in text)\uff1e \n[Main] Return 1 of your opponent's 12000 DP or higher Digimon to the top of the deck. If this effect didn't return, delete 1 of your opponent's lowest play cost Digimon.",
-    "playCost": "6",
+    "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Gankoomon]: Cost 2 ",
-    "type": "Holy Warrior/X Antibody",
+    "type": "Holy Warrior/X Antibody/Royal Knight",
     "version": "Alternative Art"
   },
   {
@@ -215945,7 +216001,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-069-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-069.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-069",
     "cardType": "Digimon",
@@ -215987,10 +216043,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216006,7 +216062,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-070-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-070.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-070",
     "cardType": "Digimon/Option",
@@ -216043,10 +216099,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216062,7 +216118,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-070_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-070_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-070",
     "cardType": "Digimon/Option",
@@ -216099,10 +216155,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216118,7 +216174,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-071-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-071.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-071",
     "cardType": "Digimon",
@@ -216160,10 +216216,10 @@
     "playCost": "11",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216179,7 +216235,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-072-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-072.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-072",
     "cardType": "Digimon",
@@ -216216,10 +216272,10 @@
     "playCost": "12",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216235,7 +216291,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-073-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-073.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-073",
     "cardType": "Digimon",
@@ -216272,10 +216328,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216291,7 +216347,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-073_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-073_P1.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-073",
     "cardType": "Digimon",
@@ -216328,10 +216384,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216347,7 +216403,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-074-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-074.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-074",
     "cardType": "Digimon",
@@ -216384,10 +216440,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216403,7 +216459,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-075-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-075.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT27-075",
     "cardType": "Digimon",
@@ -216434,10 +216490,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216453,7 +216509,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-076-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-076.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-076",
     "cardType": "Digimon",
@@ -216484,10 +216540,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216503,7 +216559,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-077-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-077.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-077",
     "cardType": "Digimon",
@@ -216540,10 +216596,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216559,7 +216615,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-078-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-078.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BT27-078",
     "cardType": "Digimon",
@@ -216596,10 +216652,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216615,7 +216671,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-079-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-079.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-079",
     "cardType": "Digimon",
@@ -216646,10 +216702,10 @@
     "playCost": "9",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216665,7 +216721,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-080-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-080.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-080",
     "cardType": "Digimon",
@@ -216702,10 +216758,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216721,7 +216777,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-081-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-081.webp",
     "cardLv": "Lv.5",
     "cardNumber": "BT27-081",
     "cardType": "Digimon",
@@ -216758,10 +216814,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216777,7 +216833,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-082-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-082.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-082",
     "cardType": "Digimon/Option",
@@ -216814,10 +216870,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216833,7 +216889,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-082_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-082_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-082",
     "cardType": "Digimon/Option",
@@ -216870,10 +216926,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -216889,7 +216945,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-083-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-083.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-083",
     "cardType": "Digimon/Option",
@@ -216926,10 +216982,10 @@
     "playCost": "5",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Birdkin] Type.",
     "securityEffect": "-",
@@ -216945,7 +217001,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-084-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-084.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-084",
     "cardType": "Digimon/Option",
@@ -216987,10 +217043,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -217006,7 +217062,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-084_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-084_P1.webp",
     "cardLv": "Lv.6",
     "cardNumber": "BT27-084",
     "cardType": "Digimon/Option",
@@ -217048,10 +217104,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -217067,7 +217123,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
-    "cardImage": "assets/images/cards/BT27-085-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-085.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-085",
     "cardType": "Digimon/Option",
@@ -217109,10 +217165,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -217128,7 +217184,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
-    "cardImage": "assets/images/cards/BT27-085_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-085_P1.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-085",
     "cardType": "Digimon/Option",
@@ -217170,10 +217226,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -217189,7 +217245,7 @@
       "06"
     ],
     "burstDigivolve": "[Digivolve] Lv.6 w/[DATA SQUAD]\u00a0trait: Cost 5\n[Burst Digivolve] [Ravemon]: Cost 0 by returning 1 [Keenan Crier] to the hand.",
-    "cardImage": "assets/images/cards/BT27-085_P2-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-085_P2.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-085",
     "cardType": "Digimon/Option",
@@ -217231,10 +217287,10 @@
     "playCost": "6",
     "rarity": "UR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -217250,7 +217306,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-086-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-086.webp",
     "cardLv": "-",
     "cardNumber": "BT27-086",
     "cardType": "Tamer",
@@ -217281,10 +217337,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217300,7 +217356,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-087-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-087.webp",
     "cardLv": "-",
     "cardNumber": "BT27-087",
     "cardType": "Tamer",
@@ -217331,10 +217387,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217350,7 +217406,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-088-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-088.webp",
     "cardLv": "-",
     "cardNumber": "BT27-088",
     "cardType": "Tamer",
@@ -217381,10 +217437,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217400,7 +217456,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-089-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-089.webp",
     "cardLv": "-",
     "cardNumber": "BT27-089",
     "cardType": "Tamer",
@@ -217431,10 +217487,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217450,7 +217506,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-090-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-090.webp",
     "cardLv": "-",
     "cardNumber": "BT27-090",
     "cardType": "Tamer",
@@ -217481,10 +217537,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -217500,7 +217556,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-091-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-091.webp",
     "cardLv": "-",
     "cardNumber": "BT27-091",
     "cardType": "Tamer",
@@ -217531,10 +217587,10 @@
     "playCost": "3",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217550,7 +217606,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-092-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-092.webp",
     "cardLv": "-",
     "cardNumber": "BT27-092",
     "cardType": "Tamer",
@@ -217581,10 +217637,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -217600,7 +217656,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-093-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-093.webp",
     "cardLv": "-",
     "cardNumber": "BT27-093",
     "cardType": "Tamer",
@@ -217631,10 +217687,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217650,7 +217706,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-094-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-094.webp",
     "cardLv": "-",
     "cardNumber": "BT27-094",
     "cardType": "Tamer",
@@ -217681,10 +217737,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217700,7 +217756,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-095-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-095.webp",
     "cardLv": "-",
     "cardNumber": "BT27-095",
     "cardType": "Tamer",
@@ -217731,10 +217787,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217750,7 +217806,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-096-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-096.webp",
     "cardLv": "-",
     "cardNumber": "BT27-096",
     "cardType": "Tamer",
@@ -217781,10 +217837,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217800,7 +217856,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-097-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-097.webp",
     "cardLv": "-",
     "cardNumber": "BT27-097",
     "cardType": "Tamer",
@@ -217831,10 +217887,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217850,7 +217906,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-098-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-098.webp",
     "cardLv": "-",
     "cardNumber": "BT27-098",
     "cardType": "Tamer",
@@ -217881,10 +217937,10 @@
     "playCost": "4",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -217900,7 +217956,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-099-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-099.webp",
     "cardLv": "-",
     "cardNumber": "BT27-099",
     "cardType": "Option",
@@ -217931,10 +217987,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Place 1 of your opponent's Digimon with the lowest DP as their top security card.",
@@ -217950,7 +218006,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-100-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-100.webp",
     "cardLv": "-",
     "cardNumber": "BT27-100",
     "cardType": "Option",
@@ -217981,10 +218037,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Delete all of your opponent's Digimon with the lowest play cost. Then, add this card to the hand.",
@@ -218000,7 +218056,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-101-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-101.webp",
     "cardLv": "-",
     "cardNumber": "BT27-101",
     "cardType": "Option",
@@ -218031,10 +218087,10 @@
     "playCost": "5",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 [Falcomon] or [Keenan Crier] from your hand or trash without paying the cost. Then, add this card to the hand.",
@@ -218050,7 +218106,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-102-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-102.webp",
     "cardLv": "-",
     "cardNumber": "BT27-102",
     "cardType": "Option",
@@ -218081,10 +218137,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] You may play 1 play cost 5 or lower [Kurata's Army]\u00a0trait card from your hand or trash without paying the cost.",
@@ -218100,7 +218156,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-103-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-103.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-103",
     "cardType": "Digimon/Option",
@@ -218147,10 +218203,10 @@
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -218166,7 +218222,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-103_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-103_P1.webp",
     "cardLv": "Lv.7",
     "cardNumber": "BT27-103",
     "cardType": "Digimon/Option",
@@ -218213,10 +218269,10 @@
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -218262,7 +218318,7 @@
     "effect": "\uff1cPiercing\uff1e \n\uff1cSecurity A. +1\uff1e \n\uff1cBlocker\uff1e \n\uff1cPartition ([Alphamon] & [Ouryumon])\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may delete 1 of your opponent's Digimon. Then, if DNA digivolving, \uff1cRecovery +2\uff1e \n[All Turns] During attacks, your opponent's effects don't affect this Digimon.",
     "form": "Mega",
     "id": "BT27-103_P2",
-    "illustrator": "To be completed",
+    "illustrator": "Tonamikanji",
     "linkDP": "-",
     "linkEffect": "-",
     "linkRequirement": "-",
@@ -218279,10 +218335,10 @@
     "playCost": "6",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -218298,7 +218354,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-104-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-104.webp",
     "cardLv": "-",
     "cardNumber": "BT27-104",
     "cardType": "Tamer",
@@ -218329,10 +218385,10 @@
     "playCost": "4",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -218348,7 +218404,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT27-104_P1-Sample.webp",
+    "cardImage": "assets/images/cards/BT27-104_P1.webp",
     "cardLv": "-",
     "cardNumber": "BT27-104",
     "cardType": "Tamer",
@@ -218379,10 +218435,10 @@
     "playCost": "4",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -218429,10 +218485,10 @@
     "playCost": "4",
     "rarity": "SEC",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -314958,7 +315014,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ED01-01-Sample.webp",
+    "cardImage": "assets/images/cards/ED01-01.webp",
     "cardLv": "Lv.6",
     "cardNumber": "ED01-01",
     "cardType": "Digimon",
@@ -314995,10 +315051,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -315014,7 +315070,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ED01-02-Sample.webp",
+    "cardImage": "assets/images/cards/ED01-02.webp",
     "cardLv": "Lv.6",
     "cardNumber": "ED01-02",
     "cardType": "Digimon",
@@ -315051,10 +315107,10 @@
     "playCost": "13",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -315070,7 +315126,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ED01-09-Sample.webp",
+    "cardImage": "assets/images/cards/ED01-09.webp",
     "cardLv": "-",
     "cardNumber": "ED01-09",
     "cardType": "Option",
@@ -315101,10 +315157,10 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Add this card to the hand.",
@@ -315120,7 +315176,107 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ED01-10-Sample.webp",
+    "cardImage": "assets/images/cards/ED01-09_P2.webp",
+    "cardLv": "-",
+    "cardNumber": "ED01-09",
+    "cardType": "Option",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] You may play 1 red [Gemmon] or [Kanata Hondo] from your hand without paying the cost. Then, place this card in the battle area.\n[Your Turn] When one of your red [ALYSION]\u00a0trait Digimon attacks, \uff1cDelay\uff1e \n\u30fbThat Digimon gains \uff1cSecurity A. +1\uff1e and +3000 DP for the turn.",
+    "form": "-",
+    "id": "ED01-09_P2",
+    "illustrator": "naru",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bond of Rubies",
+      "japanese": "\u7d05\u7389\u306e\u7d46",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Super Rare (Holographic Foil)\u00a0"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ED01-09_P3.webp",
+    "cardLv": "-",
+    "cardNumber": "ED01-09",
+    "cardType": "Option",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] You may play 1 red [Gemmon] or [Kanata Hondo] from your hand without paying the cost. Then, place this card in the battle area.\n[Your Turn] When one of your red [ALYSION]\u00a0trait Digimon attacks, \uff1cDelay\uff1e \n\u30fbThat Digimon gains \uff1cSecurity A. +1\uff1e and +3000 DP for the turn.",
+    "form": "-",
+    "id": "ED01-09_P3",
+    "illustrator": "Teppei Tadokoro",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bond of Rubies",
+      "japanese": "\u7d05\u7389\u306e\u7d46",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Rare Pull (Gold Foil)\u00a0"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ED01-10.webp",
     "cardLv": "-",
     "cardNumber": "ED01-10",
     "cardType": "Option",
@@ -315151,16 +315307,116 @@
     "playCost": "3",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Add this card to the hand.",
     "specialDigivolve": "-",
     "type": "ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ED01-10_P2.webp",
+    "cardLv": "-",
+    "cardNumber": "ED01-10",
+    "cardType": "Option",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] You may play 1 blue [Renamon] or [Valner Dragnogh] from your hand without paying the cost. Then, place this card in the battle area.\n[End of Your Turn] \uff1cDelay\uff1e \n\u30fbChoose 1 of your blue [ALYSION]\u00a0trait Digimon and it attacks 1 of your opponent's Digimon with fewer digivolution cards than it. It can also attack your opponent's unsuspended Digimon with this effect.",
+    "form": "-",
+    "id": "ED01-10_P2",
+    "illustrator": "naru",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bond of Snowflakes",
+      "japanese": "\u96ea\u7247\u306e\u7d46",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Super Rare (Holographic Foil)\u00a0"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/ED01-10_P3.webp",
+    "cardLv": "-",
+    "cardNumber": "ED01-10",
+    "cardType": "Option",
+    "color": "Blue",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Main] You may play 1 blue [Renamon] or [Valner Dragnogh] from your hand without paying the cost. Then, place this card in the battle area.\n[End of Your Turn] \uff1cDelay\uff1e \n\u30fbChoose 1 of your blue [ALYSION]\u00a0trait Digimon and it attacks 1 of your opponent's Digimon with fewer digivolution cards than it. It can also attack your opponent's unsuspended Digimon with this effect.",
+    "form": "-",
+    "id": "ED01-10_P3",
+    "illustrator": "Teppei Tadokoro",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Bond of Snowflakes",
+      "japanese": "\u96ea\u7247\u306e\u7d46",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "SR",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Add this card to the hand.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Rare Pull (Gold Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -337775,7 +338031,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e. If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
+    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
     "form": "-",
     "id": "EX11-058",
     "illustrator": "Shin Sasaki",
@@ -337825,7 +338081,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e. If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
+    "effect": "[Start of Your Main Phase] By placing 1 level 5 or lower card with [Aqua] or [Sea Animal]\u00a0in any of its traits from your hand as the bottom digivolution card of any of your Digimon with [Aqua] or [Sea Animal]\u00a0in any of their traits, gain 1 memory.\n[All Turns] When your Digimon are played or digivolve, if any of them have [Aqua] or [Sea Animal]\u00a0in any of their traits, by suspending this Tamer, \uff1cDraw 1\uff1e If played by \uff1cDecode\uff1e, 1 of your opponent's Digimon can't suspend until their turn ends.",
     "form": "-",
     "id": "EX11-058_P1",
     "illustrator": "Souichirou Gunjima",
@@ -340530,7 +340786,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e ",
     "form": "Champion",
     "id": "EX12-012",
     "illustrator": "BIRU YAMAGUCHI",
@@ -340586,7 +340842,7 @@
     "dnaDigivolve": "-",
     "dp": "4000",
     "dualEffect": "-",
-    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e.",
+    "effect": "\uff1cRaid\uff1e \n[On Play] [When Digivolving] By trashing 1 card with the [SW]\u00a0trait from your hand, \uff1cDraw 2\uff1e ",
     "form": "Champion",
     "id": "EX12-012_P1",
     "illustrator": "BIRU YAMAGUCHI",
@@ -341833,7 +342089,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "2000",
     "dualEffect": "-",
@@ -341894,7 +342150,7 @@
         "level": "2"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "2000",
     "dualEffect": "-",
@@ -342301,7 +342557,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
@@ -342362,7 +342618,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e. Then, if your hand has 7 or more cards, trash 1 card in your hand.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] \uff1cDraw 1\uff1e Then, if your hand has 7 or more cards, trash 1 card in your hand.",
     "dnaDigivolve": "-",
     "dp": "6000",
     "dualEffect": "-",
@@ -343591,7 +343847,7 @@
     "dnaDigivolve": "[Digivolve] Lv.6 w/[ME]/[VB]\u00a0trait: Cost 5\n[DNA Digivolve] Blue/Yellow Lv.6 + Red/Black Lv.6\u00a0: Cost 0",
     "dp": "15000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e ",
     "form": "Mega",
     "id": "EX12-037",
     "illustrator": "tyuga",
@@ -343657,7 +343913,7 @@
     "dnaDigivolve": "[Digivolve] Lv.6 w/[ME]/[VB]\u00a0trait: Cost 5\n[DNA Digivolve] Blue/Yellow Lv.6 + Red/Black Lv.6\u00a0: Cost 0",
     "dp": "15000",
     "dualEffect": "-",
-    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e.",
+    "effect": "\uff1cPiercing\uff1e \n\uff1cBlocker\uff1e \n\uff1cBarrier\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] Delete 1 of your opponent's Digimon. Then, for every 5 of this Digimon's digivolution cards, activate 1 of the effects below:\n\u30fb1 of your opponent's Digimon gets -13000 DP until their turn ends.\n\u30fbTrash your opponent's top security card. Then, \uff1cRecovery +1\uff1e ",
     "form": "Mega",
     "id": "EX12-037_P1",
     "illustrator": "Takeuchi Moto",
@@ -354963,7 +355219,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
     "form": "Ultimate",
     "id": "EX13-057",
     "illustrator": "Spareribs",
@@ -355024,7 +355280,7 @@
     "dnaDigivolve": "-",
     "dp": "7000",
     "dualEffect": "-",
-    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e. If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
+    "effect": "[On Play] [When Digivolving] Until your opponent's turn ends, 1 of your [X Antibody] or [Chronicle]\u00a0trait Digimon gains \uff1cReboot\uff1e and \uff1cBlocker\uff1e If during an attack, it also isn't affected by their Digimon effects and gets +5000 DP.\n[End of Attack] [Once Per Turn] This Digimon may digivolve into a Digimon card with the [Chronicle]\u00a0trait in the hand or trash.",
     "form": "Ultimate",
     "id": "EX13-057_P1",
     "illustrator": "Spareribs",
@@ -356411,7 +356667,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e. After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
     "form": "-",
     "id": "EX13-069",
     "illustrator": "Murakami Hisashi",
@@ -356461,7 +356717,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e. After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
+    "effect": "[Start of Your Main Phase] If you have a Digimon with [Veemon] or [Veedramon]\u00a0in its name, gain 1 memory.\n[Your Turn] When any of your Digimon unsuspend, by suspending this Tamer, \uff1cDraw 1\uff1e After, 1 of your Digimon may digivolve into a Digimon card with [Veedramon]\u00a0in its name in the hand with the cost reduced by 2.",
     "form": "-",
     "id": "EX13-069_P1",
     "illustrator": "Takase",
@@ -426328,7 +426584,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/LM-063-Sample.webp",
+    "cardImage": "assets/images/cards/LM-063.webp",
     "cardLv": "-",
     "cardNumber": "LM-063",
     "cardType": "Option",
@@ -426378,7 +426634,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/LM-064-Sample.webp",
+    "cardImage": "assets/images/cards/LM-064.webp",
     "cardLv": "-",
     "cardNumber": "LM-064",
     "cardType": "Option",
@@ -426428,7 +426684,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/LM-065-Sample.webp",
+    "cardImage": "assets/images/cards/LM-065.webp",
     "cardLv": "-",
     "cardNumber": "LM-065",
     "cardType": "Option",
@@ -426478,7 +426734,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/LM-066-Sample.webp",
+    "cardImage": "assets/images/cards/LM-066.webp",
     "cardLv": "Lv.6",
     "cardNumber": "LM-066",
     "cardType": "Digimon/Option",
@@ -426534,7 +426790,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/LM-067-Sample.webp",
+    "cardImage": "assets/images/cards/LM-067.webp",
     "cardLv": "Lv.6",
     "cardNumber": "LM-067",
     "cardType": "Digimon/Option",
@@ -426590,7 +426846,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/LM-068-Sample.webp",
+    "cardImage": "assets/images/cards/LM-068.webp",
     "cardLv": "Lv.6",
     "cardNumber": "LM-068",
     "cardType": "Digimon/Option",
@@ -463535,7 +463791,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/SD01-02-Sample.webp",
+    "cardImage": "assets/images/cards/SD01-02.webp",
     "cardLv": "Lv.3",
     "cardNumber": "SD01-02",
     "cardType": "Digimon",
@@ -463572,10 +463828,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -463591,7 +463847,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/SD01-03-Sample.webp",
+    "cardImage": "assets/images/cards/SD01-03.webp",
     "cardLv": "Lv.4",
     "cardNumber": "SD01-03",
     "cardType": "Digimon",
@@ -463628,10 +463884,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -463647,7 +463903,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/SD01-04-Sample.webp",
+    "cardImage": "assets/images/cards/SD01-04.webp",
     "cardLv": "Lv.5",
     "cardNumber": "SD01-04",
     "cardType": "Digimon",
@@ -463684,10 +463940,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -463909,7 +464165,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/SD02-02-Sample.webp",
+    "cardImage": "assets/images/cards/SD02-02.webp",
     "cardLv": "Lv.3",
     "cardNumber": "SD02-02",
     "cardType": "Digimon",
@@ -463946,10 +464202,10 @@
     "playCost": "3",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -463965,7 +464221,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/SD02-03-Sample.webp",
+    "cardImage": "assets/images/cards/SD02-03.webp",
     "cardLv": "Lv.4",
     "cardNumber": "SD02-03",
     "cardType": "Digimon",
@@ -464002,10 +464258,10 @@
     "playCost": "6",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -464021,7 +464277,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/SD02-04-Sample.webp",
+    "cardImage": "assets/images/cards/SD02-04.webp",
     "cardLv": "Lv.5",
     "cardNumber": "SD02-04",
     "cardType": "Digimon",
@@ -464058,10 +464314,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490066,7 +490322,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST25-01-Sample.webp",
+    "cardImage": "assets/images/cards/ST25-01.webp",
     "cardLv": "Lv.2",
     "cardNumber": "ST25-01",
     "cardType": "Digi-Egg",
@@ -490097,10 +490353,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490116,7 +490372,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST25-02-Sample.webp",
+    "cardImage": "assets/images/cards/ST25-02.webp",
     "cardLv": "Lv.3",
     "cardNumber": "ST25-02",
     "cardType": "Digimon",
@@ -490153,10 +490409,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490172,7 +490428,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST25-03-Sample.webp",
+    "cardImage": "assets/images/cards/ST25-03.webp",
     "cardLv": "Lv.4",
     "cardNumber": "ST25-03",
     "cardType": "Digimon",
@@ -490209,10 +490465,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490228,7 +490484,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST25-04-Sample.webp",
+    "cardImage": "assets/images/cards/ST25-04.webp",
     "cardLv": "Lv.5",
     "cardNumber": "ST25-04",
     "cardType": "Digimon",
@@ -490265,10 +490521,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490284,7 +490540,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST25-05-Sample.webp",
+    "cardImage": "assets/images/cards/ST25-05.webp",
     "cardLv": "Lv.6",
     "cardNumber": "ST25-05",
     "cardType": "Digimon/Option",
@@ -490321,10 +490577,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490340,7 +490596,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST25-06-Sample.webp",
+    "cardImage": "assets/images/cards/ST25-06.webp",
     "cardLv": "-",
     "cardNumber": "ST25-06",
     "cardType": "Tamer",
@@ -490371,10 +490627,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
@@ -490440,7 +490696,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-01-Sample.webp",
+    "cardImage": "assets/images/cards/ST26-01.webp",
     "cardLv": "Lv.2",
     "cardNumber": "ST26-01",
     "cardType": "Digi-Egg",
@@ -490471,10 +490727,10 @@
     "playCost": "-",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490490,7 +490746,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-02-Sample.webp",
+    "cardImage": "assets/images/cards/ST26-02.webp",
     "cardLv": "Lv.3",
     "cardNumber": "ST26-02",
     "cardType": "Digimon",
@@ -490527,10 +490783,10 @@
     "playCost": "3",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -490546,7 +490802,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-03-Sample.webp",
+    "cardImage": "assets/images/cards/ST26-03.webp",
     "cardLv": "Lv.4",
     "cardNumber": "ST26-03",
     "cardType": "Digimon",
@@ -490583,10 +490839,10 @@
     "playCost": "4",
     "rarity": "C",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -490602,7 +490858,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-04-Sample.webp",
+    "cardImage": "assets/images/cards/ST26-04.webp",
     "cardLv": "Lv.5",
     "cardNumber": "ST26-04",
     "cardType": "Digimon",
@@ -490639,10 +490895,10 @@
     "playCost": "7",
     "rarity": "U",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "[Rule] Trait: Has [Ice-Snow] Type.",
     "securityEffect": "-",
@@ -490658,7 +490914,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-05-Sample.webp",
+    "cardImage": "assets/images/cards/ST26-05.webp",
     "cardLv": "Lv.6",
     "cardNumber": "ST26-05",
     "cardType": "Digimon/Option",
@@ -490695,10 +490951,10 @@
     "playCost": "5",
     "rarity": "SR",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "-",
@@ -490714,7 +490970,7 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST26-06-Sample.webp",
+    "cardImage": "assets/images/cards/ST26-06.webp",
     "cardLv": "-",
     "cardNumber": "ST26-06",
     "cardType": "Tamer",
@@ -490745,10 +491001,10 @@
     "playCost": "4",
     "rarity": "R",
     "restrictions": {
-      "chinese": "Not released",
-      "english": "Not released",
-      "japanese": "Not released",
-      "korean": "Not released"
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
     },
     "rule": "-",
     "securityEffect": "[Security] Play this card without paying the cost.",
