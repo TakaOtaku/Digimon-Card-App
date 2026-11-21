@@ -69,7 +69,8 @@ def replaceStrings():
   replace_string_in_json('."[', '."\n[')
   replace_string_in_json('＞ {', '＞\n{')
   replace_string_in_json('.{', '.\n{')
-  
+  replace_string_in_json('.W', '.\nW')
+
 def removeSamples():
   # Remove all AAs and JAAs from every Card that include Sample in the id
   with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
