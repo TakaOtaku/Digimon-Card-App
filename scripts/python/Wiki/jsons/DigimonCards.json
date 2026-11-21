@@ -2347,11 +2347,11 @@
     "cardImage": "assets/images/cards/BD01-10.webp",
     "cardLv": "-",
     "cardNumber": "BD01-10",
-    "cardType": "Digimon",
+    "cardType": "Tamer",
     "color": "Red",
     "digiXros": "-",
     "digivolveCondition": [],
-    "digivolveEffect": "[Security] Play this card without paying the cost.",
+    "digivolveEffect": "-",
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
@@ -2381,7 +2381,7 @@
       "korean": "Unrestricted"
     },
     "rule": "-",
-    "securityEffect": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
     "type": "ALYSION",
     "version": "Normal"
@@ -2911,7 +2911,7 @@
     "dnaDigivolve": "-",
     "dp": "-",
     "dualEffect": "-",
-    "effect": "While you have have a white Digimon, you can ignore this card's color requirements.When this card would be used, if you have any [Diaboromon] with digivolution cards, reduce the use cost by 2.\n[Main] You may play 2 [Diaboromon] Tokens without paying the cost. (Digimon/Cost 14/Lv.6/White/Mega/Unknown/Unidentified/3000 DP). Then, all of your [Diaboromon] gain \uff1cBlocker\uff1e until your opponent's turn ends. ",
+    "effect": "While you have have a white Digimon, you can ignore this card's color requirements.When this card would be used, if you have any [Diaboromon] with digivolution cards, reduce the use cost by 2.\n[Main] You may play 2 [Diaboromon] Tokens without paying the cost. (Digimon/Cost 14/Lv.6/White/Mega/Unknown/Unidentified/3000 DP) Then, all of your [Diaboromon] gain \uff1cBlocker\uff1e until your opponent's turn ends. ",
     "form": "-",
     "id": "BD02-10",
     "illustrator": "To be completed",
@@ -137387,8 +137387,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-008_P1",
+        "illustrator": "Murakami Hisashi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-008_P1-J",
+        "illustrator": "Murakami Hisashi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -138883,8 +138897,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-032_P1",
+        "illustrator": "SENNSU",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-032_P1-J",
+        "illustrator": "SENNSU",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",
@@ -142169,8 +142197,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-083_P1",
+        "illustrator": "Moyasi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-083_P1-J",
+        "illustrator": "Moyasi",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -142393,8 +142435,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-086_P1",
+        "illustrator": "KISUKE",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-086_P1-J",
+        "illustrator": "KISUKE",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -142497,8 +142553,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BT27-088_P1",
+        "illustrator": "banira",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BT27-088_P1-J",
+        "illustrator": "banira",
+        "note": "Box Promotion Pack: IGNITION OF X",
+        "type": "Box Topper"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
@@ -215133,7 +215203,7 @@
         "level": "3"
       }
     ],
-    "digivolveEffect": "[When Attacking] [Once Per Turn] If your hand has 7 or fewer cards, \uff1cDraw 1\uff1e.",
+    "digivolveEffect": "[When Attacking] [Once Per Turn] If your hand has 7 or fewer cards, \uff1cDraw 1\uff1e ",
     "dnaDigivolve": "-",
     "dp": "5000",
     "dualEffect": "-",
