@@ -69,7 +69,7 @@ def replaceStrings():
   replace_string_in_json('."[', '."\n[')
   replace_string_in_json('＞ {', '＞\n{')
   replace_string_in_json('.{', '.\n{')
-  replace_string_in_json('.W', '.\nW')
+  replace_string_in_json('.Wh', '.\nWh')
 
 def removeSamples():
   # Remove all AAs and JAAs from every Card that include Sample in the id
