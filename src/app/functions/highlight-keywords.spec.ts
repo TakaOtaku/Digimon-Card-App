@@ -24,6 +24,17 @@ describe('highlightKeywords', () => {
     expect(highlightKeywords('[Once Per Turn] Draw 1.')).toContain('<span class="kw kw-once">[Once Per Turn]</span>');
   });
 
+  it('colors Hand pink like the cards do', () => {
+    expect(highlightKeywords('{Hand} [Main]')).toContain('<span class="kw kw-hand">{Hand}</span>');
+    expect(highlightKeywords('{Trash} [Main]')).toContain('<span class="kw kw-hand">{Trash}</span>');
+    expect(highlightKeywords('{Breeding} [Main]')).toContain('<span class="kw kw-hand">{Breeding}</span>');
+    expect(highlightKeywords('{Security} [Your Turn]')).toContain('<span class="kw kw-hand">{Security}</span>');
+    expect(highlightKeywords('{Hand}')).toBe('<span class="kw kw-hand">{Hand}</span>');
+    expect(highlightKeywords('{Trash}')).toBe('<span class="kw kw-hand">{Trash}</span>');
+    expect(highlightKeywords('{Breeding}')).toBe('<span class="kw kw-hand">{Breeding}</span>');
+    expect(highlightKeywords('{Security}')).toBe('<span class="kw kw-hand">{Security}</span>');  
+});
+
   it('finds Assembly written with a no-break space, for every number', () => {
     const html = highlightKeywords('[Assembly\u00a0-4] [MetalGreymon: Alterous Mode] x [Greymon]');
     expect(html).toContain('<span class="kw kw-assembly">[Assembly -4]</span>');
