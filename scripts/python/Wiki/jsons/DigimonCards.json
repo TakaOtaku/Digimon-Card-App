@@ -197657,12 +197657,6 @@
     "AAs": [
       {
         "id": "ED01-09_P2",
-        "illustrator": "naru",
-        "note": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
-        "type": "Super Rare (Holographic Foil)\u00a0"
-      },
-      {
-        "id": "ED01-09_P3",
         "illustrator": "Teppei Tadokoro",
         "note": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
         "type": "Rare Pull (Gold Foil)\u00a0"
@@ -197671,9 +197665,9 @@
     "JAAs": [
       {
         "id": "ED01-09_P2-J",
-        "illustrator": "naru",
+        "illustrator": "Teppei Tadokoro",
         "note": "ST-25: STARTER DECK DIGIMON ALYSION RUBEUSDRAMON",
-        "type": "Super Rare (Holographic Foil)\u00a0"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -197729,12 +197723,6 @@
     "AAs": [
       {
         "id": "ED01-10_P2",
-        "illustrator": "naru",
-        "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
-        "type": "Super Rare (Holographic Foil)\u00a0"
-      },
-      {
-        "id": "ED01-10_P3",
         "illustrator": "Teppei Tadokoro",
         "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
         "type": "Rare Pull (Gold Foil)\u00a0"
@@ -197743,9 +197731,9 @@
     "JAAs": [
       {
         "id": "ED01-10_P2-J",
-        "illustrator": "naru",
+        "illustrator": "Teppei Tadokoro",
         "note": "ST-26: STARTER DECK DIGIMON ALYSION YUKINAMON",
-        "type": "Super Rare (Holographic Foil)\u00a0"
+        "type": "Rare Pull (Gold Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
