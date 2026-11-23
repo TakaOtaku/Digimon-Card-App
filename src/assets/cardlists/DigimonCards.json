@@ -3947,7 +3947,7 @@
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -56788,13 +56788,13 @@
         "id": "BT16-013_P3",
         "illustrator": "sasasi",
         "note": "HACKERS' SLUMBER BT-23 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "BT16-013_P4",
         "illustrator": "sasasi",
         "note": "HACKERS' SLUMBER BT-23 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -57736,13 +57736,13 @@
         "id": "BT16-026_P3",
         "illustrator": "sasasi",
         "note": "CYBER EDEN BT-22 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "BT16-026_P4",
         "illustrator": "sasasi",
         "note": "CYBER EDEN BT-22 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -68146,13 +68146,13 @@
         "id": "BT17-077_P3",
         "illustrator": "sasasi",
         "note": "WORLD CONVERGENCE BT-21 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "BT17-077_P4",
         "illustrator": "sasasi",
         "note": "WORLD CONVERGENCE BT-21 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       },
       {
         "id": "BT17-077_P5",
@@ -125678,13 +125678,13 @@
         "id": "BT25-029_P2",
         "illustrator": "YAMURETSU",
         "note": "IGNITION OF X BT-27 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "BT25-029_P3",
         "illustrator": "YAMURETSU",
         "note": "IGNITION OF X BT-27 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       }
     ],
     "JAAs": [],
@@ -298396,13 +298396,13 @@
         "id": "ST17-06_P2",
         "illustrator": "sasasi",
         "note": "TIME STRANGER BT-24 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "ST17-06_P3",
         "illustrator": "sasasi",
         "note": "TIME STRANGER BT-24 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -306135,13 +306135,13 @@
         "id": "ST24-07_P2",
         "illustrator": "YAMURETSU",
         "note": "DUAL REVOLUTION BT-25 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "ST24-07_P3",
         "illustrator": "YAMURETSU",
         "note": "DUAL REVOLUTION BT-25 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       }
     ],
     "JAAs": [
@@ -306155,13 +306155,13 @@
         "id": "ST24-07_P2-J",
         "illustrator": "YAMURETSU",
         "note": "DUAL REVOLUTION BT-25 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "ST24-07_P3-J",
         "illustrator": "YAMURETSU",
         "note": "DUAL REVOLUTION BT-25 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       }
     ],
     "aceEffect": "-",
@@ -306452,13 +306452,13 @@
         "id": "ST24-11_P2",
         "illustrator": "YAMURETSU",
         "note": "TIMELESS BONDS BT-26 Release Event",
-        "type": "Participation "
+        "type": "Alternative Art (No Foil)\u00a0"
       },
       {
         "id": "ST24-11_P3",
         "illustrator": "YAMURETSU",
         "note": "TIMELESS BONDS BT-26 Release Event",
-        "type": "1st Place Prize (Foil)\u00a0"
+        "type": "Alternative Art (Holographic Foil)\u00a0"
       }
     ],
     "JAAs": [

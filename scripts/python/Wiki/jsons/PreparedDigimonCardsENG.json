@@ -4969,7 +4969,7 @@
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -96522,7 +96522,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Silphymon]: Cost 3 ",
     "type": "Warrior",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "Overflow \uff1c-4\uff1e ",
@@ -96583,7 +96583,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Silphymon]: Cost 3 ",
     "type": "Warrior",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -98226,7 +98226,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Shakkoumon]/[Zudomon]: Cost 3 ",
     "type": "Beastkin",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "Overflow \uff1c-4\uff1e ",
@@ -98287,7 +98287,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Shakkoumon]/[Zudomon]: Cost 3 ",
     "type": "Beastkin",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "Overflow \uff1c-4\uff1e ",
@@ -115331,7 +115331,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.6 w/[Imperialdramon]\u00a0in name: Cost 5 ",
     "type": "Ancient Holy Warrior",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "Overflow \uff1c-5\uff1e ",
@@ -115393,7 +115393,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.6 w/[Imperialdramon]\u00a0in name: Cost 5 ",
     "type": "Ancient Holy Warrior",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "Overflow \uff1c-5\uff1e ",
@@ -197718,7 +197718,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[MachGaogamon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Beast Knight/DATA SQUAD",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -197779,7 +197779,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[MachGaogamon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Beast Knight/DATA SQUAD",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -477542,7 +477542,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.3 w/[Terriermon]\u00a0in name: Cost 3 ",
     "type": "Holy Warrior",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -477603,7 +477603,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.3 w/[Terriermon]\u00a0in name: Cost 3 ",
     "type": "Holy Warrior",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -489709,7 +489709,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[RizeGreymon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Light Dragon/DATA SQUAD",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -489770,7 +489770,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[RizeGreymon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Light Dragon/DATA SQUAD",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -490289,7 +490289,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Lilamon]/Lv.5 w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Fairy/DATA SQUAD",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -490350,7 +490350,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] [Lilamon]/Lv.5 w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Fairy/DATA SQUAD",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",

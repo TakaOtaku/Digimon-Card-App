@@ -4919,7 +4919,7 @@
     "optionCardColourRequirement": "-",
     "optionCardEffect": "-",
     "playCost": "-",
-    "rarity": "-",
+    "rarity": "U",
     "restrictions": {
       "chinese": "Not released",
       "english": "Not released",
@@ -386486,7 +386486,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[RizeGreymon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Light Dragon/DATA SQUAD",
-    "version": "Participation "
+    "version": "Alternative Art (No Foil)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -386547,7 +386547,7 @@
     "securityEffect": "-",
     "specialDigivolve": "[Digivolve] Lv.5 w/[RizeGreymon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
     "type": "Light Dragon/DATA SQUAD",
-    "version": "1st Place Prize (Foil)\u00a0"
+    "version": "Alternative Art (Holographic Foil)\u00a0"
   },
   {
     "aceEffect": "-",
