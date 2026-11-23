@@ -125672,17 +125672,22 @@
         "id": "BT25-029_P1",
         "illustrator": "toriyufu",
         "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Alternative Art"
-      }
-    ],
-    "JAAs": [
+        "type": "Alternative Art "
+      },
       {
-        "id": "BT25-029_P1-J",
-        "illustrator": "toriyufu",
-        "note": "BT-25: BOOSTER DUAL REVOLUTION",
-        "type": "Alternative Art"
+        "id": "BT25-029_P2",
+        "illustrator": "YAMURETSU",
+        "note": "IGNITION OF X BT-27 Release Event",
+        "type": "Participation "
+      },
+      {
+        "id": "BT25-029_P3",
+        "illustrator": "YAMURETSU",
+        "note": "IGNITION OF X BT-27 Release Event",
+        "type": "1st Place Prize (Foil)\u00a0"
       }
     ],
+    "JAAs": [],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Data",

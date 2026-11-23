@@ -151160,67 +151160,6 @@
       "06"
     ],
     "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/BT25-029_P1-J.webp",
-    "cardLv": "Lv.6",
-    "cardNumber": "BT25-029",
-    "cardType": "Digimon",
-    "color": "Blue/Black",
-    "digiXros": "-",
-    "digivolveCondition": [
-      {
-        "color": "Blue",
-        "cost": "4",
-        "level": "5"
-      },
-      {
-        "color": "Black",
-        "cost": "4",
-        "level": "5"
-      }
-    ],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "12000",
-    "dualEffect": "-",
-    "effect": "\uff1cReboot\uff1e \n\uff1cBlocker\uff1e \n\uff1cEvade\uff1e \n[When Digivolving] [When Attacking] [Once Per Turn] You may return 1 of your opponent's level 5 or lower Digimon to the hand. Then, by trashing the bottom face-down card under any of your Tamers, return 1 of your opponent's lowest level Digimon to the hand.\n[All Turns] [Once Per Turn] When effects add cards to your opponent's hand or trash cards from under your Tamers, this Digimon may unsuspend.",
-    "form": "Mega",
-    "id": "BT25-029_P1",
-    "illustrator": "toriyufu",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "MirageGaogamon",
-      "japanese": "\u30df\u30e9\u30fc\u30b8\u30e5\u30ac\u30aa\u30ac\u30e2\u30f3",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
-    },
-    "notes": "BT-25: BOOSTER DUAL REVOLUTION",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "12",
-    "rarity": "SR",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
-    },
-    "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "[Digivolve] Lv.5 w/[MachGaogamon]\u00a0in name or w/[DATA SQUAD]\u00a0trait: Cost 3 ",
-    "type": "Beast Knight/DATA SQUAD",
-    "version": "Alternative Art"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "Data",
-    "block": [
-      "06"
-    ],
-    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BT25-030-J.webp",
     "cardLv": "Lv.3",
     "cardNumber": "BT25-030",
