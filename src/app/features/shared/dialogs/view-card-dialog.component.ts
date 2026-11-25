@@ -1,7 +1,7 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, HostListener, inject } from '@angular/core';
 import { ImgFallbackDirective } from '@directives';
-import { formatId, isDigimonType, isOptionType, highlightKeywords, withoutJ } from '@functions';
+import { formatId, isDigimonType, isOptionType, highlightKeywords, restrictionFor, withoutJ } from '@functions';
 import { ColorMap, DigimonCard, ICountCard, IDeck, RarityAbbreviationMap } from '@models';
 import { DialogStore, DigimonCardStore, SaveStore, WebsiteStore } from '@store';
 import { CardMarketService } from '@services';
@@ -249,10 +249,10 @@ import { TooltipModule } from 'primeng/tooltip';
         }
       </div>
 
-      <div *ngIf="card.restrictions.english !== 'Unrestricted'" class="my-4 max-w-full" id="Restriction">
+      <div *ngIf="restriction !== 'Unrestricted'" class="my-4 max-w-full" id="Restriction">
         <div class="flex flex-col" id="Card-Restriction">
           <p [ngStyle]="{ color }" class="text-black-outline-xs text-lg font-extrabold">Restriction</p>
-          <p class="font-white font-bold">{{ card.restrictions.english }}</p>
+          <p class="font-white font-bold">{{ restriction }}</p>
         </div>
       </div>
 
@@ -297,6 +297,10 @@ export class ViewCardDialogComponent {
   isOptionType = isOptionType;
 
   card: DigimonCard = this.dialogStore.viewCard().card;
+
+  get restriction(): string {
+    return restrictionFor(this.card, this.digimonCardStore.format());
+  }
   width?: string = this.dialogStore.viewCard().width;
 
   png: string;

@@ -1,9 +1,10 @@
-import { DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, replacements, tagsList } from '../../models';
+import { DeckFormat, DigimonCard, dummyCard, ICountCard, IDeck, IDeckCard, ISelectItem, ITag, replacements, tagsList } from '../../models';
 import { cardsAllow50 } from '../../models/data/cards-50.data';
 import { ReleaseOrder } from '../../models/data/release-order.data';
 import { environment } from '../../environments/environment';
 import { ColorOrderMap, DeckColorMap } from '../../models/maps/color.map';
 import { sortID } from './filter.functions';
+import { isInAlysionPool, restrictionFor } from './alysion.functions';
 
 /**
  * Check if a card is a Digimon-type card (includes hybrid "Digimon/Option" type)
@@ -194,7 +195,7 @@ export interface DeckCheck {
 }
 
 /** Deck-building rules shown in the builder: 50 main cards, at most 5 Digi-Eggs, copy limits. */
-export function deckChecks(cards: IDeckCard[]): DeckCheck[] {
+export function deckChecks(cards: IDeckCard[], format: DeckFormat = 'paper'): DeckCheck[] {
   let main = 0;
   let eggs = 0;
   const copies = new Map<string, { name: string; count: number; max: number }>();
@@ -203,7 +204,7 @@ export function deckChecks(cards: IDeckCard[]): DeckCheck[] {
     if (card.cardType === 'Digi-Egg') eggs += card.count;
     else main += card.count;
 
-    const restriction = card.restrictions?.english;
+    const restriction = restrictionFor(card, format);
     const max = restriction === 'Banned' ? 0 : restriction === 'Restricted to 1' ? 1 : cardsAllow50.includes(card.cardNumber) ? 50 : 4;
     const entry = copies.get(card.cardNumber) ?? { name: card.name?.english ?? card.cardNumber, count: 0, max };
     entry.count += card.count;
@@ -212,11 +213,15 @@ export function deckChecks(cards: IDeckCard[]): DeckCheck[] {
 
   const overLimit = [...copies.values()].filter((c) => c.count > c.max).map((c) => c.name);
 
-  return [
+  const checks = [
     { label: `Main deck ${main}/50`, ok: main === 50 },
     { label: `Digi-Eggs ${eggs}/5`, ok: eggs <= 5 },
     { label: overLimit.length ? `Over copy limit: ${overLimit.join(', ')}` : 'Copy limits', ok: overLimit.length === 0 },
   ];
+  if (format === 'paper') return checks;
+
+  const outside = [...new Set(cards.filter((card) => !isInAlysionPool(card)).map((card) => card.name?.english ?? card.cardNumber))];
+  return [...checks, { label: outside.length ? `Not in Alysion: ${outside.join(', ')}` : 'Alysion cards', ok: outside.length === 0 }];
 }
 
 export function sortColors(colorA: string, colorB: string): number {

@@ -21,12 +21,17 @@ describe('ViewCardDialogComponent section order', () => {
         { provide: DialogStore, useValue: { viewCard: () => ({ card }) } },
         { provide: SaveStore, useValue: { collectionMode: () => false, collection: () => [] } },
         { provide: WebsiteStore, useValue: { deck: () => emptyDeck } },
-        { provide: DigimonCardStore, useValue: { cards: () => [] } },
+        { provide: DigimonCardStore, useValue: { cards: () => [], format: () => 'alysion' } },
         { provide: CardMarketService, useValue: { getPriceData: () => undefined } },
       ],
     });
     const fixture = TestBed.createComponent(ViewCardDialogComponent);
     fixture.detectChanges();
+    // A paper restriction does not show for the same card in Alysion mode
+    fixture.componentInstance.card = { ...card, cardNumber: 'BT1-084', restrictions: { ...card.restrictions, english: 'Banned' } };
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('#Restriction')).toBeNull();
+
     const ids = Array.from(fixture.nativeElement.querySelector('#Effects').children, (element: Element) => element.id);
     expect(ids).toEqual(
       expect.arrayContaining(['Option-Colour-Requirement', 'Option-Card-Effect', 'Dual-Effect', 'Digimon-Link', 'Link-DP']),

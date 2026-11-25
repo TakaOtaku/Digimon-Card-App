@@ -1,7 +1,7 @@
 import { CurrencyPipe, NgClass, NgIf } from '@angular/common';
 import { Component, computed, EventEmitter, inject, Input, Output, Signal } from '@angular/core';
 import { IDeck, IDeckCard } from '../../../../models';
-import { deckChecks, mapToDeckCards, missingCards } from '../../../functions';
+import { deckChecks, deckFormat, mapToDeckCards, missingCards } from '../../../functions';
 import { PriceMetric } from '@models';
 import { SaveStore } from '@store';
 import { MessageService } from 'primeng/api';
@@ -120,7 +120,7 @@ export class DeckStatsComponent {
 
   deck: Signal<IDeck> = this.websiteStore.deck;
   mainDeck: Signal<IDeckCard[]> = computed(() => mapToDeckCards(this.websiteStore.deck().cards, this.digimonCardStore.cards()));
-  checks = computed(() => deckChecks(this.mainDeck()));
+  checks = computed(() => deckChecks(this.mainDeck(), deckFormat(this.websiteStore.deck())));
 
   private saveStore = inject(SaveStore);
   private cardMarketService = inject(CardMarketService);
