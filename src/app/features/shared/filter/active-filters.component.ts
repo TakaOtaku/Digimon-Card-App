@@ -24,7 +24,6 @@ const LABELS: Record<string, string> = {
   blockFilter: 'Block',
   restrictionsFilter: 'Restriction',
   sourceFilter: 'Source',
-  presetFilter: 'Preset',
 };
 
 interface ActiveFilter {

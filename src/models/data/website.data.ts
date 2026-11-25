@@ -87,5 +87,4 @@ export const emptyFilter = {
   blockFilter: [],
   restrictionsFilter: [],
   sourceFilter: [],
-  presetFilter: [],
 };

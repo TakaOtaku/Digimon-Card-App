@@ -2,6 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { environment } from '../../../../environments/environment';
+import { AlysionSwitchComponent } from './alysion-switch.component';
 import { GlobalSearchComponent } from './global-search.component';
 import { NavLinksComponent } from './nav-links.component';
 
@@ -17,6 +18,7 @@ import { NavLinksComponent } from './nav-links.component';
       <digimon-nav-links class="hidden md:contents"></digimon-nav-links>
 
       <digimon-global-search class="ml-auto"></digimon-global-search>
+      <digimon-alysion-switch class="ml-3"></digimon-alysion-switch>
     </nav>
 
     <nav aria-label="Main" class="md:hidden fixed bottom-0 inset-x-0 z-[400] h-16 flex bg-ink-1 border-t border-line">
@@ -39,7 +41,7 @@ import { NavLinksComponent } from './nav-links.component';
     </nav>
   `,
   standalone: true,
-  imports: [NgClass, RouterLink, RouterLinkActive, NavLinksComponent, GlobalSearchComponent],
+  imports: [NgClass, RouterLink, RouterLinkActive, NavLinksComponent, GlobalSearchComponent, AlysionSwitchComponent],
 })
 export class NavbarComponent {
   @Output() openSideNav = new EventEmitter<boolean>();

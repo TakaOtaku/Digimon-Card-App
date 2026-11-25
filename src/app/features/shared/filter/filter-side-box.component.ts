@@ -1,3 +1,4 @@
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { Component, computed, effect, EventEmitter, inject, Input, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { itemsAsSelectItem } from '@functions';
@@ -9,7 +10,6 @@ import {
   IFilter,
   Illustrators,
   Keywords,
-  Presets,
   Restrictions,
   SpecialRequirements,
   Types,
@@ -137,7 +137,9 @@ import { VersionFilterComponent } from './version-filter.component';
 
       <digimon-rarity-filter></digimon-rarity-filter>
       <digimon-version-filter></digimon-version-filter>
-      <digimon-block-filter></digimon-block-filter>
+      @if (cardStore.format() === 'paper') {
+        <digimon-block-filter></digimon-block-filter>
+      }
 
         <p-multiSelect
           [formControl]="keywordFilter"
@@ -244,20 +246,6 @@ import { VersionFilterComponent } from './version-filter.component';
           styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
         </p-multiSelect>
 
-        <p-multiSelect
-          [formControl]="presetFilter"
-          [options]="presets"
-          [filter]="false"
-          [showClear]="false"
-          [showHeader]="false"
-          [showToggleAll]="false"
-          appendTo="body"
-          placeholder="Select a Preset"
-          display="chip"
-          scrollHeight="250px"
-          class="mx-auto mb-1 w-full max-w-[250px]"
-          styleClass="w-full mt-1 h-8 text-sm max-w-[250px] leading-[0.75rem]">
-        </p-multiSelect>
     </div>
   `,
   styleUrls: ['filter-side-box.component.scss'],
@@ -286,6 +274,7 @@ export class FilterSideBoxComponent {
 
   filterStore = inject(FilterStore);
   saveStore = inject(SaveStore);
+  cardStore = inject(DigimonCardStore);
 
   collectionCountMax = computed(() => this.saveStore.settings().countMax);
 
@@ -303,7 +292,6 @@ export class FilterSideBoxComponent {
   dpFilter = new UntypedFormControl([1, 17]);
   priceFilter = new UntypedFormControl([0, 100]);
   cardCountFilter = new UntypedFormControl([0, this.collectionCountMax() ?? 5]);
-  presetFilter = new UntypedFormControl([]);
 
   filterFormGroup: UntypedFormGroup = new UntypedFormGroup({
     keywordFilter: this.keywordFilter,
@@ -320,7 +308,6 @@ export class FilterSideBoxComponent {
     dpFilter: this.dpFilter,
     priceFilter: this.priceFilter,
     cardCountFilter: this.cardCountFilter,
-    presetFilter: this.presetFilter,
   });
 
   keywords = itemsAsSelectItem(Keywords);
@@ -331,7 +318,6 @@ export class FilterSideBoxComponent {
   illustrators = itemsAsSelectItem(Illustrators);
   specialRequirements = itemsAsSelectItem(SpecialRequirements);
   restrictions = itemsAsSelectItem(Restrictions);
-  presets = itemsAsSelectItem(Presets);
 
   resetEmitter = new EventEmitter<void>();
 
@@ -372,9 +358,6 @@ export class FilterSideBoxComponent {
       emitEvent: false,
     });
     this.sourceFilter.setValue(filter.sourceFilter, {
-      emitEvent: false,
-    });
-    this.presetFilter.setValue(filter.presetFilter, {
       emitEvent: false,
     });
   });

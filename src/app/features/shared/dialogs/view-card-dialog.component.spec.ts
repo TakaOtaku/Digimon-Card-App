@@ -15,13 +15,14 @@ describe('ViewCardDialogComponent section order', () => {
       linkEffect: '[When Linking] Draw 1.',
       linkDP: '+2000',
     };
+    const pool = ['A-1', 'A-2', 'A-3'].map((id) => ({ ...card, id }));
     TestBed.configureTestingModule({
       imports: [ViewCardDialogComponent],
       providers: [
         { provide: DialogStore, useValue: { viewCard: () => ({ card }) } },
         { provide: SaveStore, useValue: { collectionMode: () => false, collection: () => [] } },
         { provide: WebsiteStore, useValue: { deck: () => emptyDeck } },
-        { provide: DigimonCardStore, useValue: { cards: () => [], format: () => 'alysion' } },
+        { provide: DigimonCardStore, useValue: { cards: () => [], poolCards: () => pool, format: () => 'alysion' } },
         { provide: CardMarketService, useValue: { getPriceData: () => undefined } },
       ],
     });
@@ -59,5 +60,12 @@ describe('ViewCardDialogComponent section order', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('#Digimon-Link')).toBeNull();
     expect(fixture.nativeElement.querySelector('#Link-DP').textContent).toContain('+1000');
+
+    // Previous / next stay inside the current mode's cards
+    fixture.componentInstance.card = pool[1];
+    fixture.componentInstance.nextCard();
+    expect(fixture.componentInstance.card.id).toBe('A-3');
+    fixture.componentInstance.previousCard();
+    expect(fixture.componentInstance.card.id).toBe('A-2');
   });
 });

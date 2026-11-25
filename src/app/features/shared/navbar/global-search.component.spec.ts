@@ -17,7 +17,7 @@ describe('GlobalSearchComponent', () => {
     ];
     TestBed.configureTestingModule({
       providers: [
-        { provide: DigimonCardStore, useValue: { cards: signal(cards) } },
+        { provide: DigimonCardStore, useValue: { cards: signal([...cards, card('BT5-001', 'BT5-001', 'Hidden')]), poolCards: signal(cards) } },
         { provide: DialogStore, useValue: { updateViewCardDialog: jest.fn() } },
       ],
     });
@@ -34,6 +34,11 @@ describe('GlobalSearchComponent', () => {
     expect(component.results().map((c) => c.id)).toEqual(['BT1-010']);
     component.query.set('bt1-011');
     expect(component.results().map((c) => c.id)).toEqual(['BT1-011']);
+  });
+
+  it('searches only the cards of the current mode', () => {
+    component.query.set('hidden');
+    expect(component.results()).toEqual([]);
   });
 
   it('caps results at 20', () => {

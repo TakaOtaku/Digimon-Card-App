@@ -20,5 +20,4 @@ export interface IFilter {
   cardTypeFilter: string[];
   restrictionsFilter: string[];
   sourceFilter: string[];
-  presetFilter: string[];
 }

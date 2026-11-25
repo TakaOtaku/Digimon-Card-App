@@ -190,7 +190,7 @@ export class CollectionPageComponent {
 
   sets = computed(() => {
     const settings = this.saveStore.settings();
-    return setCompletion(this.digimonCardStore.cards(), this.collection(), settings).map((set) => ({
+    return setCompletion(this.digimonCardStore.poolCards(), this.collection(), settings).map((set) => ({
       ...set,
       percent: Math.floor((set.owned / set.total) * 100),
     }));

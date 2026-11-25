@@ -17,6 +17,7 @@ export function checkDeckErrors(decks: IDeck[]) {
     newDeck.imageCardId = deck.imageCardId ?? 'BT1-001';
     newDeck.photoUrl = deck.photoUrl ?? '';
     newDeck.likes = deck.likes ?? [];
+    newDeck.format = deck.format;
     return newDeck;
   });
   return newDecks;

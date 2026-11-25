@@ -10,6 +10,10 @@ describe('alysion functions', () => {
     expect(poolFor(all, 'alysion').map((x) => x.id)).toEqual(['BD01-02', 'BD01-02_P1', 'ED01-01', 'SD01-02', 'BT1-010', 'ST6-01', 'BT2-047', 'BT1-084']);
   });
 
+  it('leaves out errata prints of reused cards', () => {
+    expect(poolFor([c('BT2-097'), { ...c('BT2-097'), id: 'BT2-097-Errata' }], 'alysion').map((x) => x.id)).toEqual(['BT2-097']);
+  });
+
   it('hides Alysion-only cards in paper', () => {
     expect(poolFor(all, 'paper').map((x) => x.id)).toEqual(['BT1-010', 'BT1-010_P1', 'ST6-01', 'BT5-001', 'ST7-01', 'BT2-047', 'BT1-084']);
   });

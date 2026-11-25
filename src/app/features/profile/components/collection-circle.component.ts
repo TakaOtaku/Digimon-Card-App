@@ -36,7 +36,7 @@ export class CollectionCircleComponent {
     const settings = this.saveStore.settings();
     const collection = this.saveStore.collection();
 
-    let setCards = this.digimonCardStore.cards().filter((card: DigimonCard) => card.id.includes('-') && card.id.includes(this.type));
+    let setCards = this.digimonCardStore.poolCards().filter((card: DigimonCard) => card.id.includes('-') && card.id.includes(this.type));
 
     // Remove AA cards from being counted for the circle
     if (settings.aaCollectionMinimum === 0) {

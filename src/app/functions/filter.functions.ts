@@ -108,10 +108,6 @@ export function filterCards(
       removeCards.add(card);
       return;
     }
-    if (filter.presetFilter.length > 0 && applyPresetFilter(card, filter.presetFilter)) {
-      removeCards.add(card);
-      return;
-    }
   });
 
   filteredCards = filteredCards.filter((card) => !removeCards.has(card));
@@ -374,18 +370,6 @@ function applyPriceFilter(card: DigimonCard, filter: number[], priceGetter: Pric
     return price < filter[0];
   }
   return price < filter[0] || price > filter[1];
-}
-
-// A preset keeps only its cards; several presets add up. DIGIMON ALYSION is every BD product
-// card (BD01-01, BD02-10, ...), matched by id so new decks need no list update.
-const PRESET_MATCHERS: Record<string, (card: DigimonCard) => boolean> = {
-  'DIGIMON ALYSION': (card) => /^BD\d+-/.test(card.id),
-};
-
-function applyPresetFilter(card: DigimonCard, filter: string[]): boolean {
-  // Saved filters may still hold removed presets (Ultimate Cup): ignore them instead of hiding every card
-  const matchers = filter.map((preset) => PRESET_MATCHERS[preset]).filter(Boolean);
-  return matchers.length > 0 && !matchers.some((matches) => matches(card));
 }
 
 function applySortOrder(cards: DigimonCard[], sort: ISort, collection: ICountCard[], priceGetter?: PriceGetter): DigimonCard[] {

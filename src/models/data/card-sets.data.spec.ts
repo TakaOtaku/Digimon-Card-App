@@ -13,7 +13,7 @@ describe('card-sets data', () => {
       expect(ReleaseOrder).toContain(name);
     }
     const alysion = GroupedSets.find((group) => group.value === 'alysion');
-    expect(alysion?.items.map((item) => item.value)).toEqual(['BD01', 'BD02', 'BD03', 'ED01', 'ED02', 'SD01', 'SD02']);
+    expect(alysion?.items.map((item) => item.value)).toEqual(['BD01', 'BD02', 'BD03', 'BD04', 'ED01', 'ED02', 'SD01', 'SD02']);
     const starters = GroupedSets.find((group) => group.value === 'starter');
     expect(starters?.items.map((item) => item.value)).toEqual(expect.arrayContaining(['ST25', 'ST26']));
   });

@@ -377,11 +377,11 @@ export class ViewCardDialogComponent {
   }
 
   previousCard() {
-    const id = this.digimonCardStore.cards().findIndex((card) => this.card.id === card.id);
+    const id = this.digimonCardStore.poolCards().findIndex((card) => this.card.id === card.id);
     if (id === -1 || id === 0) {
       return;
     }
-    const newCard = this.digimonCardStore.cards()[id - 1];
+    const newCard = this.digimonCardStore.poolCards()[id - 1];
     if (!newCard) {
       return;
     }
@@ -390,11 +390,11 @@ export class ViewCardDialogComponent {
   }
 
   nextCard() {
-    const id = this.digimonCardStore.cards().findIndex((card) => this.card.id === card.id);
-    if (id === -1 || id === this.digimonCardStore.cards().length + 1) {
+    const id = this.digimonCardStore.poolCards().findIndex((card) => this.card.id === card.id);
+    if (id === -1 || id === this.digimonCardStore.poolCards().length + 1) {
       return;
     }
-    const newCard = this.digimonCardStore.cards()[id + 1];
+    const newCard = this.digimonCardStore.poolCards()[id + 1];
     if (!newCard) {
       return;
     }

@@ -1,8 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, effect, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'primeng/api';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { GroupedSets } from '../../../../models';
+import { isAlysionSet } from '../../../functions/alysion.functions';
+import { DigimonCardStore } from '../../../store/digimon-card.store';
 import { FilterStore } from '../../../store/filter.store';
 
 @Component({
@@ -13,7 +15,7 @@ import { FilterStore } from '../../../store/filter.store';
       [ngModel]="setFilter"
       (ngModelChange)="updateFilter($event)"
       [group]="true"
-      [options]="groupedSets"
+      [options]="groupedSets()"
       [showHeader]="false"
       [showToggleAll]="false"
       placeholder="Select a Set"
@@ -33,9 +35,18 @@ import { FilterStore } from '../../../store/filter.store';
 })
 export class SetFilterComponent {
   filterStore = inject(FilterStore);
+  private cardStore = inject(DigimonCardStore);
   setFilter: string[] = this.filterStore.setFilter();
 
-  groupedSets = GroupedSets;
+  // Paper hides the Alysion products, Alysion offers only the sets in its pool
+  groupedSets = computed(() => {
+    if (this.cardStore.format() === 'paper') return GroupedSets.filter((group) => !('value' in group && group.value === 'alysion'));
+    return GroupedSets.map((group) => ({ ...group, items: group.items.filter((item) => isAlysionSet(item.value)) })).filter((group) => group.items.length > 0);
+  });
+
+  filterChange = effect(() => {
+    this.setFilter = this.filterStore.setFilter();
+  });
 
   updateFilter(setFilter: string[]) {
     this.filterStore.updateSetFilter(setFilter);

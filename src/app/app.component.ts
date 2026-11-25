@@ -125,12 +125,10 @@ export class AppComponent {
     });
 
     effect(() => {
-      const cards = this.digimonCardStore.cards();
-
-      if (cards.length === 0) return;
+      if (this.digimonCardStore.cards().length === 0) return;
 
       const filteredCards = filterCards(
-        this.digimonCardStore.cards(),
+        this.digimonCardStore.poolCards(),
         this.saveStore.save(),
         this.filterStore.filter(),
         this.websiteStore.sort(),

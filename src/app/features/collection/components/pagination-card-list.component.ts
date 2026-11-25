@@ -158,7 +158,7 @@ export class PaginationCardListComponent {
     if (cards.length === 0) return;
 
     const filteredCards = filterCards(
-      this.digimonCardStore.cards(),
+      this.digimonCardStore.poolCards(),
       { ...this.saveStore.save(), collection: this.inputCollection },
       this.filterStore.filter(),
       this.websiteStore.sort(),

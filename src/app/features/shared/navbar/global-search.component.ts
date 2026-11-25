@@ -72,7 +72,7 @@ export class GlobalSearchComponent {
     if (q.length < 2) return [];
     const seen = new Set<string>();
     const found: DigimonCard[] = [];
-    for (const card of this.digimonCardStore.cards()) {
+    for (const card of this.digimonCardStore.poolCards()) {
       if (seen.has(card.cardNumber)) continue;
       if (card.cardNumber.toLowerCase().includes(q) || card.name.english.toLowerCase().includes(q)) {
         seen.add(card.cardNumber);

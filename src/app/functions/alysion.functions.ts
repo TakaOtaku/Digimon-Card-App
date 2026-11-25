@@ -16,7 +16,7 @@ export function isAlysionSet(set: string): boolean {
 // Alysion's own cards with every print; reused paper cards only as their base print
 export function isInAlysionPool(card: Pick<DigimonCard, 'id' | 'cardNumber'>): boolean {
   const set = setOf(card.cardNumber);
-  return ALYSION_ONLY_SET.test(set) || (ALYSION_REUSED_SETS.includes(set) && !card.id.includes('_P'));
+  return ALYSION_ONLY_SET.test(set) || (ALYSION_REUSED_SETS.includes(set) && card.id === card.cardNumber);
 }
 
 export function restrictionFor(card: DigimonCard, format: DeckFormat): string {
