@@ -118,6 +118,15 @@ describe('highlightKeywords', () => {
     expect(highlightKeywords('He said “hello” twice')).toBe('He said <em>“hello”</em> twice');
   });
 
+  it('italicises complete token descriptions with nested parentheses and highlighted keywords', () => {
+    expect(highlightKeywords('Token (Digimon/Red/＜Decoy (Black)＞ [Your Turn] <script>) then draw.')).toBe(
+      'Token <em>(Digimon/<span class="kc kc-red">Red</span>/<span class="kw kw-angle">＜Decoy (Black)＞</span> <span class="kw kw-bracket">[Your Turn]</span> &lt;script&gt;)</em> then draw.',
+    );
+    expect(highlightKeywords('"(Digimon/Red/6000 DP)"')).toBe('<em>"(Digimon/<span class="kc kc-red">Red</span>/6000 DP)"</em>');
+    expect(highlightKeywords('(Digimon/Red')).toBe('(Digimon/<span class="kc kc-red">Red</span>');
+    expect(highlightKeywords('(ordinary text)')).toBe('(ordinary text)');
+  });
+
   it('leaves plain text alone', () => {
     expect(highlightKeywords('Gain 1 memory.')).toBe('Gain 1 memory.');
   });

@@ -6,7 +6,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { DragDropModule } from 'primeng/dragdrop';
 import { first } from 'rxjs';
-import { DeckColorMap, DRAG, IDeck, IDeckCard, IDraggedCard, ISave } from '@models';
+import { DeckColorMap, DRAG, ICountCard, IDeck, IDeckCard, IDraggedCard, ISave } from '@models';
 import { colorSort, compareIDs, DeckCardGroup, deckGroups, levelSort, setColors, setTags } from '@functions';
 import { ImgFallbackDirective } from '@directives';
 import { MongoBackendService } from '@services';
@@ -327,14 +327,23 @@ export class DeckViewComponent {
    * Update the Cards, Title and Description of the Deck
    */
   mapToDeck() {
-    const cards = this.mainDeck.map((card) => ({
-      id: card.id,
-      count: card.count,
-    }));
-    const sideDeck = this.sideDeck.map((card) => ({
-      id: card.id,
-      count: card.count,
-    }));
+    // Keep unavailable cards that cannot be displayed or removed in the editor.
+    const unavailable = (cards: ICountCard[]) =>
+      cards.filter((card) => !this.digimonCardStore.cards().some((known) => compareIDs(known.id, card.id)));
+    const cards = [
+      ...unavailable(this.deck().cards),
+      ...this.mainDeck.map((card) => ({
+        id: card.id,
+        count: card.count,
+      })),
+    ];
+    const sideDeck = [
+      ...unavailable(this.deck().sideDeck ?? []),
+      ...this.sideDeck.map((card) => ({
+        id: card.id,
+        count: card.count,
+      })),
+    ];
 
     const tags = setTags(this.deck(), this.digimonCardStore.cards());
     const selectedColor = setColors(this.deck(), this.digimonCardStore.cards());

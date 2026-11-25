@@ -625,15 +625,35 @@ export function highlightKeywords(rawEffect: string): string {
   }
   matches.sort((x, y) => x.start - y.start);
 
-  // Quote boundaries inside a keyword are ignored, so a badge is never cut in two
+  // Boundaries inside a keyword are ignored, so a badge is never cut in two
   const inside = (pos: number) => matches.some((m) => pos > m.start && pos < m.end);
+  const italicRanges: { start: number; end: number }[] = [];
+  for (const q of effect.matchAll(QUOTES)) {
+    italicRanges.push({ start: q.index!, end: q.index! + q[0].length });
+  }
+  for (let start = effect.indexOf('(Digimon/'); start !== -1; start = effect.indexOf('(Digimon/', start + 1)) {
+    let depth = 0;
+    for (let end = start; end < effect.length; end++) {
+      if (effect[end] === '(') depth++;
+      if (effect[end] === ')' && --depth === 0) {
+        italicRanges.push({ start, end: end + 1 });
+        start = end;
+        break;
+      }
+    }
+  }
+  const mergedRanges: { start: number; end: number }[] = [];
+  for (const range of italicRanges.sort((a, b) => a.start - b.start || b.end - a.end)) {
+    if (inside(range.start) || inside(range.end)) continue;
+    const previous = mergedRanges[mergedRanges.length - 1];
+    if (previous && range.start < previous.end) previous.end = Math.max(previous.end, range.end);
+    else mergedRanges.push({ ...range });
+  }
   const quoteStarts = new Set<number>();
   const quoteEnds = new Set<number>();
-  for (const q of effect.matchAll(QUOTES)) {
-    if (!inside(q.index!) && !inside(q.index! + q[0].length)) {
-      quoteStarts.add(q.index!);
-      quoteEnds.add(q.index! + q[0].length);
-    }
+  for (const range of mergedRanges) {
+    quoteStarts.add(range.start);
+    quoteEnds.add(range.end);
   }
   const cuts = [...new Set([0, effect.length, ...matches.flatMap((m) => [m.start, m.end]), ...quoteStarts, ...quoteEnds])].sort((x, y) => x - y);
 

@@ -21,7 +21,7 @@ export async function setupDigimonCards(cardset: CARDSET): Promise<DigimonCard[]
     throw new Error(`Loading ${file} failed: ${response.status}`);
   }
   const cards: DigimonCard[] = await response.json();
-  return cards.filter((card) => card.name.japanese && card.name.japanese.trim() !== '').map(withCdnImage);
+  return cards.filter((card) => card.cardNumber !== 'ST25-15' && card.name.japanese && card.name.japanese.trim() !== '').map(withCdnImage);
 }
 
 export function setupDigimonCardMap(cards: DigimonCard[]): Map<string, DigimonCard> {

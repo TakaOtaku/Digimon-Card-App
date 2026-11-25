@@ -16,6 +16,27 @@ import WikiVariables as WV
 def sort_key(card):
   return card["_id"]
 
+def token_description_ranges(text):
+  ranges = []
+  start = 0
+  while True:
+    start = text.find('(Digimon/', start)
+    if start == -1:
+      break
+    depth = 0
+    for index in range(start, len(text)):
+      if text[index] == '(':
+        depth += 1
+      elif text[index] == ')':
+        depth -= 1
+        if depth == 0:
+          ranges.append((start, index + 1))
+          start = index + 1
+          break
+    else:
+      break
+  return ranges
+
 def replace_string_in_json(search_string, replaceString):
   # Open the JSON file and load its contents
   with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
@@ -28,6 +49,13 @@ def replace_string_in_json(search_string, replaceString):
     elif isinstance(obj, list):
       return [replace_string(item) for item in obj]
     elif isinstance(obj, str):
+      if ('\n' in replaceString or search_string == '\n') and search_string in obj and '(Digimon/' in obj:
+        ranges = token_description_ranges(obj)
+        return re.sub(
+          re.escape(search_string),
+          lambda match: match.group() if any(start <= match.start() and match.end() <= end for start, end in ranges) else replaceString,
+          obj,
+        )
       return obj.replace(search_string, replaceString)
     else:
       return obj

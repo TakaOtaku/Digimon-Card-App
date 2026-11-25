@@ -66,6 +66,8 @@ def prepareCards():
     data = json.load(file)
 
     for card in data:
+      if card.get("cardNumber") == "ST25-15":
+        continue
       preparedCardsENG.append(card)
 
       a = deepcopy(card)
