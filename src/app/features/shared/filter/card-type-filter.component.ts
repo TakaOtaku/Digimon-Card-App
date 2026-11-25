@@ -11,6 +11,7 @@ import { MultiButtonsComponent } from '../multi-buttons.component';
       [buttonArray]="cardTypeButtons"
       [value]="cardTypeFilter"
       [perRow]="4"
+      [compact]="true"
       title="Card-Types"></digimon-multi-buttons>
   `,
   standalone: true,

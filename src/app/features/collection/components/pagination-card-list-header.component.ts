@@ -34,6 +34,8 @@ import { CardMarketService } from '../../../services/card-market.service';
       <div class="flex flex-row items-center justify-center gap-2">
         <ng-content select="[headerEnd]"></ng-content>
         <button
+          type="button"
+          aria-label="Filter"
           [ngClass]="{ 'xl:hidden': !filterButton }"
           (click)="closeFilterSidebox()"
           class="flex flex-row sm:justify-center min-w-auto primary-background h-8 w-8 sm:w-24 rounded p-2 text-xs font-semibold text-fg">

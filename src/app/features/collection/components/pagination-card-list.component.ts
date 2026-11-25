@@ -78,8 +78,12 @@ import { CardMarketService } from '../../../services/card-market.service';
 
     <digimon-filter-side-box *ngIf="showFilterBox()" [hideCollectionFilter]="hideCollectionFilter" class="hidden xl:flex"></digimon-filter-side-box>
 
+    <!-- Explicitly remove the modal mask when closing; PrimeNG can leave it intercepting clicks. -->
     <p-drawer
+      #filterDrawer
       [(visible)]="filterBox"
+      ariaCloseLabel="Close filters"
+      (onHide)="filterDrawer.destroyModal()"
       dismissible="false"
       position="right"
       styleClass="w-[20rem] md:w-[24rem] overflow-x-hidden overflow-y-auto p-0 border-none">

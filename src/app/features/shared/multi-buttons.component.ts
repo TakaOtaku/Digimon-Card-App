@@ -20,7 +20,10 @@ export interface MultiButtons {
           *ngFor="let button of buttonArray"
           [attr.aria-pressed]="value.includes(button.value)"
           [ngClass]="value.includes(button.value) ? 'border-accent bg-ink-2 text-accent' : 'border-line bg-ink-2 text-fg hover:border-muted'"
-          class="min-w-auto h-8 rounded-full border px-2 text-xs font-semibold">
+          [class.px-1]="compact"
+          [class.px-2]="!compact"
+          [class.whitespace-nowrap]="compact"
+          class="min-w-auto h-8 rounded-full border text-xs font-semibold">
           {{ button.name }}
         </button>
       </div>
@@ -34,6 +37,7 @@ export class MultiButtonsComponent implements OnInit {
   @Input() buttonArray!: MultiButtons[];
   @Input() value: any;
   @Input() perRow: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 10 = 3;
+  @Input() compact = false;
   @Output() clickEvent = new EventEmitter<any>();
 
   grid = 'grid-cols-3';

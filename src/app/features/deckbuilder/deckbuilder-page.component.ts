@@ -52,7 +52,6 @@ import { DeckViewComponent } from './components/deck-view.component';
           </button>
         </digimon-pagination-card-list>
 
-
         @if (statsDisplay && deckView) {
           <digimon-deck-stats class="fixed left-0 z-[300] hidden lg:block xl:hidden" [collectionView]="collectionView" [hideable]="true" (hide)="statsDisplay = false"></digimon-deck-stats>
         }
@@ -86,7 +85,15 @@ import { DeckViewComponent } from './components/deck-view.component';
   `,
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, NgIf, DeckViewComponent, DeckStatsComponent, AsyncPipe, PaginationCardListComponent, PageComponent],
+  imports: [
+    NgClass,
+    NgIf,
+    DeckViewComponent,
+    DeckStatsComponent,
+    AsyncPipe,
+    PaginationCardListComponent,
+    PageComponent,
+  ],
 })
 export class DeckbuilderPageComponent implements OnInit {
   private seo = inject(SeoService);
@@ -102,7 +109,6 @@ export class DeckbuilderPageComponent implements OnInit {
   deckView = true;
 
   statsDisplay = true;
-
   checkUrl$ = this.route.params.pipe(
     filter((params) => !!params['id'] || (!!params['userId'] && !!params['deckId'])),
     switchMap((params) => {
