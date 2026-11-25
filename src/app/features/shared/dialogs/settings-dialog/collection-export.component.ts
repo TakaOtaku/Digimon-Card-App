@@ -177,10 +177,10 @@ export class CollectionExportComponent {
   }
 
   private setupAllCards(): DigimonCard[] {
-    let setFiltered: DigimonCard[] = this.sets.length === 0 ? this.digimonCardStore.poolCards() : [];
+    let setFiltered: DigimonCard[] = this.sets.length === 0 ? this.digimonCardStore.cards() : [];
     this.sets.forEach((filter) => {
       setFiltered = [
-        ...new Set([...setFiltered, ...this.digimonCardStore.poolCards().filter((cards) => cards['id'].split('-')[0] === filter)]),
+        ...new Set([...setFiltered, ...this.digimonCardStore.cards().filter((cards) => cards['id'].split('-')[0] === filter)]),
       ];
     });
 

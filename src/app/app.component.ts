@@ -1,3 +1,4 @@
+import { onlyModeChanged } from './functions/alysion.functions';
 import { AlysionModeService } from './services/alysion-mode.service';
 import { ChangeDetectionStrategy, Component, effect, inject, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -5,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
 import { filterCards } from '@functions';
 import { AdvancedSearchService } from './services/advanced-search.service';
 import { CardMarketService } from './services/card-market.service';
-import { CARDSET, emptyFilter, emptySave, IFilter, ISettings, PriceMetric } from '@models';
+import { CARDSET, emptyFilter, emptySave, ISettings, PriceMetric } from '@models';
 import { AuthService, MongoBackendService, SeoService } from '@services';
 import { DigimonCardStore, FilterStore, SaveStore, WebsiteStore } from '@store';
 import { BlockUIModule } from 'primeng/blockui';
@@ -113,8 +114,9 @@ export class AppComponent {
       this.updateDatabase();
 
       if (this.settings === null || this.settings !== this.saveStore.settings()) {
+        const modeSwitch = onlyModeChanged(this.settings, this.saveStore.settings());
         this.alysionMode.syncFromSave();
-        this.setAdvancedSettings();
+        if (!modeSwitch) this.setAdvancedSettings();
         this.settings = this.saveStore.settings();
       }
 
@@ -192,8 +194,6 @@ export class AppComponent {
 
     const ALL_CARD_VERSIONS = Object.values(CARD_VERSION_MAPPING);
 
-    let filter: IFilter = this.filterStore.filter();
-
     let newVersionFilter: string[] = [...ALL_CARD_VERSIONS];
 
     for (const [settingKey, cardVersion] of Object.entries(CARD_VERSION_MAPPING)) {
@@ -205,9 +205,7 @@ export class AppComponent {
       }
     }
 
-    filter = { ...filter, versionFilter: newVersionFilter };
-
-    this.filterStore.updateFilter(filter);
+    this.filterStore.updateVersionDefaults(newVersionFilter);
   }
 
   private setDigimonCardSet(): void {

@@ -48,7 +48,10 @@ export class AlysionModeService {
       if (first && deck.cards.length > 0 && deckFormat(deck) !== saved) {
         this.setMode(deckFormat(deck));
       } else {
+        // The first sync is the page loading, not a switch: keep the search a shared link brought along
+        const search = this.filterStore.advancedSearch();
         this.apply(saved);
+        if (first) this.filterStore.updateAdvancedSearch(search);
       }
     });
   }

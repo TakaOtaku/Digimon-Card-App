@@ -32,6 +32,13 @@ export const FilterStore = signalStore(
   })),
 
   withMethods((store) => ({
+    // The version settings are global, so they reset the version choice of both modes
+    updateVersionDefaults(versionFilter: string[]): void {
+      patchState(store, (state) => ({
+        filter: { ...state.filter, versionFilter },
+        otherFilter: { ...state.otherFilter, versionFilter },
+      }));
+    },
     switchFormat(format: DeckFormat): void {
       if (store.format() === format) return;
       patchState(store, (state) => ({ format, filter: state.otherFilter, otherFilter: state.filter, advancedSearch: null }));

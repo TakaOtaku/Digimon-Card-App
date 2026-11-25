@@ -1,12 +1,20 @@
 import { ALYSION_RESTRICTED, ALYSION_REUSED_SETS } from '../../models/data/alysion.data';
 import { DeckFormat } from '../../models/interfaces/deck.interface';
 import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
+import { ISettings } from '../../models/interfaces/settings.interface';
 
 const ALYSION_ONLY_SET = /^(BD|ED|SD)\d+$/;
 const setOf = (cardNumber: string) => cardNumber.split('-')[0];
 
 export function deckFormat(deck: { format?: DeckFormat }): DeckFormat {
   return deck.format ?? 'paper';
+}
+
+/** True when the Alysion switch is the only difference, so settings-derived filters must stay as they are. */
+export function onlyModeChanged(before: ISettings | null, after: ISettings): boolean {
+  if (!before) return false;
+  const rest = (settings: ISettings) => JSON.stringify({ ...settings, alysionMode: undefined });
+  return rest(before) === rest(after);
 }
 
 export function isAlysionSet(set: string): boolean {
