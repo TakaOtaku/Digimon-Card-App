@@ -106,21 +106,23 @@ import { PageComponent } from '../shared/page.component';
                 <h2 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Level curve</h2>
                 <digimon-chart-containers [deck]="cards()"></digimon-chart-containers>
               </section>
-              <section class="flex flex-col gap-2 rounded-xl border border-line bg-ink-1 p-4">
-                <h2 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Your collection</h2>
-                <div class="flex items-baseline gap-2">
-                  <span class="font-mono text-2xl font-semibold text-fg">{{ ownedCount() }}/{{ totalCount() }}</span>
-                  <span class="text-sm text-muted">cards owned</span>
-                </div>
-                <div class="h-2 overflow-hidden rounded bg-line">
-                  <div class="h-full bg-green-500" [style.width.%]="totalCount() ? (ownedCount() / totalCount()) * 100 : 0"></div>
-                </div>
-                @if (missingList()) {
-                  <button type="button" (click)="copy(missingList(), 'Missing cards copied')" class="h-10 rounded-lg border border-line bg-ink-2 text-sm text-fg hover:border-accent">
-                    Copy missing list
-                  </button>
-                }
-              </section>
+              @if (!saveStore.alysionMode()) {
+                <section class="flex flex-col gap-2 rounded-xl border border-line bg-ink-1 p-4">
+                  <h2 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Your collection</h2>
+                  <div class="flex items-baseline gap-2">
+                    <span class="font-mono text-2xl font-semibold text-fg">{{ ownedCount() }}/{{ totalCount() }}</span>
+                    <span class="text-sm text-muted">cards owned</span>
+                  </div>
+                  <div class="h-2 overflow-hidden rounded bg-line">
+                    <div class="h-full bg-green-500" [style.width.%]="totalCount() ? (ownedCount() / totalCount()) * 100 : 0"></div>
+                  </div>
+                  @if (missingList()) {
+                    <button type="button" (click)="copy(missingList(), 'Missing cards copied')" class="h-10 rounded-lg border border-line bg-ink-2 text-sm text-fg hover:border-accent">
+                      Copy missing list
+                    </button>
+                  }
+                </section>
+              }
               <section class="flex flex-col gap-1 rounded-xl border border-line bg-ink-1 p-4">
                 <h2 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Price estimate</h2>
                 <span class="font-mono text-2xl font-semibold text-fg">{{ price() ? (price() | currency: 'EUR') : '—' }}</span>
@@ -179,7 +181,10 @@ export class DeckPageComponent {
     return isNaN(time) ? null : new Date(time);
   });
 
-  private missing = computed(() => new Map(missingCards(this.cards(), this.saveStore.collection()).map((m) => [m.card.id, m.need])));
+  // Alysion decks show no owned or missing counts
+  private missing = computed(
+    () => new Map(this.saveStore.alysionMode() ? [] : missingCards(this.cards(), this.saveStore.collection()).map((m) => [m.card.id, m.need])),
+  );
   need = (card: IDeckCard) => this.missing().get(card.id) ?? 0;
   ownedCount = computed(() => this.cards().reduce((sum, c) => sum + c.count - this.need(c), 0));
 

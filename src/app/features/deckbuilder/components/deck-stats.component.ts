@@ -57,17 +57,17 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
           </ul>
         </section>
         @if (!saveStore.alysionMode()) {
-        <section class="flex flex-col gap-2">
-          <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Collection</h3>
-          @if (missing().length) {
-            <span class="text-sm text-fg">Missing {{ missingTotal() }} cards for this deck.</span>
-            <button type="button" (click)="copyMissing()" class="h-10 rounded-lg border border-line bg-ink-2 text-sm font-semibold text-fg hover:border-accent">
-              Copy missing list
-            </button>
-          } @else {
-            <span class="text-sm text-fg">You own every card in this deck.</span>
-          }
-        </section>
+          <section class="flex flex-col gap-2">
+            <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Collection</h3>
+            @if (missing().length) {
+              <span class="text-sm text-fg">Missing {{ missingTotal() }} cards for this deck.</span>
+              <button type="button" (click)="copyMissing()" class="h-10 rounded-lg border border-line bg-ink-2 text-sm font-semibold text-fg hover:border-accent">
+                Copy missing list
+              </button>
+            } @else {
+              <span class="text-sm text-fg">You own every card in this deck.</span>
+            }
+          </section>
         }
         <section class="flex flex-col gap-1">
           <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Price estimate</h3>

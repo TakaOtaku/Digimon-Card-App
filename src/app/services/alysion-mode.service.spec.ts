@@ -34,7 +34,8 @@ describe('AlysionModeService', () => {
   });
 
   it('treats settings without alysionMode as paper', () => {
-    const { alysionMode, ...old } = emptySave.settings;
+    const old = { ...emptySave.settings };
+    delete old.alysionMode;
     save.updateSettings(old);
     service.syncFromSave();
     expect(service.mode()).toBe('paper');

@@ -7,7 +7,9 @@ const raw = (id: string) => ({ id, cardNumber: id, cardImage: '', name: { japane
 describe('DigimonCardStore', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    jest.spyOn(globalThis, 'fetch').mockImplementation(async () => ({ ok: true, json: async () => [raw('BT1-010'), raw('BT5-001'), raw('BD01-02')] }) as Response);
+    jest
+      .spyOn(globalThis, 'fetch')
+      .mockImplementation(async () => ({ ok: true, json: async () => [raw('BT1-010'), raw('BT5-001'), raw('BD01-02')] }) as Response);
   });
   afterEach(() => jest.restoreAllMocks());
 

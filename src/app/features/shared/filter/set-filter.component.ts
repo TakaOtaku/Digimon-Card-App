@@ -41,7 +41,9 @@ export class SetFilterComponent {
   // Paper hides the Alysion products, Alysion offers only the sets in its pool
   groupedSets = computed(() => {
     if (this.cardStore.format() === 'paper') return GroupedSets.filter((group) => !('value' in group && group.value === 'alysion'));
-    return GroupedSets.map((group) => ({ ...group, items: group.items.filter((item) => isAlysionSet(item.value)) })).filter((group) => group.items.length > 0);
+    return GroupedSets.map((group) => ({ ...group, items: group.items.filter((item) => isAlysionSet(item.value)) })).filter(
+      (group) => group.items.length > 0,
+    );
   });
 
   filterChange = effect(() => {

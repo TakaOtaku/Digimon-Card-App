@@ -104,13 +104,13 @@ const PAPER_ONLY = ['/collection', '/rulings', '/products'];
         </li>
 
         @if (!saveStore.alysionMode()) {
-        <li
-          class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-          [ngClass]="getNavigationBorder('/collection')"
-          (click)="router.navigateByUrl('/collection')">
-          <i class="pi pi-folder group-hover:text-accent" style="font-size: 1.5rem"></i>
-          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Collection</button>
-        </li>
+          <li
+            class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+            [ngClass]="getNavigationBorder('/collection')"
+            (click)="router.navigateByUrl('/collection')">
+            <i class="pi pi-folder group-hover:text-accent" style="font-size: 1.5rem"></i>
+            <button style="font-size:smaller" class="p-2 group-hover:text-accent">Collection</button>
+          </li>
         }
 
         <li
@@ -130,23 +130,23 @@ const PAPER_ONLY = ['/collection', '/rulings', '/products'];
         </li>
 
         @if (!saveStore.alysionMode()) {
-        <li
-          class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-          [ngClass]="getNavigationBorder('/rulings')"
-          (click)="router.navigateByUrl('/rulings')">
-          <i class="pi pi-question-circle group-hover:text-accent" style="font-size: 1.5rem"></i>
-          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Rulings</button>
-        </li>
+          <li
+            class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+            [ngClass]="getNavigationBorder('/rulings')"
+            (click)="router.navigateByUrl('/rulings')">
+            <i class="pi pi-question-circle group-hover:text-accent" style="font-size: 1.5rem"></i>
+            <button style="font-size:smaller" class="p-2 group-hover:text-accent">Rulings</button>
+          </li>
         }
 
         @if (!saveStore.alysionMode()) {
-        <li
-          class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
-          [ngClass]="getNavigationBorder('/products')"
-          (click)="router.navigateByUrl('/products')">
-          <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
-          <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
-        </li>
+          <li
+            class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
+            [ngClass]="getNavigationBorder('/products')"
+            (click)="router.navigateByUrl('/products')">
+            <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
+            <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
+          </li>
         }
           <li
             class="flex xl:hidden flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"

@@ -26,19 +26,30 @@ describe('paper-only pages', () => {
         { provide: DialogStore, useValue: {} },
         { provide: MongoBackendService, useValue: { getDecksPaginated: () => ({ pipe: () => undefined }) } },
         { provide: Location, useValue: { path: () => path } },
-        { provide: Router, useValue: { events: { pipe: () => ({ subscribe: () => undefined }) }, navigateByUrl, createUrlTree: (c: string[]) => c.join('') as unknown as UrlTree } },
+        {
+          provide: Router,
+          useValue: {
+            events: { pipe: () => ({ subscribe: () => undefined }) },
+            navigateByUrl,
+            createUrlTree: (c: string[]) => c.join('') as unknown as UrlTree,
+          },
+        },
       ],
     });
   });
 
-  const alysion = (on: boolean) => TestBed.inject(SaveStore).updateSettings({ ...emptySave.settings, alysionMode: on, collectionMode: true });
+  const alysion = (on: boolean) =>
+    TestBed.inject(SaveStore).updateSettings({ ...emptySave.settings, alysionMode: on, collectionMode: true });
 
   it('drops their links from every menu in Alysion mode', () => {
     const links = TestBed.runInInjectionContext(() => new NavLinksComponent());
     const bar = TestBed.runInInjectionContext(() => new NavbarComponent()) as any;
     const urls = () => [
       ...links.sheetLinks().map((l) => l.url),
-      ...links.moreItems().map((i) => i.routerLink).filter(Boolean),
+      ...links
+        .moreItems()
+        .map((i) => i.routerLink)
+        .filter(Boolean),
       ...bar.mobileLinks().map((l: { url: string }) => l.url),
     ];
 
