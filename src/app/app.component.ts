@@ -1,3 +1,4 @@
+import { AlysionModeService } from './services/alysion-mode.service';
 import { ChangeDetectionStrategy, Component, effect, inject, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -76,6 +77,8 @@ export class AppComponent {
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   saveLoaded = signal(!this.isBrowser);
 
+  private alysionMode = inject(AlysionModeService);
+
   sideNav = false;
 
   cardSet = '';
@@ -110,6 +113,7 @@ export class AppComponent {
       this.updateDatabase();
 
       if (this.settings === null || this.settings !== this.saveStore.settings()) {
+        this.alysionMode.syncFromSave();
         this.setAdvancedSettings();
         this.settings = this.saveStore.settings();
       }

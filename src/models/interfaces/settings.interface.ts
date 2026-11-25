@@ -1,4 +1,5 @@
 export interface ISettings {
+  alysionMode?: boolean; // Show DIGIMON ALYSION cards and decks ---- default = false
   cardSet: string; // English/Japanese/Both/Overwrite ---- default = Overwrite
 
   collectionMode: boolean; // Do you want to show cardCount for the Collection ---- default = true

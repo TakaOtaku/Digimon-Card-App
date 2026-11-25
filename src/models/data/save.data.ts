@@ -2,6 +2,7 @@ import { CARDSET, PriceMetric } from '../enums';
 import { ISave, ISettings } from '../interfaces';
 
 export const emptySettings: ISettings = {
+  alysionMode: false,
   cardSet: CARDSET.English,
   collectionMode: false,
   collectionSets: [],

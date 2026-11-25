@@ -29,7 +29,8 @@ export const SaveStore = signalStore(
     playsetTracking: computed(() => save.settings().playsetTracking),
     unlimitedCollectionMinimum: computed(() => save.settings().unlimitedCollectionMinimum),
     displaySideDeck: computed(() => save.settings().displaySideDeck),
-    showPrices: computed(() => save.settings().showPrices ?? false),
+    // Paper market prices mean nothing for Alysion cards
+    showPrices: computed(() => (save.settings().showPrices ?? false) && !save.settings().alysionMode),
     collection: computed(() => save.collection()),
     decks: computed(() => save.decks()),
   })),

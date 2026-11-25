@@ -1,15 +1,19 @@
 import { computed } from '@angular/core';
 import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
-import { emptyFilter, IFilter } from '../../models';
+import { DeckFormat, emptyFilter, IFilter } from '../../models';
 
 type FilterStore = {
   filter: IFilter;
   advancedSearch: string | null;
+  format: DeckFormat;
+  otherFilter: IFilter; // the filter of the mode that is not shown
 };
 
 const initialState: FilterStore = {
   filter: emptyFilter,
   advancedSearch: null,
+  format: 'paper',
+  otherFilter: emptyFilter,
 };
 
 export const FilterStore = signalStore(
@@ -28,6 +32,10 @@ export const FilterStore = signalStore(
   })),
 
   withMethods((store) => ({
+    switchFormat(format: DeckFormat): void {
+      if (store.format() === format) return;
+      patchState(store, (state) => ({ format, filter: state.otherFilter, otherFilter: state.filter, advancedSearch: null }));
+    },
     updateFilter(filter: IFilter): void {
       patchState(store, (state) => ({ filter }));
     },

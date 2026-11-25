@@ -3,7 +3,8 @@ import { tapResponse } from '@ngrx/operators';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { distinctUntilChanged, filter as rxFilter, first, pipe, switchMap } from 'rxjs';
-import { DRAG, dummyCard, emptyDeck, IBlog, IDeck, IDraggedCard, ISort } from '../../models';
+import * as uuid from 'uuid';
+import { DeckFormat, DRAG, dummyCard, emptyDeck, IBlog, IDeck, IDraggedCard, ISort } from '../../models';
 import { checkSpecialCardCounts } from '../functions';
 import { MongoBackendService, IDeckFilter, IPaginationResponse } from '../services/mongo-backend.service';
 import { ProductCM } from '../services/card-market.service';
@@ -19,6 +20,8 @@ interface IPaginationState {
 
 type Website = {
   deck: IDeck;
+  format: DeckFormat;
+  otherDraft: IDeck | null; // the builder draft of the mode that is not shown
   mobileCollectionView: boolean;
   pendingCardForDeck: string;
   sort: ISort;
@@ -34,6 +37,8 @@ type Website = {
 
 const initialState: Website = {
   deck: JSON.parse(JSON.stringify(emptyDeck)),
+  format: 'paper',
+  otherDraft: null,
   mobileCollectionView: false,
   pendingCardForDeck: '',
   sort: {
@@ -61,6 +66,7 @@ const initialState: Website = {
   decksFilter: {
     page: 1,
     limit: 20,
+    format: 'paper',
   },
   isLoadingDecks: false,
   priceGuideCM: [],
@@ -222,7 +228,17 @@ export const WebsiteStore = signalStore(
     },
 
     createNewDeck(id: string): void {
-      patchState(store, (state) => ({ deck: { ...emptyDeck, id } }));
+      patchState(store, (state) => ({ deck: { ...emptyDeck, id, format: state.format } }));
+    },
+
+    switchFormat(format: DeckFormat): void {
+      if (store.format() === format) return;
+      patchState(store, (state) => ({
+        format,
+        deck: state.otherDraft ?? { ...emptyDeck, id: uuid.v4(), format },
+        otherDraft: state.deck,
+        decksFilter: { ...state.decksFilter, format, page: 1, cardSet: '' },
+      }));
     },
 
     addCardToDeck(cardToAdd: string): void {

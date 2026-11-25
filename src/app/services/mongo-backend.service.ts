@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, map, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, IUser } from '@models';
+import { DeckFormat, DigimonCard, IColor, ICountCard, IDeck, ISave, ISettings, IUser } from '@models';
 import { CARDSET, IBlog, IBlogWithText, ITag } from '@models';
 import { sortByReleaseOrder } from '@models';
 import { emptySettings } from '@models';
@@ -36,6 +36,7 @@ export interface IDeckFilter {
     tags?: string[];
     search?: string;
     cardSet?: string;
+    format?: DeckFormat;
 }
 
 /**

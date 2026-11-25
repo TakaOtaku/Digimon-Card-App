@@ -1,9 +1,10 @@
+import { AlysionModeService } from '../../../services/alysion-mode.service';
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { IDeck } from '@models';
 import { AuthService } from '@services';
-import { DialogStore, SaveStore, WebsiteStore } from '@store';
+import { DialogStore, SaveStore } from '@store';
 import { HomeMetaComponent } from './home-meta.component';
 
 @Component({
@@ -107,7 +108,7 @@ import { HomeMetaComponent } from './home-meta.component';
 })
 export class HomeIntroComponent {
   private saveStore = inject(SaveStore);
-  private websiteStore = inject(WebsiteStore);
+  private alysionMode = inject(AlysionModeService);
   private authService = inject(AuthService);
   private router = inject(Router);
   private dialogStore = inject(DialogStore);
@@ -146,7 +147,7 @@ export class HomeIntroComponent {
     if (this.authService.isLoggedIn) {
       this.router.navigateByUrl(`deckbuilder/user/${this.authService.currentUser()!.uid}/deck/${deck.id}`);
     } else {
-      this.websiteStore.updateDeck(deck);
+      this.alysionMode.openDeck(deck);
       this.router.navigateByUrl('deckbuilder');
     }
   }

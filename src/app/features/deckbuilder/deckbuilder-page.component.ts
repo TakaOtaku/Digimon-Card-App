@@ -1,3 +1,4 @@
+import { AlysionModeService } from '../../services/alysion-mode.service';
 import { SeoService } from '@services';
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
@@ -103,6 +104,7 @@ export class DeckbuilderPageComponent implements OnInit {
 
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
+  private alysionMode = inject(AlysionModeService);
 
   deckCount = () => this.websiteStore.deck().cards.reduce((n, c) => n + c.count, 0);
   collectionView = true;
@@ -135,7 +137,7 @@ export class DeckbuilderPageComponent implements OnInit {
       const sameUser = save.uid === this.authService.currentUser()?.uid;
 
       // Set a new UID if it is a new user, otherwise keep the old one
-      this.websiteStore.updateDeck({
+      this.alysionMode.openDeck({
         ...foundDeck,
         id: sameUser ? foundDeck.id : uuid.v4(),
       });

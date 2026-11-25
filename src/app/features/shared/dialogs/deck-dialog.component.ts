@@ -1,3 +1,4 @@
+import { AlysionModeService } from '../../../services/alysion-mode.service';
 import { NgIf } from '@angular/common';
 import { ChangeDetectorRef, Component, effect, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
@@ -143,6 +144,7 @@ export class DeckDialogComponent {
 
   saveStore = inject(SaveStore);
   websiteStore = inject(WebsiteStore);
+  private alysionMode = inject(AlysionModeService);
   dialogStore = inject(DialogStore);
   digimonCardStore = inject(DigimonCardStore);
 
@@ -205,7 +207,7 @@ export class DeckDialogComponent {
       if (this.authService.isLoggedIn) {
         this.router.navigateByUrl(`deckbuilder/user/${this.authService.currentUser().uid}/deck/${this.deck.id}`);
       } else {
-        this.websiteStore.updateDeck(this.deck);
+        this.alysionMode.openDeck(this.deck);
         this.router.navigateByUrl('deckbuilder');
       }
       this.dialogStore.showDeckDialog(false);
@@ -214,7 +216,7 @@ export class DeckDialogComponent {
         target: event.target ?? undefined,
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
-          this.websiteStore.updateDeck(this.deck);
+          this.alysionMode.openDeck(this.deck);
           this.router.navigateByUrl('/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id);
           this.dialogStore.showDeckDialog(false);
         },
