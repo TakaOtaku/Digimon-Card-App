@@ -85,6 +85,23 @@ describe('AlysionModeService', () => {
     expect(service.mode()).toBe('paper');
   });
 
+  it('opens a playable shared deck as an Alysion copy while in Alysion mode', () => {
+    service.setMode('alysion');
+    service.openSharedDeck(deck('shared-paper'));
+    expect(service.mode()).toBe('alysion');
+    expect(website.deck()).toEqual(expect.objectContaining({ id: 'shared-paper', format: 'alysion' }));
+  });
+
+  it('opens other shared decks in their own format', () => {
+    service.setMode('alysion');
+    service.openSharedDeck({ ...deck('newer'), cards: [{ id: 'BT24-001', count: 1 }] });
+    expect(service.mode()).toBe('paper');
+
+    service.openSharedDeck(deck('playable-but-in-paper-mode'));
+    expect(service.mode()).toBe('paper');
+    expect(website.deck().format).toBeUndefined();
+  });
+
   it('reloads the community decks for the new mode', () => {
     service.setMode('alysion');
     expect(getDecksPaginated).toHaveBeenLastCalledWith(expect.objectContaining({ format: 'alysion', page: 1 }));

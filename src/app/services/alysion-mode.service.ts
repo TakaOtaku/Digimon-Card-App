@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { inject, Injectable, untracked } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeckFormat, IDeck } from '../../models';
-import { deckFormat } from '../functions/alysion.functions';
+import { deckFormat, decksForMode } from '../functions/alysion.functions';
 import { DigimonCardStore } from '../store/digimon-card.store';
 import { FilterStore } from '../store/filter.store';
 import { SaveStore } from '../store/save.store';
@@ -35,6 +35,12 @@ export class AlysionModeService {
   openDeck(deck: IDeck): void {
     this.setMode(deckFormat(deck));
     this.websiteStore.updateDeck(deck);
+  }
+
+  /** Someone else's deck: browsed in Alysion and playable there, it stays in Alysion as a copy. */
+  openSharedDeck(deck: IDeck): void {
+    const playable = this.mode() === 'alysion' && decksForMode([deck], 'alysion').length > 0;
+    this.openDeck(playable ? { ...deck, format: 'alysion' } : deck);
   }
 
   /** Called when the saved settings load or change; untracked so a calling effect does not follow the deck. */

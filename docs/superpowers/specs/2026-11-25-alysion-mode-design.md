@@ -58,7 +58,7 @@ New cards missing from the app arrive through the existing pipeline (`scripts/py
 - **Decks:** `IDeck.format?: 'alysion'`. Absent means paper. A new or imported deck takes the current mode and keeps it.
 - **Builder:** checks follow the deck's format. Alysion decks use the Alysion restrictions and flag cards outside the pool. Size rules stay 50 main, 5 eggs, 4 copies.
 - **Switching with a deck open:** the builder keeps one draft per mode, so nothing is lost. Opening a saved deck switches the site to that deck's mode.
-- **Deck lists:** community decks, home top decks and profile decks show the current mode only. The admin pages show everything. In Alysion mode, community and top decks must also consist only of released Alysion cards (added 2026-11-26).
+- **Deck lists:** community decks, home top decks and profile decks show the current mode only. The admin pages show everything. In Alysion mode, community and top decks are every deck made only of released Alysion cards, older paper decks included (changed 2026-11-26); the backend filters by card id, and opening such a shared deck keeps Alysion mode and makes an Alysion copy.
 - **Tier list:** paper only; not shown in Alysion mode (added 2026-11-26).
 - **Sign-out state:** works without an account, as today.
 

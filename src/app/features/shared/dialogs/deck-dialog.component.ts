@@ -216,7 +216,7 @@ export class DeckDialogComponent {
         target: event.target ?? undefined,
         message: 'You are about to open this deck. Are you sure?',
         accept: () => {
-          this.alysionMode.openDeck(this.deck);
+          this.alysionMode.openSharedDeck(this.deck);
           this.router.navigateByUrl('/deckbuilder/user/' + this.deck.userId + '/deck/' + this.deck.id);
           this.dialogStore.showDeckDialog(false);
         },

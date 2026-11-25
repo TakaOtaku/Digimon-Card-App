@@ -137,10 +137,11 @@ export class DeckbuilderPageComponent implements OnInit {
       const sameUser = save.uid === this.authService.currentUser()?.uid;
 
       // Set a new UID if it is a new user, otherwise keep the old one
-      this.alysionMode.openDeck({
-        ...foundDeck,
-        id: sameUser ? foundDeck.id : uuid.v4(),
-      });
+      if (sameUser) {
+        this.alysionMode.openDeck(foundDeck);
+      } else {
+        this.alysionMode.openSharedDeck({ ...foundDeck, id: uuid.v4() });
+      }
     }),
     switchMap(() => of(true)),
   );
