@@ -1,3 +1,4 @@
+import { deckFormat } from '../../../functions/alysion.functions';
 import { AlysionModeService } from '../../../services/alysion-mode.service';
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
@@ -114,7 +115,7 @@ export class HomeIntroComponent {
   private dialogStore = inject(DialogStore);
 
   recentDecks = computed(() =>
-    [...(this.saveStore.decks() ?? [])].sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0)).slice(0, 3),
+    (this.saveStore.decks() ?? []).filter((deck) => deckFormat(deck) === this.alysionMode.mode()).sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0)).slice(0, 3),
   );
 
   actions = [

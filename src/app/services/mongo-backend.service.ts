@@ -7,7 +7,7 @@ import { CARDSET, IBlog, IBlogWithText, ITag } from '@models';
 import { sortByReleaseOrder } from '@models';
 import { emptySettings } from '@models';
 import { IUserAndDecks } from '@models';
-import { checkDeckErrors, setDeckImage } from '@functions';
+import { checkDeckErrors, deckFormat, setDeckImage } from '@functions';
 
 /**
  * Pagination response interface
@@ -73,8 +73,9 @@ export class MongoBackendService {
     /**
      * Get the most-liked decks (admin analytics)
      */
-    getTopDecks(limit = 10): Observable<IDeck[]> {
-        return this.http.get<any[]>(`${this.baseUrl}decks/top?limit=${limit}`).pipe(
+    getTopDecks(limit = 10, format?: DeckFormat): Observable<IDeck[]> {
+        const query = format ? `limit=${limit}&format=${format}` : `limit=${limit}`;
+        return this.http.get<any[]>(`${this.baseUrl}decks/top?${query}`).pipe(
             map((decks) => decks.map((deck) => this.parseDeckFromMongo(deck))),
         );
     }
@@ -105,6 +106,7 @@ export class MongoBackendService {
         if (filters.user) params.append('user', filters.user);
         if (filters.search) params.append('search', filters.search);
         if (filters.cardSet) params.append('cardSet', filters.cardSet);
+        if (filters.format) params.append('format', filters.format);
         if (filters.tags && filters.tags.length > 0) {
             params.append('tags', JSON.stringify(filters.tags));
         }
@@ -460,7 +462,8 @@ export class MongoBackendService {
             userId: deck.userId,
             imageCardId: deck.imageCardId,
             likes: deck.likes || [],
-            photoUrl: deck.photoUrl
+            photoUrl: deck.photoUrl,
+            format: deckFormat(deck)
         };
     }
 

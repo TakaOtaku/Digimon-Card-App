@@ -9,10 +9,12 @@ import {
   Input,
   OnChanges,
   OnInit,
+  signal,
   SimpleChanges
 } from '@angular/core';
 import { emptyDeck, ICountCard, IDeck, IUser } from '@models';
-import { DialogStore, SaveStore } from '@store';
+import { deckFormat } from '@functions';
+import { DialogStore, DigimonCardStore, SaveStore } from '@store';
 import { DialogModule } from 'primeng/dialog';
 import { PaginatorModule } from 'primeng/paginator';
 import { DeckContainerComponent } from '../../shared/deck-container.component';
@@ -69,7 +71,17 @@ import { DecksTableComponent } from './decks-table.component';
   imports: [NgFor, DeckContainerComponent, PaginatorModule, DecksTableComponent, DialogModule, RouterLink],
 })
 export class DecksComponent implements OnInit, OnChanges {
-  @Input() decks: IDeck[];
+  private allDecks = signal<IDeck[]>([]);
+  private cardStore = inject(DigimonCardStore);
+  private modeDecks = computed(() => this.allDecks().filter((deck) => deckFormat(deck) === this.cardStore.format()));
+
+  // Only the decks of the current mode are listed
+  @Input() set decks(value: IDeck[] | undefined) {
+    this.allDecks.set(value ?? []);
+  }
+  get decks(): IDeck[] {
+    return this.modeDecks();
+  }
   @Input() editable = true;
 
   saveStore = inject(SaveStore);
@@ -77,7 +89,11 @@ export class DecksComponent implements OnInit, OnChanges {
 
   row = 24;
 
-  decksToShow: IDeck[] = [];
+  get decksToShow(): IDeck[] {
+    // A mode switch can leave the paginator past the end of the shorter list
+    const start = this.first < this.decks.length ? this.first : 0;
+    return this.decks.slice(start, start ? this.row * (this.page + 1) : this.row);
+  }
 
   collection: ICountCard[];
   user: IUser;
@@ -90,16 +106,13 @@ export class DecksComponent implements OnInit, OnChanges {
   displayTables = computed(() => this.saveStore.settings().deckDisplayTable);
 
   ngOnInit() {
-    if (!this.decks) {
-      this.decks = [];
-    }
-
     this.checkScreenWidth(window.innerWidth);
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['decks']?.currentValue) {
-      this.decksToShow = changes['decks'].currentValue.slice(0, this.row);
+    if (changes['decks']) {
+      this.first = 0;
+      this.page = 0;
     }
   }
 
@@ -121,7 +134,6 @@ export class DecksComponent implements OnInit, OnChanges {
     } else {
       this.row = 6;
     }
-    this.decksToShow = this.decks.slice(0, this.row);
   }
 
   showDeckDialog(deck: IDeck) {
@@ -132,9 +144,8 @@ export class DecksComponent implements OnInit, OnChanges {
     });
   }
 
-  onPageChange(event: any, slice?: number) {
+  onPageChange(event: any) {
     this.first = event.first;
     this.page = event.page;
-    this.decksToShow = this.decks.slice(event.first, (slice ?? this.row) * (event.page + 1));
   }
 }

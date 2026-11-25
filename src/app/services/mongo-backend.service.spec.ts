@@ -37,6 +37,34 @@ describe('MongoBackendService', () => {
     req.flush({});
   });
 
+  it('asks for decks of one format', () => {
+    service.getDecksPaginated({ format: 'alysion' }).subscribe();
+    httpMock.expectOne((r) => r.url.includes('format=alysion')).flush([]);
+  });
+
+  it('asks for top decks of one format only when given', () => {
+    service.getTopDecks(4, 'paper').subscribe();
+    httpMock.expectOne(`${base}decks/top?limit=4&format=paper`).flush([]);
+    service.getTopDecks(10).subscribe();
+    httpMock.expectOne(`${base}decks/top?limit=10`).flush([]);
+  });
+
+  it('sends the format of a deck, paper when it has none', () => {
+    for (const [format, sent] of [['alysion', 'alysion'], [undefined, 'paper']]) {
+      service.updateDeck({ id: 'd', imageCardId: 'BT1-010', cards: [], format } as any, null, []).subscribe();
+      const req = httpMock.expectOne(`${base}decks/d`);
+      expect(req.request.body.format).toBe(sent);
+      req.flush({});
+    }
+  });
+
+  it('keeps the format of every deck in a save', () => {
+    service.updateSave({ uid: 'u', collection: [], settings: {}, decks: [{ id: 'a' }, { id: 'b', format: 'alysion' }] } as any).subscribe();
+    const req = httpMock.expectOne(`${base}users/u`);
+    expect(req.request.body.decks.map((d: any) => d.format)).toEqual([undefined, 'alysion']);
+    req.flush({});
+  });
+
   it('getBlogEntries requests the blogs endpoint', () => {
     service.getBlogEntries().subscribe();
     const req = httpMock.expectOne(`${base}blogs`);

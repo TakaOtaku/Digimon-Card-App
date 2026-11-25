@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { MessageService } from 'primeng/api';
+import { of } from 'rxjs';
 import { emptyDeck, emptySave, IDeck } from '../../models';
 import { FilterStore } from '../store/filter.store';
 import { SaveStore } from '../store/save.store';
@@ -11,6 +12,7 @@ import { MongoBackendService } from './mongo-backend.service';
 const deck = (id: string, format?: 'paper' | 'alysion'): IDeck => ({ ...emptyDeck, id, cards: [{ id: 'BT1-010', count: 1 }], format });
 
 describe('AlysionModeService', () => {
+  const getDecksPaginated = jest.fn(() => of({ data: [], pagination: {} }));
   let service: AlysionModeService;
   let save: InstanceType<typeof SaveStore>;
   let website: InstanceType<typeof WebsiteStore>;
@@ -22,7 +24,7 @@ describe('AlysionModeService', () => {
       providers: [
         { provide: MessageService, useValue: {} },
         { provide: AuthService, useValue: {} },
-        { provide: MongoBackendService, useValue: {} },
+        { provide: MongoBackendService, useValue: { getDecksPaginated } },
       ],
     });
     service = TestBed.inject(AlysionModeService);
@@ -80,6 +82,11 @@ describe('AlysionModeService', () => {
     withSettings({ alysionMode: false });
     service.syncFromSave();
     expect(service.mode()).toBe('paper');
+  });
+
+  it('reloads the community decks for the new mode', () => {
+    service.setMode('alysion');
+    expect(getDecksPaginated).toHaveBeenLastCalledWith(expect.objectContaining({ format: 'alysion', page: 1 }));
   });
 
   it('stamps new decks with the current format', () => {

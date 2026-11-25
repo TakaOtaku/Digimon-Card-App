@@ -239,6 +239,7 @@ export const WebsiteStore = signalStore(
         otherDraft: state.deck,
         decksFilter: { ...state.decksFilter, format, page: 1, cardSet: '' },
       }));
+      this.loadCommunityDecksWithFilter({});
     },
 
     addCardToDeck(cardToAdd: string): void {

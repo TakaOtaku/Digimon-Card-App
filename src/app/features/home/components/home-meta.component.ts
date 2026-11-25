@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { Database, get, ref } from '@angular/fire/database';
 import { Router, RouterLink } from '@angular/router';
 import { ImgFallbackDirective } from '@directives';
@@ -8,7 +8,7 @@ import { ensureCdnUrl } from '@functions';
 import { IDeck } from '@models';
 import { MongoBackendService } from '@services';
 import { DigimonCardStore, WebsiteStore } from '@store';
-import { catchError, of } from 'rxjs';
+import { catchError, of, switchMap } from 'rxjs';
 
 interface TierDeck {
   name: string;
@@ -88,7 +88,13 @@ export class HomeMetaComponent {
   private digimonCardStore = inject(DigimonCardStore);
 
   tiers = signal<{ tier: string; color: string; decks: TierDeck[] }[]>([]);
-  topDecks = toSignal(inject(MongoBackendService).getTopDecks(4).pipe(catchError(() => of([] as IDeck[]))), { initialValue: [] as IDeck[] });
+  private backend = inject(MongoBackendService);
+  topDecks = toSignal(
+    toObservable(this.digimonCardStore.format).pipe(
+      switchMap((format) => this.backend.getTopDecks(4, format).pipe(catchError(() => of([] as IDeck[])))),
+    ),
+    { initialValue: [] as IDeck[] },
+  );
   cdn = ensureCdnUrl;
 
   constructor() {

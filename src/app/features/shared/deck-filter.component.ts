@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, computed, inject, Input, Output, EventEmitter } from '@angular/core';
+import { isAlysionSet } from '../../functions/alysion.functions';
+import { DigimonCardStore } from '../../store/digimon-card.store';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -31,7 +33,7 @@ import { TAGS } from '@models';
         <!-- Sets Filter -->
         <div class="md:col-span-2">
           <p-select
-            [options]="setOptions"
+            [options]="setOptions()"
             [(ngModel)]="currentFilter.cardSet"
             optionLabel="label"
             optionValue="value"
@@ -79,11 +81,13 @@ export class DeckFilterComponent {
   currentFilter: IDeckFilter = {};
   private debounceTimer: any;
 
-  setOptions = [
-    { label: 'All Sets', value: '' },
-    ...TAGS.map(tag => ({ label: tag, value: tag })),
-    { label: 'P', value: 'P' },
-  ];
+  private cardStore = inject(DigimonCardStore);
+
+  setOptions = computed(() => {
+    const alysion = this.cardStore.format() === 'alysion';
+    const sets = alysion ? TAGS.filter(isAlysionSet) : [...TAGS, 'P'];
+    return [{ label: 'All Sets', value: '' }, ...sets.map((tag) => ({ label: tag, value: tag }))];
+  });
 
   ngOnInit() {
     this.currentFilter = {
