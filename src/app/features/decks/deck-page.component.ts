@@ -146,7 +146,7 @@ export class DeckPageComponent {
   private router = inject(Router);
   private backend = inject(MongoBackendService);
   private digimonCardStore = inject(DigimonCardStore);
-  private saveStore = inject(SaveStore);
+  saveStore = inject(SaveStore);
   private dialogStore = inject(DialogStore);
   private cardMarketService = inject(CardMarketService);
   private messageService = inject(MessageService);
