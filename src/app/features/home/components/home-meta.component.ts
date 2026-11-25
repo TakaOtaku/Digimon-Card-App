@@ -4,11 +4,11 @@ import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { Database, get, ref } from '@angular/fire/database';
 import { Router, RouterLink } from '@angular/router';
 import { ImgFallbackDirective } from '@directives';
-import { ensureCdnUrl } from '@functions';
+import { decksForMode, ensureCdnUrl } from '@functions';
 import { IDeck } from '@models';
 import { MongoBackendService } from '@services';
-import { DigimonCardStore, WebsiteStore } from '@store';
-import { catchError, of, switchMap } from 'rxjs';
+import { DigimonCardStore, SaveStore, WebsiteStore } from '@store';
+import { catchError, map, of, switchMap } from 'rxjs';
 
 interface TierDeck {
   name: string;
@@ -26,7 +26,7 @@ const TIERS = [
 @Component({
   selector: 'digimon-home-meta',
   template: `
-    @if (tiers().length) {
+    @if (tiers().length && !saveStore.alysionMode()) {
       <section class="flex flex-col gap-4">
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h2 class="m-0 font-display text-2xl font-semibold text-fg">Meta right now</h2>
@@ -83,6 +83,7 @@ const TIERS = [
 })
 export class HomeMetaComponent {
   private db = inject(Database);
+  saveStore = inject(SaveStore);
   private router = inject(Router);
   private websiteStore = inject(WebsiteStore);
   private digimonCardStore = inject(DigimonCardStore);
@@ -91,7 +92,12 @@ export class HomeMetaComponent {
   private backend = inject(MongoBackendService);
   topDecks = toSignal(
     toObservable(this.digimonCardStore.format).pipe(
-      switchMap((format) => this.backend.getTopDecks(4, format).pipe(catchError(() => of([] as IDeck[])))),
+      switchMap((format) =>
+        this.backend.getTopDecks(4, format).pipe(
+          map((decks) => decksForMode(decks, format)),
+          catchError(() => of([] as IDeck[])),
+        ),
+      ),
     ),
     { initialValue: [] as IDeck[] },
   );

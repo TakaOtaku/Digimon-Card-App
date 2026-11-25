@@ -6,6 +6,7 @@ import { distinctUntilChanged, filter as rxFilter, first, pipe, switchMap } from
 import * as uuid from 'uuid';
 import { DeckFormat, DRAG, dummyCard, emptyDeck, IBlog, IDeck, IDraggedCard, ISort } from '../../models';
 import { checkSpecialCardCounts } from '../functions';
+import { decksForMode } from '../functions/alysion.functions';
 import { MongoBackendService, IDeckFilter, IPaginationResponse } from '../services/mongo-backend.service';
 import { ProductCM } from '../services/card-market.service';
 
@@ -87,7 +88,7 @@ export const WebsiteStore = signalStore(
             tapResponse({
               next: (response: IPaginationResponse<IDeck>) => {
                 patchState(store, (state) => ({
-                  communityDecks: response.data,
+                  communityDecks: decksForMode(response.data, state.format),
                   decksPagination: response.pagination,
                   isLoadingDecks: false
                 }));
@@ -117,7 +118,7 @@ export const WebsiteStore = signalStore(
             tapResponse({
               next: (response: IPaginationResponse<IDeck>) => {
                 patchState(store, (state) => ({
-                  communityDecks: response.data,
+                  communityDecks: decksForMode(response.data, state.format),
                   decksPagination: response.pagination,
                   isLoadingDecks: false
                 }));
@@ -147,7 +148,7 @@ export const WebsiteStore = signalStore(
             tapResponse({
               next: (response: IPaginationResponse<IDeck>) => {
                 patchState(store, (state) => ({
-                  communityDecks: response.data,
+                  communityDecks: decksForMode(response.data, state.format),
                   decksPagination: response.pagination,
                   isLoadingDecks: false
                 }));

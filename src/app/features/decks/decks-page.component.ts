@@ -83,9 +83,12 @@ import { TierlistComponent } from './components/tierlist.component';
           (pageChange)="onPageChange($event)">
         </digimon-pagination>
 
-        <p-divider></p-divider>
+        <!-- The tier list is only maintained for the paper game -->
+        @if (!saveStore.alysionMode()) {
+          <p-divider></p-divider>
 
-        <digimon-tierlist></digimon-tierlist>
+          <digimon-tierlist></digimon-tierlist>
+        }
       </div>
     </digimon-page>
 

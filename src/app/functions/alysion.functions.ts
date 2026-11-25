@@ -1,5 +1,5 @@
 import { ALYSION_RESTRICTED, ALYSION_REUSED_SETS } from '../../models/data/alysion.data';
-import { DeckFormat } from '../../models/interfaces/deck.interface';
+import { DeckFormat, IDeck } from '../../models/interfaces/deck.interface';
 import { DigimonCard } from '../../models/interfaces/digimon-card.interface';
 import { ISettings } from '../../models/interfaces/settings.interface';
 
@@ -25,6 +25,17 @@ export function isAlysionSet(set: string): boolean {
 export function isInAlysionPool(card: Pick<DigimonCard, 'id' | 'cardNumber'>): boolean {
   const set = setOf(card.cardNumber);
   return ALYSION_ONLY_SET.test(set) || (ALYSION_REUSED_SETS.includes(set) && card.id === card.cardNumber);
+}
+
+/** Alysion lists only decks whose cards are all released there, whatever the backend returns. */
+export function decksForMode(decks: IDeck[], format: DeckFormat): IDeck[] {
+  if (format === 'paper') return decks;
+  // Saved decks may write starter sets as ST01
+  const inPool = ({ id }: { id: string }) => {
+    const cardId = id.replace(/^ST0/, 'ST');
+    return isInAlysionPool({ id: cardId, cardNumber: cardId.split(/_P|-Errata/)[0] });
+  };
+  return decks.filter((deck) => deck.cards?.length > 0 && [...deck.cards, ...(deck.sideDeck ?? [])].every(inPool));
 }
 
 export function restrictionFor(card: DigimonCard, format: DeckFormat): string {
