@@ -13,6 +13,8 @@ import { DialogModule } from 'primeng/dialog';
 import { MenuModule } from 'primeng/menu';
 import { MenuItem } from 'primeng/api';
 
+const PAPER_ONLY = ['/collection', '/rulings', '/products'];
+
 @Component({
   selector: 'digimon-nav-links',
   template: `
@@ -40,7 +42,7 @@ import { MenuItem } from 'primeng/api';
         </div>
 
         <nav aria-label="All pages" class="grid grid-cols-4 gap-2">
-          @for (link of sheetLinks; track link.url) {
+          @for (link of sheetLinks(); track link.url) {
             <button
               type="button"
               (click)="go(link.url)"
@@ -101,6 +103,7 @@ import { MenuItem } from 'primeng/api';
           <button style="font-size:smaller" class="p-2 group-hover:text-accent">Deckbuilder</button>
         </li>
 
+        @if (!saveStore.alysionMode()) {
         <li
           class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
           [ngClass]="getNavigationBorder('/collection')"
@@ -108,6 +111,7 @@ import { MenuItem } from 'primeng/api';
           <i class="pi pi-folder group-hover:text-accent" style="font-size: 1.5rem"></i>
           <button style="font-size:smaller" class="p-2 group-hover:text-accent">Collection</button>
         </li>
+        }
 
         <li
           class="flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
@@ -125,6 +129,7 @@ import { MenuItem } from 'primeng/api';
           <button style="font-size:smaller" class="p-2 group-hover:text-accent">Decks</button>
         </li>
 
+        @if (!saveStore.alysionMode()) {
         <li
           class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
           [ngClass]="getNavigationBorder('/rulings')"
@@ -132,7 +137,9 @@ import { MenuItem } from 'primeng/api';
           <i class="pi pi-question-circle group-hover:text-accent" style="font-size: 1.5rem"></i>
           <button style="font-size:smaller" class="p-2 group-hover:text-accent">Rulings</button>
         </li>
+        }
 
+        @if (!saveStore.alysionMode()) {
         <li
           class="hidden xl:flex flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
           [ngClass]="getNavigationBorder('/products')"
@@ -140,6 +147,7 @@ import { MenuItem } from 'primeng/api';
           <i class="pi pi-tags group-hover:text-accent" style="font-size: 1.5rem"></i>
           <button style="font-size:smaller" class="p-2 group-hover:text-accent">Products</button>
         </li>
+        }
           <li
             class="flex xl:hidden flex-col items-center justify-center px-1 xl:px-3 group cursor-pointer"
             [ngClass]="moreActive() ? 'border-b-[3px] border-accent text-accent' : 'text-fg'"
@@ -148,7 +156,7 @@ import { MenuItem } from 'primeng/api';
             <button style="font-size:smaller" class="p-2 group-hover:text-accent" aria-haspopup="menu">More</button>
           </li>
       </ul>
-      <p-menu #moreMenu [model]="moreItems" [popup]="true" appendTo="body"></p-menu>
+      <p-menu #moreMenu [model]="moreItems()" [popup]="true" appendTo="body"></p-menu>
       <div class="order-1 ml-3 flex flex-row items-center gap-2">
         <button
           type="button"
@@ -194,7 +202,7 @@ export class NavLinksComponent {
   // Sheet mode: tell the host to close after any action
   @Output() done = new EventEmitter<void>();
   readonly version = '6.0.0';
-  sheetLinks = [
+  private readonly allLinks = [
     { url: '/', label: 'Home', icon: 'pi-home' },
     { url: '/cards', label: 'Cards', icon: 'pi-clone' },
     { url: '/deckbuilder', label: 'Build', icon: 'pi-pencil' },
@@ -204,6 +212,7 @@ export class NavLinksComponent {
     { url: '/rulings', label: 'Rulings', icon: 'pi-question-circle' },
     { url: '/products', label: 'Products', icon: 'pi-tags' },
   ];
+  sheetLinks = computed(() => this.allLinks.filter((link) => !this.saveStore.alysionMode() || !PAPER_ONLY.includes(link.url)));
   dialogStore = inject(DialogStore);
   saveStore = inject(SaveStore);
   router: Router = inject(Router);
@@ -213,12 +222,16 @@ export class NavLinksComponent {
 
   mobile = false;
   route: WritableSignal<string> = signal('');
-  moreItems: MenuItem[] = [
-    { label: 'Rulings', icon: 'pi pi-question-circle', routerLink: '/rulings' },
-    { label: 'Products', icon: 'pi pi-tags', routerLink: '/products' },
-    { separator: true },
-    { label: "What's new", icon: 'pi pi-sparkles', command: () => this.showChangelog() },
-  ];
+  moreItems = computed<MenuItem[]>(() => {
+    const whatsNew: MenuItem = { label: "What's new", icon: 'pi pi-sparkles', command: () => this.showChangelog() };
+    if (this.saveStore.alysionMode()) return [whatsNew];
+    return [
+      { label: 'Rulings', icon: 'pi pi-question-circle', routerLink: '/rulings' },
+      { label: 'Products', icon: 'pi pi-tags', routerLink: '/products' },
+      { separator: true },
+      whatsNew,
+    ];
+  });
   moreActive = computed(() => ['/rulings', '/products'].includes(this.route()));
 
   constructor() {

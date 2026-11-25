@@ -141,7 +141,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                           <span class="truncate text-sm font-medium text-fg">{{ card.name.english }}</span>
                           <span class="font-mono text-xs text-muted">{{ card.cardNumber }}</span>
                         </span>
-                        @if (missingCards && card.count - getCardHave(card) > 0) {
+                        @if (missingCards && !saveStore.alysionMode() && card.count - getCardHave(card) > 0) {
                           <span class="rounded bg-orange-400/15 px-1.5 py-0.5 font-mono text-xs text-orange-300">need {{ card.count - getCardHave(card) }}</span>
                         }
                         <button type="button" [attr.aria-label]="'Remove one ' + card.name.english" (click)="removeOne(card.id)"
@@ -183,7 +183,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                         (removeCard)="removeCard(card)"
                         [cardHave]="getCardHave(card)"
                         [card]="card"
-                        [missingCards]="missingCards"></digimon-deck-card>
+                        [missingCards]="missingCards && !saveStore.alysionMode()"></digimon-deck-card>
                     </div>
                   </section>
                 } @empty {
@@ -214,7 +214,7 @@ import { DeckToolbarComponent } from './deck-toolbar.component';
                 [cardHave]="getCardHave(card)"
                 [sideDeck]="true"
                 [card]="card"
-                [missingCards]="missingCards"></digimon-deck-card>
+                [missingCards]="missingCards && !saveStore.alysionMode()"></digimon-deck-card>
             </div>
           </p-accordion-content>
         </p-accordion-panel>

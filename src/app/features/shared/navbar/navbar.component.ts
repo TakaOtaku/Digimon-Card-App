@@ -1,7 +1,8 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, computed, EventEmitter, inject, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { environment } from '../../../../environments/environment';
+import { SaveStore } from '../../../store/save.store';
 import { AlysionSwitchComponent } from './alysion-switch.component';
 import { GlobalSearchComponent } from './global-search.component';
 import { NavLinksComponent } from './nav-links.component';
@@ -22,7 +23,7 @@ import { NavLinksComponent } from './nav-links.component';
     </nav>
 
     <nav aria-label="Main" class="md:hidden fixed bottom-0 inset-x-0 z-[400] h-16 flex bg-ink-1 border-t border-line">
-      @for (link of mobileLinks; track link.url) {
+      @for (link of mobileLinks(); track link.url) {
         <a
           [routerLink]="link.url"
           routerLinkActive
@@ -46,11 +47,13 @@ import { NavLinksComponent } from './nav-links.component';
 export class NavbarComponent {
   @Output() openSideNav = new EventEmitter<boolean>();
   protected readonly appUrl = environment.appUrl;
-  protected readonly mobileLinks = [
+  private saveStore = inject(SaveStore);
+  private readonly allMobileLinks = [
     { url: '/cards', label: 'Cards', icon: 'pi-search' },
     { url: '/deckbuilder', label: 'Build', icon: 'pi-pencil' },
     { url: '/decks', label: 'Decks', icon: 'pi-table' },
     { url: '/collection', label: 'Collection', icon: 'pi-folder' },
     { url: '/user', label: 'Profile', icon: 'pi-user' },
   ];
+  protected readonly mobileLinks = computed(() => this.allMobileLinks.filter((link) => !this.saveStore.alysionMode() || link.url !== '/collection'));
 }

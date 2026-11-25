@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { inject, Injectable, untracked } from '@angular/core';
+import { Router } from '@angular/router';
 import { DeckFormat, IDeck } from '../../models';
 import { deckFormat } from '../functions/alysion.functions';
 import { DigimonCardStore } from '../store/digimon-card.store';
@@ -6,12 +8,16 @@ import { FilterStore } from '../store/filter.store';
 import { SaveStore } from '../store/save.store';
 import { WebsiteStore } from '../store/website.store';
 
+const PAPER_ONLY_PAGES = /^\/(collection|rulings|products)(\/|\?|#|$)/;
+
 @Injectable({ providedIn: 'root' })
 export class AlysionModeService {
   private cardStore = inject(DigimonCardStore);
   private filterStore = inject(FilterStore);
   private saveStore = inject(SaveStore);
   private websiteStore = inject(WebsiteStore);
+  private router = inject(Router);
+  private location = inject(Location);
   private synced = false;
 
   readonly mode = this.cardStore.format;
@@ -51,5 +57,9 @@ export class AlysionModeService {
     this.cardStore.updateFormat(format);
     this.filterStore.switchFormat(format);
     this.websiteStore.switchFormat(format);
+    // Location, not router.url: a deep link is in the address bar before its first navigation finishes
+    if (format === 'alysion' && PAPER_ONLY_PAGES.test(this.location.path())) {
+      this.router.navigateByUrl('/cards');
+    }
   }
 }

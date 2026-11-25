@@ -16,8 +16,8 @@ DIGIMON ALYSION is a new mobile game that uses new cards plus older paper cards.
 ## Non-goals
 
 - Alysion card art or text for older cards.
-- A separate Alysion collection. Owned counts stay shared.
-- Alysion versions of Rules, Products and pack data.
+- Collection, Rulings and Products in Alysion mode (changed 2026-11-25 during the build): their links are gone, their routes lead to card search, and owned counts, the missing-card tools and collection mode are hidden. Paper collection import and export stay in Settings.
+- Pack data.
 - Price compare and price check in Alysion mode (paper prices do not apply, so they are hidden).
 
 ## Must not happen

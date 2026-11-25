@@ -29,6 +29,7 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
       <button type="button" (click)="simulate()" class="flex h-10 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 flex-1 md:flex-none" pTooltip="Simulate your draw hand and the security stack" tooltipPosition="top">
         <i class="pi pi-refresh"></i> Test hand
       </button>
+      @if (!saveStore.alysionMode()) {
       <button
         type="button"
         (click)="missingCardsChange.emit(!missingCards)"
@@ -39,6 +40,7 @@ import { ImportDeckDialogComponent } from '../../shared/dialogs/import-deck-dial
         tooltipPosition="top">
         <i class="pi pi-filter"></i> Missing
       </button>
+      }
       <button type="button" (click)="importDeckDialog = true" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 md:flex-none"><i class="pi pi-download"></i> Import</button>
       <button type="button" (click)="openExportDeckDialog()" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 md:flex-none"><i class="pi pi-upload"></i> Export</button>
       <button type="button" (click)="newDeck()" class="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg border border-line bg-ink-2 px-3 text-xs font-semibold text-fg hover:border-accent md:h-8 md:flex-none"><i class="pi pi-file"></i> New</button>

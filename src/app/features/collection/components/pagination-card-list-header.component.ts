@@ -17,12 +17,12 @@ import { CardMarketService } from '../../../services/card-market.service';
       <div class="flex flex-row items-center justify-center gap-3">
         <ng-content select="[headerStart]"></ng-content>
         <div *ngIf="!viewOnly" class="flex flex-row justify-center items-center">
-        @if (showCollectionMode) {
+        @if (showCollectionMode && !saveStore.alysionMode()) {
         <span class="text-xs hidden sm:block font-bold text-fg">Collection Mode:</span>
         <span class="text-xs sm:hidden font-bold text-fg">Owned:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [ngModel]="collectionMode()" (ngModelChange)="changeCollectionMode($event)" />
         }
-        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode"> Cards: <span class="font-mono">{{ cardCount() | number }}</span> </span>
+        <span class="text-xs font-bold text-fg" [class.ml-6]="showCollectionMode && !saveStore.alysionMode()"> Cards: <span class="font-mono">{{ cardCount() | number }}</span> </span>
         @if (saveStore.showPrices() && collectionValue() !== null) {
           <span class="ml-4 text-xs font-bold text-green-400"><span class="font-mono">{{ collectionValue() | currency: 'EUR' }}</span></span>
         }

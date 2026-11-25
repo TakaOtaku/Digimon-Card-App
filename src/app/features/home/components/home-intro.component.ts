@@ -56,7 +56,7 @@ import { HomeMetaComponent } from './home-meta.component';
       </section>
 
       <section class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        @for (action of actions; track action.url) {
+        @for (action of actions(); track action.url) {
           <a [routerLink]="action.url" class="flex items-start gap-4 rounded-xl border border-line bg-ink-1 p-5 text-fg no-underline hover:border-accent">
             <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-ink-2 text-accent">
               <i [class]="'pi ' + action.icon"></i>
@@ -118,12 +118,13 @@ export class HomeIntroComponent {
     (this.saveStore.decks() ?? []).filter((deck) => deckFormat(deck) === this.alysionMode.mode()).sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0)).slice(0, 3),
   );
 
-  actions = [
+  private readonly allActions = [
     { url: '/cards', icon: 'pi-search', title: 'Card search', text: 'Filter every card by color, level, set and effect.' },
     { url: '/deckbuilder', icon: 'pi-pencil', title: 'Deck builder', text: 'Build, import, test and price-check decks.' },
     { url: '/collection', icon: 'pi-folder', title: 'Collection', text: 'Track owned cards and set completion.' },
     { url: '/decks', icon: 'pi-table', title: 'Community decks', text: 'Browse shared decks and the archetype tier list.' },
   ];
+  actions = computed(() => this.allActions.filter((action) => !this.saveStore.alysionMode() || action.url !== '/collection'));
 
   partners = [
     { name: 'AVAULT', url: 'https://www.youtube.com/@AVAULT', img: 'assets/images/partners/avault.jpg' },

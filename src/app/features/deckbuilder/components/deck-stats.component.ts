@@ -56,6 +56,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
             }
           </ul>
         </section>
+        @if (!saveStore.alysionMode()) {
         <section class="flex flex-col gap-2">
           <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Collection</h3>
           @if (missing().length) {
@@ -67,6 +68,7 @@ import { DdtoSpreadComponent } from '../../shared/statistics/ddto-spread.compone
             <span class="text-sm text-fg">You own every card in this deck.</span>
           }
         </section>
+        }
         <section class="flex flex-col gap-1">
           <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-muted">Price estimate</h3>
           <span class="font-mono text-2xl font-semibold text-fg">{{ price() ? (price() | currency: 'EUR') : '—' }}</span>
@@ -122,7 +124,7 @@ export class DeckStatsComponent {
   mainDeck: Signal<IDeckCard[]> = computed(() => mapToDeckCards(this.websiteStore.deck().cards, this.digimonCardStore.cards()));
   checks = computed(() => deckChecks(this.mainDeck(), deckFormat(this.websiteStore.deck())));
 
-  private saveStore = inject(SaveStore);
+  saveStore = inject(SaveStore);
   private cardMarketService = inject(CardMarketService);
   private messageService = inject(MessageService);
 

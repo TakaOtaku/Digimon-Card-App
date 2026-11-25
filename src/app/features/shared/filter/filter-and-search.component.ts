@@ -22,7 +22,7 @@ import { FilterSideBoxComponent } from './filter-side-box.component';
         <button (click)="this.display = true" pButton type="button" icon="pi pi-filter-fill" label="Filter"></button>
       </div>
 
-      <div class="mx-auto my-1 flex flex-row justify-center">
+      <div class="mx-auto my-1 flex flex-row justify-center" [class.hidden]="saveStore.alysionMode()">
         <span class="text-xs font-bold text-fg">Collection Mode:</span>
         <input type="checkbox" class="my-auto ml-1 h-5 w-5" [formControl]="collectionMode" />
       </div>

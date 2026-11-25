@@ -1,3 +1,4 @@
+import { paperOnlyGuard } from './paper-only.guard';
 import { Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
@@ -27,6 +28,7 @@ export const routes: Routes = [
   },
   {
     path: 'products',
+    canActivate: [paperOnlyGuard],
     loadComponent: () => import('./features/products/products.component').then(m => m.ProductsComponent),
   },
   {
@@ -51,14 +53,17 @@ export const routes: Routes = [
   },
   {
     path: 'collection',
+    canActivate: [paperOnlyGuard],
     loadComponent: () => import('./features/collection/collection-page.component').then(m => m.CollectionPageComponent),
   },
   {
     path: 'collection/:userId',
+    canActivate: [paperOnlyGuard],
     loadComponent: () => import('./features/collection/collection-page.component').then(m => m.CollectionPageComponent),
   },
   {
     path: 'rulings',
+    canActivate: [paperOnlyGuard],
     loadComponent: () => import('./features/rules/rules.component').then(m => m.RulesComponent),
   },
   {

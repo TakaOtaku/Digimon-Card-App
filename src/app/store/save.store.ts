@@ -23,7 +23,9 @@ export const SaveStore = signalStore(
 
   withComputed(({ save }) => ({
     settings: computed(() => save.settings()),
-    collectionMode: computed(() => save.settings().collectionMode),
+    // The collection belongs to the paper game
+    collectionMode: computed(() => save.settings().collectionMode && !save.settings().alysionMode),
+    alysionMode: computed(() => !!save.settings().alysionMode),
     collectionMinimum: computed(() => save.settings().collectionMinimum),
     aaCollectionMinimum: computed(() => save.settings().aaCollectionMinimum),
     playsetTracking: computed(() => save.settings().playsetTracking),

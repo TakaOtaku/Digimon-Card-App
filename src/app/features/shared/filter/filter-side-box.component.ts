@@ -112,7 +112,7 @@ import { VersionFilterComponent } from './version-filter.component';
         </div>
       }
 
-      @if (!hideCollectionFilter) {
+      @if (!hideCollectionFilter && !saveStore.alysionMode()) {
       <div class="flex flex-row mb-2">
         <digimon-range-slider
           [reset]="resetEmitter"
