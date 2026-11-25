@@ -1,3 +1,4 @@
+export * from './alysion.functions';
 export * from './base64-adapter';
 export * from './checkSpecialCardCounts.function';
 export * from './digimon-card.functions';
