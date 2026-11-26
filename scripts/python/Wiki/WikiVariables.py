@@ -193,6 +193,10 @@ wikiPageLinks = [
     {'name': 'LIMITED CARD PACKDISTANCIA CERO [LM-09]',
         'url': 'https://digimoncardgame.fandom.com/wiki/LM-09:_LIMITED_CARD_PACK_DISTANCIA_CERO'},
 
+  
+]
+# DIGIMON ALYSION sets, fetched by GetAlysionDataFromWiki.py instead of the paper run
+alysionPageLinks = [
     {'name': 'NEW EVOLUTION [BD-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BD-01:_NEW_EVOLUTION'},
     {'name': 'ULTIMATE POWER [BD-02]',
@@ -201,6 +205,8 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/BD-03:_UNION_IMPACT'},
     {'name': 'GREAT LEGEND [BD-04]',
         'url': 'https://digimoncardgame.fandom.com/wiki/BD-04:_GREAT_LEGEND'},
+    {'name': 'BATTLE OF OMNI [BD-05]',
+        'url': 'https://digimoncardgame.fandom.com/wiki/BD-05:_BATTLE_OF_OMNI'},
     {'name': 'CLASSIC COLLECTION [ED-01]',
         'url': 'https://digimoncardgame.fandom.com/wiki/ED-01:_CLASSIC_COLLECTION'},
     {'name': 'DIGITAL HAZARD [ED-02]',
@@ -209,7 +215,6 @@ wikiPageLinks = [
         'url': 'https://digimoncardgame.fandom.com/wiki/SD-01:_GEMMON'},
     {'name': 'RENAMON [SD-02]',
         'url': 'https://digimoncardgame.fandom.com/wiki/SD-02:_RENAMON'},
-  
 ]
 NoteDictionary = {
     'BT01-03: Release Special Booster Ver.1.0': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-03]',
@@ -289,6 +294,7 @@ NoteDictionary = {
     'BD-02: ULTIMATE POWER': 'ULTIMATE POWER [BD-02]',
     'BD-03: UNION IMPACT': 'UNION IMPACT [BD-03]',
     'BD-04: GREAT LEGEND': 'GREAT LEGEND [BD-04]',
+    'BD-05: BATTLE OF OMNI': 'BATTLE OF OMNI [BD-05]',
     'ED-01: CLASSIC COLLECTION': 'CLASSIC COLLECTION [ED-01]',
     'ED-02: DIGITAL HAZARD': 'DIGITAL HAZARD [ED-02]',
     'SD-01: GEMMON': 'GEMMON [SD-01]',

@@ -28,6 +28,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 import sys
 import time
 from dataclasses import dataclass, field
@@ -173,7 +174,8 @@ def fetch_links(stats: PipelineStats) -> None:
     logger.info("Comparing to saved links")
     GetLinks.saveLinks()
 
-    WV.cardLinks = sorted(list(set(WV.cardLinks)))
+    # Alysion cards belong to GetAlysionDataFromWiki.py
+    WV.cardLinks = sorted(link for link in set(WV.cardLinks) if not re.match(r"/wiki/(BD|ED|SD)\d", link))
     WV.cardCount = len(WV.cardLinks)
     stats.links_found = WV.cardCount
 

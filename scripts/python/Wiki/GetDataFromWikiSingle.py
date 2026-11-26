@@ -40,7 +40,7 @@ def find_set_entry(set_code):
         f'[{set_code.replace("-", "")}]',
     ]
 
-    for entry in WikiVariables.wikiPageLinks:
+    for entry in WikiVariables.wikiPageLinks + WikiVariables.alysionPageLinks:
         name = entry['name']
         for pattern in patterns:
             if pattern.upper() in name.upper():
@@ -113,7 +113,7 @@ def main():
     if entry is None:
         print(f"❌ Could not find set '{set_code}' in wikiPageLinks.")
         print("Available sets:")
-        for e in WikiVariables.wikiPageLinks:
+        for e in WikiVariables.wikiPageLinks + WikiVariables.alysionPageLinks:
             # Extract bracket code from name
             match = re.search(r'\[([^\]]+)\]', e['name'])
             if match:
