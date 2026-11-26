@@ -8,12 +8,16 @@ Same phases, options and card files as GetDataFromWiki.py:
 The two runs write the same JSON files, so never run them at the same time.
 """
 
+import json
 import time
 
 import GetDataFromWiki as GDW
 import GetCardData
 import GetLinks
 import WikiVariables as WV
+
+# ids scraped in this run; only these hold unformatted wiki text
+scraped_ids = set()
 
 
 def fetch_links(stats: GDW.PipelineStats) -> None:
@@ -40,11 +44,32 @@ def scrape_cards(stats: GDW.PipelineStats) -> None:
     stats.cards_scraped = len(WV.cards)
     if not WV.cards:
         raise RuntimeError(f"None of {len(WV.cardLinks)} card pages could be scraped")
+    scraped_ids.update(card.id for card in WV.cards)
     stats.phase_times["scrape_cards"] = time.time() - t0
     GDW.logger.info("Phase 2 complete: %d of %d cards scraped", stats.cards_scraped, len(WV.cardLinks))
 
 
-OWN_PHASES = {"fetch_links": fetch_links, "scrape_cards": scrape_cards}
+def format_cards(stats: GDW.PipelineStats) -> None:
+    """Format only this run's cards: a second pass over formatted text strips its line breaks."""
+    with open(GDW.CARDS_JSON, encoding="utf-8") as f:
+        cards = json.load(f)
+    others = [card for card in cards if card["id"] not in scraped_ids]
+
+    def save(data):
+        with open(GDW.CARDS_JSON, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, sort_keys=True)
+
+    # the shared formatting works on the whole card file, so give it only the new cards
+    save([card for card in cards if card["id"] in scraped_ids])
+    try:
+        GDW.format_cards(stats)
+        with open(GDW.CARDS_JSON, encoding="utf-8") as f:
+            cards = others + json.load(f)
+    finally:
+        save(sorted(cards, key=lambda card: card["id"]))
+
+
+OWN_PHASES = {"fetch_links": fetch_links, "scrape_cards": scrape_cards, "format_cards": format_cards}
 PHASES = [(name, OWN_PHASES.get(name, phase)) for name, phase in GDW.PHASES]
 
 

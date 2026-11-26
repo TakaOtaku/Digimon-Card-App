@@ -1,6 +1,10 @@
+import json
+import os
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "Wiki"))
@@ -56,8 +60,10 @@ class AlysionPipelineTests(unittest.TestCase):
 
     def test_unfinished_wiki_pages_do_not_fail_the_alysion_run(self):
         WV.cardLinks = ["/wiki/BD05-01", "/wiki/BD05-02"]
-        with patch.object(ALYSION.GetCardData, "getCardData", lambda: WV.cards.append(object())):
+        self.addCleanup(setattr, ALYSION, "scraped_ids", set())
+        with patch.object(ALYSION.GetCardData, "getCardData", lambda: WV.cards.append(SimpleNamespace(id="BD05-01"))):
             ALYSION.scrape_cards(GDW.PipelineStats())
+        self.assertEqual(ALYSION.scraped_ids, {"BD05-01"})
         WV.cards = []
         with patch.object(ALYSION.GetCardData, "getCardData"), self.assertRaises(RuntimeError):
             ALYSION.scrape_cards(GDW.PipelineStats())
@@ -68,6 +74,30 @@ class AlysionPipelineTests(unittest.TestCase):
         self.assertIs(phases["fetch_links"], ALYSION.fetch_links)
         self.assertIs(phases["scrape_cards"], ALYSION.scrape_cards)
         self.assertIs(phases["merge_cards"], GDW.merge_cards)
+        self.assertIs(phases["format_cards"], ALYSION.format_cards)
+
+    def test_formatting_leaves_cards_of_other_sets_untouched(self):
+        # formatting is not repeatable: a second pass strips line breaks from already formatted text
+        def card(card_id):
+            return {"id": card_id, "effect": "Draw 1.\n[On Play] Then trash 1.    ", "AAs": [{"id": card_id + "_P1-Sample"}], "JAAs": []}
+
+        cards = [card("BD01-02"), card("BT1-010"), card("BD04-01")]
+        self.addCleanup(os.chdir, os.getcwd())
+        with tempfile.TemporaryDirectory() as directory:
+            os.chdir(directory)
+            path = Path("scripts/python/Wiki/jsons/DigimonCards.json")
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps(cards), encoding="utf-8")
+            # BD04-01 failed to scrape this run, so it is still the formatted copy from an earlier one
+            with patch.object(ALYSION, "scraped_ids", {"BD01-02"}):
+                ALYSION.format_cards(GDW.PipelineStats())
+            result = {c["id"]: c for c in json.loads(path.read_text(encoding="utf-8"))}
+            os.chdir(Path(__file__).parent)
+        self.assertEqual(list(result), ["BD01-02", "BD04-01", "BT1-010"])
+        self.assertEqual(result["BT1-010"], cards[1])
+        self.assertEqual(result["BD04-01"], cards[2])
+        self.assertNotEqual(result["BD01-02"]["effect"], cards[0]["effect"])
+        self.assertEqual(result["BD01-02"]["AAs"], [])
 
     def test_single_set_update_still_finds_alysion_sets(self):
         self.assertIn("BD-05", SINGLE.find_set_entry("BD-05")["url"])
