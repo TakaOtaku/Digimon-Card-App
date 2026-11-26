@@ -8,6 +8,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "Wiki"))
 
 import FormatCards
+import GetDataFromWiki
 import WikiVariables
 
 
@@ -18,7 +19,6 @@ class FormatCardsTests(unittest.TestCase):
             "dna": ("5 [DNA Digivolve]", "5\n[DNA Digivolve]"),
             "quote": ('."[On Play]', '."\n[On Play]'),
             "period": (".{Trash}", ".\n{Trash}"),
-            "angle": ("＞ {Hand}", "＞\n{Hand}"),
             "unchanged": ("No formatting needed.", "No formatting needed."),
         }
         with tempfile.TemporaryDirectory() as directory:
@@ -43,7 +43,7 @@ class FormatCardsTests(unittest.TestCase):
         examples = {
             "token": ("(Digimon/Red/＜Decoy (Black)＞ ＜Rush＞.[On Play] 5 [DNA Digivolve].{Hand} ＞ {Trash})",
                       "(Digimon/Red/＜Decoy (Black)＞ ＜Rush＞.[On Play] 5 [DNA Digivolve].{Hand} ＞ {Trash})"),
-            "outside": ("(other.[On Play]).{Hand} ＞ {Trash}", "(other.\n[On Play]).\n{Hand} ＞\n{Trash}"),
+            "outside": ("(other.[On Play]).{Hand} ＞ {Trash}", "(other.\n[On Play]).\n{Hand} ＞ {Trash}"),
             "after_token": ("(Digimon/Red/＜Rush＞) [On Play]", "(Digimon/Red/＜Rush＞)\n[On Play]"),
             "existing_break": ("(Digimon/Red/first\nsecond)", "(Digimon/Red/first\nsecond)"),
         }
@@ -56,6 +56,20 @@ class FormatCardsTests(unittest.TestCase):
                 FormatCards.replaceStrings()
             result = json.loads(path.read_text(encoding="utf-8"))[0]["effects"]
             self.assertEqual(result, {key: value[1] for key, value in examples.items()})
+
+    def test_pipeline_breaks_before_a_zone_after_removing_reminder_text(self):
+        reminder = "(At blocker timing, by suspending this Digimon, it becomes the attack target.)"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "cards.json"
+            path.write_text(json.dumps([{"id": "test", "effect": f"＜Blocker＞ {reminder} {{Breeding}}", "AAs": [], "JAAs": []}]), encoding="utf-8")
+
+            def open_fixture(_path, mode):
+                return path.open(mode, encoding="utf-8")
+
+            with patch.object(FormatCards, "open", open_fixture, create=True):
+                GetDataFromWiki.format_cards(GetDataFromWiki.PipelineStats())
+
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8"))[0]["effect"], "＜Blocker＞\n{Breeding}")
 
 
 if __name__ == "__main__":

@@ -95,7 +95,6 @@ def replaceStrings():
   replace_string_in_json('5 [Burst Digivolve]', '5\n[Burst Digivolve]')
   replace_string_in_json('5 [DNA Digivolve]', '5\n[DNA Digivolve]')
   replace_string_in_json('."[', '."\n[')
-  replace_string_in_json('＞ {', '＞\n{')
   replace_string_in_json('.{', '.\n{')
   replace_string_in_json('.Wh', '.\nWh')
 

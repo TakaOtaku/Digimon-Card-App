@@ -187,6 +187,8 @@ def main():
     FormatCards.replace_string_in_json('   ', ' ')
     FormatCards.replace_string_in_json('  ', ' ')
     FormatCards.replace_string_in_json(' .', '.')
+    # after the reminder texts are gone, which sit between ＞ and { until now
+    FormatCards.replace_string_in_json('＞ {', '＞\n{')
 
     FormatCards.removeSamples()
 
