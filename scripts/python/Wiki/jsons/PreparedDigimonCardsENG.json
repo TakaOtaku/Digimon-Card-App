@@ -5087,6 +5087,56 @@
     "assembly": "-",
     "attribute": "-",
     "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD05-01.webp",
+    "cardLv": "-",
+    "cardNumber": "BD05-01",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "BD05-01",
+    "illustrator": "-",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "-",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
       "00"
     ],
     "burstDigivolve": "-",
@@ -490936,56 +490986,6 @@
     "securityEffect": "[Security] Play this card without paying the cost.",
     "specialDigivolve": "-",
     "type": "ALYSION",
-    "version": "Normal"
-  },
-  {
-    "aceEffect": "-",
-    "assembly": "-",
-    "attribute": "-",
-    "block": [
-      "00"
-    ],
-    "burstDigivolve": "-",
-    "cardImage": "assets/images/cards/ST25-15.webp",
-    "cardLv": "-",
-    "cardNumber": "ST25-15",
-    "cardType": "Option",
-    "color": "[[]]",
-    "digiXros": "-",
-    "digivolveCondition": [],
-    "digivolveEffect": "-",
-    "dnaDigivolve": "-",
-    "dp": "-",
-    "dualEffect": "-",
-    "effect": "-",
-    "form": "-",
-    "id": "ST25-15",
-    "illustrator": "-",
-    "linkDP": "-",
-    "linkEffect": "-",
-    "linkRequirement": "-",
-    "name": {
-      "english": "[[:Category:{{{name}}}|{{{name}}}]]",
-      "japanese": "{{{jpname}}}",
-      "korean": "-",
-      "simplifiedChinese": "-",
-      "traditionalChinese": "-"
-    },
-    "notes": "-",
-    "optionCardColourRequirement": "-",
-    "optionCardEffect": "-",
-    "playCost": "-",
-    "rarity": "-",
-    "restrictions": {
-      "chinese": "Unrestricted",
-      "english": "Unrestricted",
-      "japanese": "Unrestricted",
-      "korean": "Unrestricted"
-    },
-    "rule": "-",
-    "securityEffect": "-",
-    "specialDigivolve": "-",
-    "type": "Alysion",
     "version": "Normal"
   },
   {

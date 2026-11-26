@@ -4071,6 +4071,58 @@
     "assembly": "-",
     "attribute": "-",
     "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD05-01.webp",
+    "cardLv": "-",
+    "cardNumber": "BD05-01",
+    "cardType": "",
+    "color": "[[]]",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "-",
+    "id": "BD05-01",
+    "illustrator": "-",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "[[:Category:|]]",
+      "japanese": "",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "-",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "-",
+    "rarity": "-",
+    "restrictions": {
+      "chinese": "Not released",
+      "english": "Not released",
+      "japanese": "Not released",
+      "korean": "Not released"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "-",
+    "version": "Normal"
+  },
+  {
+    "AAs": [],
+    "JAAs": [],
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
       "00"
     ],
     "burstDigivolve": "-",
