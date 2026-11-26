@@ -35,8 +35,8 @@ describe('alysion functions', () => {
     expect(poolFor([c('BT2-097'), { ...c('BT2-097'), id: 'BT2-097-Errata' }], 'alysion').map((x) => x.id)).toEqual(['BT2-097']);
   });
 
-  it('hides Alysion-only cards in paper', () => {
-    expect(poolFor(all, 'paper').map((x) => x.id)).toEqual(['BT1-010', 'BT1-010_P1', 'ST6-01', 'BT5-001', 'ST7-01', 'BT2-047', 'BT1-084']);
+  it('shows every card on the paper site: the Alysion sets come out in paper too', () => {
+    expect(poolFor(all, 'paper')).toBe(all);
   });
 
   it('applies the restriction list of the format without mutating cards', () => {

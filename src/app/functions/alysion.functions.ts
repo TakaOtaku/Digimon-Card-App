@@ -44,7 +44,8 @@ export function restrictionFor(card: DigimonCard, format: DeckFormat): string {
 }
 
 export function poolFor(cards: DigimonCard[], format: DeckFormat): DigimonCard[] {
-  if (format === 'paper') return cards.filter((card) => !ALYSION_ONLY_SET.test(setOf(card.cardNumber)));
+  // The Alysion sets are released in paper too, so the paper site shows every card
+  if (format === 'paper') return cards;
   return cards
     .filter(isInAlysionPool)
     .map((card) => ({ ...card, restrictions: { ...card.restrictions, english: restrictionFor(card, format) } }));

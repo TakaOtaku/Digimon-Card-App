@@ -30,6 +30,6 @@ describe('DigimonCardStore', () => {
   it('starts in paper', async () => {
     const store = TestBed.inject(DigimonCardStore);
     await store.updateCards(CARDSET.English);
-    expect(store.poolCards().map((c) => c.id)).toEqual(['BT1-010', 'BT5-001']);
+    expect(store.poolCards().map((c) => c.id)).toEqual(['BT1-010', 'BT5-001', 'BD01-02']);
   });
 });

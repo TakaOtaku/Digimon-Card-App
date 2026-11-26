@@ -18,6 +18,11 @@ describe('card-sets data', () => {
     expect(starters?.items.map((item) => item.value)).toEqual(expect.arrayContaining(['ST25', 'ST26']));
   });
 
+  it('titles every group, with the single products under Bonus and Alysion last', () => {
+    expect(GroupedSets.map((group) => group.label)).toEqual(['Standard', 'Extra', 'Starter Decks', 'Bonus', 'Alysion']);
+    expect(GroupedSets[3].items.map((item) => item.value)).toEqual(['AD1', 'LM', 'P', 'RB1']);
+  });
+
   it('derives ReleaseOrder and TAGS from CARD_SETS', () => {
     expect(ReleaseOrder.length).toBe(CARD_SETS.length);
     // Every derived tag corresponds to a known set name.

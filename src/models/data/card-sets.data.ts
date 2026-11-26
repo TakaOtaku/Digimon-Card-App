@@ -132,10 +132,11 @@ export const GroupedSets = (() => {
     { label: 'Standard', value: 'displays', category: 'Standard' },
     { label: 'Extra', value: 'extra', category: 'Extra' },
     { label: 'Starter Decks', value: 'starter', category: 'Starter' },
-    { label: 'Digimon Alysion', value: 'alysion', category: 'Alysion' },
+    { label: 'Bonus', value: 'bonus', category: 'Misc' },
+    { label: 'Alysion', value: 'alysion', category: 'Alysion' },
   ];
 
-  const groups = categoryConfig.map(({ label, value, category }) => ({
+  return categoryConfig.map(({ label, value, category }) => ({
     label,
     value,
     items: CARD_SETS
@@ -143,14 +144,4 @@ export const GroupedSets = (() => {
       .map((s) => ({ label: setLabel(s.name), value: s.name }))
       .sort((a, b) => a.value.localeCompare(b.value, undefined, { numeric: true })),
   }));
-
-  // Misc group (no label/value on the group itself, matching the original shape)
-  const misc = {
-    items: CARD_SETS
-      .filter((s) => s.category === 'Misc')
-      .map((s) => ({ label: setLabel(s.name), value: s.name }))
-      .sort((a, b) => a.value.localeCompare(b.value, undefined, { numeric: true })),
-  };
-
-  return [...groups, misc];
 })();
