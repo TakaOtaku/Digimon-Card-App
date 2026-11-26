@@ -232,7 +232,9 @@ function applyVersionFilter(card: DigimonCard, filters: string[]): boolean {
 function applyKeywordFilter(card: DigimonCard, filters: string[]): boolean {
   let remove = false;
   for (let filter of filters) {
-    remove = card['effect'].includes(filter) || card['digivolveEffect'].includes(filter);
+    // ＜Decode＞ also finds every variant, written ＜Decode (...)＞
+    const variant = filter.replace('＞', ' (');
+    remove = [card['effect'], card['digivolveEffect']].some((text) => text.includes(filter) || text.includes(variant));
     if (remove) break;
   }
   return !remove;
