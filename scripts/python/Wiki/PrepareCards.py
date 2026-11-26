@@ -5,6 +5,7 @@ import os
 from copy import deepcopy
 
 import CardImageIndex
+import WikiVariables as WV
 
 CARD_IMAGE_PREFIX = "assets/images/cards/"
 
@@ -62,7 +63,7 @@ def checkIfSampleShouldBeUsed(card):
     return card
 
 def prepareCards():
-  with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
+  with open(WV.cardsJson(), 'r') as file:
     data = json.load(file)
 
     for card in data:
@@ -128,8 +129,8 @@ def prepareCards():
           card["cardImage"] = addSampleBeforeWebp(card["cardImage"])
 
     # Save the updated JSON back to the file
-    with open('./scripts/python/Wiki/jsons/PreparedDigimonCardsENG.json', 'w') as file:
+    with open(WV.preparedJson('ENG'), 'w') as file:
       json.dump(preparedCardsENG, file, indent=2, sort_keys=sort_key)
 
-    with open('./scripts/python/Wiki/jsons/PreparedDigimonCardsJAP.json', 'w') as file:
+    with open(WV.preparedJson('JAP'), 'w') as file:
       json.dump(preparedCardsJAP, file, indent=2, sort_keys=sort_key)

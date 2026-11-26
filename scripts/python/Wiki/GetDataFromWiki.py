@@ -71,12 +71,6 @@ import WikiVariables as WV
 import WikiFunctions as WF
 
 # ---------------------------------------------------------------------------
-# Constants
-# ---------------------------------------------------------------------------
-CARDS_JSON = "./scripts/python/Wiki/jsons/DigimonCards.json"
-
-
-# ---------------------------------------------------------------------------
 # Pipeline statistics
 # ---------------------------------------------------------------------------
 @dataclass
@@ -142,12 +136,12 @@ def _card_content_hash(card: dict) -> str:
 
 
 def _load_existing_cards() -> Dict[str, dict]:
-    """Load existing DigimonCards.json into a dict keyed by card id."""
-    if not os.path.exists(CARDS_JSON):
-        logger.info("No existing %s found — starting fresh", CARDS_JSON)
+    """Load the existing card file of this run into a dict keyed by card id."""
+    if not os.path.exists(WV.cardsJson()):
+        logger.info("No existing %s found — starting fresh", WV.cardsJson())
         return {}
     try:
-        with open(CARDS_JSON, "r", encoding="utf-8") as f:
+        with open(WV.cardsJson(), "r", encoding="utf-8") as f:
             data = json.load(f)
         return {card["id"]: card for card in data}
     except (json.JSONDecodeError, KeyError) as exc:
@@ -227,7 +221,7 @@ def fetch_rulings(stats: PipelineStats) -> None:
 
 def merge_cards(stats: PipelineStats) -> None:
     """
-    Merge newly scraped cards into the existing DigimonCards.json.
+    Merge newly scraped cards into the existing card file.
 
     - New cards (not in existing) → add
     - Changed cards (content hash differs) → update
@@ -286,7 +280,7 @@ def merge_cards(stats: PipelineStats) -> None:
     # Sort by id and save
     merged_list = sorted(merged.values(), key=lambda c: c.get("id", ""))
 
-    with open(CARDS_JSON, "w", encoding="utf-8") as f:
+    with open(WV.cardsJson(), "w", encoding="utf-8") as f:
         json.dump(merged_list, f, indent=2, sort_keys=WF.sort_key)
 
     # Reload into WV.cards so downstream phases work correctly

@@ -282,7 +282,7 @@ def class_to_dict(obj):
 
 def formatJsonToSetDictionary():
     # Open the JSON file and load its contents
-    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
+    with open(WV.cardsJson(), 'r') as file:
         data = json.load(file)
 
     def group_cards_by_prefix(cards):
@@ -378,12 +378,12 @@ def saveCards():
 
     formatedCards = remove_underscores(formatedCards)
     print('Saving DigimonCard JSON!')
-    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as fp:
+    with open(WV.cardsJson(), 'w') as fp:
         json.dump(formatedCards, fp, indent=2, sort_keys=sort_key)
 
 def loadCards():
   # Open the JSON file and load its contents
-  with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
+  with open(WV.cardsJson(), 'r') as file:
     data = json.load(file)
     # Data is an Array of DigimonCards and they should be added to WV.Cards with the correct Class
     cards = []

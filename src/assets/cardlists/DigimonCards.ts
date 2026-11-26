@@ -13,14 +13,26 @@ function withCdnImage(card: DigimonCard): DigimonCard {
   return card;
 }
 
-// Fetched as plain JSON instead of bundled: both languages compiled into the JS (~27 MB) blocked taps at startup
-export async function setupDigimonCards(cardset: CARDSET): Promise<DigimonCard[]> {
-  const file = cardset === CARDSET.English ? 'PreparedDigimonCardsENG.json' : 'PreparedDigimonCardsJAP.json';
+async function fetchCardList(file: string): Promise<DigimonCard[]> {
   const response = await fetch('assets/cardlists/' + file);
   if (!response.ok) {
     throw new Error(`Loading ${file} failed: ${response.status}`);
   }
-  const cards: DigimonCard[] = await response.json();
+  return response.json();
+}
+
+// Fetched as plain JSON instead of bundled: both languages compiled into the JS (~27 MB) blocked taps at startup
+export async function setupDigimonCards(cardset: CARDSET): Promise<DigimonCard[]> {
+  const language = cardset === CARDSET.English ? 'ENG' : 'JAP';
+  // Normal and Alysion cards are separate files, written by separate scripts
+  const [normal, alysion] = await Promise.all([
+    fetchCardList(`PreparedDigimonCards${language}.json`),
+    fetchCardList(`PreparedAlysionCards${language}.json`).catch((error) => {
+      console.error('Loading the Alysion cards failed:', error);
+      return [] as DigimonCard[];
+    }),
+  ]);
+  const cards = [...normal, ...alysion];
   return cards.filter((card) => card.cardNumber !== 'ST25-15' && card.name.japanese && card.name.japanese.trim() !== '').map(withCdnImage);
 }
 

@@ -10,6 +10,19 @@ cardLinks = []
 # card id -> (AAs, JAAs) of the last good run, kept by the merge phase so a gallery page that
 # cannot be fetched does not cost a card its prints
 previousPrints = {}
+# Which card files a run reads and writes. Normal and Alysion cards live in separate files
+# (DigimonCards / AlysionCards), so one run can never overwrite the other's cards.
+cardsName = 'DigimonCards'
+
+
+def cardsJson():
+    return f'./scripts/python/Wiki/jsons/{cardsName}.json'
+
+
+def preparedJson(language):
+    return f'./scripts/python/Wiki/jsons/Prepared{cardsName}{language}.json'
+
+
 wikiPageLinks = [
     {'name': '▹RELEASE SPECIAL BOOSTER 1.0 [BT01-03]',
      'url': 'https://digimoncardgame.fandom.com/wiki/BT01-03:_Release_Special_Booster_Ver.1.0'},

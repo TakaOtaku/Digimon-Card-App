@@ -49,6 +49,11 @@ def find_set_entry(set_code):
     return None
 
 
+def use_files_of(entry):
+    """Alysion sets are kept in their own card files."""
+    WikiVariables.cardsName = 'AlysionCards' if entry in WikiVariables.alysionPageLinks else 'DigimonCards'
+
+
 def get_card_id_prefix(set_code):
     """
     Derive the card ID prefix from a set code.
@@ -69,7 +74,7 @@ def merge_cards_into_existing(new_cards_json_path, card_prefix):
         new_cards = json.load(f)
 
     # Load existing cards from the assets (the "live" data)
-    existing_path = './src/assets/cardlists/DigimonCards.json'
+    existing_path = f'./src/assets/cardlists/{WikiVariables.cardsName}.json'
     try:
         with open(existing_path, 'r') as f:
             existing_cards = json.load(f)
@@ -120,6 +125,7 @@ def main():
                 print(f"  {match.group(1)}")
         sys.exit(1)
 
+    use_files_of(entry)
     card_prefix = get_card_id_prefix(set_code)
     print(f"📋 Set: {entry['name']}")
     print(f"🔗 URL: {entry['url']}")
@@ -197,7 +203,7 @@ def main():
 
     # === Merge into existing data ===
     print('\n🔀 Merging with existing card data...')
-    merge_cards_into_existing('./scripts/python/Wiki/jsons/DigimonCards.json', card_prefix)
+    merge_cards_into_existing(WikiVariables.cardsJson(), card_prefix)
 
     # === TransformPNG ===
     print('\n🖼️  Converting PNGs to WebP...')

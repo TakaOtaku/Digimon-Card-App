@@ -9,7 +9,10 @@ describe('DigimonCardStore', () => {
     TestBed.configureTestingModule({});
     jest
       .spyOn(globalThis, 'fetch')
-      .mockImplementation(async () => ({ ok: true, json: async () => [raw('BT1-010'), raw('BT5-001'), raw('BD01-02')] }) as Response);
+      .mockImplementation(async (url) => {
+        const cards = String(url).includes('Alysion') ? [raw('BD01-02')] : [raw('BT1-010'), raw('BT5-001')];
+        return { ok: true, json: async () => cards } as Response;
+      });
   });
   afterEach(() => jest.restoreAllMocks());
 

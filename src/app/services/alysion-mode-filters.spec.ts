@@ -56,7 +56,10 @@ describe('Alysion mode and the rest of the settings', () => {
 
   it('exports the whole collection while in Alysion mode', async () => {
     const raw = (id: string) => ({ id, cardNumber: id, cardImage: '', name: { japanese: 'x' }, restrictions: {}, rarity: 'C', version: 'Normal' });
-    jest.spyOn(globalThis, 'fetch').mockImplementation(async () => ({ ok: true, json: async () => [raw('BT1-010'), raw('BT5-001')] }) as Response);
+    jest.spyOn(globalThis, 'fetch').mockImplementation(async (url) => {
+      const cards = String(url).includes('Alysion') ? [] : [raw('BT1-010'), raw('BT5-001')];
+      return { ok: true, json: async () => cards } as Response;
+    });
     const cards = TestBed.inject(DigimonCardStore);
     await cards.updateCards('English' as any);
     cards.updateFormat('alysion');

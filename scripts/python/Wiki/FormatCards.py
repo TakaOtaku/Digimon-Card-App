@@ -39,7 +39,7 @@ def token_description_ranges(text):
 
 def replace_string_in_json(search_string, replaceString):
   # Open the JSON file and load its contents
-  with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
+  with open(WV.cardsJson(), 'r') as file:
     data = json.load(file)
 
   # Replace the search_string with replace_string recursively in the JSON data
@@ -63,7 +63,7 @@ def replace_string_in_json(search_string, replaceString):
   updated_data = replace_string(data)
 
   # Save the updated JSON back to the file
-  with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as file:
+  with open(WV.cardsJson(), 'w') as file:
     json.dump(updated_data, file, indent=2, sort_keys=sort_key)
 
 def replaceStrings():
@@ -100,7 +100,7 @@ def replaceStrings():
 
 def removeSamples():
   # Remove all AAs and JAAs from every Card that include Sample in the id
-  with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'r') as file:
+  with open(WV.cardsJson(), 'r') as file:
     data = json.load(file)
 
     for card in data:
@@ -112,5 +112,5 @@ def removeSamples():
           card['JAAs'].remove(jaa)
 
     # Save the updated JSON back to the file
-    with open('./scripts/python/Wiki/jsons/DigimonCards.json', 'w') as file:
+    with open(WV.cardsJson(), 'w') as file:
       json.dump(data, file, indent=2, sort_keys=sort_key)
