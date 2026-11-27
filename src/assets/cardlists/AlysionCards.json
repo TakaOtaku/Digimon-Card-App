@@ -52,8 +52,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BD01-02_P1",
+        "illustrator": "Kuromori maya",
+        "note": "ST-25 & ST-26: Welcome Tamers Pack",
+        "type": "Rare (Pre Release Stamp)\u00a0"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BD01-02_P1-J",
+        "illustrator": "Kuromori maya",
+        "note": "ST-25 & ST-26: Welcome Tamers Pack",
+        "type": "Rare (Pre Release Stamp)\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -226,8 +240,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BD01-05_P1",
+        "illustrator": "Kuromori maya",
+        "note": "ST-25 & ST-26: Welcome Tamers Pack",
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BD01-05_P1-J",
+        "illustrator": "Kuromori maya",
+        "note": "ST-25 & ST-26: Welcome Tamers Pack",
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "Vaccine",
@@ -516,8 +544,22 @@
     "version": "Normal"
   },
   {
-    "AAs": [],
-    "JAAs": [],
+    "AAs": [
+      {
+        "id": "BD01-10_P1",
+        "illustrator": "naru",
+        "note": "ST-25 & ST-26: Welcome Tamers Pack",
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
+      }
+    ],
+    "JAAs": [
+      {
+        "id": "BD01-10_P1-J",
+        "illustrator": "naru",
+        "note": "ST-25 & ST-26: Welcome Tamers Pack",
+        "type": "Uncommon (Pre Release Stamp)\u00a0"
+      }
+    ],
     "aceEffect": "-",
     "assembly": "-",
     "attribute": "-",
