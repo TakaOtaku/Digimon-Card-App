@@ -113,6 +113,62 @@
       "06"
     ],
     "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD01-02_P1-J.webp",
+    "cardLv": "Lv.3",
+    "cardNumber": "BD01-02",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "0",
+        "level": "2"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] Add 1000 to this [ALYSION]\u00a0trait Digimon's DP deletion effect's maximum.",
+    "dnaDigivolve": "-",
+    "dp": "2000",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "Rookie",
+    "id": "BD01-02_P1",
+    "illustrator": "Kuromori maya",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Gemmon",
+      "japanese": "\u30b8\u30a7\u30e0\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-25 & ST-26: Welcome Tamers Pack",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "R",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Mythical Beast/ALYSION",
+    "version": "Rare (Pre Release Stamp)\u00a0"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
     "cardImage": "assets/images/cards/BD01-03-J.webp",
     "cardLv": "Lv.4",
     "cardNumber": "BD01-03",
@@ -272,6 +328,62 @@
     "specialDigivolve": "-",
     "type": "Dragon Warrior/ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "Vaccine",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD01-05_P1-J.webp",
+    "cardLv": "Lv.5",
+    "cardNumber": "BD01-05",
+    "cardType": "Digimon",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [
+      {
+        "color": "Red",
+        "cost": "2",
+        "level": "4"
+      }
+    ],
+    "digivolveEffect": "[Your Turn] [Once Per Turn] When any of your opponent's Digimon are deleted, this Digimon gains \uff1cSecurity A. +1\uff1e for the turn. ",
+    "dnaDigivolve": "-",
+    "dp": "6000",
+    "dualEffect": "-",
+    "effect": "-",
+    "form": "Ultimate",
+    "id": "BD01-05_P1",
+    "illustrator": "Kuromori maya",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Reptilimon",
+      "japanese": "\u30ec\u30d7\u30c6\u30a3\u30ea\u30e2\u30f3",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-25 & ST-26: Welcome Tamers Pack",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "7",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "-",
+    "specialDigivolve": "-",
+    "type": "Dragon Warrior/ALYSION",
+    "version": "Uncommon (Pre Release Stamp)\u00a0"
   },
   {
     "aceEffect": "-",
@@ -546,6 +658,56 @@
     "specialDigivolve": "-",
     "type": "ALYSION",
     "version": "Normal"
+  },
+  {
+    "aceEffect": "-",
+    "assembly": "-",
+    "attribute": "-",
+    "block": [
+      "06"
+    ],
+    "burstDigivolve": "-",
+    "cardImage": "assets/images/cards/BD01-10_P1-J.webp",
+    "cardLv": "-",
+    "cardNumber": "BD01-10",
+    "cardType": "Tamer",
+    "color": "Red",
+    "digiXros": "-",
+    "digivolveCondition": [],
+    "digivolveEffect": "-",
+    "dnaDigivolve": "-",
+    "dp": "-",
+    "dualEffect": "-",
+    "effect": "[Start of Your Main Phase] If you have a red Digimon with the [ALYSION]\u00a0trait, gain 1 memory.\n[Your Turn] All of your red Digimon with the [ALYSION]\u00a0trait get +1000 DP.",
+    "form": "-",
+    "id": "BD01-10_P1",
+    "illustrator": "naru",
+    "linkDP": "-",
+    "linkEffect": "-",
+    "linkRequirement": "-",
+    "name": {
+      "english": "Kanata Hondo",
+      "japanese": "\u672c\u5802\u30ab\u30ca\u30bf",
+      "korean": "-",
+      "simplifiedChinese": "-",
+      "traditionalChinese": "-"
+    },
+    "notes": "ST-25 & ST-26: Welcome Tamers Pack",
+    "optionCardColourRequirement": "-",
+    "optionCardEffect": "-",
+    "playCost": "3",
+    "rarity": "U",
+    "restrictions": {
+      "chinese": "Unrestricted",
+      "english": "Unrestricted",
+      "japanese": "Unrestricted",
+      "korean": "Unrestricted"
+    },
+    "rule": "-",
+    "securityEffect": "[Security] Play this card without paying the cost.",
+    "specialDigivolve": "-",
+    "type": "ALYSION",
+    "version": "Uncommon (Pre Release Stamp)\u00a0"
   },
   {
     "aceEffect": "-",
