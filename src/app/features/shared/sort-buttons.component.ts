@@ -16,7 +16,7 @@ import { WebsiteStore } from '../../store/website.store';
         [icon]="sort().ascOrder ? 'pi pi-sort-amount-down' : 'pi pi-sort-amount-up'"
         class="border-slate-200 border rounded"
         (onClick)="changeOrder()"
-        [model]="sortOptions"
+        [model]="sortOptions()"
         raised
         text
         size="small" />
@@ -75,11 +75,10 @@ export class SortButtonsComponent {
     },
   ];
 
-  get sortOptions(): MenuItem[] {
-    return this.saveStore.showPrices()
-      ? this.allSortOptions
-      : this.allSortOptions.filter((o) => o.label !== 'Price');
-  }
+  // computed: a new array per change detection makes PrimeNG rebuild the open menu, which swallows mouse clicks
+  sortOptions = computed(() =>
+    this.saveStore.showPrices() ? this.allSortOptions : this.allSortOptions.filter((o) => o.label !== 'Price'),
+  );
 
   updateStore() {
     this.websiteStore.updateSort({ sortBy: this.sortElement(), ascOrder: this.sort().ascOrder });

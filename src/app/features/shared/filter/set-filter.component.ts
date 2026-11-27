@@ -10,12 +10,16 @@ import { FilterStore } from '../../../store/filter.store';
   selector: 'digimon-set-filter',
   template: `
     <p-multiSelect
-      [filter]="false"
+      [filter]="true"
+      [resetFilterOnHide]="true"
+      (onFilter)="query.set($event.filter ?? '')"
+      (onPanelHide)="query.set('')"
+      filterPlaceHolder="Search sets"
+      ariaFilterLabel="Search sets"
       [ngModel]="setFilter"
       (ngModelChange)="updateFilter($event)"
       [group]="true"
       [options]="groupedSets()"
-      [showHeader]="false"
       [showToggleAll]="false"
       placeholder="Select a Set"
       display="chip"
@@ -26,10 +30,10 @@ import { FilterStore } from '../../../store/filter.store';
         <button
           type="button"
           (click)="toggle(group.value); $event.stopPropagation()"
-          [attr.aria-expanded]="openGroups().has(group.value)"
+          [attr.aria-expanded]="isOpen(group.value)"
           class="flex w-full items-center justify-between gap-2 py-1 text-left font-semibold">
           <span>{{ group.label }}</span>
-          <i [class]="openGroups().has(group.value) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" aria-hidden="true"></i>
+          <i [class]="isOpen(group.value) ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" aria-hidden="true"></i>
         </button>
       </ng-template>
     </p-multiSelect>
@@ -44,16 +48,23 @@ export class SetFilterComponent {
 
   openGroups = signal(new Set<string>());
 
+  query = signal('');
+
   // Alysion mode offers only the sets in its pool. A collapsed group lists just its selected sets,
-  // so the selection stays visible (and keeps its chips)
+  // so the selection stays visible (and keeps its chips). A search looks through every group
   groupedSets = computed(() => {
     const alysion = this.cardStore.format() === 'alysion';
-    const open = this.openGroups();
     const selected = this.filterStore.setFilter();
     return GroupedSets.map((group) => ({ ...group, items: group.items.filter((item) => !alysion || isAlysionSet(item.value)) }))
       .filter((group) => group.items.length > 0)
-      .map((group) => (open.has(group.value) ? group : { ...group, items: group.items.filter((item) => selected.includes(item.value)) }));
+      .map((group) =>
+        this.isOpen(group.value) ? group : { ...group, items: group.items.filter((item) => selected.includes(item.value)) },
+      );
   });
+
+  isOpen(group: string): boolean {
+    return !!this.query().trim() || this.openGroups().has(group);
+  }
 
   toggle(group: string): void {
     this.openGroups.update((groups) => {

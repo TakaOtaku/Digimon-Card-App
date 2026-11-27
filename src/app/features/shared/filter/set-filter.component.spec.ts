@@ -25,6 +25,13 @@ describe('SetFilterComponent', () => {
     expect(shown()).toEqual([]);
   });
 
+  it('offers every set while searching and collapses again afterwards', () => {
+    component.query.set('bt5');
+    expect(shown()).toEqual(expect.arrayContaining(['BT5', 'BD01']));
+    component.query.set('');
+    expect(shown()).toEqual([]);
+  });
+
   it('keeps selected sets visible in a collapsed group', () => {
     TestBed.inject(FilterStore).updateSetFilter(['BT5']);
     expect(shown()).toEqual(['BT5']);
