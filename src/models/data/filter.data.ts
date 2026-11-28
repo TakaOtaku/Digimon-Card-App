@@ -533,10 +533,8 @@ export const SpecialRequirements: string[] = [
   'DigiXros',
   'Burst Digivolve',
   'ACE',
-  'Link',
   'App Fusion',
   'Assembly',
-  'Arts Digivolve',
 ];
 
 export const Restrictions: string[] = ['Banned', 'Restricted to 1'];
